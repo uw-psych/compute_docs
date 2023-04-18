@@ -3,3 +3,22 @@
 
 format: jb-book
 root: intro
+parts:
+  - caption: UW HYAK
+    chapters:
+    - file: hyak/start/start
+      sections:
+      - file: hyak/start/introduction
+      - file: hyak/start/connect-ssh
+      - file: hyak/start/hyakvnc
+    - file: hyak/compute/compute
+      sections:
+      - file: hyak/compute/slurm/slurm
+      - file: hyak/compute/apptainer/apptainer
+      - file: hyak/compute/lmod
+    - file: hyak/software/software
+      sections:
+      - file: hyak/software/matlab
+      - file: hyak/software/freesurfer
+      - file: hyak/software/spm_conn
+      - file: hyak/software/afni
