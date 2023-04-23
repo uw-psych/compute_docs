@@ -64,13 +64,24 @@ local labname = "escience"
 local version = "7.3.2"
 local base = pathJoin("/sw/contrib/" .. labname .. "-src/freesurfer/", version)
 
-append_path("MATLABPATH", pathJoin(base, "fsfast/toolbox"))
-append_path("MATLABPATH", pathJoin(base, "matlab"))
+--FreeSurfer 7.x requires MATLAB R2014b
+depend_on("forsyth/matlab/r2014b")
+
 setenv("FREESURFER_HOME", base)
 prepend_path("PATH", pathJoin(base, "bin"))
 source_sh("bash", pathJoin(base, "SetUpFreeSurfer.sh"))
 whatis("Name: FreeSurfer")
 whatis("Version: " .. version)
+```
+::::
+
+::::{note}
+Lmod takes some time to cache available modules. If a module is not appearing, use the `-I` or
+`--ignore_cache` flag to force Lmod to check for new modules.
+
+```bash
+module -I avail freesurfer
+module -I load labname/freesurfer
 ```
 ::::
 
@@ -83,3 +94,21 @@ installation.
 
 5. Download license.txt from the registration email and copy it to
 `/sw/contrib/labname-src/freesurfer/<version>/license.txt`.
+
+6. For FS-FAST support, create a link to a supported MATLAB release (R2014b for FreeSurfer 7.x):
+
+```
+module -I load labname/freesurfer/<version>
+cd $FREESURFER_HOME
+ln -s /gscratch/forsyth-src/matlab/R2014b MCRv84
+```
+
+::::{note}
+Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or
+`--ignore_cache` flag to force Lmod to check for new modules.
+
+```bash
+module -I avail freesurfer
+module -I load labname/freesurfer
+```
+::::

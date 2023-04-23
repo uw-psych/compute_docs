@@ -76,3 +76,13 @@ whatis("Name: " .. name)
 whatis("Version: " .. version)
 ```
 ::::
+
+::::{note}
+Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or
+`--ignore_cache` flag to force Lmod to check for new modules.
+
+```bash
+module -I avail afni
+module -I load labname/afni
+```
+::::

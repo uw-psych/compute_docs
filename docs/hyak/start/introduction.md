@@ -1,5 +1,12 @@
 # Introduction to UW Hyak
 
-## Getting help
+TODO: introduce Klone and Mox clusters
 
-Check out UW Research Computing Club's [Slack](uw-rcc.slack.com) and ask questions under `hyak-questions`.
+TODO: add service windows for Klone and Mox clusters
+
+## Resources
+
+Check out UW Research Computing Club's [Slack](https://uw-rcc.slack.com) and ask questions under
+`hyak-questions`.
+
+https://hyak.uw.edu

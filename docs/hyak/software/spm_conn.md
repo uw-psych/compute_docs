@@ -69,6 +69,16 @@ whatis("Version: " .. version)
 ```
 ::::
 
+::::{note}
+Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or
+`--ignore_cache` flag to force Lmod to check for new modules.
+
+```bash
+module -I avail spm
+module -I load labname/spm
+```
+::::
+
 ## Installing a different version of CONN
 
 :::{note}
@@ -111,5 +121,15 @@ depends_on("escience/spm")
 append_path("MATLABPATH", base)
 whatis("Name: CONN")
 whatis("Version: " .. version)
+```
+::::
+
+::::{note}
+Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or
+`--ignore_cache` flag to force Lmod to check for new modules.
+
+```bash
+module -I avail conn
+module -I load labname/conn
 ```
 ::::

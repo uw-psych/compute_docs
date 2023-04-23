@@ -1,5 +1,8 @@
 # Apptainer
 
+Apptainer (formerly Singularity) is a simple container platform enabling users to install and run
+software that would otherwise be unsupported by the host environment.
+
 ## Checking available versions
 
 ```bash
@@ -9,8 +12,8 @@ module avail apptainer
 ## Using Apptainer
 
 :::{note}
-In general, do not use the default version of Apptainer within an Apptainer environment.
-Specify a versioned module instead.
+In general, do not use the default version of Apptainer if within an Apptainer environment. Load a
+module with a version specified instead.
 :::
 
 Load the default version with `module load apptainer`,
@@ -32,13 +35,13 @@ export APPTAINER_BINDPATH="/tmp,$HOME,/mmfs1,/sw,/scr,/gscratch,/opt,/:/hyak_roo
 apptainer shell <path_to_container>
 ```
 
-## Building Apptainer from docker.io registry
+## Pulling an Apptainer image from docker.io registry
 
-TODO
+apptainer pull docker://<image_name>[:<tag>]
 
 ## Writing and building Apptainer recipes
 
-TODO
+https://apptainer.org/docs/user/main/definition_files.html
 
 ## Scripting with Apptainer
 
@@ -49,6 +52,14 @@ To run a python script called my_script.py from within the container, run the fo
 ```bash
 apptainer exec <path_to_container.sif> python3 ./my_script.py
 ```
+
+## Clearing Apptainer cache
+
+
+
+## Changing Apptainer cache
+
+Set APPTAINER_CACHEDIR environment variable to a different cache path.
 
 ## References
 

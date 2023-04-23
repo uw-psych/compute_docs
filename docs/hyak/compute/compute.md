@@ -1,6 +1,6 @@
 # Compute
 
-The start of every compute task begins by submitting a Slurm job to a job queue.
+UW Hyak clusters use Slurm to manage access to compute resources and schedule compute jobs.
 
 ## Overview
 

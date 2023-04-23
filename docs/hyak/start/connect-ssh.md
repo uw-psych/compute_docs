@@ -73,15 +73,18 @@ Host klone.hyak.uw.edu
 
 :::::{tab-item} Windows
 
-Windows 10 and newer have OpenSSH pre-installed
+There are many SSH clients available for the Windows platform. Here is a short table comparing
+features provided by each SSH client:
 
+::::{table} Feature Comparison of Windows SSH Clients
 | SSH Client | Port-Forwarding | X11 | Session Sharing | Interface | File Transfer Interface |
 | :--------- | --------------- | --- | --------------- | --------- | ----------------------- |
-| [Win32-OpenSSH](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) | Supported | Requires X11 Server | Unsupported | CLI | CLI |
+| [Win32-OpenSSH](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI |
 | [MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html) | Supported | Supported | Unsupported | GUI/CLI | GUI/CLI |
-| [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) | Supported | Requires X11 Server | Supported | GUI | CLI |
-| [MSYS2+OpenSSH](https://www.msys2.org/) | Supported | Supported | Unsupported | CLI | CLI |
+| [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) | Supported | Requires X11 Server[^x11] | Supported | GUI | CLI |
+| [MSYS2+OpenSSH](https://www.msys2.org/) | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI |
 | [WSL2+OpenSSH](https://learn.microsoft.com/en-us/windows/wsl/) | Supported | Supported | Supported | CLI | CLI |
+::::
 
 :::{note}
 PuTTY's `plink.exe` tool is not suited for interactive sessions as it cannot handle many key inputs
@@ -191,7 +194,63 @@ copy to the other.
 
 ::::::{tab-set}
 :::::{tab-item} OpenSSH
-TODO
+`scp` is an OpenSSH client utility for copying files and directories to/from a remote target. The
+general syntax has the following form:
+```bash
+scp [-r] <SOURCE_PATH> UWNetID@klone.hyak.uw.edu:<DESTINATION_PATH>
+scp [-r] UWNetID@klone.hyak.uw.edu:<SOURCE_PATH> <DESTINATION_PATH>
+```
+
+:::{tip}
+:::
+
+To copy a file to Klone at some path, run:
+```bash
+scp /path/to/my/file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/
+```
+
+To copy a file from Klone at some path, run:
+:::::
+
+:::::{tab-item} PuTTY CLI
+
+`pscp` is a CLI utility (provided by a standard PuTTY installation) for copying files.
+
+```
+pscp [-r] <SOURCE_PATH> UWNetID@klone.hyak.uw.edu:<DESTINATION_PATH>
+pscp [-r] UWNetID@klone.hyak.uw.edu:<SOURCE_PATH> <DESTINATION_PATH>
+```
+
+:::{note}
+`pscp` does not support the use of the tilde (~) as a shortcut to the home directory. By default,
+relative paths always start from home directory anyways.
+
+```bash
+# copy file to home directory
+pscp.exe c:\path\to\my\file UWNetID@klone.hyak.uw.edu:
+```
+:::
+
+:::{tip}
+`pscp` can reuse/share an active SSH connection without re-authorization if using a saved PuTTY
+profile with `Share SSH Connection if possible` enabled.
+:::
+
+To send a file to Klone at some path, run:
+```bash
+pscp.exe c:\path\to\my\file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/
+```
+
+Alternatively, we can use the name of the saved PuTTY profile (`Klone` for this example) to reuse
+an active connection to copy a file to Klone:
+```bash
+pscp.exe c:\path\to\my\file Klone:/gscratch/mylab/
+```
+
+To copy a directory to Klone, use the `-r` argument to copy directories and files recursively:
+```bash
+pscp.exe -r c:\path\to\my\directory\ Klone:/gscratch/mylab/
+```
 :::::
 
 :::::{tab-item} WinSCP
