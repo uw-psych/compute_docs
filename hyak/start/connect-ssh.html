@@ -1,0 +1,831 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>SSH &#8212; Compute Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'hyak/start/connect-ssh';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="hyakvnc" href="hyakvnc.html" />
+    <link rel="prev" title="Introduction to UW Hyak" href="introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">UW HYAK</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="start.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to UW Hyak</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hyakvnc.html">hyakvnc</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../compute/compute.html">Compute</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../compute/slurm/slurm.html">Slurm Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compute/apptainer/apptainer.html">Apptainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../compute/lmod.html">Lmod</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../software/software.html">Software</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software/matlab.html">MATLAB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/freesurfer.html">FreeSurfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/spm_conn.html">SPM and CONN Toolboxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/afni.html">AFNI</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/uw-psych/compute_docs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/uw-psych/compute_docs/issues/new?title=Issue%20on%20page%20%2Fhyak/start/connect-ssh.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/hyak/start/connect-ssh.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>SSH</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-an-ssh-client">Installing an SSH client</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-via-ssh">Connecting via SSH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transferring-files-to-from-hyak">Transferring files to/from HYAK</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ssh">
+<h1>SSH<a class="headerlink" href="#ssh" title="Permalink to this heading">#</a></h1>
+<p>SSH (secure shell) is the primary method for connecting to and interacting with UW HYAK clusters
+from a command-line interface (CLI).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Connections to UW HYAK are authenticated with your UW NetID credentials and Duo for two-factor.
+Alternative login methods, including SSH key authentication, cannot be used to login.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use an SSH client that supports session multiplexing/sharing to reuse an active session without
+two-factor authentication.</p>
+</div>
+</div>
+<section id="installing-an-ssh-client">
+<h2>Installing an SSH client<a class="headerlink" href="#installing-an-ssh-client" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>macOS, most Linux distributions, and (newer builds of) Windows 10/11 already include <strong>OpenSSH</strong> client by default.</p>
+</div>
+<p>Pick your platform and install an SSH client:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Linux</label><div class="sd-tab-content docutils">
+<p>Open a terminal and install OpenSSH client with your distribution’s package
+manager.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Distribution</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ubuntu/Debian/Linux Mint</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">openssh</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>RHEL/CentOS/Fedora/Rocky</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">dnf</span> <span class="pre">install</span> <span class="pre">openssh</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>SUSE</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">zypper</span> <span class="pre">install</span> <span class="pre">openssh</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Alpine</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">apk</span> <span class="pre">add</span> <span class="pre">openssh</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Arch</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">openssh</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>To setup session sharing, create a new host entry to <strong>your local computer’s</strong> <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code>
+with a text editor:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code></p>
+</div>
+<div class="sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">klone</span><span class="o">.</span><span class="n">hyak</span><span class="o">.</span><span class="n">uw</span><span class="o">.</span><span class="n">edu</span>
+    <span class="n">HostName</span> <span class="o">%</span><span class="n">h</span>
+    <span class="n">ControlPath</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/%</span><span class="n">r</span><span class="o">@%</span><span class="n">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span>
+    <span class="n">ControlMaster</span> <span class="n">auto</span>
+    <span class="n">ControlPersist</span> <span class="mi">3600</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+macOS</label><div class="sd-tab-content docutils">
+<p>macOS provides SSH commands by default and are accessible from command-line with
+the native macOS Terminal application.</p>
+<p>To setup session sharing, create a new host entry to <strong>your local computer’s</strong> <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code>
+with a text editor:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code></p>
+</div>
+<div class="sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Host</span> <span class="n">klone</span><span class="o">.</span><span class="n">hyak</span><span class="o">.</span><span class="n">uw</span><span class="o">.</span><span class="n">edu</span>
+    <span class="n">HostName</span> <span class="o">%</span><span class="n">h</span>
+    <span class="n">ControlPath</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/%</span><span class="n">r</span><span class="o">@%</span><span class="n">h</span><span class="p">:</span><span class="o">%</span><span class="n">p</span>
+    <span class="n">ControlMaster</span> <span class="n">auto</span>
+    <span class="n">ControlPersist</span> <span class="mi">3600</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Windows</label><div class="sd-tab-content docutils">
+<p>There are many SSH clients available for the Windows platform. Here is a short table comparing
+features provided by each SSH client:</p>
+<table class="table" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Feature Comparison of Windows SSH Clients</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>SSH Client</p></th>
+<th class="head"><p>Port-Forwarding</p></th>
+<th class="head"><p>X11</p></th>
+<th class="head"><p>Session Sharing</p></th>
+<th class="head"><p>Interface</p></th>
+<th class="head"><p>File Transfer Interface</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui">Win32-OpenSSH</a></p></td>
+<td><p>Supported</p></td>
+<td><p>Requires X11 Server[^x11]</p></td>
+<td><p>Unsupported</p></td>
+<td><p>CLI</p></td>
+<td><p>CLI</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://mobaxterm.mobatek.net/download-home-edition.html">MobaXterm</a></p></td>
+<td><p>Supported</p></td>
+<td><p>Supported</p></td>
+<td><p>Unsupported</p></td>
+<td><p>GUI/CLI</p></td>
+<td><p>GUI/CLI</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a></p></td>
+<td><p>Supported</p></td>
+<td><p>Requires X11 Server[^x11]</p></td>
+<td><p>Supported</p></td>
+<td><p>GUI</p></td>
+<td><p>CLI</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://www.msys2.org/">MSYS2+OpenSSH</a></p></td>
+<td><p>Supported</p></td>
+<td><p>Requires X11 Server[^x11]</p></td>
+<td><p>Unsupported</p></td>
+<td><p>CLI</p></td>
+<td><p>CLI</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/">WSL2+OpenSSH</a></p></td>
+<td><p>Supported</p></td>
+<td><p>Supported</p></td>
+<td><p>Supported</p></td>
+<td><p>CLI</p></td>
+<td><p>CLI</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PuTTY’s <code class="docutils literal notranslate"><span class="pre">plink.exe</span></code> tool is not suited for interactive sessions as it cannot handle many key inputs
+(arrow keys for cursor movement, backspace for character deletion).</p>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Session Sharing in PuTTY<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Check <code class="docutils literal notranslate"><span class="pre">Share</span> <span class="pre">SSH</span> <span class="pre">Connection</span> <span class="pre">if</span> <span class="pre">possible</span></code> in the <strong>PuTTY Configuration</strong> window under <strong>Connection</strong>-&gt;<strong>SSH</strong>:</p>
+<p class="sd-card-text"><img alt="" src="../../_images/PuTTY_share_SSH_connections.png" /></p>
+<p class="sd-card-text">Save a PuTTY profile under <strong>Session</strong> with the <strong>hostname</strong> set to <code class="docutils literal notranslate"><span class="pre">UWNetID&#64;klone.hyak.uw.edu</span></code>:</p>
+<p class="sd-card-text"><img alt="" src="../../_images/PuTTY_save_profile.png" /></p>
+<p class="sd-card-text">While PuTTY maintains an active session with session sharing enabled, all (GUI/CLI) PuTTY tools can
+reuse the active authenticated session <strong>as long as the terminal window remains open and active</strong>.
+If all sessions close, authentication will be required.</p>
+<p class="sd-card-text">To create a new terminal window, right click the title bar of an active terminal window, then click
+on <strong>Duplicate Session</strong>.</p>
+<p class="sd-card-text">To reuse an active session with CLI tools, specify the name of the saved PuTTY profile in place of
+<code class="docutils literal notranslate"><span class="pre">UWNetID&#64;klone.hyak.uw.edu</span></code>.</p>
+</div>
+</details></div>
+</div>
+</section>
+<section id="connecting-via-ssh">
+<h2>Connecting via SSH<a class="headerlink" href="#connecting-via-ssh" title="Permalink to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+OpenSSH</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Open a terminal instance.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Windows users should open PowerShell console, or install and use
+<a class="reference external" href="https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701">Windows Terminal</a>
+from the Microsoft Store app.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Connect to HYAK Klone cluster with <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command with your UW NetID:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>UWNetID@klone.hyak.uw.edu
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>If prompted to “continue connecting”, type ‘yes’ and press enter.</p></li>
+<li><p>Login with your NetID password and authenticate with Duo.</p></li>
+</ol>
+<p>If successful, the <strong>login node</strong>’s command prompt should appear.</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+PuTTY</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Open PuTTY:</p></li>
+</ol>
+<p><img alt="" src="../../_images/PuTTY_start.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p>Check <strong>Share SSH Connection if possible</strong> under <strong>Connection</strong>-&gt;<strong>SSH</strong>:</p></li>
+</ol>
+<p><img alt="" src="../../_images/PuTTY_share_SSH_connections.png" /></p>
+<ol class="arabic simple" start="3">
+<li><p>Under <strong>Session</strong>, set the <strong>hostname</strong> to <code class="docutils literal notranslate"><span class="pre">UWNetID&#64;klone.hyak.uw.edu</span></code> and save the profile as
+<code class="docutils literal notranslate"><span class="pre">Klone</span></code>:</p></li>
+</ol>
+<p><img alt="" src="../../_images/PuTTY_save_profile.png" /></p>
+<ol class="arabic simple" start="4">
+<li><p>Press <strong>Open</strong> at the bottom of the configuration window to start the connection.</p></li>
+<li><p>Login with your NetID password and authenticate with Duo.</p></li>
+</ol>
+<p>If successful, the <strong>login node</strong>’s command prompt should appear.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+MobaXterm GUI</label><div class="sd-tab-content docutils">
+<ol class="arabic simple">
+<li><p>Open MobaXterm:</p></li>
+</ol>
+<p><img alt="" src="../../_images/MobaXterm_start.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p>Click the <strong>Session</strong> icon in the top left corner.</p></li>
+<li><p>Select <strong>SSH</strong> under the <strong>Session settings</strong> window, then do the following:</p></li>
+</ol>
+<ul class="simple">
+<li><p>set the remote host to <code class="docutils literal notranslate"><span class="pre">klone.hyak.uw.edu</span></code></p></li>
+<li><p>check <strong>Specify username</strong> and specify your UW NetID</p></li>
+</ul>
+<p><img alt="" src="../../_images/MobaXterm_setup_ssh_session.png" /></p>
+<ol class="arabic simple" start="4">
+<li><p>Press <strong>OK</strong> at the bottom of the window to start the connection.</p></li>
+<li><p>Press <strong>Accept</strong> if prompted to trust the identity of the remote host:</p></li>
+</ol>
+<p><img alt="" src="../../_images/MobaXterm_new_remote_host.png" /></p>
+<ol class="arabic simple" start="5">
+<li><p>Login with your NetID password and authenticate with Duo.</p></li>
+</ol>
+<p>If successful, the <strong>login node</strong>’s command prompt should appear.</p>
+</div>
+</div>
+</section>
+<section id="transferring-files-to-from-hyak">
+<h2>Transferring files to/from HYAK<a class="headerlink" href="#transferring-files-to-from-hyak" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Klone and Mox clusters have separate network attached storage. Copying to one cluster will not
+copy to the other.</p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
+OpenSSH</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">scp</span></code> is an OpenSSH client utility for copying files and directories to/from a remote target. The
+general syntax has the following form:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span><span class="o">[</span>-r<span class="o">]</span><span class="w"> </span>&lt;SOURCE_PATH&gt;<span class="w"> </span>UWNetID@klone.hyak.uw.edu:&lt;DESTINATION_PATH&gt;
+scp<span class="w"> </span><span class="o">[</span>-r<span class="o">]</span><span class="w"> </span>UWNetID@klone.hyak.uw.edu:&lt;SOURCE_PATH&gt;<span class="w"> </span>&lt;DESTINATION_PATH&gt;
+</pre></div>
+</div>
+<p>To copy a file to Klone at some path, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>/path/to/my/file<span class="w"> </span>UWNetID@klone.hyak.uw.edu:/gscratch/mylab/
+</pre></div>
+</div>
+<p>To copy a file from Klone at some path, run:</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
+PuTTY CLI</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">pscp</span></code> is a CLI utility (provided by a standard PuTTY installation) for copying files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pscp</span> <span class="p">[</span><span class="o">-</span><span class="n">r</span><span class="p">]</span> <span class="o">&lt;</span><span class="n">SOURCE_PATH</span><span class="o">&gt;</span> <span class="n">UWNetID</span><span class="nd">@klone</span><span class="o">.</span><span class="n">hyak</span><span class="o">.</span><span class="n">uw</span><span class="o">.</span><span class="n">edu</span><span class="p">:</span><span class="o">&lt;</span><span class="n">DESTINATION_PATH</span><span class="o">&gt;</span>
+<span class="n">pscp</span> <span class="p">[</span><span class="o">-</span><span class="n">r</span><span class="p">]</span> <span class="n">UWNetID</span><span class="nd">@klone</span><span class="o">.</span><span class="n">hyak</span><span class="o">.</span><span class="n">uw</span><span class="o">.</span><span class="n">edu</span><span class="p">:</span><span class="o">&lt;</span><span class="n">SOURCE_PATH</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">DESTINATION_PATH</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">pscp</span></code> does not support the use of the tilde (~) as a shortcut to the home directory. By default,
+relative paths always start from home directory anyways.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># copy file to home directory</span>
+pscp.exe<span class="w"> </span>c:<span class="se">\p</span>ath<span class="se">\t</span>o<span class="se">\m</span>y<span class="se">\f</span>ile<span class="w"> </span>UWNetID@klone.hyak.uw.edu:
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><code class="docutils literal notranslate"><span class="pre">pscp</span></code> can reuse/share an active SSH connection without re-authorization if using a saved PuTTY
+profile with <code class="docutils literal notranslate"><span class="pre">Share</span> <span class="pre">SSH</span> <span class="pre">Connection</span> <span class="pre">if</span> <span class="pre">possible</span></code> enabled.</p>
+</div>
+<p>To send a file to Klone at some path, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pscp.exe<span class="w"> </span>c:<span class="se">\p</span>ath<span class="se">\t</span>o<span class="se">\m</span>y<span class="se">\f</span>ile<span class="w"> </span>UWNetID@klone.hyak.uw.edu:/gscratch/mylab/
+</pre></div>
+</div>
+<p>Alternatively, we can use the name of the saved PuTTY profile (<code class="docutils literal notranslate"><span class="pre">Klone</span></code> for this example) to reuse
+an active connection to copy a file to Klone:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pscp.exe<span class="w"> </span>c:<span class="se">\p</span>ath<span class="se">\t</span>o<span class="se">\m</span>y<span class="se">\f</span>ile<span class="w"> </span>Klone:/gscratch/mylab/
+</pre></div>
+</div>
+<p>To copy a directory to Klone, use the <code class="docutils literal notranslate"><span class="pre">-r</span></code> argument to copy directories and files recursively:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pscp.exe<span class="w"> </span>-r<span class="w"> </span>c:<span class="se">\p</span>ath<span class="se">\t</span>o<span class="se">\m</span>y<span class="se">\d</span>irectory<span class="se">\ </span>Klone:/gscratch/mylab/
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
+WinSCP</label><div class="sd-tab-content docutils">
+<p>TODO</p>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+Cyberduck</label><div class="sd-tab-content docutils">
+<p>TODO</p>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./hyak/start"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to UW Hyak</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hyakvnc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">hyakvnc</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-an-ssh-client">Installing an SSH client</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-via-ssh">Connecting via SSH</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transferring-files-to-from-hyak">Transferring files to/from HYAK</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Department of Psychology @ UW
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
