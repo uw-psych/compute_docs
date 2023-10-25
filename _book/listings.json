@@ -1,0 +1,33 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/docs/compute/index.html",
+      "/docs/start/index.html"
+    ]
+  },
+  {
+    "listing": "/docs/start/index.html",
+    "items": [
+      "/docs/start/connect-ssh.html",
+      "/docs/start/introduction.html",
+      "/docs/start/hyakvnc.html"
+    ]
+  },
+  {
+    "listing": "/docs/compute/index.html",
+    "items": [
+      "/docs/compute/apptainer.html",
+      "/docs/compute/slurm.html"
+    ]
+  },
+  {
+    "listing": "/docs/software/index.html",
+    "items": [
+      "/docs/software/afni.html",
+      "/docs/software/freesurfer.html",
+      "/docs/software/matlab.html",
+      "/docs/software/spm_conn.html"
+    ]
+  }
+]
