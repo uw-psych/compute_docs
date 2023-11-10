@@ -1,10 +1,9 @@
 ---
 title: "Compute"
+order: 100
 listing:
   contents:
-    - "slurm.qmd"
-    - "apptainer.qmd"
-    - "slurm.qmd"
+    - "*.qmd"
 ---
 
 # Compute

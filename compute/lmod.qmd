@@ -1,6 +1,7 @@
 ---
 title: "Lmod"
 description: Loadable modules for Hyak
+order: 30
 ---
 # Lmod
 

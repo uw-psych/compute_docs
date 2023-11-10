@@ -1,6 +1,7 @@
 ---
 title: "Connecting to HYAK with SSH"
 description: How to connect to HYAK
+order: 20
 ---
 # SSH
 

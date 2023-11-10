@@ -1,5 +1,6 @@
 ---
 title: "SLURM Basics"
+order: 10
 description: An introduction to the SLURM job scheduler on Hyak
 ---
 # Slurm Basics

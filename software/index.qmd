@@ -1,11 +1,9 @@
 ---
 title: "Software"
+order: 200
 listing:
   contents:
-    - "freesurfer.qmd"
-    - "afni.qmd"
-    - "matlab.qmd"
-    - "spm_conn.qmd"
+    - "*.qmd"
 ---
 
 # Software

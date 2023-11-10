@@ -2,11 +2,12 @@
 title: "Welcome"
 description: "Documentation for Computing at the University of Washington Psychology Department"
 listing:
+#  sort: false
   contents:
-    - "docs/index.qmd"
-    - "docs/start/index.qmd"
-    - "docs/software/software.qmd"
-    - "docs/compute/index.qmd"
+    - "*/index.qmd"
+    # - "docs/start/index.qmd"
+    # - "docs/software/index.qmd"
+    # - "docs/compute/index.qmd"
 ---
 
 # Welcome

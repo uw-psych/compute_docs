@@ -1,0 +1,541 @@
+[
+  {
+    "objectID": "CONDUCT.html",
+    "href": "CONDUCT.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.\n\n\n\nExamples of behavior that contributes to creating a positive environment include:\n\nUsing welcoming and inclusive language\nBeing respectful of differing viewpoints and experiences\nGracefully accepting constructive criticism\nFocusing on what is best for the community\nShowing empathy towards other community members\n\nExamples of unacceptable behavior by participants include:\n\nThe use of sexualized language or imagery and unwelcome sexual attention or advances\nTrolling, insulting/derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or electronic address, without explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting\n\n\n\n\nProject maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.\nProject maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.\n\n\n\nThis Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representing a project or community include using an official project e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. Representation of a project may be further defined and clarified by project maintainers.\n\n\n\nInstances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team. The project team will review and investigate all complaints, and will respond in a way that it deems appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.\nProject maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project’s leadership.\n\n\n\nThis Code of Conduct is adapted from the Contributor Covenant, version 1.4."
+  },
+  {
+    "objectID": "CONDUCT.html#our-pledge",
+    "href": "CONDUCT.html#our-pledge",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation."
+  },
+  {
+    "objectID": "CONDUCT.html#our-standards",
+    "href": "CONDUCT.html#our-standards",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Examples of behavior that contributes to creating a positive environment include:\n\nUsing welcoming and inclusive language\nBeing respectful of differing viewpoints and experiences\nGracefully accepting constructive criticism\nFocusing on what is best for the community\nShowing empathy towards other community members\n\nExamples of unacceptable behavior by participants include:\n\nThe use of sexualized language or imagery and unwelcome sexual attention or advances\nTrolling, insulting/derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or electronic address, without explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting"
+  },
+  {
+    "objectID": "CONDUCT.html#our-responsibilities",
+    "href": "CONDUCT.html#our-responsibilities",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.\nProject maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful."
+  },
+  {
+    "objectID": "CONDUCT.html#scope",
+    "href": "CONDUCT.html#scope",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representing a project or community include using an official project e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. Representation of a project may be further defined and clarified by project maintainers."
+  },
+  {
+    "objectID": "CONDUCT.html#enforcement",
+    "href": "CONDUCT.html#enforcement",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team. The project team will review and investigate all complaints, and will respond in a way that it deems appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.\nProject maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project’s leadership."
+  },
+  {
+    "objectID": "CONDUCT.html#attribution",
+    "href": "CONDUCT.html#attribution",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "This Code of Conduct is adapted from the Contributor Covenant, version 1.4."
+  },
+  {
+    "objectID": "start/introduction.html",
+    "href": "start/introduction.html",
+    "title": "Introduction to UW Hyak",
+    "section": "",
+    "text": "TODO: introduce Klone and Mox clusters\nTODO: add service windows for Klone and Mox clusters\n\n\nCheck out UW Research Computing Club’s Slack and ask questions under hyak-questions.\nhttps://hyak.uw.edu"
+  },
+  {
+    "objectID": "start/introduction.html#resources",
+    "href": "start/introduction.html#resources",
+    "title": "Introduction to UW Hyak",
+    "section": "",
+    "text": "Check out UW Research Computing Club’s Slack and ask questions under hyak-questions.\nhttps://hyak.uw.edu"
+  },
+  {
+    "objectID": "start/connect-ssh.html",
+    "href": "start/connect-ssh.html",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "SSH (secure shell) is the primary method for connecting to and interacting with UW HYAK clusters from a command-line interface (CLI).\n\n\n\n\n\n\nImportant\n\n\n\nConnections to UW HYAK are authenticated with your UW NetID credentials and Duo for two-factor. Alternative login methods, including SSH key authentication, cannot be used to login.\n\n\n\n\n\n\nTip\n\n\n\nUse an SSH client that supports session multiplexing/sharing to reuse an active session without two-factor authentication.\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nmacOS, most Linux distributions, and (newer builds of) Windows 10/11 already include OpenSSH client by default.\n\n\nPick your platform and install an SSH client:\n\nLinuxmacOSWindows\n\n\nOpen a terminal and install OpenSSH client with your distribution’s package manager.\n\n\n\nDistribution\nCommand\n\n\n\n\nUbuntu/Debian/Linux Mint\nsudo apt-get install openssh\n\n\nRHEL/CentOS/Fedora/Rocky\nsudo dnf install openssh\n\n\nSUSE\nsudo zypper install openssh\n\n\nAlpine\napk add openssh\n\n\nArch\nsudo pacman -S openssh\n\n\n\nTo setup session sharing, create a new host entry to your local computer’s ~/.ssh/config with a text editor:\n\n\n\n\n\n\nNote\n\n\n\n~/.ssh/config ^^^\nHost klone.hyak.uw.edu\n    HostName %h\n    ControlPath ~/.ssh/%r@%h:%p\n    ControlMaster auto\n    ControlPersist 3600\n\n\n\n\nmacOS provides SSH commands by default and are accessible from command-line with the native macOS Terminal application.\nTo setup session sharing, create a new host entry to your local computer’s ~/.ssh/config with a text editor:\n\n\n\n\n\n\nNote\n\n\n\n~/.ssh/config ^^^\nHost klone.hyak.uw.edu\n    HostName %h\n    ControlPath ~/.ssh/%r@%h:%p\n    ControlMaster auto\n    ControlPersist 3600\n\n\n\n\nThere are many SSH clients available for the Windows platform. Here is a short table comparing features provided by each SSH client:\n:::{table} Feature Comparison of Windows SSH Clients | SSH Client | Port-Forwarding | X11 | Session Sharing | Interface | File Transfer Interface | | :——— | ————— | — | ————— | ——— | ———————– | | Win32-OpenSSH | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI | | MobaXterm | Supported | Supported | Unsupported | GUI/CLI | GUI/CLI | | PuTTY | Supported | Requires X11 Server[^x11] | Supported | GUI | CLI | | MSYS2+OpenSSH | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI | | WSL2+OpenSSH | Supported | Supported | Supported | CLI | CLI |\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nPuTTY’s plink.exe tool is not suited for interactive sessions as it cannot handle many key inputs (arrow keys for cursor movement, backspace for character deletion).\n\n\n:::{dropdown} Session Sharing in PuTTY Check Share SSH Connection if possible in the PuTTY Configuration window under Connection-&gt;SSH:\n\nSave a PuTTY profile under Session with the hostname set to UWNetID@klone.hyak.uw.edu:\n\nWhile PuTTY maintains an active session with session sharing enabled, all (GUI/CLI) PuTTY tools can reuse the active authenticated session as long as the terminal window remains open and active. If all sessions close, authentication will be required.\nTo create a new terminal window, right click the title bar of an active terminal window, then click on Duplicate Session.\nTo reuse an active session with CLI tools, specify the name of the saved PuTTY profile in place of UWNetID@klone.hyak.uw.edu.\n\n\n\n::: :::\n\n\n\nOpenSSH\n\n\n\nOpen a terminal instance.\n\n\n\n\n\n\n\nNote\n\n\n\nWindows users should open PowerShell console, or install and use Windows Terminal from the Microsoft Store app.\n\n\n\nConnect to HYAK Klone cluster with ssh command with your UW NetID:\n\nssh UWNetID@klone.hyak.uw.edu\n\nIf prompted to “continue connecting”, type ‘yes’ and press enter.\nLogin with your NetID password and authenticate with Duo.\n\nIf successful, the login node’s command prompt should appear.\n\n\n\n\n\n\n\nOpen PuTTY:\n\n\n\nCheck Share SSH Connection if possible under Connection-&gt;SSH:\n\n\n\nUnder Session, set the hostname to UWNetID@klone.hyak.uw.edu and save the profile as Klone:\n\n\n\nPress Open at the bottom of the configuration window to start the connection.\nLogin with your NetID password and authenticate with Duo.\n\nIf successful, the login node’s command prompt should appear. :::\n\n\n\n\nOpen MobaXterm:\n\n\n\nClick the Session icon in the top left corner.\nSelect SSH under the Session settings window, then do the following:\n\n\nset the remote host to klone.hyak.uw.edu\ncheck Specify username and specify your UW NetID\n\n\n\nPress OK at the bottom of the window to start the connection.\nPress Accept if prompted to trust the identity of the remote host:\n\n\n\nLogin with your NetID password and authenticate with Duo.\n\nIf successful, the login node’s command prompt should appear. ::: :::\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nKlone and Mox clusters have separate network attached storage. Copying to one cluster will not copy to the other.\n\n\n\nOpenSSH\n\n\nscp is an OpenSSH client utility for copying files and directories to/from a remote target. The general syntax has the following form:\nscp [-r] &lt;SOURCE_PATH&gt; UWNetID@klone.hyak.uw.edu:&lt;DESTINATION_PATH&gt;\nscp [-r] UWNetID@klone.hyak.uw.edu:&lt;SOURCE_PATH&gt; &lt;DESTINATION_PATH&gt;\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nTo copy a file to Klone at some path, run:\nscp /path/to/my/file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/\nTo copy a file from Klone at some path, run:\n\n\n\n\n\n\npscp is a CLI utility (provided by a standard PuTTY installation) for copying files.\npscp [-r] &lt;SOURCE_PATH&gt; UWNetID@klone.hyak.uw.edu:&lt;DESTINATION_PATH&gt;\npscp [-r] UWNetID@klone.hyak.uw.edu:&lt;SOURCE_PATH&gt; &lt;DESTINATION_PATH&gt;\n\n\n\n\n\n\nNote\n\n\n\npscp does not support the use of the tilde (~) as a shortcut to the home directory. By default, relative paths always start from home directory anyways.\n# copy file to home directory\npscp.exe c:\\path\\to\\my\\file UWNetID@klone.hyak.uw.edu:\n\n\n\n\n\n\n\n\nTip\n\n\n\npscp can reuse/share an active SSH connection without re-authorization if using a saved PuTTY profile with Share SSH Connection if possible enabled.\n\n\nTo send a file to Klone at some path, run:\npscp.exe c:\\path\\to\\my\\file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/\nAlternatively, we can use the name of the saved PuTTY profile (Klone for this example) to reuse an active connection to copy a file to Klone:\npscp.exe c:\\path\\to\\my\\file Klone:/gscratch/mylab/\nTo copy a directory to Klone, use the -r argument to copy directories and files recursively:\npscp.exe -r c:\\path\\to\\my\\directory\\ Klone:/gscratch/mylab/\n:::\n\n\n\nTODO :::\n\n\n\nTODO ::: :::"
+  },
+  {
+    "objectID": "start/connect-ssh.html#installing-an-ssh-client",
+    "href": "start/connect-ssh.html#installing-an-ssh-client",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "Note\n\n\n\nmacOS, most Linux distributions, and (newer builds of) Windows 10/11 already include OpenSSH client by default.\n\n\nPick your platform and install an SSH client:\n\nLinuxmacOSWindows\n\n\nOpen a terminal and install OpenSSH client with your distribution’s package manager.\n\n\n\nDistribution\nCommand\n\n\n\n\nUbuntu/Debian/Linux Mint\nsudo apt-get install openssh\n\n\nRHEL/CentOS/Fedora/Rocky\nsudo dnf install openssh\n\n\nSUSE\nsudo zypper install openssh\n\n\nAlpine\napk add openssh\n\n\nArch\nsudo pacman -S openssh\n\n\n\nTo setup session sharing, create a new host entry to your local computer’s ~/.ssh/config with a text editor:\n\n\n\n\n\n\nNote\n\n\n\n~/.ssh/config ^^^\nHost klone.hyak.uw.edu\n    HostName %h\n    ControlPath ~/.ssh/%r@%h:%p\n    ControlMaster auto\n    ControlPersist 3600\n\n\n\n\nmacOS provides SSH commands by default and are accessible from command-line with the native macOS Terminal application.\nTo setup session sharing, create a new host entry to your local computer’s ~/.ssh/config with a text editor:\n\n\n\n\n\n\nNote\n\n\n\n~/.ssh/config ^^^\nHost klone.hyak.uw.edu\n    HostName %h\n    ControlPath ~/.ssh/%r@%h:%p\n    ControlMaster auto\n    ControlPersist 3600\n\n\n\n\nThere are many SSH clients available for the Windows platform. Here is a short table comparing features provided by each SSH client:\n:::{table} Feature Comparison of Windows SSH Clients | SSH Client | Port-Forwarding | X11 | Session Sharing | Interface | File Transfer Interface | | :——— | ————— | — | ————— | ——— | ———————– | | Win32-OpenSSH | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI | | MobaXterm | Supported | Supported | Unsupported | GUI/CLI | GUI/CLI | | PuTTY | Supported | Requires X11 Server[^x11] | Supported | GUI | CLI | | MSYS2+OpenSSH | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI | | WSL2+OpenSSH | Supported | Supported | Supported | CLI | CLI |\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nPuTTY’s plink.exe tool is not suited for interactive sessions as it cannot handle many key inputs (arrow keys for cursor movement, backspace for character deletion).\n\n\n:::{dropdown} Session Sharing in PuTTY Check Share SSH Connection if possible in the PuTTY Configuration window under Connection-&gt;SSH:\n\nSave a PuTTY profile under Session with the hostname set to UWNetID@klone.hyak.uw.edu:\n\nWhile PuTTY maintains an active session with session sharing enabled, all (GUI/CLI) PuTTY tools can reuse the active authenticated session as long as the terminal window remains open and active. If all sessions close, authentication will be required.\nTo create a new terminal window, right click the title bar of an active terminal window, then click on Duplicate Session.\nTo reuse an active session with CLI tools, specify the name of the saved PuTTY profile in place of UWNetID@klone.hyak.uw.edu."
+  },
+  {
+    "objectID": "start/connect-ssh.html#connecting-via-ssh",
+    "href": "start/connect-ssh.html#connecting-via-ssh",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "OpenSSH\n\n\n\nOpen a terminal instance.\n\n\n\n\n\n\n\nNote\n\n\n\nWindows users should open PowerShell console, or install and use Windows Terminal from the Microsoft Store app.\n\n\n\nConnect to HYAK Klone cluster with ssh command with your UW NetID:\n\nssh UWNetID@klone.hyak.uw.edu\n\nIf prompted to “continue connecting”, type ‘yes’ and press enter.\nLogin with your NetID password and authenticate with Duo.\n\nIf successful, the login node’s command prompt should appear."
+  },
+  {
+    "objectID": "start/connect-ssh.html#putty",
+    "href": "start/connect-ssh.html#putty",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "Open PuTTY:\n\n\n\nCheck Share SSH Connection if possible under Connection-&gt;SSH:\n\n\n\nUnder Session, set the hostname to UWNetID@klone.hyak.uw.edu and save the profile as Klone:\n\n\n\nPress Open at the bottom of the configuration window to start the connection.\nLogin with your NetID password and authenticate with Duo.\n\nIf successful, the login node’s command prompt should appear. :::"
+  },
+  {
+    "objectID": "start/connect-ssh.html#mobaxterm-gui",
+    "href": "start/connect-ssh.html#mobaxterm-gui",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "Open MobaXterm:\n\n\n\nClick the Session icon in the top left corner.\nSelect SSH under the Session settings window, then do the following:\n\n\nset the remote host to klone.hyak.uw.edu\ncheck Specify username and specify your UW NetID\n\n\n\nPress OK at the bottom of the window to start the connection.\nPress Accept if prompted to trust the identity of the remote host:\n\n\n\nLogin with your NetID password and authenticate with Duo.\n\nIf successful, the login node’s command prompt should appear. ::: :::"
+  },
+  {
+    "objectID": "start/connect-ssh.html#transferring-files-tofrom-hyak",
+    "href": "start/connect-ssh.html#transferring-files-tofrom-hyak",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "Note\n\n\n\nKlone and Mox clusters have separate network attached storage. Copying to one cluster will not copy to the other.\n\n\n\nOpenSSH\n\n\nscp is an OpenSSH client utility for copying files and directories to/from a remote target. The general syntax has the following form:\nscp [-r] &lt;SOURCE_PATH&gt; UWNetID@klone.hyak.uw.edu:&lt;DESTINATION_PATH&gt;\nscp [-r] UWNetID@klone.hyak.uw.edu:&lt;SOURCE_PATH&gt; &lt;DESTINATION_PATH&gt;\n\n\n\n\n\n\nTip\n\n\n\n\n\n\nTo copy a file to Klone at some path, run:\nscp /path/to/my/file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/\nTo copy a file from Klone at some path, run:"
+  },
+  {
+    "objectID": "start/connect-ssh.html#putty-cli",
+    "href": "start/connect-ssh.html#putty-cli",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "pscp is a CLI utility (provided by a standard PuTTY installation) for copying files.\npscp [-r] &lt;SOURCE_PATH&gt; UWNetID@klone.hyak.uw.edu:&lt;DESTINATION_PATH&gt;\npscp [-r] UWNetID@klone.hyak.uw.edu:&lt;SOURCE_PATH&gt; &lt;DESTINATION_PATH&gt;\n\n\n\n\n\n\nNote\n\n\n\npscp does not support the use of the tilde (~) as a shortcut to the home directory. By default, relative paths always start from home directory anyways.\n# copy file to home directory\npscp.exe c:\\path\\to\\my\\file UWNetID@klone.hyak.uw.edu:\n\n\n\n\n\n\n\n\nTip\n\n\n\npscp can reuse/share an active SSH connection without re-authorization if using a saved PuTTY profile with Share SSH Connection if possible enabled.\n\n\nTo send a file to Klone at some path, run:\npscp.exe c:\\path\\to\\my\\file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/\nAlternatively, we can use the name of the saved PuTTY profile (Klone for this example) to reuse an active connection to copy a file to Klone:\npscp.exe c:\\path\\to\\my\\file Klone:/gscratch/mylab/\nTo copy a directory to Klone, use the -r argument to copy directories and files recursively:\npscp.exe -r c:\\path\\to\\my\\directory\\ Klone:/gscratch/mylab/\n:::"
+  },
+  {
+    "objectID": "start/connect-ssh.html#winscp",
+    "href": "start/connect-ssh.html#winscp",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "TODO :::"
+  },
+  {
+    "objectID": "start/connect-ssh.html#cyberduck",
+    "href": "start/connect-ssh.html#cyberduck",
+    "title": "Connecting to HYAK with SSH",
+    "section": "",
+    "text": "TODO ::: :::"
+  },
+  {
+    "objectID": "compute/apptainer.html",
+    "href": "compute/apptainer.html",
+    "title": "Apptainer",
+    "section": "",
+    "text": "Apptainer (formerly Singularity) is a simple container platform enabling users to install and run software that would otherwise be unsupported by the host environment.\n\n\nmodule avail apptainer\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn general, do not use the default version of Apptainer if within an Apptainer environment. Load a module with a version specified instead.\n\n\n\n\n\nLoad the default version with module load apptainer,\nor load a specific version with module load apptainer/&lt;version&gt;.\n\n\n\nSet required bind paths. These paths allow you to interact with local storage from within a container. We recommend setting the following binds before running a container:\n\nexport APPTAINER_BINDPATH=\"/tmp,$HOME,/mmfs1,/sw,/scr,/gscratch,/opt,/:/hyak_root\"\n\nTo start an Apptainer container interactively, run the following:\n\napptainer shell &lt;path_to_container&gt;\n\n\n\n\napptainer pull docker://[:]\n\n\n\nhttps://apptainer.org/docs/user/main/definition_files.html\n\n\n\nTODO\nTo run a python script called my_script.py from within the container, run the following:\napptainer exec &lt;path_to_container.sif&gt; python3 ./my_script.py\n\n\n\n\n\n\nSet APPTAINER_CACHEDIR environment variable to a different cache path.\n\n\n\nTODO"
+  },
+  {
+    "objectID": "compute/apptainer.html#checking-available-versions",
+    "href": "compute/apptainer.html#checking-available-versions",
+    "title": "Apptainer",
+    "section": "",
+    "text": "module avail apptainer"
+  },
+  {
+    "objectID": "compute/apptainer.html#using-apptainer",
+    "href": "compute/apptainer.html#using-apptainer",
+    "title": "Apptainer",
+    "section": "",
+    "text": "Note\n\n\n\nIn general, do not use the default version of Apptainer if within an Apptainer environment. Load a module with a version specified instead.\n\n\n\n\n\nLoad the default version with module load apptainer,\nor load a specific version with module load apptainer/&lt;version&gt;.\n\n\n\nSet required bind paths. These paths allow you to interact with local storage from within a container. We recommend setting the following binds before running a container:\n\nexport APPTAINER_BINDPATH=\"/tmp,$HOME,/mmfs1,/sw,/scr,/gscratch,/opt,/:/hyak_root\"\n\nTo start an Apptainer container interactively, run the following:\n\napptainer shell &lt;path_to_container&gt;"
+  },
+  {
+    "objectID": "compute/apptainer.html#pulling-an-apptainer-image-from-docker.io-registry",
+    "href": "compute/apptainer.html#pulling-an-apptainer-image-from-docker.io-registry",
+    "title": "Apptainer",
+    "section": "",
+    "text": "apptainer pull docker://[:]"
+  },
+  {
+    "objectID": "compute/apptainer.html#writing-and-building-apptainer-recipes",
+    "href": "compute/apptainer.html#writing-and-building-apptainer-recipes",
+    "title": "Apptainer",
+    "section": "",
+    "text": "https://apptainer.org/docs/user/main/definition_files.html"
+  },
+  {
+    "objectID": "compute/apptainer.html#scripting-with-apptainer",
+    "href": "compute/apptainer.html#scripting-with-apptainer",
+    "title": "Apptainer",
+    "section": "",
+    "text": "TODO\nTo run a python script called my_script.py from within the container, run the following:\napptainer exec &lt;path_to_container.sif&gt; python3 ./my_script.py"
+  },
+  {
+    "objectID": "compute/apptainer.html#changing-apptainer-cache",
+    "href": "compute/apptainer.html#changing-apptainer-cache",
+    "title": "Apptainer",
+    "section": "",
+    "text": "Set APPTAINER_CACHEDIR environment variable to a different cache path."
+  },
+  {
+    "objectID": "compute/apptainer.html#references",
+    "href": "compute/apptainer.html#references",
+    "title": "Apptainer",
+    "section": "",
+    "text": "TODO"
+  },
+  {
+    "objectID": "compute/index.html",
+    "href": "compute/index.html",
+    "title": "Compute",
+    "section": "",
+    "text": "UW Hyak clusters use Slurm to manage access to compute resources and schedule compute jobs."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nGetting Started\n\n\n\n\n\nGetting started with the Hyak cluster\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nCompute\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nSoftware\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "software/afni.html",
+    "href": "software/afni.html",
+    "title": "AFNI",
+    "section": "",
+    "text": "module avail afni\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nCurrently, AFNI only runs in a VNC Apptainer environment with sufficient dependencies.\n\n\nLoad AFNI with module load forsyth/afni.\nAfter loading the module, all AFNI tools are made accessible in the shell session.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is provided as reference material.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is ran from a VNC Apptainer environment with sufficient dependencies.\n\n\nTODO: provide steps to prepare Apptainer environment to run installer.\n\nDownload AFNI installer:\n\ncurl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries\n\nInstall the CentOS 7 package to /sw/contrib/labname-src/afni:\n\nexport LABNAME=escience\nexport TARGET=/sw/contrib/\"$LABNAME\"-src/afni/\ntcsh @update.afni.binaries -package linux_centos_7_64 -do_extras -bindir $TARGET\n\nInstall required R libraries to /sw/contrib/labname-src/afni/Rlibs:\n\nexport R_LIBS=$TARGET/Rlibs\nmkdir -p $R_LIBS\nrPkgsInstall -pkgs ALL\n\nCreate an Lmod .lua module file for AFNI with a text editor:\n\n\n\n\n\n\n\nNote\n\n\n\n/sw/contrib/modulefiles/labname/afni.lua ^^^\nhelp([[afni]])\n\nlocal labname = \"escience\"\nlocal base = \"/sw/contrib/\" .. labname .. \"-src/afni\"\nlocal r_libs = pathJoin(base, \"Rlibs\")\n\nappend_path(\"PATH\", base)\nsetenv(\"R_LIBS\", r_libs)\n\nif (mode() == \"load\") then\n    LmodMessage(\"R_LIBS set to \" .. r_libs)\n    LmodMessage(\"------------------------------------------------------------\")\n    LmodMessage(\"On initial use, run the following:\")\n    LmodMessage(\"  suma -update_env\")\nend\n\nwhatis(\"Name: \" .. name)\nwhatis(\"Version: \" .. version)\n\n\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module does not appear, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail afni\nmodule -I load labname/afni"
+  },
+  {
+    "objectID": "software/afni.html#checking-available-versions",
+    "href": "software/afni.html#checking-available-versions",
+    "title": "AFNI",
+    "section": "",
+    "text": "module avail afni"
+  },
+  {
+    "objectID": "software/afni.html#using-afni-from-forsyth",
+    "href": "software/afni.html#using-afni-from-forsyth",
+    "title": "AFNI",
+    "section": "",
+    "text": "Note\n\n\n\nCurrently, AFNI only runs in a VNC Apptainer environment with sufficient dependencies.\n\n\nLoad AFNI with module load forsyth/afni.\nAfter loading the module, all AFNI tools are made accessible in the shell session."
+  },
+  {
+    "objectID": "software/afni.html#installing-afni",
+    "href": "software/afni.html#installing-afni",
+    "title": "AFNI",
+    "section": "",
+    "text": "Note\n\n\n\nThis is provided as reference material.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is ran from a VNC Apptainer environment with sufficient dependencies.\n\n\nTODO: provide steps to prepare Apptainer environment to run installer.\n\nDownload AFNI installer:\n\ncurl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries\n\nInstall the CentOS 7 package to /sw/contrib/labname-src/afni:\n\nexport LABNAME=escience\nexport TARGET=/sw/contrib/\"$LABNAME\"-src/afni/\ntcsh @update.afni.binaries -package linux_centos_7_64 -do_extras -bindir $TARGET\n\nInstall required R libraries to /sw/contrib/labname-src/afni/Rlibs:\n\nexport R_LIBS=$TARGET/Rlibs\nmkdir -p $R_LIBS\nrPkgsInstall -pkgs ALL\n\nCreate an Lmod .lua module file for AFNI with a text editor:\n\n\n\n\n\n\n\nNote\n\n\n\n/sw/contrib/modulefiles/labname/afni.lua ^^^\nhelp([[afni]])\n\nlocal labname = \"escience\"\nlocal base = \"/sw/contrib/\" .. labname .. \"-src/afni\"\nlocal r_libs = pathJoin(base, \"Rlibs\")\n\nappend_path(\"PATH\", base)\nsetenv(\"R_LIBS\", r_libs)\n\nif (mode() == \"load\") then\n    LmodMessage(\"R_LIBS set to \" .. r_libs)\n    LmodMessage(\"------------------------------------------------------------\")\n    LmodMessage(\"On initial use, run the following:\")\n    LmodMessage(\"  suma -update_env\")\nend\n\nwhatis(\"Name: \" .. name)\nwhatis(\"Version: \" .. version)\n\n\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module does not appear, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail afni\nmodule -I load labname/afni"
+  },
+  {
+    "objectID": "software/matlab.html",
+    "href": "software/matlab.html",
+    "title": "MATLAB",
+    "section": "",
+    "text": "module avail matlab\n\n\n\nLoad the default version with module load matlab,\nor load a specific version with module load matlab/&lt;version&gt;.\n\n\n\nTo run Matlab with GUI (in a VNC session or with X11-Forwarding enabled), run:\nmatlab\nTo run Matlab from terminal CLI, run:\nmatlab -nodisplay\n\n\n\nTODO"
+  },
+  {
+    "objectID": "software/matlab.html#checking-available-versions",
+    "href": "software/matlab.html#checking-available-versions",
+    "title": "MATLAB",
+    "section": "",
+    "text": "module avail matlab"
+  },
+  {
+    "objectID": "software/matlab.html#loading-matlab",
+    "href": "software/matlab.html#loading-matlab",
+    "title": "MATLAB",
+    "section": "",
+    "text": "Load the default version with module load matlab,\nor load a specific version with module load matlab/&lt;version&gt;."
+  },
+  {
+    "objectID": "software/matlab.html#running-matlab",
+    "href": "software/matlab.html#running-matlab",
+    "title": "MATLAB",
+    "section": "",
+    "text": "To run Matlab with GUI (in a VNC session or with X11-Forwarding enabled), run:\nmatlab\nTo run Matlab from terminal CLI, run:\nmatlab -nodisplay"
+  },
+  {
+    "objectID": "software/matlab.html#installing-a-different-version",
+    "href": "software/matlab.html#installing-a-different-version",
+    "title": "MATLAB",
+    "section": "",
+    "text": "TODO"
+  },
+  {
+    "objectID": "software/spm_conn.html",
+    "href": "software/spm_conn.html",
+    "title": "SPM and CONN Toolboxes",
+    "section": "",
+    "text": "Statistical Parametric Mapping (SPM) and CONN are available as Lmod modules on Klone.\n\n\nmodule avail spm\nmodule avail conn\n\n\n\nLoad the default version with module load escience/spm,\nor load a specific version with module load escience/spm/&lt;version&gt;.\nAfter loading the module, start matlab and run spm in the MATLAB command window.\n\n\n\nLoad the default version with module load escience/conn\nor load a specific version with module load escience/conn/&lt;version&gt;.\nAfter loading the module, start matlab and run conn in the MATLAB command window.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is provided as reference material.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is tested from a VNC Apptainer environment with sufficient dependencies.\n\n\n\nDownload a version of SPM from https://www.fil.ion.ucl.ac.uk/spm/software/download/.\nExtract the .zip archive to /sw/contrib/labname-src/spm/spm&lt;version&gt;/\n\nFor example, if installing version 12 of SPM, then run the following:\nexport LABNAME=escience\nexport VERSION=12\nexport TARGET=/sw/contrib/\"$LABNAME\"-src/spm/\nmkdir -p $TARGET\nunzip spm$VERSION.zip -d $TARGET\n\nCreate an Lmod .lua module file for the new release with a text editor:\n\n\n\n\n\n\n\nNote\n\n\n\n/sw/contrib/modulefiles/labname/spm/&lt;version&gt;.lua ^^^\nhelp([[spm12]])\n\nlocal labname = \"escience\"\nlocal version = \"12\"\nlocal base = \"/sw/contrib/\" .. labname .. \"-src/spm/spm\" .. version\n\ndepends_on(\"matlab\")\nappend_path(\"MATLABPATH\", base)\nwhatis(\"Name: spm\")\nwhatis(\"Version: \" .. version)\n\n\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module does not appear, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail spm\nmodule -I load labname/spm\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is provided as reference material.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is tested from a VNC Apptainer environment with sufficient dependencies.\n\n\n\nDownload a version of CONN from https://www.nitrc.org/frs/?group_id=279.\nExtract the .zip archive to\n\nFor example, if installing version v.22.a from conn22a.zip, then run the following:\nexport LABNAME=escience\nexport VERSION=v.22.a\nexport TARGET=/sw/contrib/\"$LABNAME\"-src/conn/\nmkdir -p $TARGET\nunzip conn22a.zip -d $TARGET\nmv $TARGET/conn $TARGET/$VERSION\n\nCreate a Lmod .lua module file for the new release with a text editor:\n\n\n\n\n\n\n\nNote\n\n\n\n/sw/contrib/modulefiles/labname/conn/&lt;version&gt;.lua ^^^\nhelp([[conn-v.22.a]])\n\nlocal labname = \"escience\"\nlocal version = \"v.22.a\"\nlocal base = pathJoin(\"/sw/contrib/\" .. labname .. \"-src/conn\", version)\n\ndepends_on(\"matlab\")\ndepends_on(\"escience/spm\")\nappend_path(\"MATLABPATH\", base)\nwhatis(\"Name: CONN\")\nwhatis(\"Version: \" .. version)\n\n\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module does not appear, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail conn\nmodule -I load labname/conn"
+  },
+  {
+    "objectID": "software/spm_conn.html#checking-available-versions",
+    "href": "software/spm_conn.html#checking-available-versions",
+    "title": "SPM and CONN Toolboxes",
+    "section": "",
+    "text": "module avail spm\nmodule avail conn"
+  },
+  {
+    "objectID": "software/spm_conn.html#using-spm-from-escience",
+    "href": "software/spm_conn.html#using-spm-from-escience",
+    "title": "SPM and CONN Toolboxes",
+    "section": "",
+    "text": "Load the default version with module load escience/spm,\nor load a specific version with module load escience/spm/&lt;version&gt;.\nAfter loading the module, start matlab and run spm in the MATLAB command window."
+  },
+  {
+    "objectID": "software/spm_conn.html#using-conn-from-escience",
+    "href": "software/spm_conn.html#using-conn-from-escience",
+    "title": "SPM and CONN Toolboxes",
+    "section": "",
+    "text": "Load the default version with module load escience/conn\nor load a specific version with module load escience/conn/&lt;version&gt;.\nAfter loading the module, start matlab and run conn in the MATLAB command window."
+  },
+  {
+    "objectID": "software/spm_conn.html#installing-a-different-version-of-spm",
+    "href": "software/spm_conn.html#installing-a-different-version-of-spm",
+    "title": "SPM and CONN Toolboxes",
+    "section": "",
+    "text": "Note\n\n\n\nThis is provided as reference material.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is tested from a VNC Apptainer environment with sufficient dependencies.\n\n\n\nDownload a version of SPM from https://www.fil.ion.ucl.ac.uk/spm/software/download/.\nExtract the .zip archive to /sw/contrib/labname-src/spm/spm&lt;version&gt;/\n\nFor example, if installing version 12 of SPM, then run the following:\nexport LABNAME=escience\nexport VERSION=12\nexport TARGET=/sw/contrib/\"$LABNAME\"-src/spm/\nmkdir -p $TARGET\nunzip spm$VERSION.zip -d $TARGET\n\nCreate an Lmod .lua module file for the new release with a text editor:\n\n\n\n\n\n\n\nNote\n\n\n\n/sw/contrib/modulefiles/labname/spm/&lt;version&gt;.lua ^^^\nhelp([[spm12]])\n\nlocal labname = \"escience\"\nlocal version = \"12\"\nlocal base = \"/sw/contrib/\" .. labname .. \"-src/spm/spm\" .. version\n\ndepends_on(\"matlab\")\nappend_path(\"MATLABPATH\", base)\nwhatis(\"Name: spm\")\nwhatis(\"Version: \" .. version)\n\n\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module does not appear, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail spm\nmodule -I load labname/spm"
+  },
+  {
+    "objectID": "software/spm_conn.html#installing-a-different-version-of-conn",
+    "href": "software/spm_conn.html#installing-a-different-version-of-conn",
+    "title": "SPM and CONN Toolboxes",
+    "section": "",
+    "text": "Note\n\n\n\nThis is provided as reference material.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is tested from a VNC Apptainer environment with sufficient dependencies.\n\n\n\nDownload a version of CONN from https://www.nitrc.org/frs/?group_id=279.\nExtract the .zip archive to\n\nFor example, if installing version v.22.a from conn22a.zip, then run the following:\nexport LABNAME=escience\nexport VERSION=v.22.a\nexport TARGET=/sw/contrib/\"$LABNAME\"-src/conn/\nmkdir -p $TARGET\nunzip conn22a.zip -d $TARGET\nmv $TARGET/conn $TARGET/$VERSION\n\nCreate a Lmod .lua module file for the new release with a text editor:\n\n\n\n\n\n\n\nNote\n\n\n\n/sw/contrib/modulefiles/labname/conn/&lt;version&gt;.lua ^^^\nhelp([[conn-v.22.a]])\n\nlocal labname = \"escience\"\nlocal version = \"v.22.a\"\nlocal base = pathJoin(\"/sw/contrib/\" .. labname .. \"-src/conn\", version)\n\ndepends_on(\"matlab\")\ndepends_on(\"escience/spm\")\nappend_path(\"MATLABPATH\", base)\nwhatis(\"Name: CONN\")\nwhatis(\"Version: \" .. version)\n\n\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module does not appear, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail conn\nmodule -I load labname/conn"
+  },
+  {
+    "objectID": "software/index.html",
+    "href": "software/index.html",
+    "title": "Software",
+    "section": "",
+    "text": "This section will cover modules maintained by labs within the Psychology Department including steps for preparing new modules."
+  },
+  {
+    "objectID": "software/freesurfer.html",
+    "href": "software/freesurfer.html",
+    "title": "FreeSurfer",
+    "section": "",
+    "text": "Important\n\n\n\nCurrently, FreeSurfer must run from a container with sufficient library dependencies.\n\n\n\n\n\n\nTip\n\n\n\nWe recommend using FreeSurfer from a VNC session with rockylinux8 container from https://github.com/uw-psych/hyak_vnc_apptainer\n\n\n\n\nFreeSurfer is an open source neuroimaging toolkit and is available as an Lmod module on Klone.\n\n\nmodule avail freesurfer\n\n\n\nLoad the default version with module load escience/freesurfer,\nor load a specific version with module load escience/freesurfer/&lt;version&gt;.\nAfter loading the module, FreeSurfer should have its environment setup for normal use.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is provided as reference material.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is tested from a VNC Apptainer environment with sufficient dependencies.\n\n\nTODO: provide steps to prepare Apptainer environment to run installer.\n\nGo to https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall and download the latest FreeSurfer tar archive for CentOS 8\nExtract the .tar.gz archive to /sw/contrib/labname-src/freesurfer/&lt;version&gt;/.\n\nFor example, if installing version 7.3.2 of FreeSurfer, then run the following:\nexport LABNAME=escience\nexport VERSION=7.3.2\nmkdir -p /sw/contrib/\"$LABNAME\"-src/freesurfer/\"$VERSION\"\ntar -xzf freesurfer-linux-centos8_x86_64-\"$VERSION\".tar.gz \\\n    --strip-components=1 \\\n    -C /sw/contrib/\"$LABNAME\"-src/freesurfer/\"$VERSION\"\n\nCreate an Lmod .lua module file for the new release with a text editor:\n\n\n\n\n\n\n\nNote\n\n\n\n/sw/contrib/modulefiles/labname/freesurfer/7.3.2.lua ^^^\nhelp([[freesurfer-7.3.2]])\n\nlocal labname = \"escience\"\nlocal version = \"7.3.2\"\nlocal base = pathJoin(\"/sw/contrib/\" .. labname .. \"-src/freesurfer/\", version)\n\n--FreeSurfer 7.x requires MATLAB R2014b\ndepend_on(\"forsyth/matlab/r2014b\")\n\nsetenv(\"FREESURFER_HOME\", base)\nprepend_path(\"PATH\", pathJoin(base, \"bin\"))\nsource_sh(\"bash\", pathJoin(base, \"SetUpFreeSurfer.sh\"))\nwhatis(\"Name: FreeSurfer\")\nwhatis(\"Version: \" .. version)\n\n\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module is not appearing, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail freesurfer\nmodule -I load labname/freesurfer\n\n\n\nRequest a free license from https://surfer.nmr.mgh.harvard.edu/registration.html if not already.\n\n\n\n\n\n\n\nNote\n\n\n\nThis license is not tied to a specific version of FreeSurfer and can be copied from a previous installation.\n\n\n\nDownload license.txt from the registration email and copy it to /sw/contrib/labname-src/freesurfer/&lt;version&gt;/license.txt.\nFor FS-FAST support, create a link to a supported MATLAB release (R2014b for FreeSurfer 7.x):\n\nmodule -I load labname/freesurfer/&lt;version&gt;\ncd $FREESURFER_HOME\nln -s /gscratch/forsyth-src/matlab/R2014b MCRv84\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module does not appear, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail freesurfer\nmodule -I load labname/freesurfer"
+  },
+  {
+    "objectID": "software/freesurfer.html#checking-available-versions",
+    "href": "software/freesurfer.html#checking-available-versions",
+    "title": "FreeSurfer",
+    "section": "",
+    "text": "module avail freesurfer"
+  },
+  {
+    "objectID": "software/freesurfer.html#using-freesurfer-from-escience",
+    "href": "software/freesurfer.html#using-freesurfer-from-escience",
+    "title": "FreeSurfer",
+    "section": "",
+    "text": "Load the default version with module load escience/freesurfer,\nor load a specific version with module load escience/freesurfer/&lt;version&gt;.\nAfter loading the module, FreeSurfer should have its environment setup for normal use."
+  },
+  {
+    "objectID": "software/freesurfer.html#installing-a-different-version",
+    "href": "software/freesurfer.html#installing-a-different-version",
+    "title": "FreeSurfer",
+    "section": "",
+    "text": "Note\n\n\n\nThis is provided as reference material.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is tested from a VNC Apptainer environment with sufficient dependencies.\n\n\nTODO: provide steps to prepare Apptainer environment to run installer.\n\nGo to https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall and download the latest FreeSurfer tar archive for CentOS 8\nExtract the .tar.gz archive to /sw/contrib/labname-src/freesurfer/&lt;version&gt;/.\n\nFor example, if installing version 7.3.2 of FreeSurfer, then run the following:\nexport LABNAME=escience\nexport VERSION=7.3.2\nmkdir -p /sw/contrib/\"$LABNAME\"-src/freesurfer/\"$VERSION\"\ntar -xzf freesurfer-linux-centos8_x86_64-\"$VERSION\".tar.gz \\\n    --strip-components=1 \\\n    -C /sw/contrib/\"$LABNAME\"-src/freesurfer/\"$VERSION\"\n\nCreate an Lmod .lua module file for the new release with a text editor:\n\n\n\n\n\n\n\nNote\n\n\n\n/sw/contrib/modulefiles/labname/freesurfer/7.3.2.lua ^^^\nhelp([[freesurfer-7.3.2]])\n\nlocal labname = \"escience\"\nlocal version = \"7.3.2\"\nlocal base = pathJoin(\"/sw/contrib/\" .. labname .. \"-src/freesurfer/\", version)\n\n--FreeSurfer 7.x requires MATLAB R2014b\ndepend_on(\"forsyth/matlab/r2014b\")\n\nsetenv(\"FREESURFER_HOME\", base)\nprepend_path(\"PATH\", pathJoin(base, \"bin\"))\nsource_sh(\"bash\", pathJoin(base, \"SetUpFreeSurfer.sh\"))\nwhatis(\"Name: FreeSurfer\")\nwhatis(\"Version: \" .. version)\n\n\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module is not appearing, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail freesurfer\nmodule -I load labname/freesurfer\n\n\n\nRequest a free license from https://surfer.nmr.mgh.harvard.edu/registration.html if not already.\n\n\n\n\n\n\n\nNote\n\n\n\nThis license is not tied to a specific version of FreeSurfer and can be copied from a previous installation.\n\n\n\nDownload license.txt from the registration email and copy it to /sw/contrib/labname-src/freesurfer/&lt;version&gt;/license.txt.\nFor FS-FAST support, create a link to a supported MATLAB release (R2014b for FreeSurfer 7.x):\n\nmodule -I load labname/freesurfer/&lt;version&gt;\ncd $FREESURFER_HOME\nln -s /gscratch/forsyth-src/matlab/R2014b MCRv84\n\n\n\n\n\n\nNote\n\n\n\nLmod takes some time to cache available modules. If a module does not appear, use the -I or --ignore_cache flag to force Lmod to check for new modules.\nmodule -I avail freesurfer\nmodule -I load labname/freesurfer"
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing",
+    "section": "",
+    "text": "Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given. You can contribute in the ways listed below.\n\n\nReport bugs using GitHub issues.\nIf you are reporting a bug, please include:\n\nYour operating system name and version.\nAny details about your local setup that might be helpful in troubleshooting.\nDetailed steps to reproduce the bug.\n\n\n\n\nLook through the GitHub issues for bugs. Anything tagged with “bug” and “help wanted” is open to whoever wants to implement it.\n\n\n\nLook through the GitHub issues for features. Anything tagged with “enhancement” and “help wanted” is open to whoever wants to implement it.\n\n\n\nHYAK Documentation for Department of Psychology could always use more documentation, whether as part of the official HYAK Documentation for Department of Psychology docs, in docstrings, or even on the web in blog posts, articles, and such.\n\n\n\nThe best way to send feedback is to file an issue on GitHub.\nIf you are proposing a feature:\n\nExplain in detail how it would work.\nKeep the scope as narrow as possible, to make it easier to implement.\nRemember that this is a volunteer-driven project, and that contributions are welcome :)\n\n\n\n\nReady to contribute? Here’s how to set up HYAK Documentation for Department of Psychology for local development.\n\nFork the repo on GitHub.\nClone your fork locally.\nInstall your local copy into a virtualenv, e.g., using conda.\nCreate a branch for local development and make changes locally.\nCommit your changes and push your branch to GitHub.\nSubmit a pull request through the GitHub website.\n\n\n\n\nPlease note that the HYAK Documentation for Department of Psychology project is released with a Contributor Code of Conduct. By contributing to this project you agree to abide by its terms."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#report-bugs",
+    "href": "CONTRIBUTING.html#report-bugs",
+    "title": "Contributing",
+    "section": "",
+    "text": "Report bugs using GitHub issues.\nIf you are reporting a bug, please include:\n\nYour operating system name and version.\nAny details about your local setup that might be helpful in troubleshooting.\nDetailed steps to reproduce the bug."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#fix-bugs",
+    "href": "CONTRIBUTING.html#fix-bugs",
+    "title": "Contributing",
+    "section": "",
+    "text": "Look through the GitHub issues for bugs. Anything tagged with “bug” and “help wanted” is open to whoever wants to implement it."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#implement-features",
+    "href": "CONTRIBUTING.html#implement-features",
+    "title": "Contributing",
+    "section": "",
+    "text": "Look through the GitHub issues for features. Anything tagged with “enhancement” and “help wanted” is open to whoever wants to implement it."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#write-documentation",
+    "href": "CONTRIBUTING.html#write-documentation",
+    "title": "Contributing",
+    "section": "",
+    "text": "HYAK Documentation for Department of Psychology could always use more documentation, whether as part of the official HYAK Documentation for Department of Psychology docs, in docstrings, or even on the web in blog posts, articles, and such."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#submit-feedback",
+    "href": "CONTRIBUTING.html#submit-feedback",
+    "title": "Contributing",
+    "section": "",
+    "text": "The best way to send feedback is to file an issue on GitHub.\nIf you are proposing a feature:\n\nExplain in detail how it would work.\nKeep the scope as narrow as possible, to make it easier to implement.\nRemember that this is a volunteer-driven project, and that contributions are welcome :)"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#get-started",
+    "href": "CONTRIBUTING.html#get-started",
+    "title": "Contributing",
+    "section": "",
+    "text": "Ready to contribute? Here’s how to set up HYAK Documentation for Department of Psychology for local development.\n\nFork the repo on GitHub.\nClone your fork locally.\nInstall your local copy into a virtualenv, e.g., using conda.\nCreate a branch for local development and make changes locally.\nCommit your changes and push your branch to GitHub.\nSubmit a pull request through the GitHub website."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#code-of-conduct",
+    "href": "CONTRIBUTING.html#code-of-conduct",
+    "title": "Contributing",
+    "section": "",
+    "text": "Please note that the HYAK Documentation for Department of Psychology project is released with a Contributor Code of Conduct. By contributing to this project you agree to abide by its terms."
+  },
+  {
+    "objectID": "compute/lmod.html",
+    "href": "compute/lmod.html",
+    "title": "Lmod",
+    "section": "",
+    "text": "module avail\n\n\n\nmodule load &lt;software&gt;/&lt;version&gt;\nIf the version is not specified, Lmod will load a default version marked with D.\n\n\n\nTODO"
+  },
+  {
+    "objectID": "compute/lmod.html#checking-all-available-modules",
+    "href": "compute/lmod.html#checking-all-available-modules",
+    "title": "Lmod",
+    "section": "",
+    "text": "module avail"
+  },
+  {
+    "objectID": "compute/lmod.html#loading-modules-from-interactive-compute-job",
+    "href": "compute/lmod.html#loading-modules-from-interactive-compute-job",
+    "title": "Lmod",
+    "section": "",
+    "text": "module load &lt;software&gt;/&lt;version&gt;\nIf the version is not specified, Lmod will load a default version marked with D."
+  },
+  {
+    "objectID": "compute/lmod.html#loading-modules-from-apptainer",
+    "href": "compute/lmod.html#loading-modules-from-apptainer",
+    "title": "Lmod",
+    "section": "",
+    "text": "TODO"
+  },
+  {
+    "objectID": "compute/slurm.html",
+    "href": "compute/slurm.html",
+    "title": "SLURM Basics",
+    "section": "",
+    "text": "UW Hyak clusters use Slurm to manage access to compute resources and schedule user-submitted jobs.\nUsers can submit a batch job for scripted parallel tasks or an interactive job for manual tasks or GUI programs.\n\n\nUse groups command to see which groups you are a member of.\nUse hyakalloc command to check availability of compute resources.\n\n\n\nsalloc -A &lt;lab&gt; -p &lt;node_type&gt; -N &lt;NUM_NODES&gt; -c &lt;NUM_CPUS&gt; --mem=&lt;MEM&gt;[UNIT] --time=DD-HH:MM:SS\nAdd --no-shell flag if you plan to enter/exit the node without losing the job allocation.\nUse scancel &lt;job_id&gt; to terminate the job allocation.\nUse squeue --me to check information about active or pending job allocations (including job ID).\n\n\n\nFrom the login node, run the following:\nsrun -A &lt;lab&gt; -p &lt;node_type&gt; -N &lt;NUM_NODES&gt; -c &lt;NUM_CPUS&gt; --mem=&lt;MEM&gt;[UNIT] --time=DD-HH:MM:SS --pty /bin/bash\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nmybatch.job ^^^\n#!/bin/bash\n\n#SBATCH --job-name=&lt;name&gt; # optional\n#SBATCH --mail-type=&lt;status&gt; # optional\n#SBATCH --mail-user=&lt;email&gt; # optional\n\n#SBATCH --account=&lt;lab&gt;\n#SBATCH --partition=&lt;node_type&gt;\n#SBATCH --nodes=&lt;num_nodes&gt;\n#SBATCH --ntasks-per-node=&lt;cores_per_node&gt;\n#SBATCH --mem=&lt;size[unit]&gt;\n#SBATCH --gpus=&lt;type:quantity&gt;\n#SBATCH --time=&lt;time&gt; # Max runtime in DD-HH:MM:SS format.\n\n#SBATCH --chdir=&lt;working directory&gt; # default: current working directory\n#SBATCH --export=all\n#SBATCH --output=&lt;file&gt; # where STDOUT goes\n#SBATCH --error=&lt;file&gt; # where STDERR goes\n\n# Your program goes here...\nmy_program\n\n\nsbatch mybatch.job"
+  },
+  {
+    "objectID": "compute/slurm.html#checking-access-to-compute-resources",
+    "href": "compute/slurm.html#checking-access-to-compute-resources",
+    "title": "SLURM Basics",
+    "section": "",
+    "text": "Use groups command to see which groups you are a member of.\nUse hyakalloc command to check availability of compute resources."
+  },
+  {
+    "objectID": "compute/slurm.html#submitting-an-interactive-job-with-salloc",
+    "href": "compute/slurm.html#submitting-an-interactive-job-with-salloc",
+    "title": "SLURM Basics",
+    "section": "",
+    "text": "salloc -A &lt;lab&gt; -p &lt;node_type&gt; -N &lt;NUM_NODES&gt; -c &lt;NUM_CPUS&gt; --mem=&lt;MEM&gt;[UNIT] --time=DD-HH:MM:SS\nAdd --no-shell flag if you plan to enter/exit the node without losing the job allocation.\nUse scancel &lt;job_id&gt; to terminate the job allocation.\nUse squeue --me to check information about active or pending job allocations (including job ID)."
+  },
+  {
+    "objectID": "compute/slurm.html#submitting-an-interactive-job-with-srun",
+    "href": "compute/slurm.html#submitting-an-interactive-job-with-srun",
+    "title": "SLURM Basics",
+    "section": "",
+    "text": "From the login node, run the following:\nsrun -A &lt;lab&gt; -p &lt;node_type&gt; -N &lt;NUM_NODES&gt; -c &lt;NUM_CPUS&gt; --mem=&lt;MEM&gt;[UNIT] --time=DD-HH:MM:SS --pty /bin/bash"
+  },
+  {
+    "objectID": "compute/slurm.html#submitting-a-batch-job",
+    "href": "compute/slurm.html#submitting-a-batch-job",
+    "title": "SLURM Basics",
+    "section": "",
+    "text": "Note\n\n\n\nmybatch.job ^^^\n#!/bin/bash\n\n#SBATCH --job-name=&lt;name&gt; # optional\n#SBATCH --mail-type=&lt;status&gt; # optional\n#SBATCH --mail-user=&lt;email&gt; # optional\n\n#SBATCH --account=&lt;lab&gt;\n#SBATCH --partition=&lt;node_type&gt;\n#SBATCH --nodes=&lt;num_nodes&gt;\n#SBATCH --ntasks-per-node=&lt;cores_per_node&gt;\n#SBATCH --mem=&lt;size[unit]&gt;\n#SBATCH --gpus=&lt;type:quantity&gt;\n#SBATCH --time=&lt;time&gt; # Max runtime in DD-HH:MM:SS format.\n\n#SBATCH --chdir=&lt;working directory&gt; # default: current working directory\n#SBATCH --export=all\n#SBATCH --output=&lt;file&gt; # where STDOUT goes\n#SBATCH --error=&lt;file&gt; # where STDERR goes\n\n# Your program goes here...\nmy_program\n\n\nsbatch mybatch.job"
+  },
+  {
+    "objectID": "start/index.html",
+    "href": "start/index.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Getting Started\n\nGet access to Hyak:\n\nActive UW students can join UW Reserach Computing Club (RCC) to gain access to STF-funded nodes.\nPI’s or labs should purchase dedicated storage and compute resources.\n\nLogin to a cluster via SSH:\n\n\nKloneMox\n\n\nssh UWNetID@klone.hyak.uw.edu\n\n\nssh UWNetID@mox.hyak.uw.edu\n\n\n\n\nNavigate and understand its compute infrastructure:\n\nRequest compute jobs with Slurm\nAccess certain programs with Lmod software modules\nBuild and run software containers with Apptainer\nCreate and access a virtual desktop with hyakvnc\n\n\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nIntroduction to UW Hyak\n\n\n\n\n\nAn introduction to using the University of Washington Hyak Cluster\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nConnecting to HYAK with SSH\n\n\n\n\n\nHow to connect to HYAK\n\n\n\n\n \n\n\n\n\n  \n\n\n\n\nhyakvnc\n\n\n\n\n\nA program to create and manage VNC sessions running within a containerized Apptainer environment on a compute node.\n\n\n\n\n \n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "start/hyakvnc.html",
+    "href": "start/hyakvnc.html",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "hyakvnc is a program to create and manage VNC sessions running within an Apptainer environment on a compute node.\n\n\n\n\n\n\nNote\n\n\n\nhyakvnc script is ran from the login node and will interact with Slurm to spawn a compute node for interactive use.\n\n\n\n\nOn the user’s computer, we will need the following: - SSH client with port-forwarding capabilities - VNC client or viewer to interact with the remote graphical interface - for all platforms, we recommend TigerVNC viewer: - macOS: https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/TigerVNC-1.13.1.dmg - Windows (x86_64): https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/vncviewer64-1.13.1.exe\n\n\n\n\n\n\nNote\n\n\n\nTigerVNC viewer supports clipboard sharing and dynamically adjusts resolution upon changing window size.\n\n\n\n\n\nA VNC Apptainer hosts the graphical desktop interface, CLI/GUI tools, and libraries needed to run programs.\nAt a bare minimum for hyakvnc, this container must have the following: - TigerVNC server (with vncserver and vncpasswd) - a desktop environment (such as XFCE4)\n\n\n\n\n\n\nTip\n\n\n\nFor a more functional environment, we recommend installing additional tools and libraries as if it were your own computer.\n\n\n\n\n\n\n\n\nNote\n\n\n\nA container can be maintained by individual users or entire groups.\n\n\n\n\nHere, we will build a VNC Apptainer from https://github.com/uw-psych/hyak_vnc_apptainer. Feel free to make adjustments to these recipes as needed.\n\nFrom the login node, get an interactive node for 4 hours:\n\n[NetID@klone-login01 ~]$ salloc -A &lt;lab&gt; -p &lt;node_type&gt; -c 4 --mem=8G --time=4:00:00\n\nClone the repository to a directory with around 4GB of free space:\n\ncd some_place_with_space\ngit clone https://github.com/uw-psych/hyak_vnc_apptainer\ncd hyak_vnc_apptainer\n\nLoad Apptainer module:\n\nmodule load apptainer/1.1.5\n\nBuild rockylinux8 container by running the following:\n\nmake CONT_NAME=rockylinux8\n\nGet the path to the container and xstartup:\n\nrealpath rockylinux8/rockylinux8.sif\nrealpath xfce4_config/xstartup\n\n\n\n\nFrom the login node, run the following to install or upgrade hyakvnc:\npython3.6 -m pip install --upgrade pip\npython3.6 -m pip install git+https://github.com/uw-psych/hyakvnc\nOnce installed, run hyakvnc -h to print usage help:\n$ hyakvnc -h\nusage: hyakvnc [-h] [-d] [-v] [-J &lt;job_name&gt;] {create,status,kill,kill-all,set-passwd,repair} ...\n\npositional arguments:\n  {create,status,kill,kill-all,set-passwd,repair}\n    create              Create VNC session\n    status              Print details of all VNC jobs with given job name and exit\n    kill                Kill specified job\n    kill-all            Cancel all VNC jobs with given job name and exit\n    set-passwd          Prompts for new VNC password and exit\n    repair              Repair all missing/broken LoginNode&lt;-&gt;SubNode port forwards, and then exit\n\noptional arguments:\n  -h, --help            show this help message and exit\n  -d, --debug           Enable debug logging\n  -v, --version         Print program version and exit\n  -J &lt;job_name&gt;         Slurm job name\nCheck usage help for a specific hyakvnc command by running hyakvnc &lt;command&gt; -h.\n\n\n\n\nVNC session cannot be reserved indefinitely and will terminate when its time expires.\n\n\n\n\n\n\n\nNote\n\n\n\nIf hyakvnc create fails to reserve a node and timesout, then check if you are reducing too many compute resources.\n\n\n\nFrom the login node shell, we will need to use hyakvnc create command to start the VNC session with compute resources. As an example, to create a VNC session running on our rockylinux8 container on a compute node reserved for 10 hours with specified amount of compute resources, run the following:\n\nhyakvnc create \\\n    -A &lt;lab&gt; \\\n    -p &lt;node_type&gt; \\\n    --cpus 8 \\\n    --gpus 0 \\\n    --mem 32G \\\n    --time 10 \\\n    --container /path/to/hyak_vnc_apptainer/rockylinux8/rockylinux8.sif \\\n    --xstartup /path/to/hyak_vnc_apptainer/xfce4_config/xstartup\nOn initial use, accept to create an SSH key and set a VNC password when prompted. If you want to reset your VNC password, run hyakvnc set-passwd from the login node.\n\nCreate a port forward to Klone to access the VNC session.\n\nIf hyakvnc create was successful, it should print additional steps to setup a port forward and to connect to the VNC session.\n...\n=====================\nRun the following in a new terminal window:\n        ssh -N -f -L 590A:127.0.0.1:590B UWNetID@klone.hyak.uw.edu\nthen connect to VNC session at localhost:590A\n=====================\nIn this example, we want to create a port forward to Klone with the source port 590A and destination at 127.0.0.1:590B or localhost:590B.\n\nOpenSSH (macOS, Linux, Windows)\n\n\nCreate a new terminal window on your local computer and run the ssh command as instructed by hyakvnc create:\nssh -N -f -L 590A:127.0.0.1:590B UWNetID@klone.hyak.uw.edu\n\n\n\n\n\n\n\nInstead of creating a new terminal window, right-click the title bar of an existing terminal window, then select Change Settings:\n\n\n\nNavigate to Connection-&gt;SSH-&gt;Tunnels. Set Source port to 590A and Destination to 127.0.0.1:590B.\n\n\n\nClick on Add to add the port forward, then click on Apply at the bottom of the window.\n\n\n\n\n\n\n\nNote\n\n\n\nClosing all PuTTY terminal windows will close the port forward and break the VNC connection.\n\n\n::: :::\n\nOpen TigerVNC Viewer and connect to the VNC session at localhost:590A as instructed by hyakvnc create:\n\n\n\nLogin with your VNC password:\n\n\nIf successful, you should be greeted to a graphical desktop interface.\n\n\n\nRunning hyakvnc status from the login node will print details of active VNC sessions (with the same job name), including the following: - Slurm Job ID - Node hostname - Time left in days-hours:minutes:seconds - VNC status - VNC port forward command\nActive hyakvnc jobs:\n        Job ID: AAAAAAAA\n                SubNode: n3301\n                Time left: 2-06:00:16\n                VNC active: True\n                VNC display number: 2\n                VNC port: 5902\n                Mapped LoginNode port: 5900\n                Run command: ssh -N -f -L 5900:127.0.0.1:5900 UWNetID@klone.hyak.uw.edu\n        Job ID: BBBBBBBB\n                SubNode: n3301\n                Time left: 2-01:24:25\n                VNC active: True\n                VNC display number: 1\n                VNC port: 5901\n                Mapped LoginNode port: 5911\n                Run command: ssh -N -f -L 5911:127.0.0.1:5911 UWNetID@klone.hyak.uw.edu\n        Job ID: CCCCCCCC\n                SubNode: g3071\n                Time left: 15:07:56\n                VNC active: True\n                VNC display number: 1\n                VNC port: 5901\n                Mapped LoginNode port: 5902\n                Run command: ssh -N -f -L 5902:127.0.0.1:5902 UWNetID@klone.hyak.uw.edu\n\n\n\nTo close all VNC sessions, run hyakvnc kill-all from the login node.\nTo close a specific VNC session, find its Job ID with hyakvnc status, then run hyakvnc kill &lt;job_ID&gt; from the login node.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRequires the VNC apptainer to support Lmod. /sw/ must also be bounded to access existing module files.\n\n\nIf the VNC apptainer supports Lmod, then module command should work normally without throwing an error.\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nRequires the VNC apptainer to support Lmod and supply Apptainer dependencies.\n\n\nLoad apptainer module with a version specified (using default will not work unless apptainer is installed in the container):\nmodule load apptainer/1.1.5\nThen apptainer commands will work normally:\nExample:\napptainer shell &lt;container.sif&gt;\napptainer exec &lt;container.sif&gt; &lt;command&gt;\n\n\nTo load a nested Apptainer within the VNC session with CUDA support, add the following arguments: --nv -B /.singularity.d.\nExample:\napptainer shell --nv -B /.singularity.d &lt;container.sif&gt;\n\n\n\n\nhttps://github.com/uw-psych/hyakvnc"
+  },
+  {
+    "objectID": "start/hyakvnc.html#prerequisites",
+    "href": "start/hyakvnc.html#prerequisites",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "On the user’s computer, we will need the following: - SSH client with port-forwarding capabilities - VNC client or viewer to interact with the remote graphical interface - for all platforms, we recommend TigerVNC viewer: - macOS: https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/TigerVNC-1.13.1.dmg - Windows (x86_64): https://sourceforge.net/projects/tigervnc/files/stable/1.13.1/vncviewer64-1.13.1.exe\n\n\n\n\n\n\nNote\n\n\n\nTigerVNC viewer supports clipboard sharing and dynamically adjusts resolution upon changing window size."
+  },
+  {
+    "objectID": "start/hyakvnc.html#vnc-apptainer",
+    "href": "start/hyakvnc.html#vnc-apptainer",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "A VNC Apptainer hosts the graphical desktop interface, CLI/GUI tools, and libraries needed to run programs.\nAt a bare minimum for hyakvnc, this container must have the following: - TigerVNC server (with vncserver and vncpasswd) - a desktop environment (such as XFCE4)\n\n\n\n\n\n\nTip\n\n\n\nFor a more functional environment, we recommend installing additional tools and libraries as if it were your own computer.\n\n\n\n\n\n\n\n\nNote\n\n\n\nA container can be maintained by individual users or entire groups.\n\n\n\n\nHere, we will build a VNC Apptainer from https://github.com/uw-psych/hyak_vnc_apptainer. Feel free to make adjustments to these recipes as needed.\n\nFrom the login node, get an interactive node for 4 hours:\n\n[NetID@klone-login01 ~]$ salloc -A &lt;lab&gt; -p &lt;node_type&gt; -c 4 --mem=8G --time=4:00:00\n\nClone the repository to a directory with around 4GB of free space:\n\ncd some_place_with_space\ngit clone https://github.com/uw-psych/hyak_vnc_apptainer\ncd hyak_vnc_apptainer\n\nLoad Apptainer module:\n\nmodule load apptainer/1.1.5\n\nBuild rockylinux8 container by running the following:\n\nmake CONT_NAME=rockylinux8\n\nGet the path to the container and xstartup:\n\nrealpath rockylinux8/rockylinux8.sif\nrealpath xfce4_config/xstartup"
+  },
+  {
+    "objectID": "start/hyakvnc.html#installing-hyakvnc",
+    "href": "start/hyakvnc.html#installing-hyakvnc",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "From the login node, run the following to install or upgrade hyakvnc:\npython3.6 -m pip install --upgrade pip\npython3.6 -m pip install git+https://github.com/uw-psych/hyakvnc\nOnce installed, run hyakvnc -h to print usage help:\n$ hyakvnc -h\nusage: hyakvnc [-h] [-d] [-v] [-J &lt;job_name&gt;] {create,status,kill,kill-all,set-passwd,repair} ...\n\npositional arguments:\n  {create,status,kill,kill-all,set-passwd,repair}\n    create              Create VNC session\n    status              Print details of all VNC jobs with given job name and exit\n    kill                Kill specified job\n    kill-all            Cancel all VNC jobs with given job name and exit\n    set-passwd          Prompts for new VNC password and exit\n    repair              Repair all missing/broken LoginNode&lt;-&gt;SubNode port forwards, and then exit\n\noptional arguments:\n  -h, --help            show this help message and exit\n  -d, --debug           Enable debug logging\n  -v, --version         Print program version and exit\n  -J &lt;job_name&gt;         Slurm job name\nCheck usage help for a specific hyakvnc command by running hyakvnc &lt;command&gt; -h."
+  },
+  {
+    "objectID": "start/hyakvnc.html#creating-a-vnc-session",
+    "href": "start/hyakvnc.html#creating-a-vnc-session",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "VNC session cannot be reserved indefinitely and will terminate when its time expires.\n\n\n\n\n\n\n\nNote\n\n\n\nIf hyakvnc create fails to reserve a node and timesout, then check if you are reducing too many compute resources.\n\n\n\nFrom the login node shell, we will need to use hyakvnc create command to start the VNC session with compute resources. As an example, to create a VNC session running on our rockylinux8 container on a compute node reserved for 10 hours with specified amount of compute resources, run the following:\n\nhyakvnc create \\\n    -A &lt;lab&gt; \\\n    -p &lt;node_type&gt; \\\n    --cpus 8 \\\n    --gpus 0 \\\n    --mem 32G \\\n    --time 10 \\\n    --container /path/to/hyak_vnc_apptainer/rockylinux8/rockylinux8.sif \\\n    --xstartup /path/to/hyak_vnc_apptainer/xfce4_config/xstartup\nOn initial use, accept to create an SSH key and set a VNC password when prompted. If you want to reset your VNC password, run hyakvnc set-passwd from the login node.\n\nCreate a port forward to Klone to access the VNC session.\n\nIf hyakvnc create was successful, it should print additional steps to setup a port forward and to connect to the VNC session.\n...\n=====================\nRun the following in a new terminal window:\n        ssh -N -f -L 590A:127.0.0.1:590B UWNetID@klone.hyak.uw.edu\nthen connect to VNC session at localhost:590A\n=====================\nIn this example, we want to create a port forward to Klone with the source port 590A and destination at 127.0.0.1:590B or localhost:590B.\n\nOpenSSH (macOS, Linux, Windows)\n\n\nCreate a new terminal window on your local computer and run the ssh command as instructed by hyakvnc create:\nssh -N -f -L 590A:127.0.0.1:590B UWNetID@klone.hyak.uw.edu"
+  },
+  {
+    "objectID": "start/hyakvnc.html#putty",
+    "href": "start/hyakvnc.html#putty",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "Instead of creating a new terminal window, right-click the title bar of an existing terminal window, then select Change Settings:\n\n\n\nNavigate to Connection-&gt;SSH-&gt;Tunnels. Set Source port to 590A and Destination to 127.0.0.1:590B.\n\n\n\nClick on Add to add the port forward, then click on Apply at the bottom of the window.\n\n\n\n\n\n\n\nNote\n\n\n\nClosing all PuTTY terminal windows will close the port forward and break the VNC connection.\n\n\n::: :::\n\nOpen TigerVNC Viewer and connect to the VNC session at localhost:590A as instructed by hyakvnc create:\n\n\n\nLogin with your VNC password:\n\n\nIf successful, you should be greeted to a graphical desktop interface."
+  },
+  {
+    "objectID": "start/hyakvnc.html#checking-active-vnc-sessions",
+    "href": "start/hyakvnc.html#checking-active-vnc-sessions",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "Running hyakvnc status from the login node will print details of active VNC sessions (with the same job name), including the following: - Slurm Job ID - Node hostname - Time left in days-hours:minutes:seconds - VNC status - VNC port forward command\nActive hyakvnc jobs:\n        Job ID: AAAAAAAA\n                SubNode: n3301\n                Time left: 2-06:00:16\n                VNC active: True\n                VNC display number: 2\n                VNC port: 5902\n                Mapped LoginNode port: 5900\n                Run command: ssh -N -f -L 5900:127.0.0.1:5900 UWNetID@klone.hyak.uw.edu\n        Job ID: BBBBBBBB\n                SubNode: n3301\n                Time left: 2-01:24:25\n                VNC active: True\n                VNC display number: 1\n                VNC port: 5901\n                Mapped LoginNode port: 5911\n                Run command: ssh -N -f -L 5911:127.0.0.1:5911 UWNetID@klone.hyak.uw.edu\n        Job ID: CCCCCCCC\n                SubNode: g3071\n                Time left: 15:07:56\n                VNC active: True\n                VNC display number: 1\n                VNC port: 5901\n                Mapped LoginNode port: 5902\n                Run command: ssh -N -f -L 5902:127.0.0.1:5902 UWNetID@klone.hyak.uw.edu"
+  },
+  {
+    "objectID": "start/hyakvnc.html#closing-vnc-sessions",
+    "href": "start/hyakvnc.html#closing-vnc-sessions",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "To close all VNC sessions, run hyakvnc kill-all from the login node.\nTo close a specific VNC session, find its Job ID with hyakvnc status, then run hyakvnc kill &lt;job_ID&gt; from the login node."
+  },
+  {
+    "objectID": "start/hyakvnc.html#using-lmod-modules-in-vnc-session",
+    "href": "start/hyakvnc.html#using-lmod-modules-in-vnc-session",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "Note\n\n\n\nRequires the VNC apptainer to support Lmod. /sw/ must also be bounded to access existing module files.\n\n\nIf the VNC apptainer supports Lmod, then module command should work normally without throwing an error."
+  },
+  {
+    "objectID": "start/hyakvnc.html#using-apptainer-module-in-vnc-session",
+    "href": "start/hyakvnc.html#using-apptainer-module-in-vnc-session",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "Note\n\n\n\nRequires the VNC apptainer to support Lmod and supply Apptainer dependencies.\n\n\nLoad apptainer module with a version specified (using default will not work unless apptainer is installed in the container):\nmodule load apptainer/1.1.5\nThen apptainer commands will work normally:\nExample:\napptainer shell &lt;container.sif&gt;\napptainer exec &lt;container.sif&gt; &lt;command&gt;\n\n\nTo load a nested Apptainer within the VNC session with CUDA support, add the following arguments: --nv -B /.singularity.d.\nExample:\napptainer shell --nv -B /.singularity.d &lt;container.sif&gt;"
+  },
+  {
+    "objectID": "start/hyakvnc.html#references",
+    "href": "start/hyakvnc.html#references",
+    "title": "hyakvnc",
+    "section": "",
+    "text": "https://github.com/uw-psych/hyakvnc"
+  }
+]

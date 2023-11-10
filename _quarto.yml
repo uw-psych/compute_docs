@@ -1,34 +1,20 @@
 project:
-  type: book
+  type: website
 
-book:
-  title: "UW HYAK"
-  page-navigation: true
-  search: true
-  chapters:
-    - index.qmd
-    - part: docs/start/index.qmd
-      chapters:
-        - docs/start/introduction.qmd
-        - docs/start/connect-ssh.qmd
-        - docs/start/hyakvnc.qmd
-    - part: docs/compute/index.qmd
-      chapters:
-        - docs/compute/slurm.qmd
-        - docs/compute/apptainer.qmd
-        - docs/compute/lmod.qmd
-    - part: docs/software/index.qmd
-      chapters:
-        - docs/software/matlab.qmd
-        - docs/software/freesurfer.qmd
-        - docs/software/spm_conn.qmd
-        - docs/software/afni.qmd
-
+website:
+  title: "UW Psychology"
+  page-navigation: false
+  sidebar:
+    logo: logo.png
+    title: "Computing Resources"
+    type: dark
+    background: "#523088"
+    foreground: "#FFFF"
+    style: docked
+    contents: auto
 format:
   html:
-    theme: cosmo
-    toc: true
-    number-sections: false
-
-
+    theme: darkly
+    grid:
+      sidebar-width: "20%"
 
