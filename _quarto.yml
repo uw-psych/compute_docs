@@ -14,7 +14,13 @@ website:
     contents: auto
 format:
   html:
-    theme: darkly
+    theme:
+      dark:
+        - darkly
+        - custom.scss
+      light:
+        - flatly
+        - custom.scss
     grid:
       sidebar-width: "20%"
 
