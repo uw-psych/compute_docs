@@ -1,13 +1,10 @@
 ---
 title: "Getting Started"
 description: "Getting started with the Hyak cluster"
-order: 0
 listing:
   contents:
     - "*.qmd"
 ---
-
-# Getting Started
 
 1.  Get access to Hyak:
     -   Active UW students can join UW Reserach Computing Club (RCC) to gain access to STF-funded nodes.

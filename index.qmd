@@ -4,13 +4,9 @@ description: "Documentation for Computing at the University of Washington Psycho
 listing:
 #  sort: false
   contents:
-    - "*/index.qmd"
-    # - "docs/start/index.qmd"
-    # - "docs/software/index.qmd"
-    # - "docs/compute/index.qmd"
+#    - "*/index.qmd"
+    - "docs/start/index.qmd"
+    - "docs/software/index.qmd"
+    - "docs/compute/index.qmd"
+    - "docs/storage/index.qmd"
 ---
-
-# Welcome
-
-```         
-```

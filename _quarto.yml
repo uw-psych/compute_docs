@@ -4,23 +4,32 @@ project:
 website:
   title: "UW Psychology"
   page-navigation: false
+  favicon: static/favicon.ico
   sidebar:
-    logo: logo.png
+    logo: static/logo.png
     title: "Computing Resources"
     type: dark
     background: "#523088"
     foreground: "#FFFF"
     style: docked
-    contents: auto
+    contents:
+      - section: start/index.qmd
+        contents: start/*.qmd
+      - section: compute/index.qmd
+        contents: compute/*.qmd
+      - section: software/index.qmd
+        contents: software/*.qmd
+      - section: storage/index.qmd
+        contents: storage/index.qmd
 format:
   html:
     theme:
       dark:
         - darkly
-        - custom.scss
+        - static/custom.scss
       light:
         - flatly
-        - custom.scss
+        - static/custom.scss
     grid:
       sidebar-width: "20%"
 

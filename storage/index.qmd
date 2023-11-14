@@ -1,0 +1,18 @@
+---
+title: "Storage"
+listing:
+  contents:
+    - "*.qmd"
+---
+
+This section describes different options for storing research data for the University of Washington Department of Psychology.
+
+## Comparison
+
+| Storage Option                   | Price Estimate         | Storage Capacity                             | Speed              | Backup/Recovery Options               |
+|----------------------------------|------------------------|----------------------------------------------|--------------------|---------------------------------------|
+| Departmental Server              | Low Cost               | Up to 10 TiB                                 | Varies             | Limited; depends on department setup  |
+| Amazon S3                        | Varies with usage      |                                      | High               | High; includes versioning, replication|
+| Dropbox                          | Subscription-based     |                                      | Moderate to High   | Good; includes file version history   |
+| [UW Lolo](https://hyak.uw.edu/docs/storage/archive/)                          | $3.45/TiB (monthly)    | 10 TiB on demand, more on request            | High               | High; S3 compatible, robust options   |
+
