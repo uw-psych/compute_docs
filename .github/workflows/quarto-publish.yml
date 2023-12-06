@@ -2,7 +2,7 @@ on:
   push:
     branches: main
 
-name: Render and Publish
+name: Render with Quarto and Publish
 
 # you need these permissions to publish to GitHub pages
 permissions:
@@ -34,28 +34,8 @@ jobs:
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
 
-      # From https://github.com/julia-actions/setup-julia
-      # - name: Setup Julia
-      #   uses: julia-actions/setup-julia@v1
-
-      # See more at https://github.com/quarto-dev/quarto-actions/blob/main/examples/example-03-dependencies.md
-
-      # To publish to Netlify, RStudio Connect, or GitHub Pages, uncomment
-      # the appropriate block below
-      
-      # - name: Publish to Netlify (and render)
-      #   uses: quarto-dev/quarto-actions/publish@v2
-      #   with:
-      #     target: netlify
-      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        
-      # - name: Publish to RStudio Connect (and render)
-      #   uses: quarto-dev/quarto-actions/publish@v2
-      #   with:
-      #     target: connect
-      #     CONNECT_SERVER: enter-the-server-url-here
-      #     CONNECT_API_KEY: ${{ secrets.CONNECT_API_KEY }} 
-
+      - name: Install quarto glossary
+        run: "quarto install extension debruine/quarto-glossary"
       # NOTE: If Publishing to GitHub Pages, set the permissions correctly (see top of this yaml)
       - name: Publish to GitHub Pages (and render) 
         uses: quarto-dev/quarto-actions/publish@v2
@@ -63,4 +43,4 @@ jobs:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
-      
+

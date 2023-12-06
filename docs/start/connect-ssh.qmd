@@ -11,6 +11,7 @@ from a command-line interface (CLI).
 ::: callout-important
 Connections to UW HYAK are authenticated with your UW NetID credentials and Duo for two-factor.
 Alternative login methods, including SSH key authentication, cannot be used to login.
+:::
 
 ::: callout-tip
 Use an SSH client that supports session multiplexing/sharing to reuse an active session without
@@ -42,17 +43,13 @@ manager.
 To setup session sharing, create a new host entry to **your local computer's** `~/.ssh/config`
 with a text editor:
 
-::: callout-note
-`~/.ssh/config`
-^^^
-```
+``` {filename=~/.ssh/config}
 Host klone.hyak.uw.edu
     HostName %h
     ControlPath ~/.ssh/%r@%h:%p
     ControlMaster auto
     ControlPersist 3600
 ```
-:::
 
 ## macOS
 macOS provides SSH commands by default and are accessible from command-line with
@@ -61,17 +58,13 @@ the native macOS Terminal application.
 To setup session sharing, create a new host entry to **your local computer's** `~/.ssh/config`
 with a text editor:
 
-::: callout-note
-`~/.ssh/config`
-^^^
-```
+``` {filename=~/.ssh/config}
 Host klone.hyak.uw.edu
     HostName %h
     ControlPath ~/.ssh/%r@%h:%p
     ControlMaster auto
     ControlPersist 3600
 ```
-:::
 
 ## Windows
 
@@ -93,7 +86,8 @@ PuTTY's `plink.exe` tool is not suited for interactive sessions as it cannot han
 (arrow keys for cursor movement, backspace for character deletion).
 :::
 
-:::{dropdown} Session Sharing in PuTTY
+::: {.callout-tip collapse=true}
+# Session Sharing in PuTTY
 Check `Share SSH Connection if possible` in the **PuTTY Configuration** window under **Connection**->**SSH**:
 
 ![](./_static/putty/PuTTY_share_SSH_connections.png)
@@ -113,35 +107,29 @@ To reuse an active session with CLI tools, specify the name of the saved PuTTY p
 `UWNetID@klone.hyak.uw.edu`.
 :::
 
-:::
-:::
-
 ## Connecting via SSH
 
 ::: panel-tabset
-## OpenSSH
-1. Open a terminal instance.
 
+### OpenSSH
+
+1. Open a terminal instance.  
+  
 ::: callout-note
 Windows users should open PowerShell console, or install and use
 [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
-from the Microsoft Store app.
+from the Microsoft Store app.  
 :::
-
-2. Connect to HYAK Klone cluster with `ssh` command with your UW NetID:
-
+2. Connect to HYAK Klone cluster with `ssh` command with your UW NetID:  
 ```bash
-ssh UWNetID@klone.hyak.uw.edu
+ssh UWNetID@klone.hyak.uw.edu  
 ```
-
-3. If prompted to "continue connecting", type 'yes' and press enter.
-
+3. If prompted to "continue connecting", type `yes` and press enter.
 4. Login with your NetID password and authenticate with Duo.
 
-If successful, the **login node**'s command prompt should appear.
-:::
+If successful, the {{< login node >}}'s command prompt should appear.
 
-## PuTTY
+### PuTTY
 1. Open PuTTY:
 
 ![](./_static/putty/PuTTY_start.png)
@@ -160,9 +148,8 @@ If successful, the **login node**'s command prompt should appear.
 5. Login with your NetID password and authenticate with Duo.
 
 If successful, the **login node**'s command prompt should appear.
-:::
 
-## MobaXterm GUI
+### MobaXterm GUI
 1. Open MobaXterm:
 
 ![](./_static/mobaxterm/MobaXterm_start.png)
@@ -185,17 +172,12 @@ If successful, the **login node**'s command prompt should appear.
 
 If successful, the **login node**'s command prompt should appear.
 :::
-:::
 
 ## Transferring files to/from HYAK
 
-::: callout-note
-Klone and Mox clusters have separate network attached storage. Copying to one cluster will not
-copy to the other.
-:::
-
 ::: panel-tabset
-## OpenSSH
+
+### OpenSSH
 `scp` is an OpenSSH client utility for copying files and directories to/from a remote target. The
 general syntax has the following form:
 ```bash
@@ -204,21 +186,18 @@ scp [-r] UWNetID@klone.hyak.uw.edu:<SOURCE_PATH> <DESTINATION_PATH>
 ```
 
 ::: callout-tip
-:::
 
 To copy a file to Klone at some path, run:
 ```bash
 scp /path/to/my/file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/
 ```
-
-To copy a file from Klone at some path, run:
 :::
 
-## PuTTY CLI
+### PuTTY CLI
 
 `pscp` is a CLI utility (provided by a standard PuTTY installation) for copying files.
 
-```
+```bash
 pscp [-r] <SOURCE_PATH> UWNetID@klone.hyak.uw.edu:<DESTINATION_PATH>
 pscp [-r] UWNetID@klone.hyak.uw.edu:<SOURCE_PATH> <DESTINATION_PATH>
 ```
@@ -229,7 +208,7 @@ relative paths always start from home directory anyways.
 
 ```bash
 # copy file to home directory
-pscp.exe c:\path\to\my\file UWNetID@klone.hyak.uw.edu:
+pscp.exe "c:\path\to\my\file" UWNetID@klone.hyak.uw.edu:
 ```
 :::
 
@@ -240,13 +219,13 @@ profile with `Share SSH Connection if possible` enabled.
 
 To send a file to Klone at some path, run:
 ```bash
-pscp.exe c:\path\to\my\file UWNetID@klone.hyak.uw.edu:/gscratch/mylab/
+pscp.exe "c:\path\to\my\file" UWNetID@klone.hyak.uw.edu:/gscratch/mylab/
 ```
 
 Alternatively, we can use the name of the saved PuTTY profile (`Klone` for this example) to reuse
 an active connection to copy a file to Klone:
 ```bash
-pscp.exe c:\path\to\my\file Klone:/gscratch/mylab/
+pscp.exe "c:\path\to\my\file" Klone:/gscratch/mylab/
 ```
 
 To copy a directory to Klone, use the `-r` argument to copy directories and files recursively:
@@ -255,11 +234,3 @@ pscp.exe -r c:\path\to\my\directory\ Klone:/gscratch/mylab/
 ```
 :::
 
-## WinSCP
-TODO
-:::
-
-## Cyberduck
-TODO
-:::
-:::

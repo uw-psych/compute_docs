@@ -1,0 +1,55 @@
+Lmod: |
+  An environment module system that is used to load additional software on Klone compute nodes.
+
+Klone: |
+  The latest generation of the Hyak supercomputer. See [here](./start) for how to use it.
+
+compute node: |
+  A node on the Klone cluster that is used for running jobs. See [here](./compute) for more information.
+
+login node: |
+  A node on the Klone cluster that is used for logging in and submitting jobs. See [here](./compute) for more information.
+
+environment variable: |
+  A variable that is used to store information about the environment that a job is running in. See [here](./compute/environment.qmd) for more information.
+
+job: |
+  A task that is submitted to the cluster to be run on a compute node. See [here](./compute) for more information.
+
+job script: |
+  A script that is submitted to the cluster to be run on a compute node. See [here](./compute) for more information.
+
+job array: |
+  A set of jobs that are submitted to the cluster to be run on compute nodes. See [here](./compute) for more information.
+
+SLURM: |
+  A job scheduler that is used to manage jobs on the Klone cluster. See [here](./compute) for more information.
+
+SLURM job ID: |
+  A unique identifier for a job that is submitted to the cluster. See [here](./compute) for more information.
+
+Apptainer: |
+  Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful
+
+  See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/251524591
+
+Singularity: |
+  The former name of Apptainer, a software container platform that is used to run software on the Klone cluster. See [here](./compute/apptainer.qmd) for more information.
+
+container image: |
+  A file that contains a fully encapsulated software environment that can be run on the Klone cluster. See [here](./compute/apptainer.qmd) for more information.
+
+Apptainer recipe: |
+  A file that contains instructions for building a container image. See [here](./compute/apptainer.qmd) for more information.
+  - a
+  - b
+  - [here](./compute/apptainer.qmd)
+
+Docker: |
+  A popular software container platform that is not available on Klone; however, [Apptainer](./compute/apptainer.qmd) can be used to run Docker images on Klone.
+
+GPU: |
+  A graphics processing unit that is used for running compute-intensive tasks on the Klone cluster.
+
+CUDA: |
+  A parallel computing platform and programming model that is used for running compute-intensive tasks on the Klone cluster.

@@ -18,11 +18,6 @@ listing:
 ssh UWNetID@klone.hyak.uw.edu
 ```
 
-## Mox
-
-``` bash
-ssh UWNetID@mox.hyak.uw.edu
-```
 :::
 
 3.  Navigate and understand its [compute infrastructure](../compute/index.qmd):

@@ -1,0 +1,104 @@
+---
+title: "Apptainer"
+description: The Apptainer container environment
+order: 20
+---
+
+# Apptainer
+
+Apptainer (formerly Singularity) is a simple container platform enabling users to install and run software that would otherwise be unsupported by the host environment.
+
+On Klone, the `apptainer` command is available on all [{{< glossary compute nodes >}}](../compute/slurm.qmd), but it is not available on the {{< glossary login node >}}.
+
+By default, the `apptainer` command will use the system version of Apptainer:
+
+```bash
+which apptainer # prints /usr/bin/apptainer
+apptainer --version # apptainer version 1.2.4-1.el8 (as of 2023-12-05)
+```
+
+::: {.callout-note title="Loading a different version of Apptainer using Lmod"}
+
+To use a different version of Apptainer, load the appropriate [{{< glossary Lmod >}}](../compute/lmod.qmd) module. For example, to use Apptainer version 1.1.5:
+
+```bash
+module load apptainer/1.1.5
+which apptainer # prints /sw/apptainer/1.1.5/bin/apptainer
+apptainer --version # apptainer version 1.1.5
+```
+
+To see all available versions of Apptainer, run:
+
+```bash
+module avail apptainer
+```
+
+The default module is indicated by the tag `(D)` following the version.
+For example, `apptainer/local (D)` indicates that the default version is `local`.
+(The local version is the version installed on the system.)
+
+:::
+
+## Using Apptainer
+
+### Interactive session
+
+#### Bind paths
+
+{{< glossary Apptainer >}} containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the `--bind` option of the `apptainer` command or the `APPTAINER_BINDPATH` {{< glossary "environment variable" >}}.
+
+::: {.callout-tip title="Default bind paths"}
+By default, `apptainer` will make several directories available within the container by binding them to the same path in the container, so that `/somefolder` on the host is available as `/somefolder` within the container.
+
+These directories include:
+- `$HOME` (your home directory, a.k.a. `~`)
+- `/tmp` (temporary directory -- unique to each node, contents are purged when the users’ last job running on the node completes)
+- `$PWD` (the current working directory, i.e. the directory you are in when you run `apptainer`)
+
+The Klone Apptainer installation is also configured to bind several other following directories to the same path in the container, including:
+- `/mmfs1` (the main filesystem)
+- `/scr` (the scratch filesystem, same as `/tmp`)
+
+
+:::
+
+We recommend setting the following binds before running a container:
+
+``` bash
+export APPTAINER_BINDPATH="/gscratch" # Make /gscratch available within the container
+```
+
+
+1.  To start an Apptainer container interactively, run the following:
+
+``` bash
+apptainer shell <path_to_container>
+```
+
+## Pulling an Apptainer image from docker.io registry
+
+apptainer pull docker://<image_name>\[:<tag>\]
+
+## Writing and building Apptainer recipes
+
+https://apptainer.org/docs/user/main/definition_files.html
+
+## Scripting with Apptainer
+
+TODO
+
+To run a python script called my_script.py from within the container, run the following:
+
+``` bash
+apptainer exec <path_to_container.sif> python3 ./my_script.py
+```
+
+## Clearing Apptainer cache
+
+## Changing Apptainer cache
+
+Set APPTAINER_CACHEDIR environment variable to a different cache path.
+
+## References
+
+TODO
