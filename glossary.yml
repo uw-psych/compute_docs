@@ -31,7 +31,7 @@ SLURM job ID: |
 Apptainer: |
   Smallest Effect Size of Interest: the smallest effect that is theoretically or practically meaningful
 
-  See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/251524591
+  See [Equivalence Testing for Psychological Research](https://doi.org/10.1177/251524591)
 
 Singularity: |
   The former name of Apptainer, a software container platform that is used to run software on the Klone cluster. See [here](./compute/apptainer.qmd) for more information.

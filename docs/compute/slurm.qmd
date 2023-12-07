@@ -5,8 +5,7 @@ description: An introduction to the SLURM job scheduler on Hyak
 ---
 # Slurm Basics
 
-UW Hyak clusters use [Slurm](https://slurm.schedmd.com/) to manage access to compute resources and
-schedule user-submitted jobs.
+The {{< term Klone >}} cluster uses the [SLURM](https://slurm.schedmd.com/) job scheduler to manage access to compute resources and schedule user-submitted jobs.
 
 Users can submit a batch job for scripted parallel tasks or an interactive job for manual tasks or
 GUI programs.

@@ -3,8 +3,21 @@ project:
 
 website:
   title: "UW Psychology"
-  page-navigation: false
+  page-navigation: true
   favicon: _static/favicon.ico
+  navbar:
+    title: false
+    background: "#4b3584"
+    foreground: "#FFFF"
+    search: true
+    left: []
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            url: https://github.com/maouw/compute_docs
+          - text: Report a Bug
+            url: https://github.com/maouw/compute_docs/issues
   sidebar:
     logo: _static/logo.png
     title: "Computing Resources"
@@ -24,15 +37,14 @@ website:
 format:
   html:
     theme:
-      dark:
-        - darkly
-        - _static/custom.scss
-      light:
-        - flatly
-        - _static/custom.scss
+      - cosmo
+      - _static/custom.scss
+    mainfont: "Helvetica, Liberation Sans, Free Sans, Arial, sans-serif"
+    monofont: "Iosevka Web, monospace"
+    fontsize: 1.0em
+    linestrech: 1.0
     grid:
       sidebar-width: "20%"
-glossary:
+    code-annotations: hover
+popover_glossary:
   path: glossary.yml
-  popup: click
-  show: true

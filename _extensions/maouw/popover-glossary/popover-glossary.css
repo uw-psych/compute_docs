@@ -1,0 +1,44 @@
+/* glossary deflist styles */
+.glossary_dl {
+  font-size: 95%;
+}
+
+.glossary_dl dt {
+  font-weight: bold;
+}
+.glossary_dl dd {
+  margin-left: 1em;
+  line-height: normal;
+  text-indent: 2em;
+  text-align: justify;
+  border-top: 1px dotted var(--quarto-body-color);
+}
+
+.glossary-ref {
+  cursor: pointer;
+  display: inline;
+  border-style: hidden;
+}
+
+.glossary-def {
+  /*  background-color: var(--quarto-body-color);*/
+  background-color: var(--quarto-body-bg);
+  opacity: 1;
+  color: var(--quarto-body-color);
+  font-size: 75%;
+  display: none;
+  z-index: 1000;
+  max-width: 33%;
+  border-color: var(--quarto-border-color);
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: 2px 2px var(--quarto-body-color);
+  padding: 0.5em;
+  outline: 1px dotted var(--quarto-body-color);
+  outline-offset: -2px;
+  text-align: justify;
+}
+
+.glossary-def[data-show] {
+  display: block;
+}

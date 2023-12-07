@@ -8,7 +8,7 @@ order: 20
 
 Apptainer (formerly Singularity) is a simple container platform enabling users to install and run software that would otherwise be unsupported by the host environment.
 
-On Klone, the `apptainer` command is available on all [{{< glossary compute nodes >}}](../compute/slurm.qmd), but it is not available on the {{< glossary login node >}}.
+On Klone, the `apptainer` command is available on all {{< term "compute nodes" >}}, but it is not available on the {{< term "login node" >}}.
 
 By default, the `apptainer` command will use the system version of Apptainer:
 
@@ -19,7 +19,7 @@ apptainer --version # apptainer version 1.2.4-1.el8 (as of 2023-12-05)
 
 ::: {.callout-note title="Loading a different version of Apptainer using Lmod"}
 
-To use a different version of Apptainer, load the appropriate [{{< glossary Lmod >}}](../compute/lmod.qmd) module. For example, to use Apptainer version 1.1.5:
+To use a different version of Apptainer, load the appropriate [{{< term Lmod >}}](../compute/lmod.qmd) module. For example, to use Apptainer version 1.1.5:
 
 ```bash
 module load apptainer/1.1.5
@@ -45,7 +45,7 @@ For example, `apptainer/local (D)` indicates that the default version is `local`
 
 #### Bind paths
 
-{{< glossary Apptainer >}} containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the `--bind` option of the `apptainer` command or the `APPTAINER_BINDPATH` {{< glossary "environment variable" >}}.
+{{< term Apptainer >}} containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the `--bind` option of the `apptainer` command or the `APPTAINER_BINDPATH` {{< term "environment variable" >}}.
 
 ::: {.callout-tip title="Default bind paths"}
 By default, `apptainer` will make several directories available within the container by binding them to the same path in the container, so that `/somefolder` on the host is available as `/somefolder` within the container.

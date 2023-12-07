@@ -2,7 +2,40 @@
 .sidebar-title {
   color: #FFFFFF;
 }
-.quarto-color-scheme-toggle:before {
-  content: "Dark/light mode";
-  font-size: 50%;
+
+
+@font-face {
+  font-family: 'Iosevka Web';
+  font-display: swap;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  src: url('_static/fonts/Iosevka-Regular.woff2') format('woff2'), url('_static/fonts/Iosevka-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Iosevka Web';
+  font-display: swap;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  src: url('_static/fonts/Iosevka-Bold.woff2') format('woff2'), url('_static/fonts/Iosevka-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Iosevka Web';
+  font-display: swap;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: italic;
+  src: url('_static/fonts/Iosevka-Italic.woff2') format('woff2'), url('_static/fonts/Iosevka-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Iosevka Web';
+  font-display: swap;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: italic;
+  src: url('_static/fonts/Iosevka-BoldItalic.woff2') format('woff2'), url('_static/fonts/Iosevka-BoldItalic.ttf') format('truetype');
 }

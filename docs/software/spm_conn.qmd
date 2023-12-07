@@ -4,11 +4,11 @@ description: Statistical parametric mapping and functional connectivity toolboxe
 ---
 # SPM and CONN Toolboxes
 
-[Statistical Parametric Mapping (SPM)](https://www.fil.ion.ucl.ac.uk/spm/) and [CONN](https://web.conn-toolbox.org/) are available as [{{< glossary Lmod >}}](../compute/lmod.qmd) modules on {{< glossary Klone >}} {{< glossary "compute node" display="compute nodes" >}} >}}
+[Statistical Parametric Mapping (SPM)](https://www.fil.ion.ucl.ac.uk/spm/) and [CONN](https://web.conn-toolbox.org/) are available as [{{< term Lmod >}}](../compute/lmod.qmd) modules on {{< term Klone >}} {{< term "compute node" display="compute nodes" >}} >}}
 
 ## Use with Lmod
 
-Like all [{{< glossary Lmod >}}](../compute/lmod.qmd) modules, the `spm` and `conn` modules are available only on {{< glossary Klone >}} [{{< compute nodes>}}](../compute/slurm.qmd), and these commands will not work on the {{< glossary "login node" >}}.
+Like all {{< term Lmod >}} modules, the `spm` and `conn` modules are available only on {{< term Klone >}} {{< "compute node" display="compute nodes" >}}, and these commands will not work on the {{< term "login node" >}}.
 
 ### Checking available versions
 
@@ -16,8 +16,9 @@ Because the modules for SPM and CONN are installed in the `escience` hierarchy, 
 
 You can check the installed versions as follows:
 
-``` bash
+```bash
 module spider escience/spm
+
 #  Output:
 #  ---------------------------------------
 #    escience/spm: escience/spm/12
@@ -31,6 +32,7 @@ module spider escience/spm
 
 ```bash
 module spider escience/conn
+
 #  Output:
 #  ---------------------------------------
 #    escience/conn: escience/conn/v.22.a
@@ -64,44 +66,44 @@ After loading the module, start `matlab` and run `conn` in the MATLAB command wi
 This is provided as reference material.
 :::
 
-::: callout-note
-This is tested from a VNC Apptainer environment with sufficient dependencies.
-:::
+1. Download a version of SPM from [https://www.fil.ion.ucl.ac.uk/spm/software/download/](https://www.fil.ion.ucl.ac.uk/spm/software/download/).
 
-1.  Download a version of SPM from [https://www.fil.ion.ucl.ac.uk/spm/software/download/](https://www.fil.ion.ucl.ac.uk/spm/software/download/).
-
-2.  Extract the .zip archive to `/sw/contrib/labname-src/spm/spm<version>/`
-
-For example, if installing version 12 of SPM, then run the following:
-
-``` bash
-LABNAME=escience
-VERSION=12
-TARGET="/sw/contrib/${LABNAME}-src/spm/"
-mkdir -p "${TARGET}"
-unzip "spm${VERSION}.zip -d "${TARGET}"
-```
-
-3.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:
-
-``` {.lua filename=/sw/contrib/modulefiles/labname/spm/12.lua}
-help([[spm12]])
-
-local labname = "escience"
-local version = "12"
-local base = "/sw/contrib/" .. labname .. "-src/spm/spm" .. version
-
-depends_on("matlab")
-append_path("MATLABPATH", base)
-whatis("Name: spm")
-whatis("Version: " .. version)
-```
+2. Extract the .zip archive to `/sw/contrib/labname-src/spm/spm<version>/`.
+   
+   For example, if installing version 12 of SPM, then run the following:
+   
+   ```bash  
+   LABNAME=escience # <1>
+   VERSION=12 # <2>
+   TARGET="/sw/contrib/${LABNAME}-src/spm/" # <3>
+   mkdir -p "${TARGET}" # <4>
+   unzip "spm${VERSION}.zip" -d "${TARGET}" # <5>
+   ```
+   1. Set the labname to the name of the lab that is installing the software.  
+   2. Set the version to the version of SPM that is being installed.  
+   3. Set the target directory to the directory where the software will be installed.  
+   4. Create the target directory if it does not exist.  
+   5. Extract the SPM archive to the target directory.
+   
+3. Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
+   
+   For example, if installing version 12 of SPM, then run the following:
+   
+   ```lua
+   help([[spm12]])
+   local labname = "escience"
+   local version = "12"
+   local base = "/sw/contrib/" .. labname .. "-src/spm/spm" .. version
+   depends_on("matlab")
+   append_path("MATLABPATH", base)
+   whatis("Name: spm")
+   whatis("Version: " .. version)
+   ```   
 
 ::: callout-note
 Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or `--ignore_cache` flag to force Lmod to check for new modules.
 
 ``` bash
-module -I spider spm
 module -I load labname/spm
 ```
 :::
@@ -112,46 +114,41 @@ module -I load labname/spm
 This is provided as reference material.
 :::
 
-::: callout-note
-This is tested from a VNC Apptainer environment with sufficient dependencies.
-:::
-
 1.  Download a version of CONN from [https://www.nitrc.org/frs/?group_id=279](https://www.nitrc.org/frs/?group_id=279)
-
-2.  Extract the .zip archive to  `/sw/contrib/labname-src/conn/conn<version>/`
-
-For example, if installing version `v.22.a` from `conn22a.zip`, then run the following:
-
-``` bash
-LABNAME=escience
-VERSION=v.22.a
-TARGET="/sw/contrib/${LABNAME}-src/conn/"
-mkdir -p "${TARGET}"
-unzip conn22a.zip -d "${TARGET}"
-mv "$TARGET/conn" "${TARGET}/${VERSION}"
-```
-
-3.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:
-
-``` {.lua filename=/sw/contrib/modulefiles/labname/conn/v.22.a.lua}
-help([[conn-v.22.a]])
-
-local labname = "escience"
-local version = "v.22.a"
-local base = pathJoin("/sw/contrib/" .. labname .. "-src/conn", version)
-
-depends_on("matlab")
-depends_on("escience/spm")
-append_path("MATLABPATH", base)
-whatis("Name: CONN")
-whatis("Version: " .. version)
-```
+2.  Extract the .zip archive to  `/sw/contrib/labname-src/conn/conn<version>/`  
+    For example, if installing version `v.22.a` from `conn22a.zip`, then run the following:  
+    ```bash  
+    LABNAME=escience # <1>
+    VERSION=v.22.a # <2>
+    TARGET="/sw/contrib/${LABNAME}-src/conn/" # <3>
+    mkdir -p "${TARGET}" # <4>
+    unzip conn22a.zip -d "${TARGET}" # <5>
+    mv "$TARGET/conn" "${TARGET}/${VERSION}" # <6>
+    ```
+    1. Set the labname to the name of the lab that is installing the software.  
+    2. Set the version to the version of SPM that is being installed.  
+    3. Set the target directory to the directory where the software will be installed.  
+    4. Create the target directory if it does not exist.  
+    5. Extract the SPM archive to the target directory.  
+  
+3.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
+    ``` {.lua filename=/sw/contrib/modulefiles/labname/conn/v.22.a.lua}
+    help([[conn-v.22.a]])
+    local labname = "escience"
+    local version = "v.22.a" # <1>
+    local base = pathJoin("/sw/contrib/" .. labname .. "-src/conn", version)
+    depends_on("matlab")
+    depends_on("escience/spm")
+    append_path("MATLABPATH", base)
+    whatis("Name: CONN")
+    whatis("Version: " .. version)
+    ```  
+    1. Set the version to the version of CONN that is being installed.
 
 ::: callout-note
 Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or `--ignore_cache` flag to force Lmod to check for new modules.
 
 ```bash
-module -I spider conn
 module -I load labname/conn
 ```
 :::
