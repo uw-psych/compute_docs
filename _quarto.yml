@@ -7,7 +7,7 @@ website:
   favicon: _static/favicon.ico
   navbar:
     title: false
-    background: "#4b3584"
+    background: "#512c89"
     foreground: "#FFFF"
     search: true
     left: []
@@ -22,7 +22,7 @@ website:
     logo: _static/logo.png
     title: "Computing Resources"
     type: dark
-    background: "#4b3584"
+    background: "#512c89"
     foreground: "#FFFF"
     style: docked
     contents:

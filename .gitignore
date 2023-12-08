@@ -24,3 +24,5 @@ external/
 
 .history/
 .vscode/
+
+/.luarc.json
