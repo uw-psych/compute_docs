@@ -2,6 +2,22 @@
 title: "Apptainer"
 description: The Apptainer container environment
 order: 20
+include-in-header:
+    text: |
+        <link rel="stylesheet" type="text/css" href="/_static/asciicasts/asciinema-player.css" />
+
+include-after-body:
+    text: |
+        <script src="/_static/asciicasts/asciinema-player.min.js"></script>
+        <script>
+            term_font_family="'Iosevka Term Web', monospace'"
+            document.querySelectorAll('.cast').forEach((block) => {
+                AsciinemaPlayer.create("/_static/asciicasts/casts/" + block.id + ".cast", block, {
+                      terminalFontFamily: 'Iosevka Term Web, monospace',
+                       fit: false
+                }) 
+                });
+        </script>
 ---
 
 # Apptainer
@@ -88,7 +104,7 @@ See the [Apptainer documentation](https://apptainer.org/docs/user/main/definitio
 
 Let's try running a Python script using Apptainer. The [release notes](https://docs.python.org/3/whatsnew/3.11.html#summary-release-highlights) for Python version 3.11 say that it is "between 10-60% faster than Python 3.10". Is this true? Let's find out! We'll write a simple Python script to test this and use Apptainer to run it on Python 3.10 and Python 3.11.
 
-``` {.python filename="python_speed_test.py"}
+``` {.python filename="speedtest.py"}
 #!/usr/bin/env python3
 import os, sys, timeit
 
@@ -122,9 +138,9 @@ The `python:*-slim` images are designed to contain only the minimal set of packa
 We'll use the `apptainer exec` command to run the script inside an Apptainer container:
 
 ``` bash
-apptainer exec docker://python:3.10-slim python3 python_speed_test.py # <1>
+apptainer exec docker://python:3.10-slim python3 speedtest.py # <1>
 ```
-1. The `apptainer exec` command runs a command inside an Apptainer container. The `docker://python:3.10-slim` argument tells Apptainer to use the `python:3.10-slim` image from the Docker registry. The `python3 ./python_speed_test.py` argument tells Apptainer to run the `python3` command inside the container and provide it with the argument `python_speed_test.py`.
+1. The `apptainer exec` command runs a command inside an Apptainer container. The `docker://python:3.10-slim` argument tells Apptainer to use the `python:3.10-slim` image from the Docker registry. The `python3 ./speedtest.py` argument tells Apptainer to run the `python3` command inside the container and provide it with the argument `speedtest.py`.
 
 You should see something like:
 
@@ -140,7 +156,7 @@ It probably didn't take very long to run the script. Let's try running it again 
 
 ```bash
 export M=1000 N=100_000 # <1>
-apptainer exec docker://python:3.10-slim python3 python_speed_test.py
+apptainer exec docker://python:3.10-slim python3 speedtest.py
 ```
 1. The `export` command sets the values of the `M` and `N` {{< term "environment variable" display="environment variables" >}} and makes them avaialble to other programs like `apptainer`. `N`  is set to`100_000` instead of `100000` because underscores can be used in Python to make large numbers easier to read. This is a feature of Python, not the shell, which interprets `100_000` as just a string and not a number.
 
@@ -149,7 +165,7 @@ It should take a bit longer to run this time.
 Now let's try running the script using Python 3.11:
 
 ``` bash
-apptainer exec docker://python:3.11-slim python3 python_speed_test.py
+apptainer exec docker://python:3.11-slim python3 speedtest.py
 ```
 
 We don't need to set the values of `M` and `N` again because they are still set from the previous command via `export` (unless you closed your terminal window or logged out).
@@ -159,9 +175,9 @@ It probably took a bit less time to run the script this time.
 Is Python 3.11 really faster than Python 3.10? Let's find out by redirecting the output of the script to a file:
 
 ```bash
-apptainer exec docker://python:3.10-slim python3 python_speed_test.py > py3.10.txt # <1>
-apptainer exec docker://python:3.11-slim python3 python_speed_test.py > py3.11.txt # <1>
-cat py3.10.txt py3.11.txt # show the results <2>
+apptainer exec docker://python:3.10-slim python3 speedtest.py > py3.10.txt # <1>
+apptainer exec docker://python:3.11-slim python3 speedtest.py > py3.11.txt # <1>
+cat py3.10.txt py3.11.txt # show the results # <2>
 ```
 1. In {{< term bash >}}, the `>` operator redirects the output of a command to a file. If the file already exists, it will be overwritten. If you want to append to an existing file instead, use the `>>` operator. These operators can be used with any command, not just `apptainer`. For example, `ls > my_files.txt` will write the output of `ls` to the file `my_files.txt`.
 2. The `cat` command prints the contents of a file to {{< term stdout >}}` If you want to print the contents of multiple files, you can list them all as arguments to `cat`.
@@ -175,6 +191,12 @@ cat py3.10.txt py3.11.txt | apptainer exec docker://python:3.11-slim python3 -c 
 
 In my case, Python 3.11 was about 1.3 times faster than Python 3.10. Not bad!
 
+#### Demo
+
+Here's a demo of the above commands. Note that I used 'M=200` and `N=50_000` instead of `M=1000` and `N=100_000` because it takes a long time to run the script with the larger values of `M` and `N`.
+
+::::: {.cast #apptainer-python-speedtest}
+:::::
 
 ## Clearing Apptainer cache
 

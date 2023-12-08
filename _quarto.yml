@@ -1,5 +1,9 @@
 project:
   type: website
+  resources:
+    - _static/asciicasts/casts/*.cast
+
+
 
 website:
   title: "UW Psychology"
@@ -40,7 +44,7 @@ format:
       - cosmo
       - _static/custom.scss
     mainfont: "Helvetica, Liberation Sans, Free Sans, Arial, sans-serif"
-    monofont: "Iosevka Web, monospace"
+    monofont: "var(---term-font-family)"
     fontsize: 1.0em
     linestrech: 1.0
     grid:

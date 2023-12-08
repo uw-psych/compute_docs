@@ -3,39 +3,49 @@
   color: #FFFFFF;
 }
 
-
 @font-face {
-  font-family: 'Iosevka Web';
+  font-family: 'Iosevka Term Web';
   font-display: swap;
   font-weight: 400;
   font-stretch: normal;
   font-style: normal;
-  src: url('_static/fonts/Iosevka-Regular.woff2') format('woff2'), url('_static/fonts/Iosevka-Regular.ttf') format('truetype');
+  src: url('_static/fonts/iosevka-term-regular.woff2') format('woff2'), url('_static/fonts/iosevka-term-regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Iosevka Web';
+  font-family: 'Iosevka Term Web';
   font-display: swap;
   font-weight: 700;
   font-stretch: normal;
   font-style: normal;
-  src: url('_static/fonts/Iosevka-Bold.woff2') format('woff2'), url('_static/fonts/Iosevka-Bold.ttf') format('truetype');
+  src: url('_static/fonts/iosevka-term-bold.woff2') format('woff2'), url('_static/fonts/iosevka-term-bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Iosevka Web';
-  font-display: swap;
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: italic;
-  src: url('_static/fonts/Iosevka-Italic.woff2') format('woff2'), url('_static/fonts/Iosevka-Italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Iosevka Web';
+  font-family: 'Iosevka Term Web';
   font-display: swap;
   font-weight: 700;
   font-stretch: normal;
   font-style: italic;
-  src: url('_static/fonts/Iosevka-BoldItalic.woff2') format('woff2'), url('_static/fonts/Iosevka-BoldItalic.ttf') format('truetype');
+  src: url('_static/fonts/iosevka-term-bolditalic.woff2') format('woff2'), url('_static/fonts/iosevka-term-bolditalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Iosevka Term Web';
+  font-display: swap;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: italic;
+  src: url('_static/fonts/iosevka-term-italic.woff2') format('woff2'), url('_static/fonts/iosevka-term-italic.ttf') format('truetype');
+}
+
+:root {
+  ---term-font-family: 'Iosevka Term Web', 'Iosevka Termm', 'Iosevka', monospace;
+  --quarto-font-monospace: var(--quarto-font-monospace);
+  
+}
+
+.ap-wrapper {
+  justify-content: inherit !important;
+  align-items: inherit !important;
 }
