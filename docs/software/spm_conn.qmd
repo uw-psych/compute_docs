@@ -7,7 +7,7 @@ description: Statistical parametric mapping and functional connectivity toolboxe
 
 ## Use with Lmod
 
-Like all {{< term Lmod >}} modules, the `spm` and `conn` modules are available only on {{< term Klone >}} {{< "compute node" display="compute nodes" >}}, and these commands will not work on the {{< term "login node" >}}.
+Like all {{< term Lmod >}} modules, the `spm` and `conn` modules are available only on {{< term Klone >}} {{< term "compute node" display="compute nodes" >}}, and these commands will not work on the {{< term "login node" >}}.
 
 ### Checking available versions
 
@@ -101,20 +101,7 @@ You can install different versions of SPM and CONN by following the instructions
     ```
     1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/start/klone-storage.qmd) to storage on Klone for more information.
    
-2. Extract the .zip archive to `/sw/contrib/mylabname-src/conn` (replacing `mylabname` with the name of your lab).   
-   For example, if installing version `21a` of CONN, then run the following:
-   
-   ```bash
-   # Be sure to replace "mylabname" with the name of your lab!
-    LABNAME=mylabname # <1>
-    mkdir -p "/sw/contrib/${LABNAME}-src/conn" # <1>
-    unzip -n conn21a.zip 'conn/*' -d "/sw/contrib/${LABNAME}-src/conn/v.21.a" # <3>
-   ```
-   1. Create the target directory if it does not exist.  
-   2. Extract the conn archive to the target directory.
-   
-3.  Download a version of CONN from [https://www.nitrc.org/frs/?group_id=279](https://www.nitrc.org/frs/?group_id=279)
-4. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).   
+2. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).   
    
    ```bash
    # Be sure to replace "mylabname" with the name of your lab!
@@ -125,7 +112,7 @@ You can install different versions of SPM and CONN by following the instructions
     1. Create the target directory if it does not exist.  
     2. Extract the SPM archive to directory `v.21.a` within the target directory. (The `-n` flag prevents overwriting existing files if someone has already installed this version of CONN.)
   
-5.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
+3.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
     ``` {.lua filename=/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua}
     -- Be sure to replace "mylabname" with the name of your lab!
     help([[conn-v.21.a]])
@@ -138,7 +125,7 @@ You can install different versions of SPM and CONN by following the instructions
     whatis("Name: CONN")
     whatis("Version: " .. version)
     ``` 
-6. Remove the downloaded file when you are done with it:
+4. Remove the downloaded file when you are done with it:
    
    ```bash
    rm -v "/gscratch/scrubbed/$USER/downloads/conn21a.zip"

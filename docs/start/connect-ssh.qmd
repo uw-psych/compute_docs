@@ -127,7 +127,7 @@ ssh UWNetID@klone.hyak.uw.edu
 3. If prompted to "continue connecting", type `yes` and press enter.
 4. Login with your NetID password and authenticate with Duo.
 
-If successful, the {{< login node >}}'s command prompt should appear.
+If successful, the {{< term "login node" >}}'s command prompt should appear.
 
 ### PuTTY
 1. Open PuTTY:
