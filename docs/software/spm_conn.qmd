@@ -1,5 +1,4 @@
 ---
-title: "SPM and CONN Toolboxes"
 description: Statistical parametric mapping and functional connectivity toolboxes for MATLAB
 ---
 # SPM and CONN Toolboxes
@@ -17,138 +16,138 @@ Because the modules for SPM and CONN are installed in the `escience` hierarchy, 
 You can check the installed versions as follows:
 
 ```bash
-module spider escience/spm
-
-#  Output:
-#  ---------------------------------------
-#    escience/spm: escience/spm/12
-#  ---------------------------------------
-#  
-#      This module can be loaded directly: module load escience/spm/12
-#  
-#      Help:
-#        spm12
+module spider escience/spm escience/conn
 ```
 
-```bash
-module spider escience/conn
+The output should look a bit like this:
 
-#  Output:
-#  ---------------------------------------
-#    escience/conn: escience/conn/v.22.a
-#  ---------------------------------------
-#  
-#      This module can be loaded directly: module load escience/conn/v.22.a
-#  
-#      Help:
-#        conn-v.22.a
+```text
+---------------------------------------
+  escience/conn: escience/conn/v.22.a
+---------------------------------------
+
+    This module can be loaded directly: module load escience/conn/v.22.a
+
+    Help:
+      conn-v.22.a
+
+---------------------------------------
+  escience/spm: escience/spm/12
+---------------------------------------
+
+    This module can be loaded directly: module load escience/spm/12
+
+    Help:
+      spm12
 ```
 
-### Using SPM
+### Running SPM or CONN
 
-Load the default version with `module load escience/spm`,
+Load the default version with `module load escience/spm` or `module load escience/conn`, or load a specific version with `module load escience/spm/<version>` or `module load escience/conn/<version>`.
 
-or load a specific version with `module load escience/spm/<version>`.
+After loading the module, start `matlab` and run `spm` or `conn` in the MATLAB command window.
 
-After loading the module, start `matlab` and run `spm` in the MATLAB command window.
+### Installing different versions via Lmod
 
-### Using CONN
+You can install different versions of SPM and CONN by following the instructions below.
 
-Load the default version with `module load escience/conn`
+#### SPM 
 
-or load a specific version with `module load escience/conn/<version>`.
+1. Go to <https://www.fil.ion.ucl.ac.uk/spm/software/download>, choose the version of SPM you want to install, copy the download link to the file (with the extension `.zip`), and download the file by running the following command on a Klone login or compute node. We'll use version 8 as an example:
+   ```bash
+   wget -P "/gscratch/scrubbed/$USER/downloads" https://www.fil.ion.ucl.ac.uk/spm/download/restricted/idyll/spm8.zip # <1>
+    ```
+    1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/start/klone-storage.qmd) to storage on Klone for more information.
 
-After loading the module, start `matlab` and run `conn` in the MATLAB command window.
-
-### Installing a different version of SPM
-
-::: callout-note
-This is provided as reference material.
-:::
-
-1. Download a version of SPM from [https://www.fil.ion.ucl.ac.uk/spm/software/download/](https://www.fil.ion.ucl.ac.uk/spm/software/download/).
-
-2. Extract the .zip archive to `/sw/contrib/labname-src/spm/spm<version>/`.
+2. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).   
    
-   For example, if installing version 12 of SPM, then run the following:
-   
-   ```bash  
-   LABNAME=escience # <1>
-   VERSION=12 # <2>
-   TARGET="/sw/contrib/${LABNAME}-src/spm/" # <3>
-   mkdir -p "${TARGET}" # <4>
-   unzip "spm${VERSION}.zip" -d "${TARGET}" # <5>
+   ```bash
+   # Be sure to replace "mylabname" with the name of your lab!
+   LABNAME=mylabname # <1>
+   mkdir -p "/sw/contrib/${LABNAME}-src/spm" # <2>
+   unzip -n "/gscratch/scrubbed/$USER/downloads/spm8.zip" -d "/sw/contrib/${LABNAME}-src/spm" # <3>
    ```
-   1. Set the labname to the name of the lab that is installing the software.  
-   2. Set the version to the version of SPM that is being installed.  
-   3. Set the target directory to the directory where the software will be installed.  
-   4. Create the target directory if it does not exist.  
-   5. Extract the SPM archive to the target directory.
+   1. Create the target directory if it does not exist.  
+   2. Extract the SPM archive to the target directory (The `-n` flag prevents overwriting existing files if someone has already installed this version of SPM.).
    
 3. Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
    
    For example, if installing version 12 of SPM, then run the following:
    
-   ```lua
-   help([[spm12]])
-   local labname = "escience"
-   local version = "12"
+   ``` {.lua filename=/sw/contrib/modulefiles/mylabname/spm/8.lua}
+   help([[spm8]])
+    -- Be sure to replace "mylabname" with the name of your lab!
+   local labname = "mylabname"
+   local version = "8"
    local base = "/sw/contrib/" .. labname .. "-src/spm/spm" .. version
    depends_on("matlab")
    append_path("MATLABPATH", base)
    whatis("Name: spm")
    whatis("Version: " .. version)
-   ```   
+   ```
 
-::: callout-note
-Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or `--ignore_cache` flag to force Lmod to check for new modules.
+4. Remove the downloaded file when you are done with it:
+   
+   ```bash
+   rm -v "/gscratch/scrubbed/$USER/downloads/spm8.zip"
+   ```
 
-``` bash
-module -I load labname/spm
-```
-:::
 
-## Installing a different version of CONN
+#### CONN
 
-::: callout-note
-This is provided as reference material.
-:::
-
-1.  Download a version of CONN from [https://www.nitrc.org/frs/?group_id=279](https://www.nitrc.org/frs/?group_id=279)
-2.  Extract the .zip archive to  `/sw/contrib/labname-src/conn/conn<version>/`  
-    For example, if installing version `v.22.a` from `conn22a.zip`, then run the following:  
-    ```bash  
-    LABNAME=escience # <1>
-    VERSION=v.22.a # <2>
-    TARGET="/sw/contrib/${LABNAME}-src/conn/" # <3>
-    mkdir -p "${TARGET}" # <4>
-    unzip conn22a.zip -d "${TARGET}" # <5>
-    mv "$TARGET/conn" "${TARGET}/${VERSION}" # <6>
+1. Go to <https://www.nitrc.org/frs/?group_id=279>, choose the version of CONN you want to install, copy the download link to the file (with the extension `.zip`), and download the file by running the following command on a Klone login or compute node. We'll use version 21a as an example:
+   ```bash
+    wget -P "/gscratch/scrubbed/$USER/downloads" https://www.nitrc.org/frs/download.php/12426/conn21a.zip # <1>
     ```
-    1. Set the labname to the name of the lab that is installing the software.  
-    2. Set the version to the version of SPM that is being installed.  
-    3. Set the target directory to the directory where the software will be installed.  
-    4. Create the target directory if it does not exist.  
-    5. Extract the SPM archive to the target directory.  
+    1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/start/klone-storage.qmd) to storage on Klone for more information.
+   
+2. Extract the .zip archive to `/sw/contrib/mylabname-src/conn` (replacing `mylabname` with the name of your lab).   
+   For example, if installing version `21a` of CONN, then run the following:
+   
+   ```bash
+   # Be sure to replace "mylabname" with the name of your lab!
+    LABNAME=mylabname # <1>
+    mkdir -p "/sw/contrib/${LABNAME}-src/conn" # <1>
+    unzip -n conn21a.zip 'conn/*' -d "/sw/contrib/${LABNAME}-src/conn/v.21.a" # <3>
+   ```
+   1. Create the target directory if it does not exist.  
+   2. Extract the conn archive to the target directory.
+   
+3.  Download a version of CONN from [https://www.nitrc.org/frs/?group_id=279](https://www.nitrc.org/frs/?group_id=279)
+4. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).   
+   
+   ```bash
+   # Be sure to replace "mylabname" with the name of your lab!
+   LABNAME=mylabname # <1>
+   mkdir -p "/sw/contrib/${LABNAME}-src/conn" # <2>
+   unzip -n "/gscratch/scrubbed/$USER/downloads/conn21a.zip" -d "/sw/contrib/${LABNAME}$-src/conn/v.21.a" # <3>
+   ```
+    1. Create the target directory if it does not exist.  
+    2. Extract the SPM archive to directory `v.21.a` within the target directory. (The `-n` flag prevents overwriting existing files if someone has already installed this version of CONN.)
   
-3.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
-    ``` {.lua filename=/sw/contrib/modulefiles/labname/conn/v.22.a.lua}
-    help([[conn-v.22.a]])
-    local labname = "escience"
-    local version = "v.22.a" # <1>
-    local base = pathJoin("/sw/contrib/" .. labname .. "-src/conn", version)
+5.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
+    ``` {.lua filename=/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua}
+    -- Be sure to replace "mylabname" with the name of your lab!
+    help([[conn-v.21.a]])
+    local labname = "mylabname"
+    local version = "v.21.a"
+    local base = pathJoin("/sw/contrib/" .. labname .. "-src/conn", version, "conn")
     depends_on("matlab")
     depends_on("escience/spm")
     append_path("MATLABPATH", base)
     whatis("Name: CONN")
     whatis("Version: " .. version)
-    ```  
-    1. Set the version to the version of CONN that is being installed.
+    ``` 
+6. Remove the downloaded file when you are done with it:
+   
+   ```bash
+   rm -v "/gscratch/scrubbed/$USER/downloads/conn21a.zip"
+   ```
 
 ::: callout-note
 Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or `--ignore_cache` flag to force Lmod to check for new modules.
 
-```bash
-module -I load labname/conn
+``` bash
+module -I load mylabname/spm
 ```
 :::
