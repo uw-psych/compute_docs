@@ -25,8 +25,6 @@ jobs:
           # tinytex: true 
           # uncomment below and fill to pin a version
           version: pre-release
-      - name: Install quarto glossary
-        run: "quarto install extension debruine/quarto-glossary"
       # NOTE: If Publishing to GitHub Pages, set the permissions correctly (see top of this yaml)
       - name: Publish to GitHub Pages (and render) 
         uses: quarto-dev/quarto-actions/publish@v2
