@@ -70,10 +70,7 @@ You can install different versions of SPM and CONN by following the instructions
    1. Create the target directory if it does not exist.  
    2. Extract the SPM archive to the target directory (The `-n` flag prevents overwriting existing files if someone has already installed this version of SPM.).
    
-3. Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
-   
-   For example, if installing version 12 of SPM, then run the following:
-   
+3. Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:     
    ``` {.lua filename=/sw/contrib/modulefiles/mylabname/spm/8.lua}
    help([[spm8]])
     -- Be sure to replace "mylabname" with the name of your lab!
@@ -113,7 +110,8 @@ You can install different versions of SPM and CONN by following the instructions
     2. Extract the SPM archive to directory `v.21.a` within the target directory. (The `-n` flag prevents overwriting existing files if someone has already installed this version of CONN.)
   
 3.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
-    ``` {.lua filename=/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua}
+
+    ``` {.lua filename=/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua }
     -- Be sure to replace "mylabname" with the name of your lab!
     help([[conn-v.21.a]])
     local labname = "mylabname"
@@ -124,7 +122,8 @@ You can install different versions of SPM and CONN by following the instructions
     append_path("MATLABPATH", base)
     whatis("Name: CONN")
     whatis("Version: " .. version)
-    ``` 
+    ```
+
 4. Remove the downloaded file when you are done with it:
    
    ```bash

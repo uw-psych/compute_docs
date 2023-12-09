@@ -45,7 +45,6 @@ format:
       - _static/custom.scss
     mainfont: "Helvetica, Liberation Sans, Free Sans, Arial, sans-serif"
     monofont: "var(---term-font-family)"
-    fontsize: 1.0em
     linestrech: 1.0
     grid:
       sidebar-width: "20%"
