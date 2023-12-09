@@ -41,7 +41,7 @@ website:
 format:
   html:
     theme:
-      - cosmo
+      - flatly
       - _static/custom.scss
     mainfont: "Helvetica, Liberation Sans, Free Sans, Arial, sans-serif"
     monofont: "var(---term-font-family)"

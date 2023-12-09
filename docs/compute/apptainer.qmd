@@ -193,7 +193,7 @@ In my case, Python 3.11 was about 1.3 times faster than Python 3.10. Not bad!
 
 #### Demo
 
-Here's a demo of the above commands. Note that I used 'M=200` and `N=50_000` instead of `M=1000` and `N=100_000` because it takes a long time to run the script with the larger values of `M` and `N`.
+Here's a demo of the above commands. Note that I used `M=200` and `N=50_000` instead of `M=1000` and `N=100_000` because it takes a long time to run the script with the larger values of `M` and `N`.
 
 ::::: {.cast #apptainer-python-speedtest}
 :::::
