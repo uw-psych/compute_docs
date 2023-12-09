@@ -1,0 +1,96 @@
+---
+description: "Options and best practices for managing storage on Klone"
+order: 70
+---
+# Storage on Klone
+
+
+Klone has a number of storage options available to users.  This page describes the options and best practices for using them.
+
+## Overview
+
+The Klone cluster makes available several locations for storing data, some of which are shared across the login nodes and compute nodes, and some of which are only available to the node where a job is running.
+
+### Shared storage
+
+The following storage locations are shared across the login nodes and compute nodes:
+
+#### Home directory
+
+Every user on Klone has a home directory, which is the default location for storing files.  The home directory is located at `/mmfs1/home/<username>`. The home directory is where you are when you log in to the {{< term "login node" >}}, and it is also acessible by any compute node where you have a job running.
+
+::: important
+None of the storage locations on Klone are backed up.  If you need to store data that you cannot afford to lose, you should use a different storage location -- see our [guide to storage](/docs/storage) for more information.
+:::
+
+Currently, there is a **10 GiB** quota on the home directory. This quota is enforced by the system, and you will not be able to write to your home directory if you exceed it.  You can check your quota with the `hyakstorage` command when you are logged in to any Klone node:
+
+```bash
+hyakstorage --home # <1>
+```
+
+1. The `--home` flag tells `hyakstorage` to check your home directory quota.
+
+The result will look something like this:
+
+```text
+                       Usage report for /mmfs1/home/altan                       
+╭───────────────────┬────────────────────────────┬─────────────────────────────╮
+│                   │ Disk Usage                 │ Files Usage                 │
+├───────────────────┼────────────────────────────┼─────────────────────────────┤
+│ Total:            │ 1GB / 10GB                 │ 11579 / 256000 files        │
+│                   │ 10%                        │ 5%                          │
+╰───────────────────┴────────────────────────────┴─────────────────────────────╯
+```
+
+It is important to note that the home directory is not intended for storing large amounts of data.  If you need to store more than a few GiB of data, you should use one of the other storage options described below.
+
+::: important
+A lot of software will save files to your home directory by default. Python, for example, will install packages to `~/.local/lib/python3.6` by default when they are installed using `pip install --user`.  [Apptainer](/docs/compute/apptainer.qmd) will also cache images in `~/.apptainer/cache` by default. Fortunately, both of these can be changed by setting environment variables or using solutions like [virtual environments](https://docs.python.org/3/tutorial/venv.html).
+
+If you are installing software, you should always check to see where it is being installed, and make sure that it is not being installed to your home directory unless you have a good reason for doing so.
+:::
+
+#### `gscratch`
+
+Every group on Klone has a directory under `/mmfs1/gscratch` (also aliased as `/gscratch`), which is a good place to store data that you are using for a job, as well as any data and libraries you install. The `gscratch` directory is accessible from any node.
+
+Each group has a quota on their `gscratch` directory, and you will not be able to write to your group's `gscratch` directory if you exceed it.
+
+You can find out the locataion of your group's `gscratch` directory and see how much is used of your available capacity using the `hyakstorage` command when you are logged in to any Klone node:
+
+```bash
+hyakstorage --gscratch # <1>
+```
+1. The `--gscratch` flag tells `hyakstorage` to check your group's `gscratch` quota.
+
+The result will look something like this:
+
+```text
+                   Usage report for /mmfs1/gscratch/escience                    
+╭───────────────────┬────────────────────────────┬─────────────────────────────╮
+│                   │ Disk Usage                 │ Files Usage                 │
+├───────────────────┼────────────────────────────┼─────────────────────────────┤
+│ Total:            │ 3305GB / 4096GB            │ 710698 / 4000000 files      │
+│                   │ 81%                        │ 18%                         │
+│ My usage:         │ 41GB                       │ 11776 files                 │
+╰───────────────────┴────────────────────────────┴─────────────────────────────╯
+```
+
+The line at the top shows the location of your group's `gscratch` directory.
+
+::: callout-info
+
+Every lab or group has its own quota for `/gscratch` storage. By default, the quota is 1 TiB per {{< term slice >}} (or 4 TiB for a GPU slice). Additional storage is [available](https://hyak.uw.edu/docs/storage/gscratch#group-or-lab-directories) at $10/TiB/month as of 2023-12-08.
+
+:::
+
+#### `/gscratch/scrubbed`
+
+There is also a directory `/gscratch/scrubbed`, which is a scratch directory where any data not accessed in 21 days is **automatically deleted**. This directory is slower than other directories under /`gscratch`. There is no quota on this directory, but you should not store data here that you cannot afford to lose.
+
+## References
+
+- <https://hyak.uw.edu/blog/klone-storage-update>
+- <https://hyak.uw.edu/docs/storage>
+

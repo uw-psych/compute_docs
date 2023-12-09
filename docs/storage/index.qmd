@@ -2,7 +2,10 @@
 title: "Storage"
 ---
 
-This section describes different options for storing research data for the University of Washington Department of Psychology.
+This section describes different options for storing research data for the University of Washington Department of Psychology. 
+
+For information about storing data on {{< term Klone >}}, see [here](/docs/start/klone-storage.qmd).  
+
 
 ## Comparison
 

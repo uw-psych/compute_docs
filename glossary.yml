@@ -85,3 +85,7 @@ bash: |
 bashrc: |
   A file that contains commands that are run when a bash shell is started. See [here](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html) for more information.
 
+slice: |
+  On the Klone cluster, a slice is a unit of allocation for compute resources that is bought by a research group. See [here](https://hyak.uw.edu/blog/terminology-reset) for more information.
+
+
