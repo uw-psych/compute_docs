@@ -104,7 +104,7 @@ You can install different versions of SPM and CONN by following the instructions
    # Be sure to replace "mylabname" with the name of your lab!
    LABNAME=mylabname # <1>
    mkdir -p "/sw/contrib/${LABNAME}-src/conn" # <2>
-   unzip -n "/gscratch/scrubbed/$USER/downloads/conn21a.zip" -d "/sw/contrib/${LABNAME}$-src/conn/v.21.a" # <3>
+   unzip -n "/gscratch/scrubbed/$USER/downloads/conn21a.zip" -d "/sw/contrib/${LABNAME}-src/conn/v.21.a" # <3>
    ```
     1. Create the target directory if it does not exist.  
     2. Extract the SPM archive to directory `v.21.a` within the target directory. (The `-n` flag prevents overwriting existing files if someone has already installed this version of CONN.)
