@@ -1,7 +1,6 @@
 project:
   type: website
-  resources:
-    - "_static/asciicasts/casts/*"
+
 website:
   title: "UW Psychology"
   page-navigation: true
