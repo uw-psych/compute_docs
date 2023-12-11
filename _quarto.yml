@@ -1,6 +1,7 @@
 project:
   type: website
-
+resources:
+  - "_static/**"
 website:
   title: "UW Psychology"
   page-navigation: true

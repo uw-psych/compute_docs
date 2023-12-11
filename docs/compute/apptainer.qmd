@@ -2,8 +2,6 @@
 title: "Apptainer"
 description: The Apptainer container environment
 order: 20
-resources:
-    - "apptainer-python-speedtest.cast"
 include-in-header:
     text: |
         <link rel="stylesheet" type="text/css" href="/_static/asciicasts/asciinema-player.css" />
@@ -13,7 +11,7 @@ include-after-body:
         <script>
             term_font_family="'Iosevka Term Web', monospace'"
             document.querySelectorAll('.cast').forEach((block) => {
-                AsciinemaPlayer.create("./" + block.id + ".cast", block, {
+                AsciinemaPlayer.create("/_static/asciicasts/casts/" + block.id + ".cast", block, {
                       terminalFontFamily: 'Iosevka Term Web, monospace',
                        fit: false
                 }) 
