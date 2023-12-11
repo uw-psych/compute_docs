@@ -2,7 +2,7 @@
 title: "Apptainer"
 description: The Apptainer container environment
 order: 20
-  resources:
+resources:
     - "_static/asciicasts/casts/apptainer-python-speedtest.cast"
 include-in-header:
     text: |
@@ -47,7 +47,7 @@ apptainer --version # apptainer version 1.1.5
 To see all available versions of Apptainer, run:
 
 ```bash
-module avail apptainer
+module -t spider apptainer
 ```
 
 The default module is indicated by the tag `(D)` following the version.
