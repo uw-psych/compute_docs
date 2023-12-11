@@ -3,7 +3,7 @@ title: "Apptainer"
 description: The Apptainer container environment
 order: 20
 resources:
-    - "_static/asciicasts/casts/apptainer-python-speedtest.cast"
+    - "/_static/asciicasts/casts/apptainer-python-speedtest.cast"
 include-in-header:
     text: |
         <link rel="stylesheet" type="text/css" href="/_static/asciicasts/asciinema-player.css" />
@@ -73,8 +73,10 @@ These directories include:
 - `$PWD` (the current working directory, i.e. the directory you are in when you run `apptainer`)
 
 The Klone Apptainer installation is also configured to bind several other following directories to the same path in the container, including:
+
 - `/mmfs1` (the main filesystem)
 - `/scr` (the scratch filesystem, same as `/tmp`)
+
 :::
 
 We recommend setting the following binds before running a container:
