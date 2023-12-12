@@ -322,7 +322,7 @@ GitHub repositories can be made publicly available, or can be made private. Priv
 
 ##### GitHub Packages
 
-[GitHub Packages](https://docs.github.com/en/packages) can be used to create {{< term container image display="container images" >}} that can be uploaded to the [GitHub Container Registry](https://ghcr.io.). For public repositories, there are no charges nor storage limits. For private repositories, storage limits and charges [apply](https://docs.github.com/en/billing/managing-billing-for-github-packages/about-billing-for-github-packages). A GitHub account is required to access GitHub Packages.
+[GitHub Packages](https://docs.github.com/en/packages) can be used to create {{< term container "image|container images" >}} that can be uploaded to the [GitHub Container Registry](https://ghcr.io.). For public repositories, there are no charges nor storage limits. For private repositories, storage limits and charges [apply](https://docs.github.com/en/billing/managing-billing-for-github-packages/about-billing-for-github-packages). A GitHub account is required to access GitHub Packages.
 
 Although GitHub Packages is not designed to store research data, it can be used to store research data in the form of a {{< term container image >}} containing an archive of research data (similar to a ZIP file). The data cannot be viewed or modified while stored in GitHub Packages, but can be downloaded and extracted from the {{< term container image >}}. Any changes to the data require creating a new image and uploading it to GitHub Packages.
 

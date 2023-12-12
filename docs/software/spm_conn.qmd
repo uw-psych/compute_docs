@@ -3,11 +3,11 @@ description: Statistical parametric mapping and functional connectivity toolboxe
 ---
 # SPM and CONN Toolboxes
 
-[Statistical Parametric Mapping (SPM)](https://www.fil.ion.ucl.ac.uk/spm/) and [CONN](https://web.conn-toolbox.org/) are available as [{{< term Lmod >}}](../compute/lmod.qmd) modules on {{< term Klone >}} {{< term "compute node" display="compute nodes" >}} >}}
+[Statistical Parametric Mapping (SPM)](https://www.fil.ion.ucl.ac.uk/spm/) and [CONN](https://web.conn-toolbox.org/) are available as [{{< term Lmod >}}](../compute/lmod.qmd) modules on {{< term Klone >}} {{< term "compute node|compute nodes" >}} >}}
 
 ## Use with Lmod
 
-Like all {{< term Lmod >}} modules, the `spm` and `conn` modules are available only on {{< term Klone >}} {{< term "compute node" display="compute nodes" >}}, and these commands will not work on the {{< term "login node" >}}.
+Like all {{< term Lmod >}} modules, the `spm` and `conn` modules are available only on {{< term Klone >}} {{< term "compute node|compute nodes" >}}, and these commands will not work on the {{< term "login node" >}}.
 
 ### Checking available versions
 

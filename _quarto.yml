@@ -41,10 +41,13 @@ format:
       - flatly
       - _static/custom.scss
     mainfont: "Helvetica, Liberation Sans, Free Sans, Arial, sans-serif"
-    monofont: "var(--term-font-family)"
+    monofont: "Cascadia Code, Consolas, Liberation Mono, Courier New, monospace"
     linestrech: 1.0
     grid:
       sidebar-width: "20%"
     code-annotations: hover
+    link-external-icon: true
+    link-external-filter: "^javascript:void[(]0[)]"
+
 popover_glossary:
   path: glossary.yml

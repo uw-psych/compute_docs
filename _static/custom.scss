@@ -4,45 +4,11 @@
 }
 
 @font-face {
-  font-family: 'Iosevka Term Web';
+  font-family: 'Cascadia Mono';
+  font-style: normal;
   font-display: swap;
   font-weight: 400;
-  font-stretch: normal;
-  font-style: normal;
-  src: url('_static/fonts/iosevka-term-regular.woff2') format('woff2'), url('_static/fonts/iosevka-term-regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Iosevka Term Web';
-  font-display: swap;
-  font-weight: 700;
-  font-stretch: normal;
-  font-style: normal;
-  src: url('_static/fonts/iosevka-term-bold.woff2') format('woff2'), url('_static/fonts/iosevka-term-bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Iosevka Term Web';
-  font-display: swap;
-  font-weight: 700;
-  font-stretch: normal;
-  font-style: italic;
-  src: url('_static/fonts/iosevka-term-bolditalic.woff2') format('woff2'), url('_static/fonts/iosevka-term-bolditalic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Iosevka Term Web';
-  font-display: swap;
-  font-weight: 400;
-  font-stretch: normal;
-  font-style: italic;
-  src: url('_static/fonts/iosevka-term-italic.woff2') format('woff2'), url('_static/fonts/iosevka-term-italic.ttf') format('truetype');
-}
-
-:root {
-  --term-font-family: 'Iosevka Term Web', 'Iosevka Termm', 'Iosevka', monospace;
-  --quarto-font-monospace: var(--quarto-font-monospace);
-  
+  src: url('_static/fonts/CascadiaMono.woff2') format('woff2');
 }
 
 .ap-wrapper {

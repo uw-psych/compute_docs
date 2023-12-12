@@ -1,0 +1,39 @@
+Bootstrap: docker # Specify where to get the container from.
+From: python:{{PY_VERSION}} # Which container to use as a base.
+
+# Define the arguments that can be passed at `apptainer build` time:
+%arguments
+    # This replaces {{PY_VERSION}} in the `From:` line above:
+    PY_VERSION=3.10
+  
+%files
+    # Copy the Python script to the container as the command `speedtest`:
+    speedtest-cli.py /opt/local/bin/speedtest
+    
+%environment
+    # Set the virtual environment as the default Python environment:
+    export PATH="/opt/venv/bin:$PATH" # Add the virtual environment to the PATH.
+    export PATH="/opt/local/bin:$PATH" # Add the directory with the `speedtest` command to the PATH.
+
+%post
+    # Create a virtual environment in /opt/venv to install our dependencies:
+    python -m venv /opt/venv
+
+    # Set the virtual environment as the default Python environment for the rest of the script:
+    # (the %environment section does not apply to the %post section)
+    export PATH="/opt/venv/bin:$PATH"
+
+    # Install `click` and don't cache the downloaded files:
+    pip install --no-cache-dir click
+
+    # Print a message to stderr to let the user know that the installation is done:
+    echo "$(python --version): Done installing dependencies." >&2
+    # (python --version prints the result of the command `python --version`.)
+    # (The >&2 part redirects the output to stderr instead of stdout.)
+
+    chmod +x /opt/local/bin/speedtest # Make the `speedtest` command executable.
+
+%runscript
+    # Run the Python script with the arguments passed to the container:
+    speedtest "$@"
+

@@ -88,4 +88,6 @@ bashrc: |
 slice: |
   On the Klone cluster, a slice is a unit of allocation for compute resources that is bought by a research group. See [here](https://hyak.uw.edu/blog/terminology-reset) for more information.
 
+build argument: |
+  A variable that is used to pass information to an Apptainer recipe. See the [Apptainer documentation](https://apptainer.org/docs/user/main/definition_files.html#arguments) for more information.
 
