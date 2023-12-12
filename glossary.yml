@@ -89,5 +89,10 @@ slice: |
   On the Klone cluster, a slice is a unit of allocation for compute resources that is bought by a research group. See [here](https://hyak.uw.edu/blog/terminology-reset) for more information.
 
 build argument: |
-  A variable that is used to pass information to an Apptainer recipe. See the [Apptainer documentation](https://apptainer.org/docs/user/main/definition_files.html#arguments) for more information.
+  A variable that can be set during build time with Apptainer with the `--build-arg` option. See the [Apptainer documentation](https://apptainer.org/docs/user/main/definition_files.html#arguments) for more information.
 
+chmod: |
+  A command that is used to change the permissions of a file or directory, or to mark a file as executable so that it can be run. See [here](https://www.gnu.org/software/coreutils/manual/html_node/chmod-invocation.html) for more information.
+
+"PATH": |
+  An environment variable that contains a list of directories that are searched for executable programs. See [here](https://pubs.opengroup.org/onlinepubs/000095399/basedefs/xbd_chap08.html#tag_08_03) for more information.

@@ -1,58 +1,56 @@
 #!/usr/bin/env python3
 import os, sys, timeit
 import click
-from math import sqrt
 
-@click.command()  # Set up the context for the command line interface
+
+# Set up the context for the command line interface and add the options:
+@click.command()
 @click.option(
     "-n",  # The name of the option
-    envvar="N",  # Use the environment variable N if it exists
-    default=1000,  # Default value if N is not set
-    help="How many numbers to join",  # Help text for the -n option
+    envvar="N",  # Use the environment variable `N` if it exists
+    default=1000,  # Default value if `N` is not set
+    help="How many numbers to join",  # Help text for the `-n` option
     type=int,  # Convert the value to an integer
 )
 @click.option(
-    "-m",  # The name of the option
-    envvar="M",  # Use the environment variable M if it exists
-    default=100,  # Default value if M is not set
-    help="How many times to run the test",  # Help text for the -m option
-    type=int,  # Convert the value to an integer
+    "-m",
+    envvar="M",
+    default=100,
+    help="How many times to run the test",
+    type=int,
 )
 @click.option(
     "--output",
-    envvar="OUTPUT_FILE",  # Use the environment variable OUTPUT_FILE if it exists
-    default="/dev/stdout",  # Default value if OUTPUT_FILE is not set # <1>
-    help="Output file to write the results to",
-    type=click.Path(writable=True, dir_okay=False),
+    default="/dev/stdout",  # Write the result to stdout by default # <1>
+    help="Path to the output file",
+    type=click.Path(writable=True, dir_okay=False),  # <2>
 )
-def speedtest(m, n, output):
+def speedtest(m, n, output):  # <3>
     """Run a speed test."""  # Help text for the command
 
-    bar = click.progressbar(length=n * m,
-        update_min_steps=sqrt(n * m), # How often to update the progress bar
-        label="Joining numbers",
-        file=sys.stderr,
-    )  # <2>
+    def join_nums():  # The function to test
+        return "-".join([str(i) for i in range(n)])
 
-    # Function to test:
-    def join_nums():
-        result = "-".join([str(i) for i in range(n)])
-        bar.update(n)
+    bar = click.progressbar(  # Create a progress bar
+        length=n * m,
+        update_min_steps=n,  # Update the progress bar every `n` steps
+        label=f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}",
+        file=sys.stderr,  # Print the progress bar to stderr
+    )
+
+    def join_nums_progress():  # Wrap the function to add the progress bar
+        result = join_nums()
+        bar.update(n)  # Increment the progress bar by `n` steps
         return result
 
-    # Print details about the test to stderr:
-    print(
-        f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}",
-        file=sys.stderr,
-    )
-    # Run the test:
-    result = timeit.timeit(join_nums, number=m)
-    bar.render_finish()
+    result = timeit.timeit(join_nums_progress, number=m)  # Run the test
 
-    # Print the result:
+    bar.render_finish()  # Stop rendering the progress bar
+
     with open(output, "w") as f:  # Open the output file for writing
-        print(result, file=f)
-    print(f"Result written to {output}", file=sys.stderr)
+        print(result, file=f)  # Write the result to the output file
 
-# Run the command:
+    if output != "/dev/stdout":  # Show the output path if it's not stdout
+        print(f"Result written to {output}", file=sys.stderr)
+
 speedtest()

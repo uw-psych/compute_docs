@@ -9,4 +9,5 @@ listing:
     - "docs/software/index.qmd"
     - "docs/compute/index.qmd"
     - "docs/storage/index.qmd"
+    - "docs/CONTRIBUTING.qmd"
 ---

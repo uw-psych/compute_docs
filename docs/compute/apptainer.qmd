@@ -206,65 +206,68 @@ What if we wanted to add a command-line interface to make it possible to run the
 This sounds like a tall order, but it's actually quite easy to do in Python using the [click](https://click.palletsprojects.com) package for Python. Here's the new script:
 
 ``` {.python filename="speedtest-cli.py"}
-#!/usr/bin/env python3
 import os, sys, timeit
 import click
-from math import sqrt
 
-@click.command()  # Set up the context for the command line interface
+
+# Set up the context for the command line interface and add the options:
+@click.command()
 @click.option(
     "-n",  # The name of the option
-    envvar="N",  # Use the environment variable N if it exists
-    default=1000,  # Default value if N is not set
-    help="How many numbers to join",  # Help text for the -n option
+    envvar="N",  # Use the environment variable `N` if it exists
+    default=1000,  # Default value if `N` is not set
+    help="How many numbers to join",  # Help text for the `-n` option
     type=int,  # Convert the value to an integer
 )
 @click.option(
-    "-m",  # The name of the option
-    envvar="M",  # Use the environment variable M if it exists
-    default=100,  # Default value if M is not set
-    help="How many times to run the test",  # Help text for the -m option
-    type=int,  # Convert the value to an integer
+    "-m",
+    envvar="M",
+    default=100,
+    help="How many times to run the test",
+    type=int,
 )
 @click.option(
     "--output",
-    envvar="OUTPUT_FILE",  # Use the environment variable OUTPUT_FILE if it exists
-    default="/dev/stdout",  # Default value if OUTPUT_FILE is not set # <1>
-    help="Output file to write the results to",
-    type=click.Path(writable=True, dir_okay=False),
+    default="/dev/stdout",  # Write the result to stdout by default # <1>
+    help="Path to the output file",
+    type=click.Path(writable=True, dir_okay=False),  # <2>
 )
-def speedtest(m, n, output):
+def speedtest(m, n, output):  # <3>
     """Run a speed test."""  # Help text for the command
 
-    bar = click.progressbar(length=n * m,
-        update_min_steps=sqrt(n * m), # How often to update the progress bar
-        label="Joining numbers",
-        file=sys.stderr,
-    )  # <2>
+    def join_nums():  # The function to test
+        return "-".join([str(i) for i in range(n)])
 
-    # Function to test:
-    def join_nums():
-        result = "-".join([str(i) for i in range(n)])
-        bar.update(n)
+    bar = click.progressbar(  # Create a progress bar
+        length=n * m,
+        update_min_steps=n,  # Update the progress bar every `n` steps
+        label=f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}",
+        file=sys.stderr,  # Print the progress bar to stderr
+    )
+
+    def join_nums_progress():  # Wrap the function to add the progress bar
+        result = join_nums()
+        bar.update(n)  # Increment the progress bar by `n` steps
         return result
 
-    # Print details about the test to stderr:
-    print(
-        f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}",
-        file=sys.stderr,
-    )
-    # Run the test:
-    result = timeit.timeit(join_nums, number=m)
-    bar.render_finish()
+    result = timeit.timeit(join_nums_progress, number=m)  # Run the test
 
-    # Print the result:
+    bar.render_finish()  # Stop rendering the progress bar
+
     with open(output, "w") as f:  # Open the output file for writing
-        print(result, file=f)
-    print(f"Result written to {output}", file=sys.stderr)
+        print(result, file=f)  # Write the result to the output file
 
-# Run the command:
-speedtest()
+    if output != "/dev/stdout":  # Show the output path if it's not stdout
+        print(f"Result written to {output}", file=sys.stderr)
+
+
+if __name__ == "__main__":  # Run the script if it's executed directly # <4>
+    speedtest()
 ```
+1. We set the default value of `--output` to `/dev/stdout` so that the script will print the result to <tt>{{< term stdout >}}</tt> by default.
+2. `click` provides a [`Path`](https://click.palletsprojects.com/en/8.1.x/api/#click.Path) type that can be used to validate paths. The `writable=True` option tells `click` that the path must be writable. The `dir_okay=False` option tells `click` that the path must not be a directory.
+3. The `@click.command()` [decorator](https://docs.python.org/3.10/glossary.html#term-decorator) tells `click` that the first function definition that follows defines a command. The `@click.option()` decorators add options to the command-line interface. `click` passes the values of these options to the function using the names of the options (lowercased and with `-` replaced by `_`).
+4. The `__name__ == "__main__"` check ensures that the script is only run if it is executed directly and not if it is imported as a module. This is useful if you want to use the script as a module in another script. We don't *need* to do this here, but it's a good habit to get into.
 
 Now, let's try running the script with `apptainer exec`:
 
@@ -277,58 +280,81 @@ You probaby got a `ModuleNotFoundError` because the `click` package is not insta
 We'll solve this by writing an [Apptainer definition file](https://apptainer.org/docs/user/latest/definition_files.html) to build a custom Apptainer image that contains the `click` module. Here's the definition file:
 
 ``` {.bash filename="speedtest.def"}
-Bootstrap: docker # Specify where to get the container from.
-From: python:{{PY_VERSION}} # Which container to use as a base.
+Bootstrap: docker # Where to get the base image from. # <1>
+From: python:{{ PY_VERSION }} # Which container to use as a base image. # <2>
 
-# Define the arguments that can be passed at `apptainer build` time:
-%arguments
-    # This replaces {{PY_VERSION}} in the `From:` line above:
-    PY_VERSION=3.10
+%arguments # <3>
+    # The version of Python to use:
+    PY_VERSION=3.10-slim
   
 %files
-    # Copy the Python script to the container as the command `speedtest`:
-    speedtest-cli.py /opt/local/bin/speedtest
-    
-%environment
-    # Set the virtual environment as the default Python environment:
-    export PATH="/opt/venv/bin:$PATH" # Add the virtual environment to the PATH.
-    export PATH="/opt/local/bin:$PATH" # Add the directory with the `speedtest` command to the PATH.
+    speedtest-cli.py /opt/local/bin/speedtest # Copy the script to the container. # <4>
 
-%post
+%post # <5>
     # Create a virtual environment in /opt/venv to install our dependencies:
-    python -m venv /opt/venv
-
-    # Set the virtual environment as the default Python environment for the rest of the script:
-    # (the %environment section does not apply to the %post section)
-    export PATH="/opt/venv/bin:$PATH"
+    /usr/local/bin/python -m venv /opt/venv # <6>
 
     # Install `click` and don't cache the downloaded files:
-    pip install --no-cache-dir click
+    /opt/venv/bin/pip install --no-cache-dir click # <7>
 
     # Print a message to stderr to let the user know that the installation is done:
-    echo "$(python --version): Done installing dependencies." >&2
-    # (python --version prints the result of the command `python --version`.)
-    # (The >&2 part redirects the output to stderr instead of stdout.)
+    echo "$(/opt/venv/bin/python3 --version): Done installing dependencies." >&2 # <8>
 
-    chmod +x /opt/local/bin/speedtest # Make the `speedtest` command executable.
+    # Make the `speedtest` command executable:
+    chmod +x /opt/local/bin/speedtest # <9>
 
-%runscript
+%environment # <10>
+    export PATH="/opt/local/bin:$PATH" # Add the directory with the `speedtest` command to the PATH. # <11>
+    export PATH="/opt/venv/bin:$PATH" # Add the virtual environment to the PATH. # <12>
+
+%runscript # <13>
     # Run the Python script with the arguments passed to the container:
-    speedtest "$@"
+    speedtest "$@" # <14>
 
+%test # <15>
+    # Run the speedtest command to check if it works:
+    speedtest -m 2000 -n 1000
 ```
+1. Each definition file [must start](https://apptainer.org/docs/user/latest/definition_files.html#header) with a `Bootstrap` line that tells Apptainer where to get the base image from. In this case, we're using the `docker` bootstrap, which means that we're getting the base image from the Docker registry.
+2. We're using the `python:{{ PY_VERSION }}` image as the base image. The `{{ PY_VERSION }}` part refers to a [template variable](https://apptainer.org/docs/user/latest/definition_files.html#template-variables) and will be replaced with the value of the `PY_VERSION` [build argument](https://apptainer.org/docs/user/latest/definition_files.html#arguments) when we build the image. This means that we can use the same definition file to build images for different versions of Python. Note that we are *not* using the `python:*-slim` images as the base image because they do not contain the `pip` command, which we need to install the `click` module.
+3. The definition file is split into [sections](https://apptainer.org/docs/user/latest/definition_files.html#sections). The [`%arguments`](https://apptainer.org/docs/user/latest/definition_files.html#arguments)  section defines the {{< term "build argument|build arguments" >}} for the image. We're using the `PY_VERSION` argument to specify the version of Python to use, and we're setting the default value to `3.10`.
+4. The [`%files`](https://apptainer.org/docs/user/latest/definition_files.html#files) section defines the files to copy inside the container. We're copying the `speedtest-cli.py` script to `/opt/local/bin/speedtest` in the container. /opt/local/bin is a good place to put scripts that you want to be able to run from anywhere in the container, but you should add the directory to the `PATH` environment variable if you want to be able to run the script without specifying the full path to the script. We're removing the `.py` extension from the script name because we want to be able to run the script by typing `speedtest` instead of `speedtest-cli.py`.
+5. The [`%post`](https://apptainer.org/docs/user/latest/definition_files.html#post) section defines the commands to run inside the container after the base image has been downloaded. This is where you should install any dependencies that your script needs.
+6. We're using the `python -m venv` command to create a virtual environment in `/opt/venv`, which is where we will install the `click` module.
+7. We run `pip` from the virtual environment to install the `click` module. We use the `--no-cache-dir` option to tell `pip` not to cache the downloaded files. This is useful because we don't need the downloaded files after we've installed the `click` module -- otherwise, they would just take up space in the built image.
+8. We're using the `echo` command to print a message to {{< term stderr >}} to let the user know that the installation is done. We're using the `>&2` operator to redirect the output of `echo` to {{< term stderr >}} instead of {{< term stdout >}}. The `$(...)` syntax runs the commands within and inserts the output into a string. In this case, we're using it to insert the output of `python3 --version` into the string we're about to print with `echo`. This helps the user know which version of Python the built image will contain.
+9. We're using the `chmod` command to make the `speedtest` command executable -- otherwise, we wouldn't be able to run it without passing it to the `python3` command.
+10. The [`%environment`](https://apptainer.org/docs/user/latest/definition_files.html#environment) section defines the environment variables to set in the container. Note that the environment variables set in the `%environment` section are only set when the container is run. They are *not* set when the image is built, so they are not available in the `%post` section, even if you move the `%environment` section above the `%post` section.
+11. We're prepending `/opt/local/bin` to the existing value of the <tt>{{< term PATH >}}</tt> environment variable so that we can run the `speedtest` command from anywhere in the container. The `PATH` environment variable is used by the shell to find commands. If you want to be able to run a command without specifying the full path to the command, you need to add the directory containing the command to the `PATH` environment variable, separated by a colon (`:`). 
+12. Adding the `/opt/venv/bin` directory to the `PATH` environment variable makes it possible to run the `python` command from the virtual environment we created in the `%post` section. This is necessary because we installed the `click` module in the virtual environment, so we need to run the `python` command from the virtual environment to be able to import the `click` module.
+13. The [`%runscript`](https://apptainer.org/docs/user/latest/definition_files.html#runscript) section defines the command to run when the container is run. In this case, we're running the `speedtest` command we installed in the `%post` section.
+14. We're using the [`$@`](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html#index-_0040) *special parameter* to pass all the arguments passed to the container to the `speedtest` command -- for example, if you run `apptainer exec speedtest.sif --output output.txt`, the `speedtest` command will be run with the arguments `--output output.txt`.
+15. The [`%test`](https://apptainer.org/docs/user/latest/definition_files.html#test) section defines the command to run when the image is built. In this case, we're running the `speedtest` command to make sure that it works.
 
-Now we can build the image:
+Now we can build the image using the [`apptainer build`](https://apptainer.org/docs/user/latest/cli/apptainer_build.html) command. The first argument is the name of the image to build. The second argument is the path to the definition file:
 
 ```bash
 apptainer build speedtest-py3.10.sif speedtest.def
 ```
 
-And now we can run the script using the new image with the `apptainer run` commanad, which is similar to `apptainer exec` but runs the command specified in the definition file instead of the `python` command specified as an argument:
+It might take a little while to build the image. If everything goes according to plan, you should see the output of a test run at the end of the build process, when the `%test` section is run.
+
+When it's done, the image will be saved as `speedtest-py3.10.sif` in the current directory. This image encapsulates the script and all its dependencies, so we can run it on any system that has Apptainer installed without having to worry about whether the system has a specific version of Python or the `click` module installed. Furthermore, because we defined a `%runscript` section in the definition file, we can run the script without having to specify the `python3` command.
+
+To run the containerized script, we can run the [`apptainer run`](https://apptainer.org/docs/user/latest/cli/apptainer_run.html) command, which is similar to [`apptainer exec`](https://apptainer.org/docs/user/latest/cli/apptainer_exec.html) but launches the commands in the `%runscript` section of the definition file instead of the command specified as an argument:
 
 ```bash
 apptainer run speedtest-py3.10.sif
 ```
+
+You should see a progress bar and the result of the test.
+
+Because the container image is {{< term chmod|marked >}} as an executable, we can also run it directly without having to specify the `apptainer` command (although it will still run using Apptainer):
+
+```bash
+./speedtest-py3.10.sif
+```
+
 
 Try it with some different values of `M` and `N`:
 
