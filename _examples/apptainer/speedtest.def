@@ -36,4 +36,3 @@ From: python:{{PY_VERSION}} # Which container to use as a base.
 %runscript
     # Run the Python script with the arguments passed to the container:
     speedtest "$@"
-

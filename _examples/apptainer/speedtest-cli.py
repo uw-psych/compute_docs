@@ -3,7 +3,6 @@ import os, sys, timeit
 import click
 from math import sqrt
 
-
 @click.command()  # Set up the context for the command line interface
 @click.option(
     "-n",  # The name of the option
@@ -29,8 +28,7 @@ from math import sqrt
 def speedtest(m, n, output):
     """Run a speed test."""  # Help text for the command
 
-    bar = click.progressbar(
-        length=n * m,
+    bar = click.progressbar(length=n * m,
         update_min_steps=sqrt(n * m), # How often to update the progress bar
         label="Joining numbers",
         file=sys.stderr,
@@ -55,7 +53,6 @@ def speedtest(m, n, output):
     with open(output, "w") as f:  # Open the output file for writing
         print(result, file=f)
     print(f"Result written to {output}", file=sys.stderr)
-
 
 # Run the command:
 speedtest()
