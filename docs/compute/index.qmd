@@ -5,6 +5,6 @@ listing:
     - "*.qmd"
 ---
 
-UW Hyak clusters use Slurm to manage access to compute resources and schedule compute jobs.
+UW Hyak clusters use {{<term SLURM >}} to manage access to compute resources and schedule compute jobs.
 
 ## Overview

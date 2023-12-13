@@ -5,6 +5,6 @@ listing:
     - "*.qmd"
 ---
 
-This section will cover modules maintained by labs within the Psychology Department including steps for preparing new modules.
+This section covers software on {{< term Klone >}} maintained by labs within the psychology department. Instructions for adding new software are also included.
 
 ## Overview
