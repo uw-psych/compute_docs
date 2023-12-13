@@ -22,6 +22,7 @@ website:
     foreground: "#FFFF"
     style: docked
     contents:
+      - "index.qmd"
       - section: docs/start/index.qmd
         contents:
           - docs/start/introduction.qmd
