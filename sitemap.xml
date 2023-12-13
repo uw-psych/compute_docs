@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/storage/klone-storage.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
+    <loc>https://uw-psych.github.io/compute_docs/docs/storage/options.html</loc>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
   </url>
   <url>
     <loc>https://uw-psych.github.io/compute_docs/docs/storage/index.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
   </url>
   <url>
     <loc>https://uw-psych.github.io/compute_docs/docs/CONTRIBUTING.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
   </url>
   <url>
     <loc>https://uw-psych.github.io/compute_docs/docs/start/introduction.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/start/hyakvnc.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/compute/lmod.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/compute/index.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/software/matlab.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/software/afni.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/index.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/software/index.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/software/freesurfer.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/software/spm_conn.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/compute/slurm.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
-  </url>
-  <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/compute/apptainer.html</loc>
-    <lastmod>2023-12-13T22:41:34.435Z</lastmod>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
   </url>
   <url>
     <loc>https://uw-psych.github.io/compute_docs/docs/start/index.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/compute/slurm.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/compute/index.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/software/matlab.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/software/index.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/index.html</loc>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/software/spm_conn.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/software/freesurfer.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/software/afni.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/compute/lmod.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/compute/apptainer.html</loc>
+    <lastmod>2023-12-13T23:10:44.731Z</lastmod>
   </url>
   <url>
     <loc>https://uw-psych.github.io/compute_docs/docs/start/connect-ssh.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
   </url>
   <url>
-    <loc>https://uw-psych.github.io/compute_docs/docs/storage/options.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
+    <loc>https://uw-psych.github.io/compute_docs/docs/start/hyakvnc.html</loc>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
+  </url>
+  <url>
+    <loc>https://uw-psych.github.io/compute_docs/docs/storage/klone-storage.html</loc>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
   </url>
   <url>
     <loc>https://uw-psych.github.io/compute_docs/docs/storage/concepts.html</loc>
-    <lastmod>2023-12-13T22:41:34.439Z</lastmod>
+    <lastmod>2023-12-13T23:10:44.735Z</lastmod>
   </url>
 </urlset>
