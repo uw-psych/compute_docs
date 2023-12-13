@@ -31,7 +31,7 @@ This is provided as reference material.
 This is ran from a VNC Apptainer environment with sufficient dependencies.
 :::
 
-TODO: provide steps to prepare Apptainer environment to run installer.
+<!-- TODO: provide steps to prepare Apptainer environment to run installer. -->
 
 1.  Download AFNI installer:
 

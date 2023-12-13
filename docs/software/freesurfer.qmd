@@ -38,7 +38,7 @@ This is provided as reference material.
 This is tested from a VNC Apptainer environment with sufficient dependencies.
 :::
 
-TODO: provide steps to prepare Apptainer environment to run installer.
+<!-- TODO: provide steps to prepare Apptainer environment to run installer. -->
 
 1.  Go to https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall and download the latest FreeSurfer tar archive for CentOS 8
 

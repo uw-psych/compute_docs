@@ -32,4 +32,5 @@ matlab -nodisplay
 
 ## Installing a different version
 
-TODO
+<!-- TODO: Add instructions for installing a different version of MATLAB -->
+
