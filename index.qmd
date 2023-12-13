@@ -11,3 +11,5 @@ listing:
     - "docs/storage/index.qmd"
     - "docs/CONTRIBUTING.qmd"
 ---
+
+Welcome to the documentation for computing at the University of Washington Psychology Department. This documentation is intended to be a living document, and we welcome contributions from the community.
