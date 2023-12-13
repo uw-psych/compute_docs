@@ -54,7 +54,7 @@ format:
       sidebar-width: "20%"
     code-annotations: hover
     link-external-icon: true
-    link-external-filter: "(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs)"
+    link-external-filter: "(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs.*)"
 
 popover_glossary:
   path: glossary.yml
