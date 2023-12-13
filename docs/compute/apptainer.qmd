@@ -130,6 +130,11 @@ print(result)  # <4>
 3. `timeit.timeit()` runs a function multiple times and returns the average time it took to run the function.
 4. The `print` function prints to the {{< term "stdout|standard output" >}} stream (`stdout`) by default. We can redirect this to a file in {{< term bash >}} using the `>` operator.
 
+
+::: {.callout-tip title="How to paste and save a file in the terminal"}
+You can use the `nano` command to create a new file and paste the contents of the file into the terminal. To do this, run `nano <filename>` in the terminal, paste the contents of the file into the terminal, and press `Ctrl+X` to exit. You will be asked if you want to save the file. Press `Y` to save the file and `Enter` to confirm the filename.
+:::
+
 Now let's run the script using Python 3.10 and Python 3.11. For the image, we will use the `python:3.10-slim` and `python:3.11-slim` images from the official [Python images](https://hub.docker.com/_/python).
 
 ::: {.callout-tip title="Tagged container releases"}
@@ -148,7 +153,7 @@ apptainer exec docker://python:3.10-slim python3 speedtest.py # <1>
 You should see something like:
 
 ```bash
-Running join_nums() 1000*100 times on Python v3.11 # <1>
+Running join_nums() 1000*100 times on Python v3.10 # <1>
 0.003154174002702348 # <2>
 ```
 1. This is printed to {{< term stderr >}} because we used `print(..., file=sys.stderr)` in the script.
@@ -196,7 +201,6 @@ In my case, Python 3.11 was about 1.3 times faster than Python 3.10. Not bad!
 Here's a demo of the above commands. Note that I used `M=200` and `N=50_000` instead of `M=1000` and `N=100_000` because it takes a long time to run the script with the larger values of `M` and `N`.
 
 ::::: {.cast #apptainer-python-speedtest}
-<!-- FIXME: Update the cast to reflect the new script -->
 :::::
 
 ### Writing a definition file to build a custom Apptainer image
@@ -206,6 +210,7 @@ What if we wanted to add a command-line interface to make it possible to run the
 This sounds like a tall order, but it's actually quite easy to do in Python using the [click](https://click.palletsprojects.com) package for Python. Here's the new script:
 
 ``` {.python filename="speedtest-cli.py"}
+#!/usr/bin/env python3
 import os, sys, timeit
 import click
 
@@ -238,10 +243,10 @@ def speedtest(m, n, output):  # <3>
     def join_nums():  # The function to test
         return "-".join([str(i) for i in range(n)])
 
+    print(f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}", file=sys.stderr)
     bar = click.progressbar(  # Create a progress bar
         length=n * m,
         update_min_steps=n,  # Update the progress bar every `n` steps
-        label=f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}",
         file=sys.stderr,  # Print the progress bar to stderr
     )
 
@@ -281,11 +286,11 @@ We'll solve this by writing an [Apptainer definition file](https://apptainer.org
 
 ``` {.bash filename="speedtest.def"}
 Bootstrap: docker # Where to get the base image from. # <1>
-From: python:{{ PY_VERSION }} # Which container to use as a base image. # <2>
+From: python:{{ PY_VERSION }}-slim # Which container to use as a base image. # <2>
 
 %arguments # <3>
     # The version of Python to use:
-    PY_VERSION=3.10-slim
+    PY_VERSION=3.10
   
 %files
     speedtest-cli.py /opt/local/bin/speedtest # Copy the script to the container. # <4>
@@ -316,7 +321,7 @@ From: python:{{ PY_VERSION }} # Which container to use as a base image. # <2>
     speedtest -m 2000 -n 1000
 ```
 1. Each definition file [must start](https://apptainer.org/docs/user/latest/definition_files.html#header) with a `Bootstrap` line that tells Apptainer where to get the base image from. In this case, we're using the `docker` bootstrap, which means that we're getting the base image from the Docker registry.
-2. We're using the `python:{{ PY_VERSION }}` image as the base image. The `{{ PY_VERSION }}` part refers to a [template variable](https://apptainer.org/docs/user/latest/definition_files.html#template-variables) and will be replaced with the value of the `PY_VERSION` [build argument](https://apptainer.org/docs/user/latest/definition_files.html#arguments) when we build the image. This means that we can use the same definition file to build images for different versions of Python. Note that we are *not* using the `python:*-slim` images as the base image because they do not contain the `pip` command, which we need to install the `click` module.
+2. We're using the `python:{{ PY_VERSION }}` image as the base image. The `{{ PY_VERSION }}` part refers to a [template variable](https://apptainer.org/docs/user/latest/definition_files.html#template-variables) and will be replaced with the value of the `PY_VERSION` [build argument](https://apptainer.org/docs/user/latest/definition_files.html#arguments) when we build the image. This means that we can use the same definition file to build images for different versions of Python.
 3. The definition file is split into [sections](https://apptainer.org/docs/user/latest/definition_files.html#sections). The [`%arguments`](https://apptainer.org/docs/user/latest/definition_files.html#arguments)  section defines the {{< term "build argument|build arguments" >}} for the image. We're using the `PY_VERSION` argument to specify the version of Python to use, and we're setting the default value to `3.10`.
 4. The [`%files`](https://apptainer.org/docs/user/latest/definition_files.html#files) section defines the files to copy inside the container. We're copying the `speedtest-cli.py` script to `/opt/local/bin/speedtest` in the container. /opt/local/bin is a good place to put scripts that you want to be able to run from anywhere in the container, but you should add the directory to the `PATH` environment variable if you want to be able to run the script without specifying the full path to the script. We're removing the `.py` extension from the script name because we want to be able to run the script by typing `speedtest` instead of `speedtest-cli.py`.
 5. The [`%post`](https://apptainer.org/docs/user/latest/definition_files.html#post) section defines the commands to run inside the container after the base image has been downloaded. This is where you should install any dependencies that your script needs.
@@ -354,7 +359,6 @@ Because the container image is {{< term chmod|marked >}} as an executable, we ca
 ```bash
 ./speedtest-py3.10.sif
 ```
-
 
 Try it with some different values of `M` and `N`:
 
@@ -413,6 +417,11 @@ apptainer run speedtest-py3.11.sif --output py3.11.txt
 cat py3.10.txt py3.11.txt | apptainer exec speedtest-py3.10.sif python3 -c 'print(float(input())/float(input()))' # <1>
 ```
 1. We're using `apptainer exec` instead of `apptainer run` because we want to run the `python3` command instead of the command specified in the definition file.
+
+Here's a demo of the above commands:
+
+::::: {.cast #apptainer-python-speedtest-deffile}
+:::::
 
 <!-- FIXME: Add another cast -->
 

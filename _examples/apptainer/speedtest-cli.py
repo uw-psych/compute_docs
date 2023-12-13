@@ -30,11 +30,12 @@ def speedtest(m, n, output):  # <3>
 
     def join_nums():  # The function to test
         return "-".join([str(i) for i in range(n)])
+    
+    print(f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}", file=sys.stderr)
 
     bar = click.progressbar(  # Create a progress bar
         length=n * m,
         update_min_steps=n,  # Update the progress bar every `n` steps
-        label=f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}",
         file=sys.stderr,  # Print the progress bar to stderr
     )
 

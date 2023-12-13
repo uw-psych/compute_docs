@@ -1,9 +1,9 @@
 Bootstrap: docker # Where to get the base image from. # <1>
-From: python:{{ PY_VERSION }} # Which container to use as a base image. # <2>
+From: python:{{ PY_VERSION }}-slim # Which container to use as a base image. # <2>
 
 %arguments # <3>
     # The version of Python to use:
-    PY_VERSION=3.10-slim
+    PY_VERSION=3.10
   
 %files
     speedtest-cli.py /opt/local/bin/speedtest # Copy the script to the container. # <4>

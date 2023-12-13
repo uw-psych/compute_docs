@@ -1,0 +1,267 @@
+---
+description: "Different storage options for your research data."
+---
+# Options
+
+There are a number of different storage options available for storing research data. This section describes some of the options available at the University of Washington, as well as some other options that may be useful.
+
+## UW-supported options
+
+UW provides a number of different storage options for faculty, staff, and students. Additionally, there are a number of storage options that are not directly supported by UW, but are available to UW users through UW's enterprise agreements with the service providers, sometimes at a discount.
+
+ The following sections describe some of the most common options. UW IT maintains a [page](https://itconnect.uw.edu/guides-by-topic/online-storage-publishing/online-storage/) that provides an overview of UW's online storage options, as well as a [comparison](https://itconnect.uw.edu/tools-services-support/software-computers/mws/my-workstation/files/comparison/) of file service options. The [UW IT Service Catalog](https://uw.service-now.com/sp?id=sc_home) has a more complete list of UW IT services. 
+
+ UW Libraries' Research Data Services also maintains a [page](https://www.lib.washington.edu/dataservices/tools/storage-options) with information about storage options.
+
+### Departmental storage
+
+The Department of Psychology has a server that can be used for storing research data. This server is located in Guthrie Hall and is managed by the department's IT staff. The server is not intended for sharing data with collaborators outside of the University of Washington. Contact the department's IT staff for more information.
+
+#### Features and options
+
+- 2 TiB of storage (up to 10 TiB available on request) **per lab**
+- Accessible off campus via {{< term VPN >}}
+- Weekly backups (twice a week on request) to a backup server
+- Monthly backups to network-attached storage (NAS)
+- Storage is not encrypted
+- Shared access typically by sharing a single username and password per lab
+  - Alternative configurations are possible on requuest (e.g., read-only accounts, restricted access to specific directories)
+- Mountable as a drive on Windows, Mac, and Linux systems
+
+#### Pricing
+
+Free for departmental labs up to 10 TiB. More available on request.
+
+#### Eligibility
+
+- Department faculty and staff
+
+### UW LOLO
+
+The UW [LOLO Data Archive](https://itconnect.uw.edu/service/shared-central-file-system-for-research-archives-lolo-archive/) provides long-term tape-backed archival storage for users at the university. It is only intended for use by UW faculty, staff, and affiliated organizations. It is suitable for data that s not actively being worked on.  The [Hyak documentation](https://hyak.uw.edu/docs/storage/archive) has additional information about the LOLO Data Archive. 
+
+#### Features and options
+
+> - All files immediately and directly accessible via SSH protocol
+> - Support for up to 1,000 files per TB of data stored
+> - Fast uploads and downloads for large (>=100GB) files
+> - 10Gbs network connection to campus, the internet, and Hyak
+> - Two copies of all files are preserved, each in a separate data center, each in a different seismic zone
+
+#### Pricing
+
+The LOLO Data Archive is priced at \$3.45/TiB/month, with a minimum purchase of 1 TiB. The LOLO Data Archive is billed to a UW Workday worktag.
+
+#### Eligibility
+
+- UW faculty, staff, and affiliated organizations
+- UW Workday worktag required
+
+### UW Shared File Service
+
+The [UW Shared File Service](https://itconnect.uw.edu/service/shared-file-service/) provides a network file system that can be mounted on Linux and Windows systems. It is only intended for use by UW faculty, staff, and students. It is suitable for data that is actively being worked on.
+
+#### Features and options
+ 
+> - CIFS/SMB access from UW campus subnets.  (Can also be accessed via VPN Service, which provides remote systems with a UW campus IP address.)
+> - SFTP access from any internet location.
+> - User self-service file restores via “snapshots”
+> - Disaster recovery backups in two geographically separate regions (Seattle and Spokane).  Per-file restores from tape are not available.
+> - Easy allocations of additional space as demand requires.
+> - Access controlled via UW NetIDs and UW Groups
+> - Permissions are limited to Read/Write for a single group per folder, full granular ACLs are not supported currently.
+
+#### Pricing
+
+$0.25/GiB/month
+
+#### Eligibility
+
+> UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW Medical Center; Harborview Medical Center; requires a valid UW budget number
+
+#### Compliance
+
+> This service is considered FERPA compliant by the UW Registrar's office (due to the process used for data release), but has had no other formal third party data security or privacy compliance audits.
+
+### UW U Drive
+
+The UW [U Drive](https://uw.service-now.com/sp?id=sc_entry&sys_id=b7f0cd86db9637c037ae9ec6db961965) provides a network file system that can be mounted as a drive on Windows, Mac, and Linux 0systems on campus or by VPN.
+
+#### Features and options
+
+> - CIFS/SMB access from UW campus subnets.  (Can also be accessed via VPN Service, which provides remote systems with a UW campus IP address.)
+
+::: callout-warning
+SFTP access to U Drive will no longer be available after March 20, 2024.
+:::
+
+#### Pricing
+
+Free up to 50 GiB. $0.12/GiB/month for additional storage.
+
+#### Eligibility
+
+> UW faculty; UW staff; UW students; UW students in residence halls; UW researchers
+
+### UW OneDrive for Business
+
+UW [provides](https://uw.service-now.com/sp?id=sc_entry&sys_id=60a95c36db8af38437ae9ec6db961956) access to the [Microsoft OneDrive for Business](https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage) cloud file syncing service as part of its Office 365 subscription.
+
+#### Features and options
+
+- 5 TiB of storage
+- 250 GiB maximum file size
+- HIPAA and FERPA compliance
+- Sharing with UW users
+- Desktop, browser, and mobile access
+- SharePoint Online integration
+- Accessible on {{< term Klone >}} via {{< term rclone >}}
+
+::: callout-warning
+OneDrive has technical limitations that may cause problems when using it with some applications (e.g., [FreeSurfer](../software/freesurfer.qmd)). Caution is advised when working with files stored in OneDrive. The [support](https://support.microsoft.com/en-us/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa?ui=en-us&rs=en-us&ad=us) page has more information about OneDrive's limitations.
+:::
+
+#### Pricing
+
+Free for eligible UW users.
+
+#### Eligibility
+ 
+> UW faculty; UW staff; UW students; UW researchers; UW clinicians; For Shared UW NetIDs and Sponsored & affiliate UW NetIDs, accounts can be provisioned by UW employees
+
+### UW Google Drive
+
+[UW Google Drive](https://itconnect.uw.edu/tools-services-support/software-computers/productivity-platforms/google-productivity-platform/) provides Google Drive file storage and sync for users at UW (this is not the same as the Google Drive service provided by Google).
+
+#### Features and options
+
+- 100 GiB of storage
+- FERPA compliance
+- Accessible on {{< term Klone >}} via {{< term rclone >}}
+
+::: callout-warning
+UW Google Drive is not HIPAA compliant.
+:::
+
+### ResearchWorks Archive
+
+> ResearchWorks Archive is the University of Washington's digital repository (also known as "institutional repository") for disseminating scholarly work. More information about ResearchWorks can be found on the Scholarly Publishing Services page.
+
+Link: [ResearchWorks Archive](https://digital.lib.washington.edu/researchworks/)
+
+### RedCap
+
+[RedCap](https://www.iths.org/investigators/services/bmi/redcap/) is a web-based application for building and managing online surveys and databases. According to the [RedCap website](https://www.project-redcap.org/):
+
+> Research Electronic Data Capture (REDCap) is a rapidly evolving web tool developed by researchers for researchers in the translational domain.
+>
+> REDCap features a high degree of customizability for your forms and advanced user right control. It also features free, unlimited survey functionality, a sophisticated export module with support for all the popular statistical programs, and supports HIPAA compliance.
+
+### Cloud storage
+
+#### Amazon Web Services
+
+Amazon Web Services (AWS) is a cloud computing platform that provides a number of different storage services, including [Amazon S3](https://aws.amazon.com/s3/), [Amazon EBS](https://aws.amazon.com/ebs/), [Amazon EFS](https://aws.amazon.com/efs/), and [Amazon Glacier](https://aws.amazon.com/glacier/). Amazon S3 is comparable to Azure Blobs. Amazon EBS is comparable to Azure Files. Amazon EFS is comparable to Azure Files. Amazon Glacier is comparable to Azure Archive Storage. 
+
+##### Features and options
+
+> - Data Egress Waiver, which effectively eliminates the standard charges for moving data out of the AWS Service.
+> - HIPAA Eligible Account, requires special request and approval, and is subject to important operational considerations to meet compliance requirements of HIPAA, the UW BAA, and UW Medicine Compliance Policies.
+- Accessible on {{< term Klone >}} via {{< term rclone >}}
+
+##### Pricing
+
+The approximate cost of storing 1 TiB of data per month is:
+- \~\$25 for "hot" data accessed frequently (S3 Standard)
+- \~\$5/month for "cold" data accessed infrequently  (S3 Glacier Instant Retrieval)
+
+The Data Egress Waiver eliminates the standard charges for moving data out of the AWS Service.
+
+UW IT has a subscription service for AWS that provides a discount of 5% and a waiver for data egress charges. The subscription is covered by UW's HIPPAA BAA and other enterprise contracts. A UW Workday worktag is required to use the service. For more information, see the [UW IT AWS page ](https://uw.service-now.com/sp?id=sc_entry&sys_id=1fb99435db127748d6a77a8eaf961967&sysparm_category=5942fc69db62bf40d6a77a8eaf96190b).
+
+For detailed pricing information, see the [AWS pricing calculator](https://calculator.aws).
+
+##### Eligibility
+
+> UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW affiliated organizations; UW Medical Center; Harborview Medical Center; Any group with an approved UW blanket PO. NOTE: UW students are not eligible for this service, except when working within the scope of UW employment, e.g., as an RA, TA or GSA.
+> Known Prerequisites: This service requires a valid UW budget number.
+
+#### Azure
+
+Microsoft's Azure cloud platform includes a number of storage options, including [Azure Blobs](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction) and [Azure Files](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction).
+
+Azure Blobs is comparable to Amazon AWS S3. It is designed to store large amounts of unstructured data but is not designed to be used as a file system.
+
+##### Features and options
+
+- Covered by UW's HIPPAA BAA and other enterprise contracts
+- Accessible on {{< term Klone >}} via {{< term rclone >}}
+
+##### Pricing
+
+The approximate cost of storing 1 TiB of data per month is:
+- \~\$25 for "hot" data accessed frequently (Azure Blobs Hot Tier)
+- \~\$5/month for "cold" data accessed infrequently  (Azure Blobs Cold Tier) 
+
+UW IT has a subscription service for Azure that provides a discount of roughly 10% on Azure usage charges and allows charges to be paid with a UW Workday worktag.  A UW Workday worktag is required to use the service. For more information, see the [UW IT Azure Subscription Service](https://itconnect.uw.edu/service/selfmanaged-azure-subscription/).
+
+For detailed pricing information, see the [Azure pricing calculator](https://azure.microsoft.com/en-us/pricing/calculator/).
+
+##### Eligibility
+
+> UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW affiliated organizations; UW Medical Center; Harborview Medical Center; Any group with an approved UW blanket PO. NOTE: UW students are not eligible for this service, except when working within the scope of UW employment, e.g., as an RA, TA or GSA.
+> Known Prerequisites: This service requires a valid UW budget number.
+
+UW-IT's Azure Subscription service allows UW units, that wish to create and manage their own Azure subscription, to receive a discount (~10%) on Azure usage charges and to pay those with a UW Workday worktag. ThesUW's HIPAA BAA and associated enterprise contracts to cover these subscriptions.
+
+## Other options
+
+### Google Cloud Storage
+
+[Google Cloud Storage](https://cloud.google.com/storage) is a cloud [object storage](#object-storage) service that is part of the Google Cloud Platform. It resembles the offerings by [AWS](#amazon-web-services) and [Azure](#azure). It is distinct from UW Google Drive and Google Drive. Google Cloud Storage can be accessed on {{< term Klone >}} via {{< term rclone >}}.
+
+::: callout-tip
+Google Cloud also offers block storage, file storage, and archival storage services. See [here](https://cloud.google.com/products/storage) for more information.
+:::
+
+### Open Science Framework
+
+[Open Science Framework](https://osf.io/) (OSF) is a web-based platform for managing research projects. OSF can be used to store research data and their metadata. It is best suited for collaborating with other researchers and sharing research data for papers.  [Storage addons](https://help.osf.io/article/395-storage-add-ons) are available to connect [Amazon S3](#amazon-web-services), [Dropbox](#dropbox), [GitHub](#github), [OneDrive](#uw-onedrive-for-business), and [GitHub](#github) to OSF.
+
+### Dropbox
+
+[Dropbox](https://www.dropbox.com) is a subscription-based cloud file sync service. The University of Washington does not support Dropbox. Dropbox is not suited for storing sensitive data. However, Dropbox can be useful for storing non-sensitive data that is actively being worked on, and provides convenient versioning and recovery options. Dropbox can be accessed on {{< term Klone >}} via {{< term rclone >}}.
+
+### GitHub
+
+GitHub is a web-based hosting service for version control using Git. Files up to 100 MiB each can be stored in a GitHub repository. The total size of a repository [should be](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits) under 5 GiB. 
+
+GitHub repositories can be made publicly available, or can be made private. Private repositories are only accessible to collaborators who have been granted access to the repository. Private repositories are only available to collaborators who have GitHub accounts. GitHub repositories can be accessed using the GitHub website, or using the [GitHub Desktop](https://desktop.github.com/) application.
+
+#### GitHub Releases
+
+[GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) can be used to store files up to 2 GiB in size each.
+
+#### GitHub Packages
+
+[GitHub Packages](https://docs.github.com/en/packages) can be used to create {{< term container "image|container images" >}} that can be uploaded to the [GitHub Container Registry](https://ghcr.io.). For public repositories, there are no charges nor storage limits. For private repositories, storage limits and charges [apply](https://docs.github.com/en/billing/managing-billing-for-github-packages/about-billing-for-github-packages). A GitHub account is required to access GitHub Packages.
+
+Although GitHub Packages is not designed to store research data, it can be used to store research data in the form of a {{< term container image >}} containing an archive of research data (similar to a ZIP file). The data cannot be viewed or modified while stored in GitHub Packages, but can be downloaded and extracted from the {{< term container image >}}. Any changes to the data require creating a new image and uploading it to GitHub Packages.
+
+Public packages can be accessed by anyone and should not be used for sensitive data. However, it may be possible to encrypt data before storing it in the image, or to deploy an [encrypted container](https://apptainer.org/docs/user/main/encryption.html).
+
+#### Large File Storage
+
+GitHub has a [Large File Storage](https://git-lfs.github.com/) (LFS) extension that can be used to store large files in a GitHub repository. 
+
+According to [GitHub's documentation](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage#about-git-large-file-storage), the file size limits for GitHub repositories are:
+
+| Plan                    | Maximum file size
+|-------------------------|------------------
+GitHub Free	              | 2 GiB
+GitHub Pro	              | 2 GiB
+GitHub Team               | 4 GiB
+GitHub Enterprise Cloud	  | 5 GiB
+
+
+

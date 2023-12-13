@@ -1,9 +1,7 @@
 ---
 description: "Options and best practices for managing storage on Klone"
-order: 70
 ---
 # Storage on Klone
-
 
 Klone has a number of storage options available to users.  This page describes the options and best practices for using them.
 

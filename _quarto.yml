@@ -6,6 +6,7 @@ website:
   title: "UW Psychology"
   page-navigation: true
   favicon: _static/favicon.ico
+  site-path: /compute_docs
   navbar:
     title: false
     background: "#512c89"
@@ -34,7 +35,13 @@ website:
       - section: docs/software/index.qmd
         contents: docs/software/*.qmd
       - section: docs/storage/index.qmd
-        contents: docs/storage/index.qmd
+        contents:
+          - docs/storage/concepts.qmd
+          - docs/storage/options.qmd
+          - docs/storage/comparison.qmd
+          - docs/storage/klone-storage.qmd
+      - docs/CONTRIBUTING.qmd
+        
 format:
   html:
     theme:

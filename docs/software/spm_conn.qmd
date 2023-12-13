@@ -57,7 +57,7 @@ You can install different versions of SPM and CONN by following the instructions
    ```bash
    wget -P "/gscratch/scrubbed/$USER/downloads" https://www.fil.ion.ucl.ac.uk/spm/download/restricted/idyll/spm8.zip # <1>
     ```
-    1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/start/klone-storage.qmd) to storage on Klone for more information.
+    1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/storage/klone-storage.qmd) to storage on Klone for more information.
 
 2. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).   
    
@@ -96,7 +96,7 @@ You can install different versions of SPM and CONN by following the instructions
    ```bash
     wget -P "/gscratch/scrubbed/$USER/downloads" https://www.nitrc.org/frs/download.php/12426/conn21a.zip # <1>
     ```
-    1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/start/klone-storage.qmd) to storage on Klone for more information.
+    1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/storage/klone-storage.qmd) to storage on Klone for more information.
    
 2. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).   
    
