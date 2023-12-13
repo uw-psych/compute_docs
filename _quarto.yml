@@ -7,6 +7,7 @@ website:
   page-navigation: true
   favicon: _static/favicon.ico
   site-path: /compute_docs
+  site-url: https://maouw.github.io/compute_docs
   navbar:
     title: false
     background: "#512c89"
@@ -40,7 +41,7 @@ website:
           - docs/storage/options.qmd
           - docs/storage/comparison.qmd
           - docs/storage/klone-storage.qmd
-      - docs/CONTRIBUTING.qmd
+      - "docs/CONTRIBUTING.qmd"
         
 format:
   html:
