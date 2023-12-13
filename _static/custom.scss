@@ -8,7 +8,7 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url('_static/fonts/CascadiaMono.woff2') format('woff2');
+  src: url('/_static/fonts/CascadiaMono.woff2') format('woff2'), url('/_static/fonts/CascadiaMono.ttf') format('truetype');
 }
 
 .ap-wrapper {

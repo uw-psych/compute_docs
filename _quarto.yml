@@ -48,7 +48,7 @@ format:
       - flatly
       - _static/custom.scss
     mainfont: "Helvetica, Liberation Sans, Free Sans, Arial, sans-serif"
-    monofont: "Cascadia Code, Consolas, Liberation Mono, Courier New, monospace"
+    monofont: "Cascadia Mono, Consolas, Liberation Mono, Courier New, monospace"
     linestrech: 1.0
     grid:
       sidebar-width: "20%"
