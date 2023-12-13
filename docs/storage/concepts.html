@@ -268,23 +268,23 @@ ul.task-list li input[type="checkbox"] {
 <p>There are many different types of storage. Some of the most common types of storage are:</p>
 <section id="object-storage" class="level3">
 <h3 class="anchored" data-anchor-id="object-storage">Object storage</h3>
-<p>Object storage is a type of storage that stores data as objects. Each object contains data, metadata, and a unique identifier. Objects are stored in a flat address space, and can be accessed using a URL. Object storage is designed to store large amounts of unstructured data. Object storage is not designed to be used as a file system. Object storage is typically accessed using a REST API. Object storage is typically used for storing data that is not actively being worked on, but needs to be stored for a long time. [Amazon S3][#amazon-web-services] and <a href="#azure">Azure Blobs</a> are examples of object storage services.</p>
+<p>Object storage is a type of storage that stores data as objects. Each object contains data, metadata, and a unique identifier. Objects are stored in a flat address space and can be accessed using a URL. Object storage is designed to store large amounts of unstructured data. Object storage is <em>not</em> designed to be used as a file system. Object storage is typically accessed using a REST API. Object storage is typically used for storing data that is not actively being worked on but needs to be stored for a long time. [Amazon S3][#amazon-web-services] and <a href="#azure">Azure Blobs</a> are examples of object storage services.</p>
 </section>
 <section id="block-storage" class="level3">
 <h3 class="anchored" data-anchor-id="block-storage">Block storage</h3>
-<p>Block storage is a type of storage that stores data as blocks. Each block contains data and a unique identifier. Blocks are stored in a hierarchical address space, and can be accessed using a file system. Block storage is designed to store large amounts of structured data. Block storage is typically used for storing data that is actively being worked on. <a href="#amazon-web-services">Amazon EBS</a> is an example of block storage.</p>
+<p>Block storage is a type of storage that stores data as blocks. Each block contains data and a unique identifier. Blocks are stored in a hierarchical address space and can be accessed using a file system. Block storage is designed to store large amounts of structured data. Block storage is typically used for storing data that is actively being worked on. <a href="#amazon-web-services">Amazon EBS</a> is an example of block storage.</p>
 </section>
 <section id="file-storage" class="level3">
 <h3 class="anchored" data-anchor-id="file-storage">File storage</h3>
 <p>File storage is a type of storage that stores data as files. Your computer’s local filesystem uses file storage. Network filesystems such as NFS and SMB, and cloud storage services such as <a href="#azure">Azure Files</a> and <a href="#amazon-web-services">Amazon EFS</a> also use file storage. File storage is designed to store large amounts of structured data. File storage is designed to be used by multiple users at the same time and supports creating, reading, updating, and deleting files. File storage is typically used for storing data that is actively being worked on. <a href="#azure">Azure Files</a> is an example of file storage.</p>
 <section id="sync-services" class="level4">
 <h4 class="anchored" data-anchor-id="sync-services">Sync services</h4>
-<p>Cloud-based file sync services, such as <a href="#dropbox">Dropbox</a>, <a href="#google-drive">Google Drive</a>, and <a href="#uw-onedrive-for-business">OneDrive</a>, offer file storage that can easily be accessed from multiple devices. These services usually offer convenient features such as file versioning, recovery, and file sharing. You can access the files stored in these services from a directory on your computer, and the files are automatically synchronized with the cloud storage service. However, the services may not support all of the features of a traditional file system (e.g.&nbsp;file permissions, symbolic links) and often have restrictions on the length of file names and the types of characters that can be used in file names, which may cause serious problems when using files stored in these services with some applications (e.g., <a href="../../docs/software/freesurfer.html">FreeSurfer</a>). Caution is advised when working with files stored in these services.</p>
+<p>Cloud-based file sync services, such as <a href="#dropbox">Dropbox</a>, <a href="#google-drive">Google Drive</a>, and <a href="#uw-onedrive-for-business">OneDrive</a>, offer file storage that can easily be accessed from multiple devices. These services usually offer convenient features such as file versioning, recovery, and file sharing. You can access the files stored in these services from a directory on your computer, and the files are automatically synchronized with the cloud storage service. However, the services may not support all of the features of a traditional file system (e.g., file permissions, symbolic links) and often have restrictions on the length of file names and the types of characters that can be used in file names, which may cause serious problems when using files stored in these services with some applications (e.g., <a href="../../docs/software/freesurfer.html">FreeSurfer</a>). Caution is advised when working with files stored in these services.</p>
 </section>
 </section>
 <section id="version-control-systems" class="level3">
 <h3 class="anchored" data-anchor-id="version-control-systems">Version control systems</h3>
-<p>Version control systems, such as <a href="https://git-scm.com/">Git</a>, are designed to store and manage different versions of files. Version control systems are typically used for storing source code, but can also be used for storing other types of files. There are some version control systems that are designed to handle datasets, such as <a href="https://dvc.org/">DVC</a>. <a href="#github">GitHub</a> provides online hosting and collaboration services for Git repositories.</p>
+<p>Version control systems, such as <a href="https://git-scm.com/">Git</a>, are designed to store and manage different versions of files. Version control systems are typically used for storing source code but can also be used for storing other types of files. There are some version control systems that are designed to handle datasets, such as <a href="https://dvc.org/">DVC</a>. <a href="#github">GitHub</a> provides online hosting and collaboration services for Git repositories.</p>
 </section>
 <section id="data-repositories" class="level3">
 <h3 class="anchored" data-anchor-id="data-repositories">Data repositories</h3>
@@ -296,16 +296,16 @@ ul.task-list li input[type="checkbox"] {
 <p>There are a number of characteristics and considerations that are important when choosing a storage service, and these may be reflected in the upfront and ongoing costs. Some of the most common characteristics and considerations are:</p>
 <section id="storage-capacity" class="level3">
 <h3 class="anchored" data-anchor-id="storage-capacity">Storage capacity</h3>
-<p>How much data is being stored. The more data that is being stored, the more it will cost to store the data. Storage services may have minimum and/or maximum storage capacity requirements, and may charge for storage in increments of a certain size (e.g.&nbsp;1 TiB).</p>
+<p>How much data is being stored. The more data that is being stored, the more it will cost to store the data. Storage services may have minimum and/or maximum storage capacity requirements. Some services may charge for storage in increments of a certain size (e.g., 1 TiB).</p>
 </section>
 <section id="storage-latency" class="level3">
 <h3 class="anchored" data-anchor-id="storage-latency">Storage latency</h3>
-<p>How quickly data can start being read or written. The lower the latency, the faster data can be read or written. Storage services may charge more for lower latency. A solid-state drive (SSD) has lower latency than a hard disk drive (HDD), which has lower latency than a tape drive. However, capacity on SSDs is more expensive than capacity on HDDs, which is more expensive than capacity on tape drives.</p>
+<p>How quickly data can start being read or written. The lower the latency, the faster data can be read or written. Storage services may charge more for lower latency. A solid-state drive (SSD) has lower latency than a hard disk drive (HDD), which has lower latency than a tape drive. However, storage capacity on SSDs is more expensive than storage capacity on HDDs, which is more expensive than storage capacity on tape drives.</p>
 </section>
 <section id="data-transfer" class="level3">
 <h3 class="anchored" data-anchor-id="data-transfer">Data transfer</h3>
 <p>The rate at which data can be downloaded from or uploaded to a service may be limited. The higher the bandwidth, the faster data can be downloaded from or uploaded to the service. Service providers may charge more for higher bandwidth.</p>
-<p>Data transfer costs may be charged for uploading data to and downloading data from a service, also known as <em>ingress</em> and <em>egress</em>. Typically, ingress is free and egress is charged. Some services may charge more for uploading data to and downloading data from certain locations (e.g.&nbsp;outside of the United States). Some providers offer options such as physical media transfer (e.g.&nbsp;mailing a hard drive) for uploading and downloading large amounts of data (see <a href="https://aws.amazon.com/snowball/">AWS Snowball</a>).</p>
+<p>Data transfer costs may be charged for uploading data to and downloading data from a service, also known as <em>ingress</em> and <em>egress</em>. Typically, ingress is free and egress is charged. Some services may charge more for uploading data to and downloading data from certain locations (e.g., outside of the United States). Some providers offer options such as physical media transfer (e.g., mailing a hard drive) for uploading and downloading large amounts of data (see <a href="https://aws.amazon.com/snowball/">AWS Snowball</a>).</p>
 </section>
 <section id="retention-period" class="level3">
 <h3 class="anchored" data-anchor-id="retention-period">Retention period</h3>
@@ -313,20 +313,20 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="backup-and-recovery-options" class="level3">
 <h3 class="anchored" data-anchor-id="backup-and-recovery-options">Backup and recovery options</h3>
-<p>How often data is backed up, how long backups are kept, and how quickly data can be recovered from backups. The more often data is backed up, the longer backups are kept, and the faster data can be recovered from backups, the more it will cost to store the data. Some services may not provide backup and recovery options, or may charge extra for backup and recovery options.</p>
+<p>How often data is backed up, how long backups are kept, and how quickly data can be recovered from backups. The more often data is backed up, the longer backups are kept, and the faster data can be recovered from backups, the more it will cost to store the data. Backup and recovery options may not be available or involve extra charges on some services.</p>
 </section>
 <section id="frequency-of-access" class="level3">
 <h3 class="anchored" data-anchor-id="frequency-of-access">Frequency of access</h3>
-<p>How often data is accessed. Some services may charge for each time data is accessed, or may charge more for more frequent access.</p>
+<p>How often data is accessed. Some services may charge for each time data is accessed or charge more for more frequent access.</p>
 </section>
 <section id="data-access-restrictions" class="level3">
 <h3 class="anchored" data-anchor-id="data-access-restrictions">Data access restrictions</h3>
-<p>Who can access the data. Data access restrictions may be inherent to a service (e.g., only people connected to the UW intranet can access the data) or may be imposed by the user, the organization, or the service provider. Sharing data with outside collaborators may require additional steps such as creating accounts for the collaborators, or may not be possible at all.</p>
+<p>Who can access the data. Data access restrictions may be inherent to a service (e.g., only people connected to the UW intranet can access the data) or may be imposed by the user, the organization, or the service provider. Sharing data with outside collaborators may require additional steps, such as creating accounts for the collaborators, or may not be possible at all.</p>
 </section>
 <section id="data-security" class="level3">
 <h3 class="anchored" data-anchor-id="data-security">Data security</h3>
 <p>How secure the data is against unauthorized access. While <a href="#data-access-restrictions">access restrictions</a> can limit who can access the data in certain circumstances, measures such as encryption may be necessary to prevent access by users who have access to the data but should not be able to access the data (e.g., system administrators).</p>
-<p>Research data that is subject to HIPAA or FERPA regulations must be stored in a HIPAA or FERPA compliant service. For more information about HIPAA at UW, see the <a href="https://www.washington.edu/research/policies/guidance-hipaa-2/">HIPPA Guidance</a> page.</p>
+<p>Research data that is subject to HIPAA or FERPA regulations must be stored in a HIPAA- or FERPA-compliant service. For more information about HIPAA at UW, see the <a href="https://www.washington.edu/research/policies/guidance-hipaa-2/">HIPPA Guidance</a> page.</p>
 
 
 </section>
