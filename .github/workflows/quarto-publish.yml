@@ -15,21 +15,32 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        
+      - name: "Set URLs in _quarto.yml"
+        uses: mikefarah/yq@master
+        with:
+          cmd: |
+            GITHUB_REPOSITORY_NAME="${GITHUB_REPOSITORY_NAME:-${GITHUB_REPOSITORY##*/}}"
+            GITHUB_PAGES_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY_NAME}"
+            GITHUB_REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
+            GITHUB_ISSUE_URL="${GITHUB_REPO_URL}/issues/new"
+            # Replace the URLs in _quarto.yml:
+            yq -i '
+              .website.site-url: strenv(GITHUB_PAGES_URL) |
+              .website.repo-url: strenv(GITHUB_REPO_URL) |
+              .website.issue-url: strenv(GITHUB_ISSUE_URL)
+            ' _quarto.yml
+            cat _quarto.yml >&2 # show the file after the changes
+      - name: "Update URLs in glossary.yml"
+        run: |
+          sed -i -E 's/\(\/docs\//(\/compute_docs\/docs\//g' glossary.yml              
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          # version: SPECIFIC-QUARTO-VERSION-HERE
-        #with:
-          # To install LaTeX to build PDF book 
-          # tinytex: true 
-          # uncomment below and fill to pin a version
           version: pre-release
-      # NOTE: If Publishing to GitHub Pages, set the permissions correctly (see top of this yaml)
       - name: Publish to GitHub Pages (and render) 
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

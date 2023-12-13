@@ -7,9 +7,9 @@ listing:
 # Getting started
 
 (@) Get access to Hyak:
-   - Active UW students can join UW Reserach Computing Club (RCC) to gain access to STF-funded nodes.
+   - Active UW students can join UW Research Computing Club (RCC) to gain access to STF-funded nodes.
    - PIs or labs should purchase dedicated storage and compute resources.
-(@) [Login to a cluster via SSH](./connect-ssh.qmd): 
+(@) [Log in to a cluster via SSH](./connect-ssh.qmd): 
   ``` bash
   ssh your-uw-netid@klone.hyak.uw.edu
   ```

@@ -21,8 +21,8 @@ Before running `hyakvnc`, you'll need the following:
 - A Linux, macOS, or Windows machine
 - The OpenSSH client (usually included with Linux and macOS, and available for Windows via [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) or [Cygwin](https://www.cs.odu.edu/~zeil/cs252/latest/Public/loggingin/cygwin.mmd.html) [note that the Windows 10+ built-in OpenSSH client will not work])
 - A VNC client/viewer ([TurboVNC viewer](https://www.turbovnc.org) is recommended for all platforms)
-- HYAK Klone access with compute resources
-- A private SSH key on your local machine which has been added to the authorized keys on the login node of the HYAK Klone cluster (see below)
+- Hyak Klone access with compute resources
+- A private SSH key on your local machine which has been added to the authorized keys on the login node of the Hyak Klone cluster (see below)
 - A HyakVNC-compatible Apptainer container image in a directory on Hyak (usually with the file extension `.sif`) or the URL to one (e.g,., `oras://ghcr.io/maouw/hyakvnc_apptainer/hyakvnc-vncserver-ubuntu22.04:latest`)
 
 Follow the instructions below to set up your machine correctly:
@@ -49,7 +49,7 @@ To install TurboVNC, download the latest version from [here](https://sourceforge
 
 ### Setting up SSH keys to connect to Hyak compute nodes
 
-Before you are allowed to connect to a compute node where your VNC session will be running, you must add your SSH public key to the authorized keys on the login node of the HYAK Klone cluster.
+Before you are allowed to connect to a compute node where your VNC session will be running, you must add your SSH public key to the authorized keys on the login node of the Hyak Klone cluster.
 
 If you don't, you will receive an error like this when you try to connect:
 
@@ -75,7 +75,7 @@ You'll need to find a HyakVNC-compatible container image to run your VNC session
 
 ## Installing `hyakvnc`
 
-`hyakvnc` should be installed on the login node of the HYAK Klone cluster.
+`hyakvnc` should be installed on the login node of the Hyak Klone cluster.
 
 To connect to the login node, you'll need to enter the following command into a terminal window (replacing `your-uw-netid` with your UW NetID) and provide your password when prompted:
 

@@ -8,7 +8,7 @@ description: Software suite for brain MRI analysis
 Currently, FreeSurfer must run from a container with sufficient library dependencies. We recommend using FreeSurfer from a VNC session with [hyakvnc](/docs/start/hyakvnc.qmd).
 :::
 
-FreeSurfer is an open source neuroimaging toolkit and is available as an Lmod module on Klone.
+FreeSurfer is an open-source neuroimaging toolkit available as a Lmod module on Klone.
 
 ## Checking available versions
 
@@ -22,7 +22,7 @@ Load the default version with `module load escience/freesurfer`,
 
 or load a specific version with `module load escience/freesurfer/<version>`.
 
-After loading the module, FreeSurfer should have its environment setup for normal use.
+After loading the module, FreeSurfer should have its environment set up for normal use.
 
 ## Installing a different version
 

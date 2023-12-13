@@ -3,7 +3,7 @@ description: "Different storage options for your research data."
 ---
 # Options
 
-There are a number of different storage options available for storing research data. This section describes some of the options available at the University of Washington, as well as some other options that may be useful.
+There are many different storage options available for storing research data. This section describes some of the options available at the University of Washington, as well as some other options that may be useful.
 
 ## Options comparison
 
@@ -13,11 +13,11 @@ The following table compares the different options for storing research data:
 
 ## UW-supported options
 
-UW provides a number of different storage options for faculty, staff, and students. Additionally, there are a number of storage options that are not directly supported by UW, but are available to UW users through UW's enterprise agreements with the service providers, sometimes at a discount.
+UW provides several different storage options for faculty, staff, and students. Additionally, there are storage options that are not directly supported by UW but are available to UW users through UW's enterprise agreements with the service providers, sometimes at a discount.
 
  The following sections describe some of the most common options. UW IT maintains a [page](https://itconnect.uw.edu/guides-by-topic/online-storage-publishing/online-storage/) that provides an overview of UW's online storage options, as well as a [comparison](https://itconnect.uw.edu/tools-services-support/software-computers/mws/my-workstation/files/comparison/) of file service options. The [UW IT Service Catalog](https://uw.service-now.com/sp?id=sc_home) has a more complete list of UW IT services.
 
- UW Libraries' Research Data Services also maintains a [page](https://www.lib.washington.edu/dataservices/tools/storage-options) with information about storage options.
+ UW 'Libraries' Research Data Services also maintains a [page](https://www.lib.washington.edu/dataservices/tools/storage-options) with information about storage options.
 
 ### Departmental storage
 
@@ -26,12 +26,12 @@ The Department of Psychology has a server that can be used for storing research 
 #### Features and options
 
 - 2 TiB of storage (up to 10 TiB available on request) **per lab**
-- Accessible off campus via {{< term VPN >}}
+- Accessible off-campus via {{< term VPN >}}
 - Weekly backups (twice a week on request) to a backup server
 - Monthly backups to network-attached storage (NAS)
 - Storage is not encrypted
 - Shared access typically by sharing a single username and password per lab
-  - Alternative configurations are possible on requuest (e.g., read-only accounts, restricted access to specific directories)
+  - Alternative configurations are possible on request (e.g., read-only accounts, restricted access to specific directories)
 - Mountable as a drive on Windows, Mac, and Linux systems
 
 #### Pricing
@@ -44,7 +44,7 @@ Free for departmental labs up to 10 TiB. More available on request.
 
 ### UW LOLO
 
-The UW [LOLO Data Archive](https://itconnect.uw.edu/service/shared-central-file-system-for-research-archives-lolo-archive/) provides long-term tape-backed archival storage for users at the university. It is only intended for use by UW faculty, staff, and affiliated organizations. It is suitable for data that s not actively being worked on.  The [Hyak documentation](https://hyak.uw.edu/docs/storage/archive) has additional information about the LOLO Data Archive.
+The UW [LOLO Data Archive](https://itconnect.uw.edu/service/shared-central-file-system-for-research-archives-lolo-archive/) provides long-term tape-backed archival storage for users at the university. It is only intended for use by UW faculty, staff, and affiliated organizations. It is suitable for data that is not actively being worked on.  The [Hyak documentation](https://hyak.uw.edu/docs/storage/archive) has additional information about the LOLO Data Archive.
 
 #### Features and options
 
@@ -200,7 +200,7 @@ Azure Blobs is comparable to Amazon AWS S3. It is designed to store large amount
 
 ##### Features and options
 
-- Covered by UW's HIPPAA BAA and other enterprise contracts
+- Covered by UW's HIPAA BAA and other enterprise contracts
 - Accessible on {{< term Klone >}} via {{< term rclone >}}
 
 ##### Pricing
@@ -218,7 +218,7 @@ For detailed pricing information, see the [Azure pricing calculator](https://azu
 > UW faculty; UW staff; UW researchers; UW clinicians; UW academic units; UW administrative units; UW affiliated organizations; UW Medical Center; Harborview Medical Center; Any group with an approved UW blanket PO. NOTE: UW students are not eligible for this service, except when working within the scope of UW employment, e.g., as an RA, TA or GSA.
 > Known Prerequisites: This service requires a valid UW budget number.
 
-UW-IT's Azure Subscription service allows UW units, that wish to create and manage their own Azure subscription, to receive a discount (~10%) on Azure usage charges and to pay those with a UW Workday worktag. ThesUW's HIPAA BAA and associated enterprise contracts to cover these subscriptions.
+UW-IT's Azure Subscription service allows UW units that wish to create and manage their own Azure subscription to receive a discount (~10%) on Azure usage charges and to pay those with a UW Workday worktag.
 
 ## Other options
 
@@ -236,13 +236,13 @@ Google Cloud also offers block storage, file storage, and archival storage servi
 
 ### Dropbox
 
-[Dropbox](https://www.dropbox.com) is a subscription-based cloud file sync service. The University of Washington does not support Dropbox. Dropbox is not suited for storing sensitive data. However, Dropbox can be useful for storing non-sensitive data that is actively being worked on, and provides convenient versioning and recovery options. Dropbox can be accessed on {{< term Klone >}} via {{< term rclone >}}.
+[Dropbox](https://www.dropbox.com) is a subscription-based cloud file sync service. The University of Washington does not support Dropbox. Dropbox is not suited for storing sensitive data. However, Dropbox can be useful for storing non-sensitive data that is actively being worked on, and it provides convenient versioning and recovery options. Dropbox can be accessed on {{< term Klone >}} via {{< term rclone >}}.
 
 ### GitHub
 
 GitHub is a web-based hosting service for version control using Git. Files up to 100 MiB each can be stored in a GitHub repository. The total size of a repository [should be](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits) under 5 GiB.
 
-GitHub repositories can be made publicly available, or can be made private. Private repositories are only accessible to collaborators who have been granted access to the repository. Private repositories are only available to collaborators who have GitHub accounts. GitHub repositories can be accessed using the GitHub website, or using the [GitHub Desktop](https://desktop.github.com/) application.
+GitHub repositories can be made publicly available or can be made private. Private repositories are only accessible to collaborators who have been granted access to the repository. Private repositories are only available to collaborators who have GitHub accounts. GitHub repositories can be accessed from the GitHub website or the [GitHub Desktop](https://desktop.github.com/) application.
 
 #### GitHub Releases
 
@@ -254,7 +254,7 @@ GitHub repositories can be made publicly available, or can be made private. Priv
 
 Although GitHub Packages is not designed to store research data, it can be used to store research data in the form of a {{< term container image >}} containing an archive of research data (similar to a ZIP file). The data cannot be viewed or modified while stored in GitHub Packages, but can be downloaded and extracted from the {{< term container image >}}. Any changes to the data require creating a new image and uploading it to GitHub Packages.
 
-Public packages can be accessed by anyone and should not be used for sensitive data. However, it may be possible to encrypt data before storing it in the image, or to deploy an [encrypted container](https://apptainer.org/docs/user/main/encryption.html).
+Public packages can be accessed by anyone and should not be used for sensitive data. However, it may be possible to encrypt data before storing it in the image or to deploy an [encrypted container](https://apptainer.org/docs/user/main/encryption.html).
 
 #### Large File Storage
 

@@ -58,18 +58,18 @@ For example, `apptainer/local (D)` indicates that the default version is `local`
 
 #### Bind paths
 
-{{< term Apptainer >}} containers are designed to be portable, so by default they do not have access to any files on the host system. To make files available to the container, you must bind them to the container. This is done using the `--bind` option of the `apptainer` command or the `APPTAINER_BINDPATH` {{< term "environment variable" >}}.
+{{< term Apptainer >}} containers are designed to be portable, so by default, they do not have access to all the files on the host system. To make files available to the container, you must bind them to the container. This is done using the `--bind` option of the `apptainer` command or the `APPTAINER_BINDPATH` {{< term "environment variable" >}}.
 
 ::: {.callout-tip title="Default bind paths"}
-By default, `apptainer` will make several directories available within the container by binding them to the same path in the container, so that `/somefolder` on the host is available as `/somefolder` within the container.
+By default, `apptainer` will make several directories available within the container by binding them to the same path in the container so that `/somefolder` on the host is available as `/somefolder` within the container.
 
 These directories include:
 
 - `$HOME` (your home directory, a.k.a. `~`)
-- `/tmp` (temporary directory -- unique to each node, contents are purged when the users’ last job running on the node completes)
-- `$PWD` (the current working directory, i.e. the directory you are in when you run `apptainer`)
+- `/tmp` (temporary directory -- unique to each node; contents are purged when the users’ last job running on the node completes)
+- `$PWD` (the current working directory, i.e., the directory you are in when you run `apptainer`)
 
-The Klone Apptainer installation is also configured to bind several other following directories to the same path in the container, including:
+The Klone Apptainer installation is also configured to bind several other directories to the same path in the container, including:
 
 - `/mmfs1` (the main filesystem)
 - `/scr` (the scratch filesystem, same as `/tmp`)
@@ -138,7 +138,7 @@ Now let's run the script using Python 3.10 and Python 3.11. For the image, we wi
 ::: {.callout-tip title="Tagged container releases"}
 The `python:3.10-slim` and `python:3.11-slim` images are tagged with the version of Python they contain. This means that if you pull the `python:3.10-slim` image today, it will always contain Python 3.10, even if Python 3.11 is released tomorrow.
 
-*The `python:*-slim` images are designed to contain only the minimal set of packages required to run Python and are therefore much smaller than the standard Python images (~45 MiB vs ~350 MiB).*
+*The `python:*-slim` images are designed to contain only the minimal set of packages required to run Python and are much smaller than the standard Python images (~45 MiB vs ~350 MiB).*
 :::
 
 We'll use the `apptainer exec` command to run the script inside an Apptainer container:
@@ -163,11 +163,11 @@ It probably didn't take very long to run the script. Let's try running it again 
 export M=1000 N=100_000 # <1>
 apptainer exec docker://python:3.10-slim python3 speedtest.py
 ```
-1. The `export` command sets the values of the `M` and `N` {{< term "environment variable|environment variables" >}} and makes them avaialble to other programs like `apptainer`. We're setting `N` to`100_000` instead of `100000` because underscores can be used in Python to make large numbers easier to read. This is a feature of Python, not the shell (which interprets `100_000` as just a string and not a number).
+1. The `export` command sets the values of the `M` and `N` {{< term "environment variable|environment variables" >}} and makes them available to other programs like `apptainer`. We're setting `N` to `100_000` instead of `100000` because underscores can be used in Python to make large numbers easier to read. This is a feature of Python, not the shell (which interprets `100_000` as just a string and not a number).
 
 It should take a bit longer to run this time.
 
-Now let's try running the script using Python 3.11:
+Now, let's try running the script using Python 3.11:
 
 ``` bash
 apptainer exec docker://python:3.11-slim python3 speedtest.py
@@ -185,7 +185,7 @@ apptainer exec docker://python:3.11-slim python3 speedtest.py > py3.11.txt # <1>
 cat py3.10.txt py3.11.txt # show the results # <2>
 ```
 1. In {{< term bash >}}, the `>` operator redirects the output of a command to a file. If the file already exists, it will be overwritten. If you want to append to an existing file instead, use the `>>` operator. These operators can be used with any command, not just `apptainer`. For example, `ls > my_files.txt` will write the output of `ls` to the file `my_files.txt`.
-2. The `cat` command prints the contents of a file to {{< term stdout >}}` If you want to print the contents of multiple files, you can list them all as arguments to `cat`.
+2. The `cat` command prints the contents of a file to> <tt>{{< term stdout >}}</tt>. If you want to print the contents of multiple files, you can list them all as arguments to `cat`.
 
 We see the results, but they're not very easy to interpret. Let's pipe the output to Python to calculate the speedup:
 
@@ -205,7 +205,7 @@ Here's a demo of the above commands. Note that I used `M=200` and `N=50_000` ins
 
 What if we wanted to add a command-line interface to make it possible to run the script with different values of `M` and `N` without having to set them as {{< term "environment variable|environment variables" >}}? A user might want to set the values of `M` and `N` as command-line arguments. Maybe they would also like to be able to specify the output file instead of redirecting the output to a file. And how about a progress bar? Users love progress bars!
 
-This sounds like a tall order, but it's actually quite easy to do in Python using the [click](https://click.palletsprojects.com) package for Python. Here's the new script:
+This sounds like a tall order, but it's quite easy to do in Python using the [click](https://click.palletsprojects.com) package for Python. Here's the new script:
 
 ``` {.python filename="speedtest-cli.py"}
 #!/usr/bin/env python3
@@ -278,7 +278,7 @@ Now, let's try running the script with `apptainer exec`:
 apptainer exec docker://python:3.11-slim python3 speedtest-cli.py
 ```
 
-You probaby got a `ModuleNotFoundError` because the `click` package is not installed in the `python:3.11-slim` image. If you know some Python, you might think, "I could probably fix this if I install the `click` module via `pip`." And you would be right -- if you were running the script in the version of Python that's normally installed on your computer. But we're running the script inside an Apptainer container, so we need to install the `click` module inside the container. Furthermore, we're using *two* different versions of Python, so we need to install the `click` module in the containers for *both* versions.
+You probably got a `ModuleNotFoundError` because the `click` package is not installed in the `python:3.11-slim` image. If you know some Python, you might think, "I could probably fix this if I install the `click` module via `pip`." And you would be right -- if you were running the script in the version of Python that's normally installed on your computer. But we're running the script inside an Apptainer container, so we need to install the `click` module inside the container. Furthermore, we're using *two* different versions of Python, so we need to install the `click` module in the containers for *both* versions.
 
 We'll solve this by writing an [Apptainer definition file](https://apptainer.org/docs/user/latest/definition_files.html) to build a custom Apptainer image that contains the `click` module. Here's the definition file:
 
@@ -289,7 +289,7 @@ From: python:{{ PY_VERSION }}-slim # Which container to use as a base image. # <
 %arguments # <3>
     # The version of Python to use:
     PY_VERSION=3.10
-
+  
 %files
     speedtest-cli.py /opt/local/bin/speedtest # Copy the script to the container. # <4>
 
@@ -319,7 +319,7 @@ From: python:{{ PY_VERSION }}-slim # Which container to use as a base image. # <
     speedtest -m 2000 -n 1000
 ```
 1. Each definition file [must start](https://apptainer.org/docs/user/latest/definition_files.html#header) with a `Bootstrap` line that tells Apptainer where to get the base image from. In this case, we're using the `docker` bootstrap, which means that we're getting the base image from the Docker registry.
-2. We're using the `python:{{ PY_VERSION }}` image as the base image. The `{{ PY_VERSION }}` part refers to a [template variable](https://apptainer.org/docs/user/latest/definition_files.html#template-variables) and will be replaced with the value of the `PY_VERSION` [build argument](https://apptainer.org/docs/user/latest/definition_files.html#arguments) when we build the image. This means that we can use the same definition file to build images for different versions of Python.
+2. We're using the `python:{{ PY_VERSION }}` image as the base image. The `{{ PY_VERSION }}` part refers to a [template variable](https://apptainer.org/docs/user/latest/definition_files.html#template-variables) and will be replaced with the value of the `PY_VERSION` [build argument](https://apptainer.org/docs/user/latest/definition_files.html#arguments) when we build the image. This means we can use the same definition file to build images for different versions of Python.
 3. The definition file is split into [sections](https://apptainer.org/docs/user/latest/definition_files.html#sections). The [`%arguments`](https://apptainer.org/docs/user/latest/definition_files.html#arguments)  section defines the {{< term "build argument|build arguments" >}} for the image. We're using the `PY_VERSION` argument to specify the version of Python to use, and we're setting the default value to `3.10`.
 4. The [`%files`](https://apptainer.org/docs/user/latest/definition_files.html#files) section defines the files to copy inside the container. We're copying the `speedtest-cli.py` script to `/opt/local/bin/speedtest` in the container. /opt/local/bin is a good place to put scripts that you want to be able to run from anywhere in the container, but you should add the directory to the `PATH` environment variable if you want to be able to run the script without specifying the full path to the script. We're removing the `.py` extension from the script name because we want to be able to run the script by typing `speedtest` instead of `speedtest-cli.py`.
 5. The [`%post`](https://apptainer.org/docs/user/latest/definition_files.html#post) section defines the commands to run inside the container after the base image has been downloaded. This is where you should install any dependencies that your script needs.
@@ -340,7 +340,7 @@ Now we can build the image using the [`apptainer build`](https://apptainer.org/d
 apptainer build speedtest-py3.10.sif speedtest.def
 ```
 
-It might take a little while to build the image. If everything goes according to plan, you should see the output of a test run at the end of the build process, when the `%test` section is run.
+It might take a little while to build the image. If everything goes according to plan, you should see the output of a test run at the end of the build process when the `%test` section is run.
 
 When it's done, the image will be saved as `speedtest-py3.10.sif` in the current directory. This image encapsulates the script and all its dependencies, so we can run it on any system that has Apptainer installed without having to worry about whether the system has a specific version of Python or the `click` module installed. Furthermore, because we defined a `%runscript` section in the definition file, we can run the script without having to specify the `python3` command.
 
@@ -392,7 +392,7 @@ apptainer run speedtest-py3.11.sif
 
 This makes it easier to run both containers with the same values of `M` and `N` without having to specify them each time.
 
-If we wanted to, we could even use `OUTPUT_FILE` to specify the output file instead of using the `--output` option, because we let `click` know that `OUTPUT_FILE` is an alternative for the `--output` argument if there is no `--output` option:
+If we wanted to, we could even use `OUTPUT_FILE` to specify the output file instead of using the `--output` option because we let `click` know that `OUTPUT_FILE` is an alternative for the `--output` argument if there is no `--output` option:
 
 ```bash
 export OUTPUT_FILE=py3.11-2.txt
@@ -443,7 +443,7 @@ That should free up some space.
 
 ### Changing the Apptainer cache directory
 
-By default, Apptainer stores the cache in `~/.apptainer/cache`. This can be a problem if you have a small home directory (e.g. if you are using the default 10 GB quota on {{< term Klone >}}). You can change the cache directory by setting the `APPTAINER_CACHE` {{< term "environment variable" >}}. For example, to set the cache directory to `/tmp/<your-username>/apptainer-cache`, you can use the `$USER` environment variable:
+By default, Apptainer stores the cache in `~/.apptainer/cache`. This can be a problem if you have a small home directory (e.g., if you are using the default 10 GB quota on {{< term Klone >}}). You can change the cache directory by setting the `APPTAINER_CACHE` {{< term "environment variable" >}}. For example, to set the cache directory to `/tmp/<your-username>/apptainer-cache`, you can use the `$USER` environment variable:
 
 ```bash
 export APPTAINER_CACHE="/tmp/$USER/apptainer-cache"
@@ -451,4 +451,4 @@ export APPTAINER_CACHE="/tmp/$USER/apptainer-cache"
 
 Apptainer will create the cache directory if it does not already exist.
 
-You'll need to set the `APPTAINER_CACHE` {{< term "environment variable" >}} every time you want to use Apptainer, so it's a good idea to add it to your {{< term "bashrc|~/.bashrc" >}} file so that it is set automatically when you log in.
+You'll need to set the `APPTAINER_CACHE` {{< term "environment variable" >}} every time you want to use Apptainer, so it's a good idea to add it to your {{< term "bashrc|~/.bashrc" >}} file so that it is always set when you log in.
