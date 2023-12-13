@@ -1,50 +1,50 @@
 Lmod: |-
-  An environment module system that is used to load additional software on Klone compute nodes. See [here](/compute_docs/compute/lmod.html) for more information.
+  An environment module system that is used to load additional software on Klone compute nodes. See [here](/compute_docs/docs/compute/lmod.html) for more information.
 
 Klone: |-
-  The latest generation of the Hyak supercomputer. See [here](/compute_docs/start/introduction.html) for how to use it.
+  The latest generation of the Hyak supercomputer. See [here](/compute_docs/docs/start/introduction.html) for how to use it.
 
 compute node: |-
-  A node on the Klone cluster that is used for running jobs. See [here](/compute_docs/compute/slurm.html) for more information.
+  A node on the Klone cluster that is used for running jobs. See [here](/compute_docs/docs/compute/slurm.html) for more information.
 
 login node: |-
-  A node on the Klone cluster that is used for logging in and submitting jobs. See [here](/compute_docs/compute/slurm.html) for more information.
+  A node on the Klone cluster that is used for logging in and submitting jobs. See [here](/compute_docs/docs/compute/slurm.html) for more information.
 
 "environment variable": |-
   A variable that is used to store information about the environment that a job is running in. See [here](https://www.gnu.org/software/bash/manual/html_node/Environment.html) for more information.
 
 job: |-
-  A task that is submitted to the cluster to be run on a compute node. See [here](/compute_docs/compute/slurm.html) for more information.
+  A task that is submitted to the cluster to be run on a compute node. See [here](/compute_docs/docs/compute/slurm.html) for more information.
 
 job script: |-
-  A script that is submitted to the cluster to be run on a compute node. See [here](/compute_docs/compute/slurm.html) for more information.
+  A script that is submitted to the cluster to be run on a compute node. See [here](/compute_docs/docs/compute/slurm.html) for more information.
 
 job array: |-
-  A set of jobs that are submitted to the cluster to be run on compute nodes. See [here](/compute_docs/compute/slurm.html) for more information.
+  A set of jobs that are submitted to the cluster to be run on compute nodes. See [here](/compute_docs/docs/compute/slurm.html) for more information.
 
 SSH: |-
-  A secure network protocol that is used to connect to the Klone cluster. See [here](/compute_docs/start/connect-ssh.html) for more information.
+  A secure network protocol that is used to connect to the Klone cluster. See [here](/compute_docs/docs/start/connect-ssh.html) for more information.
 
 SLURM: |-
-  A job scheduler that is used to manage jobs on the Klone cluster. See [here](/compute_docs/compute) for more information.
+  A job scheduler that is used to manage jobs on the Klone cluster. See [here](/compute_docs/docs/compute) for more information.
 
 SLURM job ID: |-
-  A unique identifier for a job that is submitted to the cluster. See [here](/compute_docs/compute) for more information.
+  A unique identifier for a job that is submitted to the cluster. See [here](/compute_docs/docs/compute) for more information.
 
 Apptainer: |-
-  A software container platform that is used to run software on the Klone cluster. See [here](/compute_docs/compute/apptainer.html) for more information.
+  A software container platform that is used to run software on the Klone cluster. See [here](/compute_docs/docs/compute/apptainer.html) for more information.
 
 Singularity: |-
-  The former name of Apptainer, a software container platform that is used to run software on the Klone cluster. See [here](/compute_docs/compute/apptainer.html) for more information.
+  The former name of Apptainer, a software container platform that is used to run software on the Klone cluster. See [here](/compute_docs/docs/compute/apptainer.html) for more information.
 
 container image: |-
-  A file that contains a fully encapsulated software environment that can be run on the Klone cluster and elsewhere. Containers can also be used to store data. See [here](/compute_docs/compute/apptainer.html) for more information.
+  A file that contains a fully encapsulated software environment that can be run on the Klone cluster and elsewhere. Containers can also be used to store data. See [here](/compute_docs/docs/compute/apptainer.html) for more information.
 
 Apptainer definition: |-
-  A file that contains instructions for building a container image. Also known as an *Apptainer recipe*. See [here](/compute_docs/compute/apptainer.html) for more information.
+  A file that contains instructions for building a container image. Also known as an *Apptainer recipe*. See [here](/compute_docs/docs/compute/apptainer.html) for more information.
 
 Docker: |-
-  A popular software container platform that is not available on Klone; however, [Apptainer](/compute_docs/compute/apptainer.html) can be used to run Docker images on Klone.
+  A popular software container platform that is not available on Klone; however, [Apptainer](/compute_docs/docs/compute/apptainer.html) can be used to run Docker images on Klone.
 
 GPU: |-
   A graphics processing unit that is used for running compute-intensive tasks on the Klone cluster.
