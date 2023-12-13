@@ -1,0 +1,71 @@
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script>
+  const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
+
+  refs.forEach((ref) => {
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
+    const popperInstance = Popper.createPopper(ref, def, {
+      placement: "auto",
+    });
+
+    function show() {
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
+
+      // Enable the event listeners:
+      popperInstance.setOptions((options) => ({
+        ...options,
+        modifiers: [
+          ...options.modifiers,
+          { name: "eventListeners", enabled: true },
+        ],
+      }));
+
+      // Update its position
+      popperInstance.update();
+    }
+
+    function hide() {
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
+    }
+
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
+
+    showEvents.forEach((event) => {
+      ref.addEventListener(event, show);
+    });
+
+    hideEvents.forEach((event) => {
+      ref.addEventListener(event, hide);
+    });
+  });
+</script>

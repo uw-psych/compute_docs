@@ -1,0 +1,34 @@
+---
+description: "How to contribute to this project"
+---
+# Contributing
+
+Contributions are welcome and appreciated! Every little bit helps and we will always give you credit. You can contribute in the ways listed below.
+
+## Report issues
+
+Report errors and other issues using the "Report issue" link at the bottom of each page.
+
+If you are reporting an issue related to running the code, please include the following information:
+
+* Your operating system name and version
+* Whether you are running the code on {{< term Klone >}}, and if you are:
+  * Whether you are running the code on a {{< term "login node" >}} or a {{< term "compute node" >}}
+* Any details about your local setup that might be helpful in troubleshooting
+* Detailed steps to reproduce the issue
+
+## Fix issues
+
+Look through the GitHub Issues for any open issues and see if there's anything you can help with. Send a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests) and we'll be happy to take a look.
+
+## Submit Feedback
+
+The best way to send feedback is to file an issue on GitHub.
+
+If you are proposing a feature or change, please:
+
+* Explain in detail how it would work or what it would cover
+* Keep the scope as narrow as possible
+
+You can also submit feedback and ask questions on the [psych-hpc](https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc) mailing list.
+

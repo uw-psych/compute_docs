@@ -1,0 +1,34 @@
+Bootstrap: docker # Where to get the base image from. # <1>
+From: python:{{ PY_VERSION }}-slim # Which container to use as a base image. # <2>
+
+%arguments # <3>
+    # The version of Python to use:
+    PY_VERSION=3.10
+  
+%files
+    speedtest-cli.py /opt/local/bin/speedtest # Copy the script to the container. # <4>
+
+%post # <5>
+    # Create a virtual environment in /opt/venv to install our dependencies:
+    /usr/local/bin/python -m venv /opt/venv # <6>
+
+    # Install `click` and don't cache the downloaded files:
+    /opt/venv/bin/pip install --no-cache-dir click # <7>
+
+    # Print a message to stderr to let the user know that the installation is done:
+    echo "$(/opt/venv/bin/python3 --version): Done installing dependencies." >&2 # <8>
+
+    # Make the `speedtest` command executable:
+    chmod +x /opt/local/bin/speedtest # <9>
+
+%environment # <10>
+    export PATH="/opt/local/bin:$PATH" # Add the directory with the `speedtest` command to the PATH. # <11>
+    export PATH="/opt/venv/bin:$PATH" # Add the virtual environment to the PATH. # <12>
+
+%runscript # <13>
+    # Run the Python script with the arguments passed to the container:
+    speedtest "$@" # <14>
+
+%test
+    # Run the speedtest command to check if it works:
+    speedtest -m 2000 -n 1000

@@ -1,0 +1,12 @@
+---
+title: "Storage"
+description: "Storing research data"
+listing:
+  contents:
+    - concepts.qmd
+    - options.qmd
+    - klone-storage.qmd
+---
+
+This section describes the storage options available for your research data and provides information on concepts and terminology that will help you understand these options.
+

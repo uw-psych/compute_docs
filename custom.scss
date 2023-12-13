@@ -1,0 +1,30 @@
+/*-- scss:rules --*/
+
+/* quarto sidebar overrides: */
+.sidebar-title {
+  color: #FFFFFF;
+}
+
+/* [Cascadia Mono](https: //github.com/microsoft/cascadia-code): */
+@font-face {
+  font-family: 'Cascadia Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('_static/CascadiaMono.woff2') format('woff2'), url('_static/CascadiaMono.ttf') format('truetype');
+}
+
+/* asciinema-player overrides: */
+.ap-wrapper {
+  justify-content: inherit !important;
+  align-items: inherit !important;
+}
+
+/* quarto popover-glossary overrides: */
+.glossary-def {
+  font-size: 100% !important;
+}
+
+.sidebar-title {
+  font-weight: bold;
+}

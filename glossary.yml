@@ -1,0 +1,98 @@
+Lmod: |-
+  An environment module system that is used to load additional software on Klone compute nodes. See [here](/docs/compute/lmod.html) for more information.
+
+Klone: |-
+  The latest generation of the Hyak supercomputer. See [here](/docs/start/introduction.html) for how to use it.
+
+compute node: |-
+  A node on the Klone cluster that is used for running jobs. See [here](/docs/compute/slurm.html) for more information.
+
+login node: |-
+  A node on the Klone cluster that is used for logging in and submitting jobs. See [here](/docs/compute/slurm.html) for more information.
+
+"environment variable": |-
+  A variable that is used to store information about the environment that a job is running in. See [here](https://www.gnu.org/software/bash/manual/html_node/Environment.html) for more information.
+
+job: |-
+  A task that is submitted to the cluster to be run on a compute node. See [here](/docs/compute/slurm.html) for more information.
+
+job script: |-
+  A script that is submitted to the cluster to be run on a compute node. See [here](/docs/compute/slurm.html) for more information.
+
+job array: |-
+  A set of jobs that are submitted to the cluster to be run on compute nodes. See [here](/docs/compute/slurm.html) for more information.
+
+SSH: |-
+  A secure network protocol that is used to connect to the Klone cluster. See [here](/docs/start/connect-ssh.html) for more information.
+
+SLURM: |-
+  A job scheduler that is used to manage jobs on the Klone cluster. See [here](/docs/compute) for more information.
+
+SLURM job ID: |-
+  A unique identifier for a job that is submitted to the cluster. See [here](/docs/compute) for more information.
+
+Apptainer: |-
+  A software container platform that is used to run software on the Klone cluster. See [here](/docs/compute/apptainer.html) for more information.
+
+Singularity: |-
+  The former name of Apptainer, a software container platform that is used to run software on the Klone cluster. See [here](/docs/compute/apptainer.html) for more information.
+
+container image: |-
+  A file that contains a fully encapsulated software environment that can be run on the Klone cluster and elsewhere. Containers can also be used to store data. See [here](/docs/compute/apptainer.html) for more information.
+
+Apptainer definition: |-
+  A file that contains instructions for building a container image. Also known as an *Apptainer recipe*. See [here](/docs/compute/apptainer.html) for more information.
+
+Docker: |-
+  A popular software container platform that is not available on Klone; however, [Apptainer](/docs/compute/apptainer.html) can be used to run Docker images on Klone.
+
+GPU: |-
+  A graphics processing unit that is used for running compute-intensive tasks on the Klone cluster.
+
+CUDA: |-
+  A parallel computing platform and programming model that is used for running compute-intensive tasks on the Klone cluster.
+
+WSL2: |-
+  Windows Subsystem for Linux 2, a Linux kernel that is used to run Linux software on Windows 10. See [here](https://learn.microsoft.com/en-us/windows/wsl/install) for more information.
+
+Cygwin: |-
+  A Linux-like environment that is used to run Linux software on Windows. See [here](https://www.cygwin.com/) for more information.
+
+Git: |-
+  A version control system that is used to manage software projects. See [here](https://git-scm.com/) for more information.
+
+GitHub: |-
+  A web-based hosting service for Git repositories. See [here](https://github.com) for more information.
+
+rclone: |-
+  A command-line program that is used to access and manage files on cloud storage services. It is installed on the Klone cluster's login and compute nodes. See [here](https://rclone.org/) for more information.
+
+VPN: |-
+  [Virtual private network](https://en.wikipedia.org/wiki/Virtual_private_network) software can be used to access the UW network from off-campus. See [here](https://itconnect.uw.edu/connect/uw-networks/about-vpn/) for information about UW's VPN service.
+
+stderr: |-
+  The standard error stream, `stderr`, is where a program's error and diagnostic messages are written to by default. See [here](https://en.wikipedia.org/wiki/Standard_streams) for more information.
+
+stdout: |-
+  The standard output stream, `stdout`, is where a program's output is written to by default. See [here](https://en.wikipedia.org/wiki/Standard_streams) for more information.
+
+stdin: |-
+  The standard input stream, `stdin`, is where a program's input is read from by default. See [here](https://en.wikipedia.org/wiki/Standard_streams) for more information.
+
+bash: |-
+  A popular Unix shell and command language that is used on the Klone cluster. See [here](https://www.gnu.org/software/bash/) for more information.
+
+bashrc: |-
+  A file that contains commands that are run when a bash shell is started. See [here](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html) for more information.
+
+slice: |-
+  On the Klone cluster, a slice is a unit of allocation for compute resources that is bought by a research group. See [here](https://hyak.uw.edu/blog/terminology-reset) for more information.
+
+build argument: |-
+  A variable that can be set during build time with Apptainer with the `--build-arg` option. See the [Apptainer documentation](https://apptainer.org/docs/user/main/definition_files.html#arguments) for more information.
+
+chmod: |-
+  A command that is used to change the permissions of a file or directory, or to mark a file as executable so that it can be run. See [here](https://www.gnu.org/software/coreutils/manual/html_node/chmod-invocation.html) for more information.
+
+"PATH": |-
+  An environment variable that contains a list of directories that are searched for executable programs. See [here](https://pubs.opengroup.org/onlinepubs/000095399/basedefs/xbd_chap08.html#tag_08_03) for more information.

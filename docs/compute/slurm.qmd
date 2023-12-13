@@ -1,0 +1,140 @@
+---
+title: "SLURM Basics"
+order: 10
+description: An introduction to the SLURM job scheduler on Hyak
+---
+# Slurm Basics
+
+The {{< term Klone >}} cluster uses the [SLURM](https://slurm.schedmd.com/) job scheduler to manage access to compute resources and schedule user-submitted jobs.
+
+Users can submit a batch job for scripted parallel tasks or an interactive job for manual tasks or
+GUI programs.
+
+## Checking access to compute resources
+
+Use `groups` command to see which groups you are a member of.
+
+Use `hyakalloc` command to check availability of compute resources.
+
+## Submitting an interactive job with salloc
+
+```bash
+salloc -A <lab> -p <node_type> -N <NUM_NODES> -c <NUM_CPUS> --mem=<MEM>[UNIT] --time=DD-HH:MM:SS
+```
+
+Add `--no-shell` flag if you plan to enter/exit the node without losing the job allocation.
+
+Use `scancel <job_id>` to terminate the job allocation.
+
+Use `squeue --me` to check information about active or pending job allocations (including job ID).
+
+## Submitting an interactive job with srun
+
+From the login node, run the following:
+
+```bash
+srun -A <lab> -p <node_type> -N <NUM_NODES> -c <NUM_CPUS> --mem=<MEM>[UNIT] --time=DD-HH:MM:SS --pty /bin/bash
+```
+
+## Submitting a batch job
+
+>  sbatch submits a batch script to Slurm. The batch script may be given to sbatch through a file name on the command line, or if no file name is specified, sbatch will read in a script from standard input. The batch script may contain options preceded with "#SBATCH" before any executable commands in the script. sbatch will stop processing further #SBATCH directives once the first non-comment non-whitespace line has been reached in the script.
+
+```{.bash filename=mybatch.job}
+#!/usr/bin/env bash
+#
+# This is a script that the SLURM scheduler will use to run your job.
+#
+# The line at the top of the file is called a shebang.
+# It tells the shell what program to use to interpret the script.
+# In this case, we're using bash, the most common shell on Linux systems.
+# The shell is a program that reads commands from the terminal and executes them.
+# It's similar to the command prompt on Windows systems.
+#
+# Lines that begin with # are comments. They are not executed by the shell.
+# They are intended to document what the script does.
+#
+# Lines that begin with #SBATCH are special directives to the SLURM scheduler.
+# These directives tell the scheduler how to run your job.
+# They must come before any executable commands in your script.
+# Remove a single # character from the start of the line to enable a directive.
+#
+# For more information about SLURM directives, see the SLURM documentation:
+# https://slurm.schedmd.com/sbatch.html
+#
+# For more information about bash scripting in general, see:
+# https://www.gnu.org/software/bash/manual/bash.html
+#
+#
+# # JOB OPTIONS
+# You can specify some options here to customize your job.
+# For example, you can give your job a name with the --job-name option,
+# or specify the maximum amount of time the job can run with the --time option.
+#
+#
+# ## JOB NAME
+# The job name will appear when querying running jobs on the system and in log files.
+# The default is the name of this file.
+##SBATCH --job-name=myjob
+#
+#
+# ## RESOURCES
+# SLURM jobs run on compute nodes that are allocated to your job.
+# The resources available to your job depend on the account you are using,
+# the partition you request, and the number of nodes and tasks you request.
+# To see the accounts and partitions available to you, run the command `hyakalloc`.
+#
+##SBATCH --account=<lab> # Replace <lab> with your lab's name, e.g., "escience".
+##SBATCH --partition=<partition> # Replace <partition> with the name of the partition you want to use, e.g., "gpu-a40".
+##SBATCH --nodes=<number> # Number of nodes to allocate
+##SBATCH --ntasks-per-node=<number> # Number of cores to allocate on each node
+##SBATCH --mem=<number>[units] # How much memory to allocate per node, with units (M|G|T), e.g., 10G = 10 gigabytes
+##SBATCH --gpus=<number> # Number of GPUs to allocate, e.g., 1
+##SBATCH --time=<time> # Max runtime in DD-HH:MM:SS format, e.g., 02-12:00:00 = 1 day, 12 hours
+#
+#
+# ## EMAIL NOTIFICATIONS
+# SLURM can send email notifications when certain events relating to your job occur.
+# To enable email notifications, uncomment the following lines and replace <status> and <email> with appropriate values:
+#
+##SBATCH --mail-type=ALL # Will e-mail about all job state changes
+##SBATCH --mail-user="${USER}@uw.edu" # Who to send e-mail to (here, your username at uw.edu)
+#
+# Some valid --mail-type values besides ALL include:
+#   BEGIN (job started), END (job finished), FAIL (job failed), REQUEUE (job requeued),
+#   STAGE_OUT (stage out completed), TIME_LIMIT (reached max run time), TIME_LIMIT_50 (reached 50% of max run time),
+#   TIME_LIMIT_80 (reached 80% of max run time), TIME_LIMIT_90 (reached 90% of max run time)
+# See sbatch documentation (command: `man sbatch`) for more details.
+#
+# ## WORKING DIRECTORY
+# The --chdir option tells SLURM to change to the specified directory before running your job.
+# The default is to run your job from the current working directory.
+##SBATCH --chdir=<directory>
+#
+#
+# ## JOB OUTPUT STREAMS
+# Processes on Unix/Linux systems write messages to two places:
+# - standard output (stdout): where the program writes its normal output
+# - standard error (stderr): where the program usually writes error and diagnostic messages
+#
+# The default behavior of SLURM is to merge these two streams into a single file,
+# which is written to the current working directory under the name 'slurm-<jobid>.out'.
+# This can be changed with the --output and --error options.
+#
+# To disable an output stream, use /dev/null as the file name -- e.g. --error=/dev/null
+# /dev/null is a special file that discards all data written to it.
+#
+# Uncomment the following lines to customize output and error streams:
+##SBATCH --output=output.log # Where to direct standard output (in this case, to the file 'output.log')
+##SBATCH --error=error.log # Where to direct standard error (in this case, to the file 'error.log')
+#
+#
+# Your program goes here:
+echo "Starting program"
+<myprogram>
+```
+
+
+```bash
+sbatch mybatch.job
+```

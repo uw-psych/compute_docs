@@ -1,0 +1,62 @@
+---
+title: "Lmod"
+description: Loadable modules for Hyak
+order: 30
+---
+# Lmod
+
+[Lmod](https://www.tacc.utexas.edu/research/tacc-research/lmod/) is a module system that is used to load additional software on Klone compute nodes.
+
+Lmod is run with the command `module`. This command is only available on {{< term "compute node|compute nodes"  >}} and will not run on the {{< term "login node" >}}, so you need to launch a [SLURM job](../compute/slurm.qmd) on {{< term "Klone" >}} to run the command.
+
+
+## Show help for Lmod
+
+```bash
+module help
+```
+
+## Checking all available modules
+
+```bash
+module avail
+```
+
+## Load a module
+
+```bash
+module load <module_name> # To load the default version of a module
+module load <module_name>/<version> # To load a specific version of a module
+```
+
+If the version is not specified, Lmod will load a default version marked with `D`.
+
+## Show help for a module
+
+```bash
+module help <module>
+```
+
+## List loaded modules
+
+```bash
+module list
+```
+
+## Unload a module
+
+```bash
+module unload <module>
+```
+
+## Unload all modules
+
+```bash
+module purge
+```
+
+## Show module description
+
+```bash
+module whatis <module>
+```

@@ -1,0 +1,26 @@
+---
+description: An introduction to using the University of Washington Hyak Cluster
+order: 10
+---
+
+# Introduction to UW Hyak
+
+[Hyak](https://hyak.uw.edu/systems/) is the University of Washington's high-performance computing cluster:
+
+> Hyak is part of the University of Washington's cyberinfrastructure plan to support world-class research in every department. Hyak is an ecosystem of high-performance compute (HPC) clusters and supporting infrastructure (e.g., data management, computational training, scientific consulting). We are currently on the 3rd generation cluster for Hyak.
+
+## Klone
+
+The latest generation of the Hyak cluster is Klone.
+
+## Mox
+
+The second generation of the Hyak cluster, Mox, is being phased out in 2024. No new capacity or node additions are planned. The Klone cluster is recommended for all users.
+
+## Resources
+
+Sign up to the [psych-hpc](https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc) mailing list to ask questions and receive updates about computing at the UW Psychology Department.
+
+Check out UW Research Computing Club's [Slack](https://uw-rcc.slack.com) and ask questions under `hyak-questions`.
+
+For more information, see the official [Hyak website](https://hyak.uw.edu).

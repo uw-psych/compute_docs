@@ -1,0 +1,15 @@
+---
+description: "Documentation for Computing at the University of Washington Psychology Department"
+listing:
+  contents:
+    - docs/start/index.qmd
+    - docs/compute/index.qmd
+    - docs/software/index.qmd
+    - docs/storage/index.qmd
+---
+# Welcome
+
+Welcome to the documentation for computing resources at the University of Washington Psychology Department. This documentation is intended to be a living document and we welcome contributions from the community.
+
+Here are some quick links to get you started:
+

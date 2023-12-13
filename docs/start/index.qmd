@@ -1,0 +1,20 @@
+---
+description: "Getting started with the Hyak cluster"
+listing:
+  contents:
+    - "*.qmd"
+---
+# Getting started
+
+(@) Get access to Hyak:
+    - Active UW students can join UW Research Computing Club (RCC) to gain access to STF-funded nodes.
+    - PIs or labs should purchase dedicated storage and compute resources.
+(@) [Log in to a cluster via SSH](./connect-ssh.qmd): 
+  ``` bash
+  ssh your-uw-netid@klone.hyak.uw.edu
+  ```
+(@) Navigate and understand its [compute infrastructure](../compute/index.qmd):  
+    - Request compute jobs with [Slurm](../compute/slurm.qmd)
+    - Access certain programs with [Lmod software modules](../compute/lmod.qmd)
+    - Build and run software containers with [Apptainer](../compute/apptainer.qmd)
+    - Create and access a virtual desktop with [hyakvnc](../start/hyakvnc.qmd)

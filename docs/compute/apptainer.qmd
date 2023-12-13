@@ -1,0 +1,454 @@
+---
+title: "Apptainer"
+description: The Apptainer container environment
+order: 20
+css: "/_static/lib/asciinema-player.css"
+include-after-body:
+    text: |
+        <script src="/_static/lib/asciinema-player.min.js"></script>
+        <script>
+            term_font_family="'Cascadia Mono', monospace'"
+            document.querySelectorAll('.cast').forEach((block) => {
+                AsciinemaPlayer.create("../../_static/casts/" + block.id + ".cast", block, {
+                      terminalFontFamily: 'Iosevka Term Web, monospace',
+                       fit: false
+                })
+                });
+        </script>
+---
+
+# Apptainer
+
+Apptainer (formerly Singularity) is a simple container platform enabling users to install and run software that would otherwise be unsupported by the host environment.
+
+On Klone, the `apptainer` command is available on all {{< term "compute node|compute nodes" >}}, but it is not available on the {{< term "login node" >}}.
+
+By default, the `apptainer` command will use the system version of Apptainer:
+
+```bash
+which apptainer # prints /usr/bin/apptainer
+apptainer --version # apptainer version 1.2.4-1.el8 (as of 2023-12-05)
+```
+
+::: {.callout-note title="Loading a different version of Apptainer using Lmod" collapse=true}
+
+To use a different version of Apptainer, load the appropriate [{{< term Lmod >}}](../compute/lmod.qmd) module. For example, to use Apptainer version 1.1.5:
+
+```bash
+module load apptainer/1.1.5
+which apptainer # prints /sw/apptainer/1.1.5/bin/apptainer
+apptainer --version # apptainer version 1.1.5
+```
+
+To see all available versions of Apptainer, run:
+
+```bash
+module -t spider apptainer
+```
+
+The default module is indicated by the tag `(D)` following the version.
+For example, `apptainer/local (D)` indicates that the default version is `local`.
+(The local version is the version installed on the system.)
+
+:::
+
+## Using Apptainer
+
+### Interactive session
+
+#### Bind paths
+
+{{< term Apptainer >}} containers are designed to be portable, so by default, they do not have access to all the files on the host system. To make files available to the container, you must bind them to the container. This is done using the `--bind` option of the `apptainer` command or the `APPTAINER_BINDPATH` {{< term "environment variable" >}}.
+
+::: {.callout-tip title="Default bind paths"}
+By default, `apptainer` will make several directories available within the container by binding them to the same path in the container so that `/somefolder` on the host is available as `/somefolder` within the container.
+
+These directories include:
+
+- `$HOME` (your home directory, a.k.a. `~`)
+- `/tmp` (temporary directory -- unique to each node; contents are purged when the users’ last job running on the node completes)
+- `$PWD` (the current working directory, i.e., the directory you are in when you run `apptainer`)
+
+The Klone Apptainer installation is also configured to bind several other directories to the same path in the container, including:
+
+- `/mmfs1` (the main filesystem)
+- `/scr` (the scratch filesystem, same as `/tmp`)
+
+:::
+
+We recommend setting the following binds before running a container:
+
+``` bash
+export APPTAINER_BINDPATH="/gscratch" # Make /gscratch available within the container
+```
+
+To start an Apptainer container interactively, run the following:
+
+``` bash
+apptainer shell <path_to_container>
+```
+
+## Pulling an Apptainer image from docker.io registry
+
+```bash
+apptainer pull docker://<image_name>[:<tag>] # Pulls the image from docker registry
+```
+
+## Practical examples
+
+### Using Apptainer to run a Python script
+
+Let's try running a Python script using Apptainer. The [release notes](https://docs.python.org/3/whatsnew/3.11.html#summary-release-highlights) for Python version 3.11 say that it is "between 10-60% faster than Python 3.10". Is this true? Let's find out! We'll write a simple Python script to test this and use Apptainer to run it on Python 3.10 and Python 3.11.
+
+``` {.python filename="speedtest.py"}
+#!/usr/bin/env python3
+import os, sys, timeit
+
+# Get the values of the environment variables M and N, or use default values:
+n = int(os.getenv("N", default=1000))  # How many numbers to join # <1>
+m = int(os.getenv("M", default=100))  # How many times to run the test # <1>
+
+# Function to test:
+def join_nums():
+    return "-".join([str(i) for i in range(n)])
+
+# Print details about the test to stderr: # <2>
+print(
+    f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}",
+    file=sys.stderr,  # <2>
+)
+
+# Run the test:
+result = timeit.timeit(join_nums, number=m)  # <3>
+
+# Print the result:
+print(result)  # <4>
+```
+1. The `os.getenv` function retrieves the value of an {{< term "environment variable" >}} or returns a default value if the variable is not set.
+2. Here, we use the `file` parameter to `print()`, which makes it write to the {{< term "stderr|standard error" >}} stream (`stderr`) instead of the default {{< term "stdout|standard output" >}} stream (`stdout`). This is useful because we want to print the result of the test to `stdout` so that we can save the output by redirecting it to a file, but we also want to print some information about the test to `stderr` so that it doesn't get mixed up with the result.
+3. `timeit.timeit()` runs a function multiple times and returns the average time it took to run the function.
+4. The `print` function prints to the {{< term "stdout|standard output" >}} stream (`stdout`) by default. We can redirect this to a file in {{< term bash >}} using the `>` operator.
+
+::: {.callout-tip title="How to paste and save a file in the terminal"}
+You can use the `nano` command to create a new file and paste the contents of the file into the terminal. To do this, run `nano <filename>` in the terminal, paste the contents of the file into the terminal, and press `Ctrl+X` to exit. You will be asked if you want to save the file. Press `Y` to save the file and `Enter` to confirm the filename.
+:::
+
+Now let's run the script using Python 3.10 and Python 3.11. For the image, we will use the `python:3.10-slim` and `python:3.11-slim` images from the official [Python images](https://hub.docker.com/_/python).
+
+::: {.callout-tip title="Tagged container releases"}
+The `python:3.10-slim` and `python:3.11-slim` images are tagged with the version of Python they contain. This means that if you pull the `python:3.10-slim` image today, it will always contain Python 3.10, even if Python 3.11 is released tomorrow.
+
+*The `python:*-slim` images are designed to contain only the minimal set of packages required to run Python and are much smaller than the standard Python images (~45 MiB vs ~350 MiB).*
+:::
+
+We'll use the `apptainer exec` command to run the script inside an Apptainer container:
+
+``` bash
+apptainer exec docker://python:3.10-slim python3 speedtest.py # <1>
+```
+1. The `apptainer exec` command runs a command inside an Apptainer container. The `docker://python:3.10-slim` argument tells Apptainer to use the `python:3.10-slim` image from the Docker registry. The `python3 ./speedtest.py` argument tells Apptainer to run the `python3` command inside the container and provide it with the argument `speedtest.py`.
+
+You should see something like:
+
+```bash
+Running join_nums() 1000*100 times on Python v3.10 # <1>
+0.003154174002702348 # <2>
+```
+1. This is printed to {{< term stderr >}} because we used `print(..., file=sys.stderr)` in the script.
+2. This is printed to {{< term stdout >}}.
+
+It probably didn't take very long to run the script. Let's try running it again with larger values of `M` and `N`. We can set the values of `M` and `N` by setting them as {{< term "environment variable|environment variables" >}} in the {{< term bash >}} command prompt before running the script:
+
+```bash
+export M=1000 N=100_000 # <1>
+apptainer exec docker://python:3.10-slim python3 speedtest.py
+```
+1. The `export` command sets the values of the `M` and `N` {{< term "environment variable|environment variables" >}} and makes them available to other programs like `apptainer`. We're setting `N` to `100_000` instead of `100000` because underscores can be used in Python to make large numbers easier to read. This is a feature of Python, not the shell (which interprets `100_000` as just a string and not a number).
+
+It should take a bit longer to run this time.
+
+Now, let's try running the script using Python 3.11:
+
+``` bash
+apptainer exec docker://python:3.11-slim python3 speedtest.py
+```
+
+We don't need to set the values of `M` and `N` again because they are still set from the previous command via `export` (unless you closed your terminal window or logged out).
+
+It probably took a bit less time to run the script this time.
+
+Is Python 3.11 really faster than Python 3.10? Let's find out by redirecting the output of the script to a file:
+
+```bash
+apptainer exec docker://python:3.10-slim python3 speedtest.py > py3.10.txt # <1>
+apptainer exec docker://python:3.11-slim python3 speedtest.py > py3.11.txt # <1>
+cat py3.10.txt py3.11.txt # show the results # <2>
+```
+1. In {{< term bash >}}, the `>` operator redirects the output of a command to a file. If the file already exists, it will be overwritten. If you want to append to an existing file instead, use the `>>` operator. These operators can be used with any command, not just `apptainer`. For example, `ls > my_files.txt` will write the output of `ls` to the file `my_files.txt`.
+2. The `cat` command prints the contents of a file to> <tt>{{< term stdout >}}</tt>. If you want to print the contents of multiple files, you can list them all as arguments to `cat`.
+
+We see the results, but they're not very easy to interpret. Let's pipe the output to Python to calculate the speedup:
+
+```bash
+cat py3.10.txt py3.11.txt | apptainer exec docker://python:3.11-slim python3 -c 'print(float(input())/float(input()))' # <1>
+```
+1. The `|` operator pipes the output of one command to the input of another. In this case, we are piping the output of `cat py3.10.txt py3.11.txt` to the input of `apptainer exec docker://python:3.11-slim python3 -c 'print(float(input())/float(input()))'`. The `-c` option of the `python3` command tells Python to run the code provided as an argument. The code `print(float(input())/float(input()))` reads two lines of input from {{< term "stdin|standard input" >}}, converts them to floating point numbers, divides the first by the second, and prints the result.
+
+In my case, Python 3.11 was about 1.3 times faster than Python 3.10. Not bad!
+
+Here's a demo of the above commands. Note that I used `M=200` and `N=50_000` instead of `M=1000` and `N=100_000` because it takes a long time to run the script with the larger values of `M` and `N`.
+
+::::: {.cast #apptainer-python-speedtest}
+:::::
+
+### Writing a definition file to build a custom Apptainer image
+
+What if we wanted to add a command-line interface to make it possible to run the script with different values of `M` and `N` without having to set them as {{< term "environment variable|environment variables" >}}? A user might want to set the values of `M` and `N` as command-line arguments. Maybe they would also like to be able to specify the output file instead of redirecting the output to a file. And how about a progress bar? Users love progress bars!
+
+This sounds like a tall order, but it's quite easy to do in Python using the [click](https://click.palletsprojects.com) package for Python. Here's the new script:
+
+``` {.python filename="speedtest-cli.py"}
+#!/usr/bin/env python3
+import os, sys, timeit
+import click
+
+
+# Set up the context for the command line interface and add the options:
+@click.command()
+@click.option(
+    "-n",  # The name of the option
+    envvar="N",  # Use the environment variable `N` if it exists
+    default=1000,  # Default value if `N` is not set
+    help="How many numbers to join",  # Help text for the `-n` option
+    type=int,  # Convert the value to an integer
+)
+@click.option(
+    "-m",
+    envvar="M",
+    default=100,
+    help="How many times to run the test",
+    type=int,
+)
+@click.option(
+    "--output",
+    default="/dev/stdout",  # Write the result to stdout by default # <1>
+    help="Path to the output file",
+    type=click.Path(writable=True, dir_okay=False),  # <2>
+)
+def speedtest(m, n, output):  # <3>
+    """Run a speed test."""  # Help text for the command
+
+    def join_nums():  # The function to test
+        return "-".join([str(i) for i in range(n)])
+
+    print(f"Running join_nums() {n}*{m} times on Python v{sys.version_info.major}.{sys.version_info.minor}", file=sys.stderr)
+    bar = click.progressbar(  # Create a progress bar
+        length=n * m,
+        update_min_steps=n,  # Update the progress bar every `n` steps
+        file=sys.stderr,  # Print the progress bar to stderr
+    )
+
+    def join_nums_progress():  # Wrap the function to add the progress bar
+        result = join_nums()
+        bar.update(n)  # Increment the progress bar by `n` steps
+        return result
+
+    result = timeit.timeit(join_nums_progress, number=m)  # Run the test
+
+    bar.render_finish()  # Stop rendering the progress bar
+
+    with open(output, "w") as f:  # Open the output file for writing
+        print(result, file=f)  # Write the result to the output file
+
+    if output != "/dev/stdout":  # Show the output path if it's not stdout
+        print(f"Result written to {output}", file=sys.stderr)
+
+
+if __name__ == "__main__":  # Run the script if it's executed directly # <4>
+    speedtest()
+```
+1. We set the default value of `--output` to `/dev/stdout` so that the script will print the result to <tt>{{< term stdout >}}</tt> by default.
+2. `click` provides a [`Path`](https://click.palletsprojects.com/en/8.1.x/api/#click.Path) type that can be used to validate paths. The `writable=True` option tells `click` that the path must be writable. The `dir_okay=False` option tells `click` that the path must not be a directory.
+3. The `@click.command()` [decorator](https://docs.python.org/3.10/glossary.html#term-decorator) tells `click` that the first function definition that follows defines a command. The `@click.option()` decorators add options to the command-line interface. `click` passes the values of these options to the function using the names of the options (lowercased and with `-` replaced by `_`).
+4. The `__name__ == "__main__"` check ensures that the script is only run if it is executed directly and not if it is imported as a module. This is useful if you want to use the script as a module in another script. We don't *need* to do this here, but it's a good habit to get into.
+
+Now, let's try running the script with `apptainer exec`:
+
+```bash
+apptainer exec docker://python:3.11-slim python3 speedtest-cli.py
+```
+
+You probably got a `ModuleNotFoundError` because the `click` package is not installed in the `python:3.11-slim` image. If you know some Python, you might think, "I could probably fix this if I install the `click` module via `pip`." And you would be right -- if you were running the script in the version of Python that's normally installed on your computer. But we're running the script inside an Apptainer container, so we need to install the `click` module inside the container. Furthermore, we're using *two* different versions of Python, so we need to install the `click` module in the containers for *both* versions.
+
+We'll solve this by writing an [Apptainer definition file](https://apptainer.org/docs/user/latest/definition_files.html) to build a custom Apptainer image that contains the `click` module. Here's the definition file:
+
+``` {.bash filename="speedtest.def"}
+Bootstrap: docker # Where to get the base image from. # <1>
+From: python:{{ PY_VERSION }}-slim # Which container to use as a base image. # <2>
+
+%arguments # <3>
+    # The version of Python to use:
+    PY_VERSION=3.10
+  
+%files
+    speedtest-cli.py /opt/local/bin/speedtest # Copy the script to the container. # <4>
+
+%post # <5>
+    # Create a virtual environment in /opt/venv to install our dependencies:
+    /usr/local/bin/python -m venv /opt/venv # <6>
+
+    # Install `click` and don't cache the downloaded files:
+    /opt/venv/bin/pip install --no-cache-dir click # <7>
+
+    # Print a message to stderr to let the user know that the installation is done:
+    echo "$(/opt/venv/bin/python3 --version): Done installing dependencies." >&2 # <8>
+
+    # Make the `speedtest` command executable:
+    chmod +x /opt/local/bin/speedtest # <9>
+
+%environment # <10>
+    export PATH="/opt/local/bin:$PATH" # Add the directory with the `speedtest` command to the PATH. # <11>
+    export PATH="/opt/venv/bin:$PATH" # Add the virtual environment to the PATH. # <12>
+
+%runscript # <13>
+    # Run the Python script with the arguments passed to the container:
+    speedtest "$@" # <14>
+
+%test # <15>
+    # Run the speedtest command to check if it works:
+    speedtest -m 2000 -n 1000
+```
+1. Each definition file [must start](https://apptainer.org/docs/user/latest/definition_files.html#header) with a `Bootstrap` line that tells Apptainer where to get the base image from. In this case, we're using the `docker` bootstrap, which means that we're getting the base image from the Docker registry.
+2. We're using the `python:{{ PY_VERSION }}` image as the base image. The `{{ PY_VERSION }}` part refers to a [template variable](https://apptainer.org/docs/user/latest/definition_files.html#template-variables) and will be replaced with the value of the `PY_VERSION` [build argument](https://apptainer.org/docs/user/latest/definition_files.html#arguments) when we build the image. This means we can use the same definition file to build images for different versions of Python.
+3. The definition file is split into [sections](https://apptainer.org/docs/user/latest/definition_files.html#sections). The [`%arguments`](https://apptainer.org/docs/user/latest/definition_files.html#arguments)  section defines the {{< term "build argument|build arguments" >}} for the image. We're using the `PY_VERSION` argument to specify the version of Python to use, and we're setting the default value to `3.10`.
+4. The [`%files`](https://apptainer.org/docs/user/latest/definition_files.html#files) section defines the files to copy inside the container. We're copying the `speedtest-cli.py` script to `/opt/local/bin/speedtest` in the container. /opt/local/bin is a good place to put scripts that you want to be able to run from anywhere in the container, but you should add the directory to the `PATH` environment variable if you want to be able to run the script without specifying the full path to the script. We're removing the `.py` extension from the script name because we want to be able to run the script by typing `speedtest` instead of `speedtest-cli.py`.
+5. The [`%post`](https://apptainer.org/docs/user/latest/definition_files.html#post) section defines the commands to run inside the container after the base image has been downloaded. This is where you should install any dependencies that your script needs.
+6. We're using the `python -m venv` command to create a virtual environment in `/opt/venv`, which is where we will install the `click` module.
+7. We run `pip` from the virtual environment to install the `click` module. We use the `--no-cache-dir` option to tell `pip` not to cache the downloaded files. This is useful because we don't need the downloaded files after we've installed the `click` module -- otherwise, they would just take up space in the built image.
+8. We're using the `echo` command to print a message to {{< term stderr >}} to let the user know that the installation is done. We're using the `>&2` operator to redirect the output of `echo` to {{< term stderr >}} instead of {{< term stdout >}}. The `$(...)` syntax runs the commands within and inserts the output into a string. In this case, we're using it to insert the output of `python3 --version` into the string we're about to print with `echo`. This helps the user know which version of Python the built image will contain.
+9. We're using the `chmod` command to make the `speedtest` command executable -- otherwise, we wouldn't be able to run it without passing it to the `python3` command.
+10. The [`%environment`](https://apptainer.org/docs/user/latest/definition_files.html#environment) section defines the environment variables to set in the container. Note that the environment variables set in the `%environment` section are only set when the container is run. They are *not* set when the image is built, so they are not available in the `%post` section, even if you move the `%environment` section above the `%post` section.
+11. We're prepending `/opt/local/bin` to the existing value of the <tt>{{< term PATH >}}</tt> environment variable so that we can run the `speedtest` command from anywhere in the container. The `PATH` environment variable is used by the shell to find commands. If you want to be able to run a command without specifying the full path to the command, you need to add the directory containing the command to the `PATH` environment variable, separated by a colon (`:`).
+12. Adding the `/opt/venv/bin` directory to the `PATH` environment variable makes it possible to run the `python` command from the virtual environment we created in the `%post` section. This is necessary because we installed the `click` module in the virtual environment, so we need to run the `python` command from the virtual environment to be able to import the `click` module.
+13. The [`%runscript`](https://apptainer.org/docs/user/latest/definition_files.html#runscript) section defines the command to run when the container is run. In this case, we're running the `speedtest` command we installed in the `%post` section.
+14. We're using the [`$@`](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html#index-_0040) *special parameter* to pass all the arguments passed to the container to the `speedtest` command -- for example, if you run `apptainer exec speedtest.sif --output output.txt`, the `speedtest` command will be run with the arguments `--output output.txt`.
+15. The [`%test`](https://apptainer.org/docs/user/latest/definition_files.html#test) section defines the command to run when the image is built. In this case, we're running the `speedtest` command to make sure that it works.
+
+Now we can build the image using the [`apptainer build`](https://apptainer.org/docs/user/latest/cli/apptainer_build.html) command. The first argument is the name of the image to build. The second argument is the path to the definition file:
+
+```bash
+apptainer build speedtest-py3.10.sif speedtest.def
+```
+
+It might take a little while to build the image. If everything goes according to plan, you should see the output of a test run at the end of the build process when the `%test` section is run.
+
+When it's done, the image will be saved as `speedtest-py3.10.sif` in the current directory. This image encapsulates the script and all its dependencies, so we can run it on any system that has Apptainer installed without having to worry about whether the system has a specific version of Python or the `click` module installed. Furthermore, because we defined a `%runscript` section in the definition file, we can run the script without having to specify the `python3` command.
+
+To run the containerized script, we can run the [`apptainer run`](https://apptainer.org/docs/user/latest/cli/apptainer_run.html) command, which is similar to [`apptainer exec`](https://apptainer.org/docs/user/latest/cli/apptainer_exec.html) but launches the commands in the `%runscript` section of the definition file instead of the command specified as an argument:
+
+```bash
+apptainer run speedtest-py3.10.sif
+```
+
+You should see a progress bar and the result of the test.
+
+Because the container image is {{< term chmod|marked >}} as an executable, we can also run it directly without having to specify the `apptainer` command (although it will still run using Apptainer):
+
+```bash
+./speedtest-py3.10.sif
+```
+
+Try it with some different values of `M` and `N`:
+
+```bash
+apptainer run speedtest-py3.10.sif -m 30_000 -n 1000
+```
+
+Now try specifying a different output file:
+
+```bash
+apptainer run speedtest-py3.10.sif -- -m 30_000 -n 1000 --output py3.10.txt
+cat py3.10.txt # Show the results
+```
+
+How do we build the image for Python 3.11? We could copy the definition file and change `PY_VERSION` to `3.11`, but that would be a lot of work. Instead, we can use the `--build-arg` option of the `apptainer build` command to pass the value of `PY_VERSION` as a {{< term "build argument" >}} to the definition file:
+
+```bash
+apptainer build --build-arg PY_VERSION=3.11 speedtest-py3.11.sif speedtest.def
+```
+
+Now we can run the script using the new image:
+
+```bash
+apptainer run speedtest-py3.11.sif -m 30_000 -n 1000
+```
+
+We can still use the environment variables `M` and `N` to set the values of `m` and `n`:
+
+```bash
+export M=30_000 N=1000
+apptainer run speedtest-py3.11.sif
+```
+
+This makes it easier to run both containers with the same values of `M` and `N` without having to specify them each time.
+
+If we wanted to, we could even use `OUTPUT_FILE` to specify the output file instead of using the `--output` option because we let `click` know that `OUTPUT_FILE` is an alternative for the `--output` argument if there is no `--output` option:
+
+```bash
+export OUTPUT_FILE=py3.11-2.txt
+apptainer run speedtest-py3.11.sif
+unset OUTPUT_FILE # Unset the OUTPUT_FILE environment variable so that it doesn't affect the next command
+```
+
+Because we specified the `%runscript` section in the definition file, we can also execute the script directly without having to specify the `apptainer` command:
+
+```bash
+./speedtest-py3.11.sif -m 30_000 -n 1000
+```
+
+Let's recreate the comparison we did earlier:
+
+```bash
+export M=1000 N=100_000
+apptainer run speedtest-py3.10.sif --output py3.10.txt
+apptainer run speedtest-py3.11.sif --output py3.11.txt
+cat py3.10.txt py3.11.txt | apptainer exec speedtest-py3.10.sif python3 -c 'print(float(input())/float(input()))' # <1>
+```
+1. We're using `apptainer exec` instead of `apptainer run` because we want to run the `python3` command instead of the command specified in the definition file.
+
+Here's a demo of the above commands:
+
+::::: {.cast #apptainer-python-speedtest-deffile}
+:::::
+
+<!-- FIXME: Add another cast -->
+
+### Clearing the Apptainer cache
+
+Apptainer caches all the images it downloads in a cache directory to avoid downloading them again. The cache can get quite large, so it's a good idea to clear it from time to time.
+
+ You can see the size of the cache directory by running:
+
+```bash
+apptainer cache list
+```
+
+To clear the cache, run:
+
+```bash
+apptainer cache clean
+```
+
+That should free up some space.
+
+### Changing the Apptainer cache directory
+
+By default, Apptainer stores the cache in `~/.apptainer/cache`. This can be a problem if you have a small home directory (e.g., if you are using the default 10 GB quota on {{< term Klone >}}). You can change the cache directory by setting the `APPTAINER_CACHE` {{< term "environment variable" >}}. For example, to set the cache directory to `/tmp/<your-username>/apptainer-cache`, you can use the `$USER` environment variable:
+
+```bash
+export APPTAINER_CACHE="/tmp/$USER/apptainer-cache"
+```
+
+Apptainer will create the cache directory if it does not already exist.
+
+You'll need to set the `APPTAINER_CACHE` {{< term "environment variable" >}} every time you want to use Apptainer, so it's a good idea to add it to your {{< term "bashrc|~/.bashrc" >}} file so that it is always set when you log in.
