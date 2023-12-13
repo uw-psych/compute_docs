@@ -5,8 +5,8 @@ listing:
   contents:
     - concepts.qmd
     - options.qmd
-    - comparison.qmd
     - klone-storage.qmd
 ---
 
-This section describes the storage options available to you for your research data, along with concepts and terminology that will help you understand the options.
+This section describes the storage options available for your research data and provides information on concepts and terminology that will help you understand these options.
+

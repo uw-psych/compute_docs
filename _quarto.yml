@@ -39,7 +39,6 @@ website:
         contents:
           - docs/storage/concepts.qmd
           - docs/storage/options.qmd
-          - docs/storage/comparison.qmd
           - docs/storage/klone-storage.qmd
       - "docs/CONTRIBUTING.qmd"
         

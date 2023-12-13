@@ -1,8 +1,0 @@
----
-description: "Comparing different options for storing research data"
----
-# Options comparison
-
-The following table compares the different [options](./options.qmd) for storing research data:
-
-{{< include "comparison.qmd.inc" >}}
