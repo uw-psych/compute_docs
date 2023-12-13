@@ -40,6 +40,8 @@ website:
           - docs/storage/concepts.qmd
           - docs/storage/options.qmd
           - docs/storage/klone-storage.qmd
+      - text: "psych-hpc mailing list"
+        href: "https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc"
       - "docs/CONTRIBUTING.qmd"
         
 format:
