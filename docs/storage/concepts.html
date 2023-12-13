@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Documentation for Computing at the University of Washington Psychology Department">
+<meta name="description" content="Concepts, terminology, and considerations for storing research data.">
 
 <title>UW Psychology Computational Resources</title>
 <style>
@@ -24,26 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./docs/start/index.html" rel="next">
-<link href="./_static/favicon.ico" rel="icon">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../docs/storage/options.html" rel="next">
+<link href="../../docs/storage/index.html" rel="prev">
+<link href="../../_static/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,38 +69,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -114,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/storage/index.html">Storage</a></li><li class="breadcrumb-item"><a href="../../docs/storage/concepts.html">Concepts</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -128,11 +96,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./_static/department_uw_wordmark.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../_static/department_uw_wordmark.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Computational Resources</a> 
+      <a href="../../">Computational Resources</a> 
         <div class="sidebar-tools-main">
     <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
 </div>
@@ -142,13 +110,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./docs/start/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../docs/start/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -157,19 +125,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/start/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/start/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to UW Hyak</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting to Hyak with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">hyakvnc</span></a>
   </div>
 </li>
@@ -177,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./docs/compute/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../docs/compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Compute</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -186,19 +154,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/compute/slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/compute/slurm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SLURM Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lmod</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/compute/apptainer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Apptainer</span></a>
   </div>
 </li>
@@ -206,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./docs/software/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../docs/software/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -215,25 +183,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/software/afni.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/software/afni.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AFNI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/software/freesurfer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/software/freesurfer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FreeSurfer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/software/matlab.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/software/matlab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MATLAB</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/software/spm_conn.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/software/spm_conn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SPM and CONN Toolboxes</span></a>
   </div>
 </li>
@@ -241,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./docs/storage/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../docs/storage/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Storage</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -250,19 +218,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/storage/options.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Storage on Klone</span></a>
   </div>
 </li>
@@ -276,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contributing</span></a>
   </div>
 </li>
@@ -292,110 +260,80 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="welcome" class="level1">
-<h1>Welcome</h1>
-<p>Welcome to the documentation for computing resources at the University of Washington Psychology Department. This documentation is intended to be a living document and we welcome contributions from the community.</p>
-<p>Here are some quick links to get you started:</p>
-
+<section id="concepts" class="level1">
+<h1>Concepts</h1>
+<p>A number of concepts and terms are used when discussing research data storage. This page provides an overview of some of the most common concepts and terms.</p>
+<section id="storage-types" class="level2">
+<h2 class="anchored" data-anchor-id="storage-types">Storage types</h2>
+<p>There are many different types of storage. Some of the most common types of storage are:</p>
+<section id="object-storage" class="level3">
+<h3 class="anchored" data-anchor-id="object-storage">Object storage</h3>
+<p>Object storage is a type of storage that stores data as objects. Each object contains data, metadata, and a unique identifier. Objects are stored in a flat address space, and can be accessed using a URL. Object storage is designed to store large amounts of unstructured data. Object storage is not designed to be used as a file system. Object storage is typically accessed using a REST API. Object storage is typically used for storing data that is not actively being worked on, but needs to be stored for a long time. [Amazon S3][#amazon-web-services] and <a href="#azure">Azure Blobs</a> are examples of object storage services.</p>
+</section>
+<section id="block-storage" class="level3">
+<h3 class="anchored" data-anchor-id="block-storage">Block storage</h3>
+<p>Block storage is a type of storage that stores data as blocks. Each block contains data and a unique identifier. Blocks are stored in a hierarchical address space, and can be accessed using a file system. Block storage is designed to store large amounts of structured data. Block storage is typically used for storing data that is actively being worked on. <a href="#amazon-web-services">Amazon EBS</a> is an example of block storage.</p>
+</section>
+<section id="file-storage" class="level3">
+<h3 class="anchored" data-anchor-id="file-storage">File storage</h3>
+<p>File storage is a type of storage that stores data as files. Your computer’s local filesystem uses file storage. Network filesystems such as NFS and SMB, and cloud storage services such as <a href="#azure">Azure Files</a> and <a href="#amazon-web-services">Amazon EFS</a> also use file storage. File storage is designed to store large amounts of structured data. File storage is designed to be used by multiple users at the same time and supports creating, reading, updating, and deleting files. File storage is typically used for storing data that is actively being worked on. <a href="#azure">Azure Files</a> is an example of file storage.</p>
+<section id="sync-services" class="level4">
+<h4 class="anchored" data-anchor-id="sync-services">Sync services</h4>
+<p>Cloud-based file sync services, such as <a href="#dropbox">Dropbox</a>, <a href="#google-drive">Google Drive</a>, and <a href="#uw-onedrive-for-business">OneDrive</a>, offer file storage that can easily be accessed from multiple devices. These services usually offer convenient features such as file versioning, recovery, and file sharing. You can access the files stored in these services from a directory on your computer, and the files are automatically synchronized with the cloud storage service. However, the services may not support all of the features of a traditional file system (e.g.&nbsp;file permissions, symbolic links) and often have restrictions on the length of file names and the types of characters that can be used in file names, which may cause serious problems when using files stored in these services with some applications (e.g., <a href="../../docs/software/freesurfer.html">FreeSurfer</a>). Caution is advised when working with files stored in these services.</p>
+</section>
+</section>
+<section id="version-control-systems" class="level3">
+<h3 class="anchored" data-anchor-id="version-control-systems">Version control systems</h3>
+<p>Version control systems, such as <a href="https://git-scm.com/">Git</a>, are designed to store and manage different versions of files. Version control systems are typically used for storing source code, but can also be used for storing other types of files. There are some version control systems that are designed to handle datasets, such as <a href="https://dvc.org/">DVC</a>. <a href="#github">GitHub</a> provides online hosting and collaboration services for Git repositories.</p>
+</section>
+<section id="data-repositories" class="level3">
+<h3 class="anchored" data-anchor-id="data-repositories">Data repositories</h3>
+<p>Data repositories, such as <a href="#researchworks-archive">ResearchWorks Archive</a> and <a href="#open-science-framework">OSF</a>, are designed to store and manage research data and their metadata. Data repositories are typically used for storing data that is being shared with other researchers. Data repositories often provide features such as versioning, recovery, sharing, and embargos. Data repositories often provide a DOI for each dataset, which can be used to cite the dataset in publications.</p>
+</section>
+</section>
+<section id="characteristics-and-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="characteristics-and-considerations">Characteristics and considerations</h2>
+<p>There are a number of characteristics and considerations that are important when choosing a storage service, and these may be reflected in the upfront and ongoing costs. Some of the most common characteristics and considerations are:</p>
+<section id="storage-capacity" class="level3">
+<h3 class="anchored" data-anchor-id="storage-capacity">Storage capacity</h3>
+<p>How much data is being stored. The more data that is being stored, the more it will cost to store the data. Storage services may have minimum and/or maximum storage capacity requirements, and may charge for storage in increments of a certain size (e.g.&nbsp;1 TiB).</p>
+</section>
+<section id="storage-latency" class="level3">
+<h3 class="anchored" data-anchor-id="storage-latency">Storage latency</h3>
+<p>How quickly data can start being read or written. The lower the latency, the faster data can be read or written. Storage services may charge more for lower latency. A solid-state drive (SSD) has lower latency than a hard disk drive (HDD), which has lower latency than a tape drive. However, capacity on SSDs is more expensive than capacity on HDDs, which is more expensive than capacity on tape drives.</p>
+</section>
+<section id="data-transfer" class="level3">
+<h3 class="anchored" data-anchor-id="data-transfer">Data transfer</h3>
+<p>The rate at which data can be downloaded from or uploaded to a service may be limited. The higher the bandwidth, the faster data can be downloaded from or uploaded to the service. Service providers may charge more for higher bandwidth.</p>
+<p>Data transfer costs may be charged for uploading data to and downloading data from a service, also known as <em>ingress</em> and <em>egress</em>. Typically, ingress is free and egress is charged. Some services may charge more for uploading data to and downloading data from certain locations (e.g.&nbsp;outside of the United States). Some providers offer options such as physical media transfer (e.g.&nbsp;mailing a hard drive) for uploading and downloading large amounts of data (see <a href="https://aws.amazon.com/snowball/">AWS Snowball</a>).</p>
+</section>
+<section id="retention-period" class="level3">
+<h3 class="anchored" data-anchor-id="retention-period">Retention period</h3>
+<p>How long data needs to be stored. The longer data needs to be stored, the more it will cost to store the data. Billing for storage services is typically done on a monthly or annual basis.</p>
+</section>
+<section id="backup-and-recovery-options" class="level3">
+<h3 class="anchored" data-anchor-id="backup-and-recovery-options">Backup and recovery options</h3>
+<p>How often data is backed up, how long backups are kept, and how quickly data can be recovered from backups. The more often data is backed up, the longer backups are kept, and the faster data can be recovered from backups, the more it will cost to store the data. Some services may not provide backup and recovery options, or may charge extra for backup and recovery options.</p>
+</section>
+<section id="frequency-of-access" class="level3">
+<h3 class="anchored" data-anchor-id="frequency-of-access">Frequency of access</h3>
+<p>How often data is accessed. Some services may charge for each time data is accessed, or may charge more for more frequent access.</p>
+</section>
+<section id="data-access-restrictions" class="level3">
+<h3 class="anchored" data-anchor-id="data-access-restrictions">Data access restrictions</h3>
+<p>Who can access the data. Data access restrictions may be inherent to a service (e.g., only people connected to the UW intranet can access the data) or may be imposed by the user, the organization, or the service provider. Sharing data with outside collaborators may require additional steps such as creating accounts for the collaborators, or may not be possible at all.</p>
+</section>
+<section id="data-security" class="level3">
+<h3 class="anchored" data-anchor-id="data-security">Data security</h3>
+<p>How secure the data is against unauthorized access. While <a href="#data-access-restrictions">access restrictions</a> can limit who can access the data in certain circumstances, measures such as encryption may be necessary to prevent access by users who have access to the data but should not be able to access the data (e.g., system administrators).</p>
+<p>Research data that is subject to HIPAA or FERPA regulations must be stored in a HIPAA or FERPA compliant service. For more information about HIPAA at UW, see the <a href="https://www.washington.edu/research/policies/guidance-hipaa-2/">HIPPA Guidance</a> page.</p>
 
 
 </section>
+</section>
+</section>
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1702507180656" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<div class="thumbnail">
-<p><a href="./docs/compute/index.html" class="no-external"></a></p><a href="./docs/compute/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./docs/compute/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./docs/compute/index.html" class="no-external">Compute</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./docs/compute/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./docs/compute/index.html" class="no-external">How to connect to and use the UW Hyak clusters</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./docs/compute/index.html" class="no-external"></a></p><a href="./docs/compute/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1702507180660" data-listing-reading-time-sort="1" data-listing-word-count-sort="106">
-<div class="thumbnail">
-<p><a href="./docs/start/index.html" class="no-external"></a></p><a href="./docs/start/index.html" class="no-external">
-<p class="card-img-top"><img src="docs/start/_static/putty/PuTTY_share_SSH_connections.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./docs/start/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./docs/start/index.html" class="no-external">Getting started</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./docs/start/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./docs/start/index.html" class="no-external">Getting started with the Hyak cluster</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./docs/start/index.html" class="no-external"></a></p><a href="./docs/start/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1702507180656" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail">
-<p><a href="./docs/software/index.html" class="no-external"></a></p><a href="./docs/software/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./docs/software/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./docs/software/index.html" class="no-external">Software</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./docs/software/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./docs/software/index.html" class="no-external">Using and installing software on Klone</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./docs/software/index.html" class="no-external"></a></p><a href="./docs/software/index.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1702507180660" data-listing-reading-time-sort="1" data-listing-word-count-sort="25">
-<div class="thumbnail">
-<p><a href="./docs/storage/index.html" class="no-external"></a></p><a href="./docs/storage/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./docs/storage/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./docs/storage/index.html" class="no-external">Storage</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./docs/storage/index.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./docs/storage/index.html" class="no-external">Storing research data</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./docs/storage/index.html" class="no-external"></a></p><a href="./docs/storage/index.html" class="no-external">
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -849,10 +787,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../docs/storage/index.html" class="pagination-link  aria-label=" storage"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Storage</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./docs/start/index.html" class="pagination-link" aria-label="Getting started">
-        <span class="nav-page-text">Getting started</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../docs/storage/options.html" class="pagination-link" aria-label="Options">
+        <span class="nav-page-text">Options</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -861,4 +802,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/uw-psych/compute_docs/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/uw-psych/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/uw-psych/compute_docs/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/uw-psych/compute_docs/blob/main/docs/storage/concepts.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/uw-psych/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/uw-psych/compute_docs/edit/main/docs/storage/concepts.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
