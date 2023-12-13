@@ -5,7 +5,7 @@ order: 30
 ---
 # Lmod
 
-[Lmod](https://www.tacc.utexas.edu/research/tacc-research/lmod/) is a module system that is used to load additional software on Klone compute nodes. 
+[Lmod](https://www.tacc.utexas.edu/research/tacc-research/lmod/) is a module system that is used to load additional software on Klone compute nodes.
 
 Lmod is run with the command `module`. This command is only available on {{< term "compute node|compute nodes"  >}} and will not run on the {{< term "login node" >}}, so you need to launch a [SLURM job](../compute/slurm.qmd) on {{< term "Klone" >}} to run the command.
 

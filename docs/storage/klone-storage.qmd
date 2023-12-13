@@ -32,7 +32,7 @@ hyakstorage --home # <1>
 The result will look something like this:
 
 ```text
-                       Usage report for /mmfs1/home/altan                       
+                       Usage report for /mmfs1/home/altan
 ╭───────────────────┬────────────────────────────┬─────────────────────────────╮
 │                   │ Disk Usage                 │ Files Usage                 │
 ├───────────────────┼────────────────────────────┼─────────────────────────────┤
@@ -65,7 +65,7 @@ hyakstorage --gscratch # <1>
 The result will look something like this:
 
 ```text
-                   Usage report for /mmfs1/gscratch/escience                    
+                   Usage report for /mmfs1/gscratch/escience
 ╭───────────────────┬────────────────────────────┬─────────────────────────────╮
 │                   │ Disk Usage                 │ Files Usage                 │
 ├───────────────────┼────────────────────────────┼─────────────────────────────┤

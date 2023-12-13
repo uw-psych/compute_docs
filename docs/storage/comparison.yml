@@ -1,5 +1,4 @@
-UW Psych Dept:
-  Link:  "[{{< fa solid link >}}](options.qmd#departmental-storage)"
+"[UW Psych Dept](#departmental-storage)":
   Suitability: "General use at UW Psych"
   UW support: "{{< fa solid check >}}"
   Storage cost: "Free up to 2 TiB; 10 TiB free on request; more available for purchase (no recurring costs)"
@@ -14,8 +13,7 @@ UW Psych Dept:
   Local filesystem: "{{< fa solid check >}}"
   Sharing: "{{< fa solid xmark >}}"
   Available on {{< term Klone >}}: "w/{{< term rclone >}}"
-U Drive:
-  Link:  "[{{< fa solid link >}}](options.qmd#uw-u-drive)"
+"[U Drive](#uw-u-drive)":
   Suitability: "Interactive use at UW"
   UW support: "{{< fa solid check >}}"
   Storage cost: "Free up to 50 GiB, then \\$123/TiB/month (\\$0.12/GiB)"
@@ -30,8 +28,7 @@ U Drive:
   Local filesystem: "{{< fa solid check >}}"
   Sharing: "{{< fa solid xmark >}}"
   Available on {{< term Klone >}}: "w/{{< term rclone >}}"
-UW LOLO:
-  Link:  "[{{< fa solid link >}}](options.qmd#uw-lolo)"
+"[UW LOLO](#uw-lolo)":
   Suitability: "Long-term storage, archival"
   UW support: "{{< fa solid check >}}"
   Storage cost: "\\$3.45/TiB/month"
@@ -46,11 +43,10 @@ UW LOLO:
   Local filesystem: ""
   Sharing: "UW only"
   Available on {{< term Klone >}}: "{{< fa solid question >}}"
-UW SFS:
-  Link:  "[{{< fa solid link >}}](options.qmd#uw-shared-file-service)"
+"[UW SFS](#uw-shared-file-service)":
   Suitability: "Interactive use and collaboration at UW"
   UW support: "{{< fa solid check >}}"
-  Storage cost: "\\$3.45/TiB/month"
+  Storage cost: "\\$256/TiB/month"
   Off-campus availability: "VPN"
   Automatic backups: "{{< fa solid check >}}"
   Versioning: "{{< fa solid xmark >}}"
@@ -62,8 +58,7 @@ UW SFS:
   Local filesystem: "{{< fa solid check >}}"
   Sharing: "UW only"
   Available on {{< term Klone >}}: "{{< fa solid question >}}"
-UW OneDrive:
-  Link:  "[{{< fa solid link >}}](options.qmd#uw-onedrive-for-business)"
+"[UW OneDrive](#uw-onedrive-for-business)":
   Suitability: "Interactive use and collaboration at UW"
   UW support: "{{< fa solid check >}}"
   Storage cost: "Free, 5 TiB limit"
@@ -78,8 +73,7 @@ UW OneDrive:
   Local filesystem: "{{< fa solid check >}}"
   Sharing: "UW only"
   Available on {{< term Klone >}}: "w/{{< term rclone >}}"
-UW Google Drive:
-  Link:  "[{{< fa solid link >}}](options.qmd#uw-google-drive)"
+"[UW Google Drive](#uw-google-drive)":
   Suitability: "Interactive use and collaboration at UW"
   UW support: "{{< fa solid check >}}"
   Storage cost: "Free, 100 GiB limit"
@@ -94,8 +88,7 @@ UW Google Drive:
   Local filesystem: "{{< fa solid check >}}"
   Sharing: "{{< fa solid check >}}"
   Available on {{< term Klone >}}: "w/{{< term rclone >}}"
-RedCap:
-  Link:  "[{{< fa solid link >}}](options.qmd#redcap)"
+"[RedCap](#redcap)":
   Suitability: "Research data"
   UW support: "{{< fa solid check >}}"
   Storage cost: ""
@@ -110,8 +103,7 @@ RedCap:
   Local filesystem: ""
   Sharing: "UW only"
   Available on {{< term Klone >}}: ""
-ResearchWorks:
-  Link:  "[{{< fa solid link >}}](options.qmd#researchworks-archive)"
+"[ResearchWorks](#researchworks-archive)":
   Suitability: "Research data publication at UW"
   UW support: "{{< fa solid check >}}"
   Storage cost: ""
@@ -126,8 +118,7 @@ ResearchWorks:
   Local filesystem: ""
   Sharing: "{{< fa solid check >}}"
   Available on {{< term Klone >}}: ""
-Amazon S3:
-  Link:  "[{{< fa solid link >}}](options.qmd#amazon-web-services)"
+"[Amazon S3](#amazon-web-services)":
   Suitability: "Programming, sharing, archival"
   UW support: "\U0001F4B2discount 5%"
   Storage cost: "\\~\\$25/month for 1 TiB hot data, \\~\\$5/month for cold (S3 Glacier Instant Retrival)"
@@ -142,8 +133,7 @@ Amazon S3:
   Local filesystem: ""
   Sharing: "{{< fa solid check >}}"
   Available on {{< term Klone >}}: "w/{{< term rclone >}}"
-Azure Blobs:
-  Link:  "[{{< fa solid link >}}](options.qmd#azure)"
+"[Azure Blobs](#azure)":
   Suitability: "Programming, sharing, archival"
   UW support: "\U0001F4B2discount \\~10%"
   Storage cost: "\\~\\$25/month for 1 TiB hot data, \\~\\$5/month for cold; \\~\\$30/TiB for cold egress"
@@ -158,8 +148,7 @@ Azure Blobs:
   Local filesystem: ""
   Sharing: "{{< fa solid check >}}"
   Available on {{< term Klone >}}: "w/{{< term rclone >}}"
-Dropbox:
-  Link:  "[{{< fa solid link >}}](options.qmd#Dropbox)"
+"[Dropbox](#Dropbox)":
   Suitability: "Interactive use and collaboration"
   UW support: ""
   Storage cost: "Subscription (\\$12/month for 2 TiB)"
@@ -174,8 +163,7 @@ Dropbox:
   Local filesystem: "{{< fa solid check >}}"
   Sharing: "{{< fa solid check >}}"
   Available on {{< term Klone >}}: "w/{{< term rclone >}}"
-OSF:
-  Link:  "[{{< fa solid link >}}](options.qmd#open-science-framework)"
+"[OSF](#open-science-framework)":
   Suitability: "Research data, collaboration, publishing"
   UW support: ""
   Storage cost: "Free"
@@ -190,8 +178,7 @@ OSF:
   Local filesystem: ""
   Sharing: "{{< fa solid check >}}"
   Available on {{< term Klone >}}: ""
-GitHub:
-  Link:  "[{{< fa solid link >}}](options.qmd#github)"
+"[GitHub](#github)":
   Suitability: "Code, software containers, collaboration"
   UW support: "{{< fa solid check >}}"
   Storage cost: "Free for most uses"

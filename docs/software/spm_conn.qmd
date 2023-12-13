@@ -51,7 +51,7 @@ After loading the module, start `matlab` and run `spm` or `conn` in the MATLAB c
 
 You can install different versions of SPM and CONN by following the instructions below.
 
-#### SPM 
+#### SPM
 
 1. Go to <https://www.fil.ion.ucl.ac.uk/spm/software/download>, choose the version of SPM you want to install, copy the download link to the file (with the extension `.zip`), and download the file by running the following command on a Klone login or compute node. We'll use version 8 as an example:
    ```bash
@@ -59,7 +59,7 @@ You can install different versions of SPM and CONN by following the instructions
     ```
     1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/storage/klone-storage.qmd) to storage on Klone for more information.
 
-2. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).   
+2. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).
    
    ```bash
    # Be sure to replace "mylabname" with the name of your lab!
@@ -67,10 +67,10 @@ You can install different versions of SPM and CONN by following the instructions
    mkdir -p "/sw/contrib/${LABNAME}-src/spm" # <2>
    unzip -n "/gscratch/scrubbed/$USER/downloads/spm8.zip" -d "/sw/contrib/${LABNAME}-src/spm" # <3>
    ```
-   1. Create the target directory if it does not exist.  
+   1. Create the target directory if it does not exist.
    2. Extract the SPM archive to the target directory (The `-n` flag prevents overwriting existing files if someone has already installed this version of SPM.).
    
-3. Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:     
+3. Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:
    ``` {.lua filename=/sw/contrib/modulefiles/mylabname/spm/8.lua}
    help([[spm8]])
     -- Be sure to replace "mylabname" with the name of your lab!
@@ -98,7 +98,7 @@ You can install different versions of SPM and CONN by following the instructions
     ```
     1. `wget` is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The `-P` flag tells `wget` to save the file to the specified directory. The directory `/gscratch/scrubbed/$USER/downloads` is a good place to save files temporarily -- see our [guide](/docs/storage/klone-storage.qmd) to storage on Klone for more information.
    
-2. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).   
+2. Extract the .zip archive to `/sw/contrib/mylabname-src/spm` (replacing `mylabname` with the name of your lab).
    
    ```bash
    # Be sure to replace "mylabname" with the name of your lab!
@@ -106,10 +106,10 @@ You can install different versions of SPM and CONN by following the instructions
    mkdir -p "/sw/contrib/${LABNAME}-src/conn" # <2>
    unzip -n "/gscratch/scrubbed/$USER/downloads/conn21a.zip" -d "/sw/contrib/${LABNAME}-src/conn/v.21.a" # <3>
    ```
-    1. Create the target directory if it does not exist.  
+    1. Create the target directory if it does not exist.
     2. Extract the SPM archive to directory `v.21.a` within the target directory. (The `-n` flag prevents overwriting existing files if someone has already installed this version of CONN.)
   
-3.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:  
+3.  Create an Lmod `.lua` module file for the new release with a text editor, using `<version>.lua` as the filename:
 
     ``` {.lua filename=/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua }
     -- Be sure to replace "mylabname" with the name of your lab!

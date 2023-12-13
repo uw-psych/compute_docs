@@ -7,7 +7,7 @@ description: A programming and numeric computing platform
 ## Checking available versions
 
 ``` bash
-module avail matlab
+module spider matlab
 ```
 
 ## Loading MATLAB
@@ -29,8 +29,3 @@ To run Matlab from terminal CLI, run:
 ``` bash
 matlab -nodisplay
 ```
-
-## Installing a different version
-
-<!-- TODO: Add instructions for installing a different version of MATLAB -->
-

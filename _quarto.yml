@@ -1,40 +1,39 @@
 project:
   type: website
-resources:
-  - "_static/**"
+  resources:
+    - "_static/**"
+
 website:
-  title: "UW Psychology"
+  title: "UW Psychology Computational Resources"
   page-navigation: true
   favicon: _static/favicon.ico
-  site-path: /compute_docs
   site-url: https://maouw.github.io/compute_docs
-  navbar:
-    title: false
-    background: "#512c89"
-    foreground: "#FFFF"
-    search: true
-    left: []
-    tools:
-      - icon: github
-        menu:
-          - text: Source Code
-            url: https://github.com/maouw/compute_docs
-          - text: Report a Bug
-            url: https://github.com/maouw/compute_docs/issues
+  repo-url: https://github.com/maouw/compute_docs
+  issue-url: https://github.com/maouw/compute_docs/issues/new
+  repo-actions: [source, issue, edit]
+  search:
+    location: sidebar
+    type: overlay
   sidebar:
-    logo: _static/logo.png
-    title: "Computing Resources"
+    logo: _static/department_uw_wordmark.svg
+    title: "Computational Resources"
     type: dark
     background: "#512c89"
     foreground: "#FFFF"
     style: docked
     contents:
       - section: docs/start/index.qmd
-        contents: docs/start/*.qmd
+        contents:
+          - docs/start/introduction.qmd
+          - docs/start/connect-ssh.qmd
+          - docs/start/hyakvnc.qmd
       - section: docs/compute/index.qmd
-        contents: docs/compute/*.qmd
+        contents:
+          - docs/compute/slurm.qmd
+          - docs/compute/lmod.qmd
+          - docs/compute/apptainer.qmd
       - section: docs/software/index.qmd
-        contents: docs/software/*.qmd
+        contents: "docs/software/*.qmd"
       - section: docs/storage/index.qmd
         contents:
           - docs/storage/concepts.qmd
@@ -47,7 +46,7 @@ format:
   html:
     theme:
       - flatly
-      - _static/custom.scss
+      - custom.scss
     mainfont: "Helvetica, Liberation Sans, Free Sans, Arial, sans-serif"
     monofont: "Cascadia Mono, Consolas, Liberation Mono, Courier New, monospace"
     linestrech: 1.0
@@ -55,7 +54,7 @@ format:
       sidebar-width: "20%"
     code-annotations: hover
     link-external-icon: true
-    link-external-filter: "^javascript:void[(]0[)]"
+    link-external-filter: "(^javascript:void[(]0[)])|(.*github[.]io[/].*[/]compute_docs)"
 
 popover_glossary:
   path: glossary.yml

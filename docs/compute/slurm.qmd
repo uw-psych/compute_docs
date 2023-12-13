@@ -38,7 +38,7 @@ srun -A <lab> -p <node_type> -N <NUM_NODES> -c <NUM_CPUS> --mem=<MEM>[UNIT] --ti
 
 ## Submitting a batch job
 
->  sbatch submits a batch script to Slurm. The batch script may be given to sbatch through a file name on the command line, or if no file name is specified, sbatch will read in a script from standard input. The batch script may contain options preceded with "#SBATCH" before any executable commands in the script. sbatch will stop processing further #SBATCH directives once the first non-comment non-whitespace line has been reached in the script. 
+>  sbatch submits a batch script to Slurm. The batch script may be given to sbatch through a file name on the command line, or if no file name is specified, sbatch will read in a script from standard input. The batch script may contain options preceded with "#SBATCH" before any executable commands in the script. sbatch will stop processing further #SBATCH directives once the first non-comment non-whitespace line has been reached in the script.
 
 ```{.bash filename=mybatch.job}
 #!/usr/bin/env bash
@@ -58,7 +58,7 @@ srun -A <lab> -p <node_type> -N <NUM_NODES> -c <NUM_CPUS> --mem=<MEM>[UNIT] --ti
 # These directives tell the scheduler how to run your job.
 # They must come before any executable commands in your script.
 # Remove a single # character from the start of the line to enable a directive.
-# 
+#
 # For more information about SLURM directives, see the SLURM documentation:
 # https://slurm.schedmd.com/sbatch.html
 #

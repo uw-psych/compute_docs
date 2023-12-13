@@ -57,10 +57,7 @@ rPkgsInstall -pkgs ALL
 
 4.  Create an Lmod .lua module file for AFNI with a text editor:
 
-::: callout-note
-`/sw/contrib/modulefiles/labname/afni.lua` \^\^\^
-
-``` lua
+``` {.lua filename=/sw/contrib/modulefiles/labname/afni.lua}
 help([[afni]])
 
 local labname = "escience"
@@ -80,7 +77,6 @@ end
 whatis("Name: " .. name)
 whatis("Version: " .. version)
 ```
-:::
 
 ::: callout-note
 Lmod takes some time to cache available modules. If a module does not appear, use the `-I` or `--ignore_cache` flag to force Lmod to check for new modules.
@@ -89,4 +85,5 @@ Lmod takes some time to cache available modules. If a module does not appear, us
 module -I avail afni
 module -I load labname/afni
 ```
+
 :::

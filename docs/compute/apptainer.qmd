@@ -2,19 +2,17 @@
 title: "Apptainer"
 description: The Apptainer container environment
 order: 20
-include-in-header:
-    text: |
-        <link rel="stylesheet" type="text/css" href="/_static/asciicasts/asciinema-player.css" />
+css: "/_static/lib/asciinema-player.css"
 include-after-body:
     text: |
-        <script src="/_static/asciicasts/asciinema-player.min.js"></script>
+        <script src="/_static/lib/asciinema-player.min.js"></script>
         <script>
-            term_font_family="'Iosevka Term Web', monospace'"
+            term_font_family="'Cascadia Mono', monospace'"
             document.querySelectorAll('.cast').forEach((block) => {
-                AsciinemaPlayer.create("../../_static/asciicasts/casts/" + block.id + ".cast", block, {
+                AsciinemaPlayer.create("../../_static/casts/" + block.id + ".cast", block, {
                       terminalFontFamily: 'Iosevka Term Web, monospace',
                        fit: false
-                }) 
+                })
                 });
         </script>
 ---
@@ -66,6 +64,7 @@ For example, `apptainer/local (D)` indicates that the default version is `local`
 By default, `apptainer` will make several directories available within the container by binding them to the same path in the container, so that `/somefolder` on the host is available as `/somefolder` within the container.
 
 These directories include:
+
 - `$HOME` (your home directory, a.k.a. `~`)
 - `/tmp` (temporary directory -- unique to each node, contents are purged when the users’ last job running on the node completes)
 - `$PWD` (the current working directory, i.e. the directory you are in when you run `apptainer`)
@@ -83,7 +82,7 @@ We recommend setting the following binds before running a container:
 export APPTAINER_BINDPATH="/gscratch" # Make /gscratch available within the container
 ```
 
-1.  To start an Apptainer container interactively, run the following:
+To start an Apptainer container interactively, run the following:
 
 ``` bash
 apptainer shell <path_to_container>
@@ -129,7 +128,6 @@ print(result)  # <4>
 2. Here, we use the `file` parameter to `print()`, which makes it write to the {{< term "stderr|standard error" >}} stream (`stderr`) instead of the default {{< term "stdout|standard output" >}} stream (`stdout`). This is useful because we want to print the result of the test to `stdout` so that we can save the output by redirecting it to a file, but we also want to print some information about the test to `stderr` so that it doesn't get mixed up with the result.
 3. `timeit.timeit()` runs a function multiple times and returns the average time it took to run the function.
 4. The `print` function prints to the {{< term "stdout|standard output" >}} stream (`stdout`) by default. We can redirect this to a file in {{< term bash >}} using the `>` operator.
-
 
 ::: {.callout-tip title="How to paste and save a file in the terminal"}
 You can use the `nano` command to create a new file and paste the contents of the file into the terminal. To do this, run `nano <filename>` in the terminal, paste the contents of the file into the terminal, and press `Ctrl+X` to exit. You will be asked if you want to save the file. Press `Y` to save the file and `Enter` to confirm the filename.
@@ -280,7 +278,7 @@ Now, let's try running the script with `apptainer exec`:
 apptainer exec docker://python:3.11-slim python3 speedtest-cli.py
 ```
 
-You probaby got a `ModuleNotFoundError` because the `click` package is not installed in the `python:3.11-slim` image. If you know some Python, you might think, "I could probably fix this if I install the `click` module via `pip`." And you would be right -- if you were running the script in the version of Python that's normally installed on your computer. But we're running the script inside an Apptainer container, so we need to install the `click` module inside the container. Furthermore, we're using *two* different versions of Python, so we need to install the `click` module in the containers for *both* versions. 
+You probaby got a `ModuleNotFoundError` because the `click` package is not installed in the `python:3.11-slim` image. If you know some Python, you might think, "I could probably fix this if I install the `click` module via `pip`." And you would be right -- if you were running the script in the version of Python that's normally installed on your computer. But we're running the script inside an Apptainer container, so we need to install the `click` module inside the container. Furthermore, we're using *two* different versions of Python, so we need to install the `click` module in the containers for *both* versions.
 
 We'll solve this by writing an [Apptainer definition file](https://apptainer.org/docs/user/latest/definition_files.html) to build a custom Apptainer image that contains the `click` module. Here's the definition file:
 
@@ -291,7 +289,7 @@ From: python:{{ PY_VERSION }}-slim # Which container to use as a base image. # <
 %arguments # <3>
     # The version of Python to use:
     PY_VERSION=3.10
-  
+
 %files
     speedtest-cli.py /opt/local/bin/speedtest # Copy the script to the container. # <4>
 
@@ -330,7 +328,7 @@ From: python:{{ PY_VERSION }}-slim # Which container to use as a base image. # <
 8. We're using the `echo` command to print a message to {{< term stderr >}} to let the user know that the installation is done. We're using the `>&2` operator to redirect the output of `echo` to {{< term stderr >}} instead of {{< term stdout >}}. The `$(...)` syntax runs the commands within and inserts the output into a string. In this case, we're using it to insert the output of `python3 --version` into the string we're about to print with `echo`. This helps the user know which version of Python the built image will contain.
 9. We're using the `chmod` command to make the `speedtest` command executable -- otherwise, we wouldn't be able to run it without passing it to the `python3` command.
 10. The [`%environment`](https://apptainer.org/docs/user/latest/definition_files.html#environment) section defines the environment variables to set in the container. Note that the environment variables set in the `%environment` section are only set when the container is run. They are *not* set when the image is built, so they are not available in the `%post` section, even if you move the `%environment` section above the `%post` section.
-11. We're prepending `/opt/local/bin` to the existing value of the <tt>{{< term PATH >}}</tt> environment variable so that we can run the `speedtest` command from anywhere in the container. The `PATH` environment variable is used by the shell to find commands. If you want to be able to run a command without specifying the full path to the command, you need to add the directory containing the command to the `PATH` environment variable, separated by a colon (`:`). 
+11. We're prepending `/opt/local/bin` to the existing value of the <tt>{{< term PATH >}}</tt> environment variable so that we can run the `speedtest` command from anywhere in the container. The `PATH` environment variable is used by the shell to find commands. If you want to be able to run a command without specifying the full path to the command, you need to add the directory containing the command to the `PATH` environment variable, separated by a colon (`:`).
 12. Adding the `/opt/venv/bin` directory to the `PATH` environment variable makes it possible to run the `python` command from the virtual environment we created in the `%post` section. This is necessary because we installed the `click` module in the virtual environment, so we need to run the `python` command from the virtual environment to be able to import the `click` module.
 13. The [`%runscript`](https://apptainer.org/docs/user/latest/definition_files.html#runscript) section defines the command to run when the container is run. In this case, we're running the `speedtest` command we installed in the `%post` section.
 14. We're using the [`$@`](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html#index-_0040) *special parameter* to pass all the arguments passed to the container to the `speedtest` command -- for example, if you run `apptainer exec speedtest.sif --output output.txt`, the `speedtest` command will be run with the arguments `--output output.txt`.

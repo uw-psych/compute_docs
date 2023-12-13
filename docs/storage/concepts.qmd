@@ -65,7 +65,7 @@ How often data is accessed. Some services may charge for each time data is acces
 
 ### Data access restrictions
 
-Who can access the data. Data access restrictions may be inherent to a service (e.g., only people connected to the UW intranet can access the data) or may be imposed by the user, the organization, or the service provider. Sharing data with outside collaborators may require additional steps such as creating accounts for the collaborators, or may not be possible at all. 
+Who can access the data. Data access restrictions may be inherent to a service (e.g., only people connected to the UW intranet can access the data) or may be imposed by the user, the organization, or the service provider. Sharing data with outside collaborators may require additional steps such as creating accounts for the collaborators, or may not be possible at all.
 
 ### Data security
 

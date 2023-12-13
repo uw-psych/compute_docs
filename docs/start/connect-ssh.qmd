@@ -26,7 +26,8 @@ macOS, most Linux distributions, and (newer builds of) Windows 10/11 already inc
 
 Pick your platform and install an SSH client:
 
-::: panel-tabset
+::: {.panel-tabset}
+
 ## Linux
 
 Open a terminal and install OpenSSH client with your distribution's package
@@ -43,6 +44,7 @@ manager.
 To setup session sharing, create a new host entry to **your local computer's** `~/.ssh/config`
 with a text editor:
 
+
 ``` {filename=~/.ssh/config}
 Host klone.hyak.uw.edu
     HostName %h
@@ -52,13 +54,14 @@ Host klone.hyak.uw.edu
 ```
 
 ## macOS
+
 macOS provides SSH commands by default and are accessible from command-line with
 the native macOS Terminal application.
 
 To setup session sharing, create a new host entry to **your local computer's** `~/.ssh/config`
 with a text editor:
 
-``` {filename=~/.ssh/config}
+``` {filename=~/.ssh/config }
 Host klone.hyak.uw.edu
     HostName %h
     ControlPath ~/.ssh/%r@%h:%p
@@ -71,7 +74,7 @@ Host klone.hyak.uw.edu
 There are many SSH clients available for the Windows platform. Here is a short table comparing
 features provided by each SSH client:
 
-:::{table} Feature Comparison of Windows SSH Clients
+### Feature Comparison of Windows SSH Clients
 | SSH Client | Port-Forwarding | X11 | Session Sharing | Interface | File Transfer Interface |
 | :--------- | --------------- | --- | --------------- | --------- | ----------------------- |
 | [Win32-OpenSSH](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI |
@@ -79,7 +82,6 @@ features provided by each SSH client:
 | [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) | Supported | Requires X11 Server[^x11] | Supported | GUI | CLI |
 | [MSYS2+OpenSSH](https://www.msys2.org/) | Supported | Requires X11 Server[^x11] | Unsupported | CLI | CLI |
 | [WSL2+OpenSSH](https://learn.microsoft.com/en-us/windows/wsl/) | Supported | Supported | Supported | CLI | CLI |
-:::
 
 ::: callout-note
 PuTTY's `plink.exe` tool is not suited for interactive sessions as it cannot handle many key inputs
@@ -87,7 +89,9 @@ PuTTY's `plink.exe` tool is not suited for interactive sessions as it cannot han
 :::
 
 ::: {.callout-tip collapse=true}
+
 # Session Sharing in PuTTY
+
 Check `Share SSH Connection if possible` in the **PuTTY Configuration** window under **Connection**->**SSH**:
 
 ![](./_static/putty/PuTTY_share_SSH_connections.png)
@@ -105,6 +109,9 @@ on **Duplicate Session**.
 
 To reuse an active session with CLI tools, specify the name of the saved PuTTY profile in place of
 `UWNetID@klone.hyak.uw.edu`.
+
+:::
+
 :::
 
 ## Connecting via SSH
@@ -113,16 +120,16 @@ To reuse an active session with CLI tools, specify the name of the saved PuTTY p
 
 ### OpenSSH
 
-1. Open a terminal instance.  
+1. Open a terminal instance.
   
 ::: callout-note
 Windows users should open PowerShell console, or install and use
 [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
-from the Microsoft Store app.  
+from the Microsoft Store app.
 :::
-2. Connect to HYAK Klone cluster with `ssh` command with your UW NetID:  
+2. Connect to HYAK Klone cluster with `ssh` command with your UW NetID:
 ```bash
-ssh UWNetID@klone.hyak.uw.edu  
+ssh UWNetID@klone.hyak.uw.edu
 ```
 3. If prompted to "continue connecting", type `yes` and press enter.
 4. Login with your NetID password and authenticate with Duo.

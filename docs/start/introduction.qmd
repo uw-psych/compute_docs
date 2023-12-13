@@ -1,5 +1,4 @@
 ---
-title: "Introduction to UW Hyak"
 description: An introduction to using the University of Washington Hyak Cluster
 order: 10
 ---
@@ -8,7 +7,6 @@ order: 10
 
 [HYAK](https://hyak.uw.edu/systems/) is the University of Washington's high-performance computing cluster:
 > HYAK is part of the University of Washington's cyberinfrastructure plan to support world-class research in every department. HYAK is an ecosystem of high-performance compute (HPC) clusters and supporting infrastructure (e.g., data management, computational training, scientific consulting). Acknowleding our Pacific Northwest heritage, HYAK means "fast" in Chinook jargon. Counting 1, 2, and 3 translates to "ikt", "mox", and "klone" in this local trading language. The numbers are cluster names corresponding to the generation of HYAK cluster deployed. We are currently on the 3rd generation cluster for HYAK.
-
 
 ## Klone
 

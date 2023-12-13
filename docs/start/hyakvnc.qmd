@@ -210,7 +210,7 @@ Examples:
 Usage: hyakvnc show <jobid>
     
 Description:
-    Show connection information for a HyakVNC sesssion. 
+    Show connection information for a HyakVNC sesssion.
     If no job ID is provided, a menu will be shown to select from running jobs.
     
 Options:

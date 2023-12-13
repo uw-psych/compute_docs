@@ -65,6 +65,16 @@ clean: ## Remove all generated files.
 build: ## Build the site.
 	$(QUARTO) render
 
-.PHONY: lint-glossary
-lint-glossary: glossary.yml ## Lint the glossary.
+.PHONY: fmt-glossary
+fmt-glossary: glossary.yml ## Lint the glossary.
 	$(YQ) 'sort_keys(..) | .. style="literal"' $<
+
+docs/storage/comparison.qmd.inc: docs/storage/comparison.yml
+	./docs/storage/comparison-yaml-to-table.R $< > $@
+
+
+YAML_TABLES := docs/storage/comparison.qmd.inc
+
+.PHONY: yaml-tables
+yaml-tables: $(YAML_TABLES) ## Generate YAML tables.
+

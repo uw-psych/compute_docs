@@ -5,11 +5,17 @@ description: "Different storage options for your research data."
 
 There are a number of different storage options available for storing research data. This section describes some of the options available at the University of Washington, as well as some other options that may be useful.
 
+## Options comparison
+
+The following table compares the different options for storing research data:
+
+{{< include "comparison.qmd.inc" >}}
+
 ## UW-supported options
 
 UW provides a number of different storage options for faculty, staff, and students. Additionally, there are a number of storage options that are not directly supported by UW, but are available to UW users through UW's enterprise agreements with the service providers, sometimes at a discount.
 
- The following sections describe some of the most common options. UW IT maintains a [page](https://itconnect.uw.edu/guides-by-topic/online-storage-publishing/online-storage/) that provides an overview of UW's online storage options, as well as a [comparison](https://itconnect.uw.edu/tools-services-support/software-computers/mws/my-workstation/files/comparison/) of file service options. The [UW IT Service Catalog](https://uw.service-now.com/sp?id=sc_home) has a more complete list of UW IT services. 
+ The following sections describe some of the most common options. UW IT maintains a [page](https://itconnect.uw.edu/guides-by-topic/online-storage-publishing/online-storage/) that provides an overview of UW's online storage options, as well as a [comparison](https://itconnect.uw.edu/tools-services-support/software-computers/mws/my-workstation/files/comparison/) of file service options. The [UW IT Service Catalog](https://uw.service-now.com/sp?id=sc_home) has a more complete list of UW IT services.
 
  UW Libraries' Research Data Services also maintains a [page](https://www.lib.washington.edu/dataservices/tools/storage-options) with information about storage options.
 
@@ -38,7 +44,7 @@ Free for departmental labs up to 10 TiB. More available on request.
 
 ### UW LOLO
 
-The UW [LOLO Data Archive](https://itconnect.uw.edu/service/shared-central-file-system-for-research-archives-lolo-archive/) provides long-term tape-backed archival storage for users at the university. It is only intended for use by UW faculty, staff, and affiliated organizations. It is suitable for data that s not actively being worked on.  The [Hyak documentation](https://hyak.uw.edu/docs/storage/archive) has additional information about the LOLO Data Archive. 
+The UW [LOLO Data Archive](https://itconnect.uw.edu/service/shared-central-file-system-for-research-archives-lolo-archive/) provides long-term tape-backed archival storage for users at the university. It is only intended for use by UW faculty, staff, and affiliated organizations. It is suitable for data that s not actively being worked on.  The [Hyak documentation](https://hyak.uw.edu/docs/storage/archive) has additional information about the LOLO Data Archive.
 
 #### Features and options
 
@@ -161,7 +167,7 @@ Link: [ResearchWorks Archive](https://digital.lib.washington.edu/researchworks/)
 
 #### Amazon Web Services
 
-Amazon Web Services (AWS) is a cloud computing platform that provides a number of different storage services, including [Amazon S3](https://aws.amazon.com/s3/), [Amazon EBS](https://aws.amazon.com/ebs/), [Amazon EFS](https://aws.amazon.com/efs/), and [Amazon Glacier](https://aws.amazon.com/glacier/). Amazon S3 is comparable to Azure Blobs. Amazon EBS is comparable to Azure Files. Amazon EFS is comparable to Azure Files. Amazon Glacier is comparable to Azure Archive Storage. 
+Amazon Web Services (AWS) is a cloud computing platform that provides a number of different storage services, including [Amazon S3](https://aws.amazon.com/s3/), [Amazon EBS](https://aws.amazon.com/ebs/), [Amazon EFS](https://aws.amazon.com/efs/), and [Amazon Glacier](https://aws.amazon.com/glacier/). Amazon S3 is comparable to Azure Blobs. Amazon EBS is comparable to Azure Files. Amazon EFS is comparable to Azure Files. Amazon Glacier is comparable to Azure Archive Storage.
 
 ##### Features and options
 
@@ -201,7 +207,7 @@ Azure Blobs is comparable to Amazon AWS S3. It is designed to store large amount
 
 The approximate cost of storing 1 TiB of data per month is:
 - \~\$25 for "hot" data accessed frequently (Azure Blobs Hot Tier)
-- \~\$5/month for "cold" data accessed infrequently  (Azure Blobs Cold Tier) 
+- \~\$5/month for "cold" data accessed infrequently  (Azure Blobs Cold Tier)
 
 UW IT has a subscription service for Azure that provides a discount of roughly 10% on Azure usage charges and allows charges to be paid with a UW Workday worktag.  A UW Workday worktag is required to use the service. For more information, see the [UW IT Azure Subscription Service](https://itconnect.uw.edu/service/selfmanaged-azure-subscription/).
 
@@ -234,7 +240,7 @@ Google Cloud also offers block storage, file storage, and archival storage servi
 
 ### GitHub
 
-GitHub is a web-based hosting service for version control using Git. Files up to 100 MiB each can be stored in a GitHub repository. The total size of a repository [should be](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits) under 5 GiB. 
+GitHub is a web-based hosting service for version control using Git. Files up to 100 MiB each can be stored in a GitHub repository. The total size of a repository [should be](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits) under 5 GiB.
 
 GitHub repositories can be made publicly available, or can be made private. Private repositories are only accessible to collaborators who have been granted access to the repository. Private repositories are only available to collaborators who have GitHub accounts. GitHub repositories can be accessed using the GitHub website, or using the [GitHub Desktop](https://desktop.github.com/) application.
 
@@ -252,7 +258,7 @@ Public packages can be accessed by anyone and should not be used for sensitive d
 
 #### Large File Storage
 
-GitHub has a [Large File Storage](https://git-lfs.github.com/) (LFS) extension that can be used to store large files in a GitHub repository. 
+GitHub has a [Large File Storage](https://git-lfs.github.com/) (LFS) extension that can be used to store large files in a GitHub repository.
 
 According to [GitHub's documentation](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage#about-git-large-file-storage), the file size limits for GitHub repositories are:
 
