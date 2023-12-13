@@ -11,7 +11,7 @@ There are many different types of storage. Some of the most common types of stor
 
 ### Object storage
 
-Object storage is a type of storage that stores data as objects. Each object contains data, metadata, and a unique identifier. Objects are stored in a flat address space and can be accessed using a URL. Object storage is designed to store large amounts of unstructured data. Object storage is *not* designed to be used as a file system. Object storage is typically accessed using a REST API. Object storage is typically used for storing data that is not actively being worked on but needs to be stored for a long time. [Amazon S3][#amazon-web-services] and [Azure Blobs](options.qmd#azure) are examples of object storage services.
+Object storage is a type of storage that stores data as objects. Each object contains data, metadata, and a unique identifier. Objects are stored in a flat address space and can be accessed using a URL. Object storage is designed to store large amounts of unstructured data. Object storage is *not* designed to be used as a file system. Object storage is typically accessed using a REST API. Object storage is typically used for storing data that is not actively being worked on but needs to be stored for a long time. [Amazon S3](options.qmd#amazon-web-services) and [Azure Blobs](options.qmd#azure) are examples of object storage services.
 
 ### Block storage
 
