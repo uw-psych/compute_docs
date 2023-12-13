@@ -19,10 +19,10 @@ jobs:
         uses: mikefarah/yq@master
         with:
           cmd: |
-            GITHUB_REPOSITORY_NAME="${GITHUB_REPOSITORY_NAME:-${GITHUB_REPOSITORY##*/}}"
-            GITHUB_PAGES_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY_NAME}"
-            GITHUB_REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
-            GITHUB_ISSUE_URL="${GITHUB_REPO_URL}/issues/new"
+            export GITHUB_REPOSITORY_NAME="${GITHUB_REPOSITORY_NAME:-${GITHUB_REPOSITORY##*/}}"
+            export GITHUB_PAGES_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY_NAME}"
+            export GITHUB_REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
+            export GITHUB_ISSUE_URL="${GITHUB_REPO_URL}/issues/new"
             # Replace the URLs in _quarto.yml:
             yq -i '
               .website.site-url = strenv(GITHUB_PAGES_URL) |
