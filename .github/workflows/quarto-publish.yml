@@ -25,9 +25,9 @@ jobs:
             GITHUB_ISSUE_URL="${GITHUB_REPO_URL}/issues/new"
             # Replace the URLs in _quarto.yml:
             yq -i '
-              .website.site-url: strenv(GITHUB_PAGES_URL) |
-              .website.repo-url: strenv(GITHUB_REPO_URL) |
-              .website.issue-url: strenv(GITHUB_ISSUE_URL)
+              .website.site-url = strenv(GITHUB_PAGES_URL) |
+              .website.repo-url = strenv(GITHUB_REPO_URL) |
+              .website.issue-url = strenv(GITHUB_ISSUE_URL)
             ' _quarto.yml
             cat _quarto.yml >&2 # show the file after the changes
       - name: "Update URLs in glossary.yml"
