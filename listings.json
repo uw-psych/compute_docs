@@ -8,20 +8,19 @@
     ]
   },
   {
+    "listing": "/docs/start/index.html",
+    "items": [
+      "/docs/start/introduction.html",
+      "/docs/start/connect-ssh.html",
+      "/docs/start/hyakvnc.html"
+    ]
+  },
+  {
     "listing": "/docs/compute/index.html",
     "items": [
       "/docs/compute/slurm.html",
       "/docs/compute/apptainer.html",
       "/docs/compute/lmod.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/docs/compute/index.html",
-      "/docs/start/index.html",
-      "/docs/software/index.html",
-      "/docs/storage/index.html"
     ]
   },
   {
@@ -34,11 +33,12 @@
     ]
   },
   {
-    "listing": "/docs/start/index.html",
+    "listing": "/index.html",
     "items": [
-      "/docs/start/introduction.html",
-      "/docs/start/connect-ssh.html",
-      "/docs/start/hyakvnc.html"
+      "/docs/compute/index.html",
+      "/docs/start/index.html",
+      "/docs/software/index.html",
+      "/docs/storage/index.html"
     ]
   }
 ]
