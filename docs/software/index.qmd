@@ -1,10 +1,10 @@
 ---
 title: "Software"
+description: "Using and installing software on Klone"
 listing:
   contents:
     - "*.qmd"
 ---
 
-This section covers software on {{< term Klone >}} maintained by labs within the psychology department. Instructions for adding new software are also included.
 
 ## Overview

@@ -1,5 +1,5 @@
 ---
-description: "Different storage options for your research data."
+description: "Different storage options for your research data"
 ---
 # Options
 

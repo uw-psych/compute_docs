@@ -1,5 +1,6 @@
 ---
 title: "Compute"
+description: "How to connect to and use the UW Hyak clusters"
 listing:
   contents:
     - "*.qmd"
