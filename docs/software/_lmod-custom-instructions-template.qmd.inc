@@ -34,8 +34,16 @@
 (@) Use a text editor to create an Lmod `.lua` module file for the new release with a text editor, using `{{< meta lmod-example.version >}}.lua` as the filename:
 
 	``` {.lua filename="`r paste0("/sw/contrib/modulefiles/mylabname/", rmarkdown::metadata$"lmod-example"$"basename", rmarkdown::metadata$"lmod-example"$"version", ".lua") `"}
-	{{< include _lmod-template-header.lua >}}
-	{{< meta lmod-example.modulefile-footer >}}
+	help(myModuleName())
+	local base = pathJoin(
+		"/sw/contrib",
+		string.gsub(myModuleName(), "/.*$", "-src"),
+		string.gsub(myModuleName(), "^.*/", ""),
+		myModuleVersion()
+	)
+	whatis("Name: " .. string.gsub(myModuleName(), "^.*/", ""))
+	whatis("Version: " .. myModuleVersion())
+	`r rmarkdown::metadata$"lmod-example"$"modulefile-footer" `
     ```
 
 	::: callout-tip
