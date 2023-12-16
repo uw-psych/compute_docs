@@ -1,0 +1,57 @@
+---
+description: Statistical parametric mapping toolbox for MATLAB
+engine: knitr
+lmod-example:
+    displayname: SPM
+    basename: spm
+    version: 8
+    download-page: https://www.fil.ion.ucl.ac.uk/spm/software/download
+    file-url: https://www.fil.ion.ucl.ac.uk/spm/download/restricted/dyll/spm8.zip
+    download-filename: spm8.zip
+    copy-dir: spm8
+    modulefile-footer: |-
+        depends_on("matlab")
+        append_path("MATLABPATH", base)
+---
+# SPM Toolbox
+
+The [Statistical Parametric Mapping (SPM)](https://www.fil.ion.ucl.ac.uk/spm/) toolbox for MATLAB is available as an {{< term Lmod >}} module on {{< term Klone >}} {{< term "compute node|compute nodes" >}}.
+
+## Use with Lmod
+
+Like all {{< term Lmod >}} modules, the `spm` module is available only on {{< term Klone >}} {{< term "compute node|compute nodes" >}}, and these commands will not work on the {{< term "login node" >}}.
+
+### Checking available versions
+
+Because the module for SPM is installed in the `escience` hierarchy, its name is prefixed with `escience/`.
+
+You can check the installed versions as follows:
+
+```bash
+module spider escience/spm
+```
+
+The output should look a bit like this:
+
+```text
+---------------------------------------
+  escience/spm: escience/spm/12
+---------------------------------------
+
+     This module can be loaded directly: module load escience/spm/12
+
+     Help:
+        spm12
+```
+
+### Running SPM
+
+Load the default version with `module load escience/spm` or load a specific version with `module load escience/spm/version`.
+
+After loading the module, start `matlab` and run `spm` in the MATLAB command window.
+
+### Installing different versions via Lmod
+
+You can install different versions of SPM by following the instructions below.
+
+{{< include _lmod-custom-instructions-template.qmd.inc >}}
