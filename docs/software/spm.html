@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.526">
+<meta name="generator" content="quarto-1.4.529">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Statistical parametric mapping and functional connectivity toolboxes for MATLAB">
+<meta name="description" content="Statistical parametric mapping toolbox for MATLAB">
 
 <title>UW Psychology Computational Resources</title>
 <style>
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/software/index.html">Software</a></li><li class="breadcrumb-item"><a href="../../docs/software/spm_conn.html">SPM and CONN Toolboxes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/software/index.html">Software</a></li><li class="breadcrumb-item"><a href="../../docs/software/spm.html">SPM Toolbox</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -145,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" id="quarto-sidebar-item-1" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
@@ -160,19 +160,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/start/introduction.html" id="quarto-sidebar-item-2" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to UW Hyak</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/start/connect-ssh.html" id="quarto-sidebar-item-3" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting to Hyak with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/start/hyakvnc.html" id="quarto-sidebar-item-4" class="sidebar-item-text sidebar-link">
  <span class="menu-text">hyakvnc</span></a>
   </div>
 </li>
@@ -189,19 +189,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/compute/slurm.html" id="quarto-sidebar-item-8" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SLURM Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/compute/lmod.html" id="quarto-sidebar-item-9" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lmod</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/compute/apptainer.html" id="quarto-sidebar-item-10" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Apptainer</span></a>
   </div>
 </li>
@@ -218,26 +218,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/afni.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/software/afni.html" id="quarto-sidebar-item-14" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AFNI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/freesurfer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/software/conn.html" id="quarto-sidebar-item-15" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CONN Toolbox</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../docs/software/freesurfer.html" id="quarto-sidebar-item-16" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FreeSurfer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/matlab.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/software/matlab.html" id="quarto-sidebar-item-17" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MATLAB</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/spm_conn.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">SPM and CONN Toolboxes</span></a>
+  <a href="../../docs/software/spm.html" id="quarto-sidebar-item-18" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">SPM Toolbox</span></a>
   </div>
 </li>
       </ul>
@@ -253,19 +259,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/storage/concepts.html" id="quarto-sidebar-item-24" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/storage/options.html" id="quarto-sidebar-item-25" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/storage/klone-storage.html" id="quarto-sidebar-item-26" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Storage on Klone</span></a>
   </div>
 </li>
@@ -273,13 +279,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc" class="sidebar-item-text sidebar-link">
+  <a href="https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc" id="quarto-sidebar-item-30" class="sidebar-item-text sidebar-link">
  <span class="menu-text">psych-hpc mailing list</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+  <a href="../../docs/CONTRIBUTING.html" id="quarto-sidebar-item-31" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contributing</span></a>
   </div>
 </li>
@@ -295,151 +301,122 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="spm-and-conn-toolboxes" class="level1">
-<h1>SPM and CONN Toolboxes</h1>
-<p><a href="https://www.fil.ion.ucl.ac.uk/spm/">Statistical Parametric Mapping (SPM)</a> and <a href="https://web.conn-toolbox.org/">CONN</a> are available as <a href="../../docs/compute/lmod.html"></a><a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> modules on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a> &gt;}}</p>
+<section id="spm-toolbox" class="level1">
+<h1>SPM Toolbox</h1>
+<p>The <a href="https://www.fil.ion.ucl.ac.uk/spm/">Statistical Parametric Mapping (SPM)</a> toolbox for MATLAB is available as an <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> module on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a>.</p>
 <section id="use-with-lmod" class="level2">
 <h2 class="anchored" data-anchor-id="use-with-lmod">Use with Lmod</h2>
-<p>Like all <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> modules, the <code>spm</code> and <code>conn</code> modules are available only on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a>, and these commands will not work on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvY29tcHV0ZV9kb2NzL2RvY3MvY29tcHV0ZS9zbHVybS5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">login node</a>.</p>
+<p>Like all <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> modules, the <code>spm</code> module is available only on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a>, and these commands will not work on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvY29tcHV0ZV9kb2NzL2RvY3MvY29tcHV0ZS9zbHVybS5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">login node</a>.</p>
 <section id="checking-available-versions" class="level3">
 <h3 class="anchored" data-anchor-id="checking-available-versions">Checking available versions</h3>
-<p>Because the modules for SPM and CONN are installed in the <code>escience</code> hierarchy, their names are prefixed with <code>escience/</code>.</p>
+<p>Because the module for SPM is installed in the <code>escience</code> hierarchy, its name is prefixed with <code>escience/</code>.</p>
 <p>You can check the installed versions as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider escience/spm escience/conn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider escience/spm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The output should look a bit like this:</p>
 <pre class="text"><code>---------------------------------------
-  escience/conn: escience/conn/v.22.a
----------------------------------------
-
-    This module can be loaded directly: module load escience/conn/v.22.a
-
-    Help:
-      conn-v.22.a
-
----------------------------------------
   escience/spm: escience/spm/12
 ---------------------------------------
 
-    This module can be loaded directly: module load escience/spm/12
+     This module can be loaded directly: module load escience/spm/12
 
-    Help:
-      spm12</code></pre>
+     Help:
+        spm12</code></pre>
 </section>
-<section id="running-spm-or-conn" class="level3">
-<h3 class="anchored" data-anchor-id="running-spm-or-conn">Running SPM or CONN</h3>
-<p>Load the default version with <code>module load escience/spm</code> or <code>module load escience/conn</code>, or load a specific version with <code>module load escience/spm/&lt;version&gt;</code> or <code>module load escience/conn/&lt;version&gt;</code>.</p>
-<p>After loading the module, start <code>matlab</code> and run <code>spm</code> or <code>conn</code> in the MATLAB command window.</p>
+<section id="running-spm" class="level3">
+<h3 class="anchored" data-anchor-id="running-spm">Running SPM</h3>
+<p>Load the default version with <code>module load escience/spm</code> or load a specific version with <code>module load escience/spm/version</code>.</p>
+<p>After loading the module, start <code>matlab</code> and run <code>spm</code> in the MATLAB command window.</p>
 </section>
 <section id="installing-different-versions-via-lmod" class="level3">
 <h3 class="anchored" data-anchor-id="installing-different-versions-via-lmod">Installing different versions via Lmod</h3>
-<p>You can install different versions of SPM and CONN by following the instructions below.</p>
-<section id="spm" class="level4">
-<h4 class="anchored" data-anchor-id="spm">SPM</h4>
-<ol type="1">
-<li><p>Go to <a href="https://www.fil.ion.ucl.ac.uk/spm/software/download" class="uri">https://www.fil.ion.ucl.ac.uk/spm/software/download</a>, choose the version of SPM you want to install, copy the download link to the file (with the extension <code>.zip</code>), and download the file by running the following command on a Klone login or compute node. We’ll use version 8 as an example:</p>
-<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">-P</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads"</span> https://www.fil.ion.ucl.ac.uk/spm/download/restricted/idyll/spm8.zip</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can install different versions of SPM by following the instructions below.</p>
+<ol class="example" type="1">
+<li><p>Go to &lt;https://www.fil.ion.ucl.ac.uk/spm/software/download&gt;, choose the version of SPM you want to install, copy the download link to the file, and download the file by running the following command on a <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvY29tcHV0ZV9kb2NzL2RvY3MvY29tcHV0ZS9zbHVybS5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">login</a> or <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute node</a>. We’ll use version 8 as an example:</p>
+<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads"</span> <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> <span class="st">"</span><span class="va">$_</span><span class="st">"</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="2">2</button><span id="annotated-cell-3-2" class="code-annotation-target"><a href="#annotated-cell-3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-LO</span> https://www.fil.ion.ucl.ac.uk/spm/download/restricted/dyll/spm8.zip</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1"><code>wget</code> is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The <code>-P</code> flag tells <code>wget</code> to save the file to the specified directory. The directory <code>/gscratch/scrubbed/$USER/downloads</code> is a good place to save files temporarily – see our <a href="../../docs/storage/klone-storage.html">guide</a> to storage on Klone for more information.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="1">Create the target directory if it does not exist and navigate to it (<code>$_</code> is a special variable that expands to the last argument of the previous command).</span>
 </dd>
-</dl></li>
-<li><p>Extract the .zip archive to <code>/sw/contrib/mylabname-src/spm</code> (replacing <code>mylabname</code> with the name of your lab).</p>
-<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Be sure to replace "mylabname" with the name of your lab!</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="va">LABNAME</span><span class="op">=</span>mylabname</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2">2</button><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">"/sw/contrib/</span><span class="va">${LABNAME}</span><span class="st">-src/spm"</span></span>
-<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> <span class="at">-n</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads/spm8.zip"</span> <span class="at">-d</span> <span class="st">"/sw/contrib/</span><span class="va">${LABNAME}</span><span class="st">-src/spm"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="1">Create the target directory if it does not exist.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="2" data-code-annotation="2"><code>curl</code> is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The <code>-L</code> option tells <code>curl</code> to follow redirects, and the <code>-O</code> option tells it to save the file to the current directory.</span>
 </dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="2">Extract the SPM archive to the target directory (The <code>-n</code> flag prevents overwriting existing files if someone has already installed this version of SPM.).</span>
-</dd>
-</dl></li>
-<li><p>Create an Lmod <code>.lua</code> module file for the new release with a text editor, using <code>&lt;version&gt;.lua</code> as the filename:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>/sw/contrib/modulefiles/mylabname/spm/8.lua</strong></pre>
-</div>
-<div class="sourceCode" id="cb3" data-filename="/sw/contrib/modulefiles/mylabname/spm/8.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span><span class="vs">[[spm8]]</span><span class="op">)</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="co">-- Be sure to replace "mylabname" with the name of your lab!</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">labname</span> <span class="op">=</span> <span class="st">"mylabname"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">version</span> <span class="op">=</span> <span class="st">"8"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> <span class="st">"/sw/contrib/"</span> <span class="op">..</span> <span class="va">labname</span> <span class="op">..</span> <span class="st">"-src/spm/spm"</span> <span class="op">..</span> <span class="va">version</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>depends_on<span class="op">(</span><span class="st">"matlab"</span><span class="op">)</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>append_path<span class="op">(</span><span class="st">"MATLABPATH"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: spm"</span><span class="op">)</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> <span class="va">version</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-<li><p>Remove the downloaded file when you are done with it:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-v</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads/spm8.zip"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-</section>
-<section id="conn" class="level4">
-<h4 class="anchored" data-anchor-id="conn">CONN</h4>
-<ol type="1">
-<li><p>Go to <a href="https://www.nitrc.org/frs/?group_id=279" class="uri">https://www.nitrc.org/frs/?group_id=279</a>, choose the version of CONN you want to install, copy the download link to the file (with the extension <code>.zip</code>), and download the file by running the following command on a Klone login or compute node. We’ll use version 21a as an example:</p>
-<div class="sourceCode" id="annotated-cell-8"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-1" class="code-annotation-target"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">wget</span> <span class="at">-P</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads"</span> https://www.nitrc.org/frs/download.php/12426/conn21a.zip</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="1" data-code-annotation="1"><code>wget</code> is a program you can use to download files from the web. Replace the URL with the URL for the version of SPM you want to install. The <code>-P</code> flag tells <code>wget</code> to save the file to the specified directory. The directory <code>/gscratch/scrubbed/$USER/downloads</code> is a good place to save files temporarily – see our <a href="../../docs/storage/klone-storage.html">guide</a> to storage on Klone for more information.</span>
-</dd>
-</dl></li>
-<li><p>Extract the .zip archive to <code>/sw/contrib/mylabname-src/spm</code> (replacing <code>mylabname</code> with the name of your lab).</p>
-<div class="sourceCode" id="annotated-cell-9"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Be sure to replace "mylabname" with the name of your lab!</span></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-2" class="code-annotation-target"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a><span class="va">LABNAME</span><span class="op">=</span>mylabname</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="2">2</button><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">"/sw/contrib/</span><span class="va">${LABNAME}</span><span class="st">-src/conn"</span></span>
-<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> <span class="at">-n</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads/conn21a.zip"</span> <span class="at">-d</span> <span class="st">"/sw/contrib/</span><span class="va">${LABNAME}</span><span class="st">-src/conn/v.21.a"</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="2" data-code-annotation="1">Create the target directory if it does not exist.</span>
-</dd>
-<dt data-target-cell="annotated-cell-9" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-9" data-code-lines="3" data-code-annotation="2">Extract the SPM archive to directory <code>v.21.a</code> within the target directory. (The <code>-n</code> flag prevents overwriting existing files if someone has already installed this version of CONN.)</span>
-</dd>
-</dl></li>
-<li><p>Create an Lmod <code>.lua</code> module file for the new release with a text editor, using <code>&lt;version&gt;.lua</code> as the filename:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua</strong></pre>
-</div>
-<div class="sourceCode" id="cb5" data-filename="/sw/contrib/modulefiles/mylabname/conn/v.21.a.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Be sure to replace "mylabname" with the name of your lab!</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span><span class="vs">[[conn-v.21.a]]</span><span class="op">)</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">labname</span> <span class="op">=</span> <span class="st">"mylabname"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">version</span> <span class="op">=</span> <span class="st">"v.21.a"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> pathJoin<span class="op">(</span><span class="st">"/sw/contrib/"</span> <span class="op">..</span> <span class="va">labname</span> <span class="op">..</span> <span class="st">"-src/conn"</span><span class="op">,</span> <span class="va">version</span><span class="op">,</span> <span class="st">"conn"</span><span class="op">)</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>depends_on<span class="op">(</span><span class="st">"matlab"</span><span class="op">)</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>depends_on<span class="op">(</span><span class="st">"escience/spm"</span><span class="op">)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>append_path<span class="op">(</span><span class="st">"MATLABPATH"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: CONN"</span><span class="op">)</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> <span class="va">version</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-<li><p>Remove the downloaded file when you are done with it:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-v</span> <span class="st">"/gscratch/scrubbed/</span><span class="va">$USER</span><span class="st">/downloads/conn21a.zip"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
+</dl>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Lmod takes some time to cache available modules. If a module does not appear, use the <code>-I</code> or <code>--ignore_cache</code> flag to force Lmod to check for new modules.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load mylabname/spm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The directory <code>/gscratch/scrubbed/$USER/downloads</code> will expand to <code>/gscratch/scrubbed/(your username)/downloads</code>. This directory is a good place to save files temporarily – see our <a href="../../docs/storage/klone-storage.html">guide</a> to storage on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> for more information.</p>
+</div>
+</div></li>
+<li><p>Extract the archive and copy the contents to <code>/sw/contrib/mylabname-src/spm/8</code> (replacing <code>mylabname</code> with the name of your lab):</p>
+<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-1" class="code-annotation-target"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unzip</span> spm8.zip <span class="at">-d</span> spm8.zip</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="2">2</button><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Make sure you include the parentheses around the commands below. Replace "mylabname" with your lab name!</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="3">3</button><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="bu">umask</span> 002 <span class="kw">&amp;&amp;</span> <span class="fu">mkdir</span> <span class="at">-p</span> /sw/contrib/mylabname-src/spm/8 <span class="kw">&amp;&amp;</span> <span class="fu">rsync</span> <span class="at">-rlHP</span> <span class="at">--chmod</span><span class="op">=</span>a+rwX spm8/spm8/ <span class="va">$_</span><span class="kw">)</span></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="4">4</button><span id="annotated-cell-4-4" class="code-annotation-target"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rfv</span> spm8.zip spm8</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="1" data-code-annotation="1">Extract the SPM archive to a new directory called <code>spm8</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="2">In <tt><a class="glossary-ref" data-glossary-term="bash" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2Jhc2gnIHJvbGU9J3Rvb2x0aXAnPkEKCnBvcHVsYXIKClVuaXgKCnNoZWxsCgphbmQKCmNvbW1hbmQKCmxhbmd1YWdlCgp0aGF0CgppcwoKdXNlZAoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIuCgpTZWUKCjxhIGhyZWY9Imh0dHBzOi8vd3d3LmdudS5vcmcvc29mdHdhcmUvYmFzaC8iPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">bash</a></tt>, parentheses create a [subshell]((https://tldp.org/LDP/abs/html/subshells.html), which runs the enclosed commands in a new shell session. We want to use it here so that we can temporarily modify the default permissions for new files and directories with the <a href="https://wiki.archlinux.org/title/umask"><code>umask</code></a> command. Your current settings will remain intact when the commands in the subshell are completed.</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="3">We’re running a series of commands here in a [subshell]((https://tldp.org/LDP/abs/html/subshells.html). Let’s break it down:</span>
+</dd>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="4" data-code-annotation="4">Remove the downloaded file and the extracted directory.</span>
+</dd>
+</dl></li>
+<li><p>Use a text editor to create an Lmod <code>.lua</code> module file for the new release with a text editor, using <code>8.lua</code> as the filename:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>/sw/contrib/modulefiles/mylabname/spm8.lua</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="/sw/contrib/modulefiles/mylabname/spm8.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span>myModuleName<span class="op">())</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> pathJoin<span class="op">(</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"/sw/contrib"</span><span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"/.*$"</span><span class="op">,</span> <span class="st">"-src"</span><span class="op">),</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"^.*/"</span><span class="op">,</span> <span class="st">""</span><span class="op">),</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    myModuleVersion<span class="op">()</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: "</span> <span class="op">..</span> <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"^.*/"</span><span class="op">,</span> <span class="st">""</span><span class="op">))</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> myModuleVersion<span class="op">())</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>depends_on<span class="op">(</span><span class="st">"matlab"</span><span class="op">)</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>append_path<span class="op">(</span><span class="st">"MATLABPATH"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<p>If you don’t know how to use a text editor on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a>, you can try <a href="https://www.nano-editor.org/">nano</a>, which is installed on the system. To create a new file, run <code>nano filename</code>, paste the contents of the template into the file, and save it by pressing <code>Ctrl+O</code> and then <code>Enter</code>. To exit, press <code>Ctrl+X</code>.</p>
+</div>
+</div></li>
+<li><p>Check that the module is available and load it: <code>{.bash}     module -I spider mylabname/spm # &lt;1&gt;     module load mylabname/spm/8</code></p>
+<ol type="1">
+<li>Lmod takes some time to cache available modules. You can use the <code>-I</code> option to force Lmod to check for new modules.</li>
+</ol></li>
+</ol>
 
 
-</section>
 </section>
 </section>
 </section>
@@ -588,27 +565,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
-            });
-          }
-        }
-      }
-    }
     if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -623,10 +579,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             break;
           }
         }
-        typesetMath(container);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
         return container.innerHTML
       } else {
-        typesetMath(note);
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -635,7 +595,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      typesetMath(note);
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
       return note.innerHTML;
     }
   }
@@ -909,7 +871,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/uw-psych/compute_docs/blob/main/docs/software/spm_conn.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/uw-psych/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/uw-psych/compute_docs/edit/main/docs/software/spm_conn.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="https://unpkg.com/@popperjs/core@2"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/uw-psych/compute_docs/blob/main/docs/software/spm.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/uw-psych/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/uw-psych/compute_docs/edit/main/docs/software/spm.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
   const refs = document.querySelectorAll(".glossary-ref");
   var activeRef, oldRef;
