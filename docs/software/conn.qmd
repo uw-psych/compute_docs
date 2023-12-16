@@ -9,7 +9,7 @@ lmod-example:
     file-url:  https://www.nitrc.org/frs/download.php/12426/conn21a.zip
     download-filename: conn21a.zip
     copy-dir: conn
-    modulefile-footer: |
+    modulefile-footer: |-
         depends_on("matlab")
         depends_on("escience/spm") -- edit this line to match the name of your SPM module
         append_path("MATLABPATH", base)

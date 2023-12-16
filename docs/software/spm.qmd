@@ -9,7 +9,7 @@ lmod-example:
     file-url: https://www.fil.ion.ucl.ac.uk/spm/download/restricted/dyll/spm8.zip
     download-filename: spm8.zip
     copy-dir: spm8
-    modulefile-footer: |
+    modulefile-footer: |-
         depends_on("matlab")
         append_path("MATLABPATH", base)
 ---
