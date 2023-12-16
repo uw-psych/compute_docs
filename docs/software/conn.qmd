@@ -1,0 +1,59 @@
+---
+description: Functional connectivity toolbox for MATLAB
+engine: knitr
+lmod-example:
+    displayname: CONN
+    basename: conn
+    version: 21a
+    download-page: https://www.nitrc.org/frs/?group_id=279
+    file-url:  https://www.nitrc.org/frs/download.php/12426/conn21a.zip
+    download-filename: conn21a.zip
+    copy-dir: conn
+    modulefile-footer: |
+        depends_on("matlab")
+        depends_on("escience/spm") -- edit this line to match the name of your SPM module
+        append_path("MATLABPATH", base)
+---
+# CONN Toolbox
+
+The [Functional Connectivity (CONN)](https://www.fil.ion.ucl.ac.uk/spm/)\) toolbox for MATLAB is available as an {{< term Lmod >}} module on {{< term Klone >}} {{< term "compute node|compute nodes" >}}.
+
+## Use with Lmod
+
+Like all {{< term Lmod >}} modules, the `conn` module is available only on {{< term Klone >}} {{< term "compute node|compute nodes" >}}, and these commands will not work on the {{< term "login node" >}}.
+
+### Checking available versions
+
+Because the module for CONN is installed in the `escience` hierarchy, its name is prefixed with `escience/`.
+
+You can check the installed versions as follows:
+
+```bash
+module spider escience/conn
+```
+
+The output should look a bit like this:
+
+```text
+---------------------------------------
+  escience/conn: escience/conn/v.22.a
+---------------------------------------
+
+    This module can be loaded directly: module load escience/conn/v.22.a
+
+    Help:
+      conn-v.22.a
+```
+
+### Running CONN
+
+Load the default version with `module load escience/conn` or load a specific version with `module load escience/conn/version`.
+
+After loading the module, start `matlab` and run `conn` in the MATLAB command window.
+
+### Installing different versions via Lmod
+
+You can install different versions of CONN by following the instructions below.
+
+{{< include _lmod-custom-instructions-template.qmd.inc >}}
+
