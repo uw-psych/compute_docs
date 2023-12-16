@@ -43,8 +43,9 @@ jobs:
           use-public-rspm: true
       - name: Install R dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
-        extra-packages:
-          any::rmarkdown
+        with:
+          extra-packages:
+            any::rmarkdown
       - name: Publish to GitHub Pages (and render) 
         uses: quarto-dev/quarto-actions/publish@v2
         with:
