@@ -43,7 +43,7 @@ The result will look something like this:
 
 It is important to note that the home directory is not intended for storing large amounts of data.  If you need to store more than a few GiB of data, you should use one of the other storage options described below.
 
-::: important
+::: {.callout-important title="Default software installation locations"}
 A lot of software will save files to your home directory by default. Python, for example, will install packages to `~/.local/lib/python3.6` by default when they are installed using `pip install --user`.  [Apptainer](/docs/compute/apptainer.qmd) will also cache images in `~/.apptainer/cache` by default. Fortunately, both of these can be changed by setting environment variables or using solutions like [virtual environments](https://docs.python.org/3/tutorial/venv.html).
 
 If you are installing software, you should always check to see where it is being installed, and make sure that it is not being installed to your home directory unless you have a good reason for doing so.
@@ -77,10 +77,18 @@ The result will look something like this:
 
 The line at the top shows the location of your group's `gscratch` directory.
 
-::: callout-info
-
 Every lab or group has its own quota for `/gscratch` storage. By default, the quota is 1 TiB per {{< term slice >}} (or 4 TiB for a GPU slice). Additional storage is [available](https://hyak.uw.edu/docs/storage/gscratch#group-or-lab-directories) at $10/TiB/month as of 2023-12-08.
 
+::: {.callout-tip title="Finding large or old files"}
+You can browse through the largest files and directories in any directory using the <tt>[gdu](/docs/software/utilities/gdu.qmd)</tt> command, which you can load using `module load escience/gdu` when logged in to a {{< term "compute node" >}}.
+
+If you want to look up files nobody has accessed in a while, you can use the [`find`](https://www.gnu.org/software/findutils/manual/html_mono/find.html) command. The following command will find all files in the current directory that have not been accessed  in the last 14 days (`atime +14`) and are larger than 1 MiB (`-size +1M`):
+
+``` bash 
+find . -atime +14 -size +1M -printf '%AFT%AH:%AM\t%s\t%p\n' | \
+    awk '{printf "%s\t%dM\t%s\n", $1, $2/(1024*1024), $3}' # <1>
+```
+1. We use [`awk`](https://www.gnu.org/software/gawk/manual/gawk.html) to process the file size in bytes that `find` reports and convert it to MiB.
 :::
 
 #### `/gscratch/scrubbed`

@@ -1,0 +1,61 @@
+---
+description: Disk usage analyzer
+css: "/_static/lib/asciinema-player.css"
+include-after-body:
+    text: |
+        <script src="/_static/lib/asciinema-player.min.js"></script>
+        <script>
+            term_font_family="'Cascadia Mono', monospace'"
+            document.querySelectorAll('.cast').forEach((block) => {
+                AsciinemaPlayer.create("../../../_static/casts/" + block.id + ".cast", block, {
+                      terminalFontFamily: 'Iosevka Term Web, monospace',
+                       fit: false
+                })
+                });
+        </script>
+---
+# Gdu
+
+[Gdu](https://github.com/dundee/gdu) is a disk usage analyzer that can be used to find out what is using up disk space. It is particularly useful for finding the largest files in your {{< term "home|home directory" >}} or {{< term "gscratch" >}} directories.
+
+Gdu available as an {{< term Lmod >}} module on {{< term Klone >}} {{< term "compute node|compute nodes" >}}.
+
+## Use with Lmod
+
+Like all {{< term Lmod >}} modules, the `gdu` module is available only on {{< term Klone >}} {{< term "compute node|compute nodes" >}}, and these commands will not work on the {{< term "login node" >}}.
+
+### Checking available versions
+
+Because the module for CONN is installed in the `escience` hierarchy, its name is prefixed with `escience/`.
+
+You can check the installed versions as follows:
+
+```bash
+module spider escience/gdu
+```
+
+The output should look a bit like this:
+
+```text
+---------------------------------------
+  escience/gdu: escience/gdu/5.25.0                                                           
+---------------------------------------    
+                                                                                              
+    This module can be loaded directly: module load escience/gdu/5.25.0                       
+                                                                                              
+    Help:                                                                                     
+      escience/gdu                                                                            
+```
+
+### Running Gdu
+
+Load the default version with `module load escience/gdu` or load a specific version with `module load escience/gdu/version`.
+
+After loading the module, enter `gdu` into the shell to run the program.
+
+### Demo
+
+The following demo shows how to use `gdu` to find the largest files and directories in the `/sw/contrib/escience-src` directory, where the contents of {{< term "Lmod" >}} modules are stored.
+
+::::: {.cast #gdu}
+:::::

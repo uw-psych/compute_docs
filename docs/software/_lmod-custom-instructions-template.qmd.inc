@@ -1,4 +1,4 @@
-(@) Go to <{{< meta lmod-example.download-page >}}>, choose the version of {{< meta lmod-example.displayname >}} you want to install, copy the download link to the file, and download the file by running the following command on a {{< term Klone >}} {{< term "login node|login" >}} or {{< term "compute node" >}}. We'll use version {{< meta lmod-example.version >}} as an example:
+(@) Go to [{{< meta lmod-example.download-page >}}]({{< meta lmod-example.download-page >}}), choose the version of {{< meta lmod-example.displayname >}} you want to install, copy the download link to the file, and download the file by running the following command on a {{< term Klone >}} {{< term "login node|login" >}} or {{< term "compute node" >}}. We'll use version {{< meta lmod-example.version >}} as an example:
 
     ``` {.bash}
     mkdir -p "/gscratch/scrubbed/$USER/downloads" && cd "$_" # <1>
@@ -51,6 +51,7 @@
 	:::
 
 (@) Check that the module is available and load it:
+    
 	``` {.bash}
 	module -I spider mylabname/{{< meta lmod-example.basename >}} # <1>
 	module load mylabname/{{< meta lmod-example.basename >}}/{{< meta lmod-example.version >}}
