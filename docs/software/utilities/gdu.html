@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Concepts, terminology, and considerations for storing research data">
+<meta name="description" content="Disk usage analyzer">
 
 <title>UW Psychology Computational Resources</title>
 <style>
@@ -21,28 +21,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../docs/storage/options.html" rel="next">
-<link href="../../docs/storage/index.html" rel="prev">
-<link href="../../_static/favicon.ico" rel="icon">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../docs/storage/index.html" rel="next">
+<link href="../../../docs/software/spm.html" rel="prev">
+<link href="../../../_static/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/quarto-contrib/popover-glossary/popover-glossary.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -71,6 +106,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="../../../_static/lib/asciinema-player.css">
 </head>
 
 <body class="nav-sidebar docked fullcontent">
@@ -82,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../docs/storage/index.html">Storage</a></li><li class="breadcrumb-item"><a href="../../docs/storage/concepts.html">Concepts</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../docs/software/index.html">Software</a></li><li class="breadcrumb-item"><a href="../../../docs/software/utilities/gdu.html">Utilities</a></li><li class="breadcrumb-item"><a href="../../../docs/software/utilities/gdu.html">Gdu</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -96,11 +132,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../_static/department_uw_wordmark.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../_static/department_uw_wordmark.svg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../">Computational Resources</a> 
+      <a href="../../../">Computational Resources</a> 
         <div class="sidebar-tools-main">
     <div id="quarto-search" class="quarto-navigation-tool px-1" title="Search"></div>
 </div>
@@ -110,13 +146,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/start/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../docs/start/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -125,19 +161,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/start/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to UW Hyak</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/start/connect-ssh.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Connecting to Hyak with SSH</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/start/hyakvnc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">hyakvnc</span></a>
   </div>
 </li>
@@ -145,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/compute/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../docs/compute/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Compute</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -154,19 +190,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/slurm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/compute/slurm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SLURM Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/compute/lmod.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lmod</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/compute/apptainer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Apptainer</span></a>
   </div>
 </li>
@@ -174,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/software/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../docs/software/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -183,46 +219,46 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/afni.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/afni.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">AFNI</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/conn.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/conn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">CONN Toolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/freesurfer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/freesurfer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">FreeSurfer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/matlab.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/matlab.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">MATLAB</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/spm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/spm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SPM Toolbox</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Utilities</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/software/utilities/gdu.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/software/utilities/gdu.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Gdu</span></a>
   </div>
 </li>
@@ -232,7 +268,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../docs/storage/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../docs/storage/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Storage</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -241,19 +277,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/storage/options.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/storage/klone-storage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Storage on Klone</span></a>
   </div>
 </li>
@@ -267,7 +303,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../docs/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contributing</span></a>
   </div>
 </li>
@@ -283,73 +319,39 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="concepts" class="level1">
-<h1>Concepts</h1>
-<p>A number of concepts and terms are used when discussing research data storage. This page provides an overview of some of the most common concepts and terms.</p>
-<section id="storage-types" class="level2">
-<h2 class="anchored" data-anchor-id="storage-types">Storage types</h2>
-<p>There are many different types of storage. Some of the most common types of storage are:</p>
-<section id="object-storage" class="level3">
-<h3 class="anchored" data-anchor-id="object-storage">Object storage</h3>
-<p>Object storage is a type of storage that stores data as objects. Each object contains data, metadata, and a unique identifier. Objects are stored in a flat address space and can be accessed using a URL. Object storage is designed to store large amounts of unstructured data. Object storage is <em>not</em> designed to be used as a file system. Object storage is typically accessed using a REST API. Object storage is typically used for storing data that is not actively being worked on but needs to be stored for a long time. <a href="../../docs/storage/options.html#amazon-web-services">Amazon S3</a> and <a href="../../docs/storage/options.html#azure">Azure Blobs</a> are examples of object storage services.</p>
+<section id="gdu" class="level1">
+<h1>Gdu</h1>
+<p><a href="https://github.com/dundee/gdu">Gdu</a> is a disk usage analyzer that can be used to find out what is using up disk space. It is particularly useful for finding the largest files in your <a class="glossary-ref" data-glossary-term="home" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2hvbWUnIHJvbGU9J3Rvb2x0aXAnPjwvZGl2Pg==" href="javascript:void(0);">home directory</a> or <a class="glossary-ref" data-glossary-term="gscratch" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2dzY3JhdGNoJyByb2xlPSd0b29sdGlwJz48L2Rpdj4=" href="javascript:void(0);">gscratch</a> directories.</p>
+<p>Gdu available as an <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> module on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a>.</p>
+<section id="use-with-lmod" class="level2">
+<h2 class="anchored" data-anchor-id="use-with-lmod">Use with Lmod</h2>
+<p>Like all <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> modules, the <code>gdu</code> module is available only on <a class="glossary-ref" data-glossary-term="klone" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2tsb25lJyByb2xlPSd0b29sdGlwJz5UaGUKCmxhdGVzdAoKZ2VuZXJhdGlvbgoKb2YKCnRoZQoKSHlhawoKc3VwZXJjb21wdXRlci4KClNlZQoKPGEgaHJlZj0iL2NvbXB1dGVfZG9jcy9kb2NzL3N0YXJ0L2ludHJvZHVjdGlvbi5odG1sIj5oZXJlPC9hPgoKZm9yCgpob3cKCnRvCgp1c2UKCml0LjwvZGl2Pg==" href="javascript:void(0);">Klone</a> <a class="glossary-ref" data-glossary-term="compute node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2NvbXB1dGUgbm9kZScgcm9sZT0ndG9vbHRpcCc+QQoKbm9kZQoKb24KCnRoZQoKS2xvbmUKCmNsdXN0ZXIKCnRoYXQKCmlzCgp1c2VkCgpmb3IKCnJ1bm5pbmcKCmpvYnMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL3NsdXJtLmh0bWwiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">compute nodes</a>, and these commands will not work on the <a class="glossary-ref" data-glossary-term="login node" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xvZ2luIG5vZGUnIHJvbGU9J3Rvb2x0aXAnPkEKCm5vZGUKCm9uCgp0aGUKCktsb25lCgpjbHVzdGVyCgp0aGF0CgppcwoKdXNlZAoKZm9yCgpsb2dnaW5nCgppbgoKYW5kCgpzdWJtaXR0aW5nCgpqb2JzLgoKU2VlCgo8YSBocmVmPSIvY29tcHV0ZV9kb2NzL2RvY3MvY29tcHV0ZS9zbHVybS5odG1sIj5oZXJlPC9hPgoKZm9yCgptb3JlCgppbmZvcm1hdGlvbi48L2Rpdj4=" href="javascript:void(0);">login node</a>.</p>
+<section id="checking-available-versions" class="level3">
+<h3 class="anchored" data-anchor-id="checking-available-versions">Checking available versions</h3>
+<p>Because the module for CONN is installed in the <code>escience</code> hierarchy, its name is prefixed with <code>escience/</code>.</p>
+<p>You can check the installed versions as follows:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> spider escience/gdu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The output should look a bit like this:</p>
+<pre class="text"><code>---------------------------------------
+  escience/gdu: escience/gdu/5.25.0                                                           
+---------------------------------------    
+                                                                                              
+    This module can be loaded directly: module load escience/gdu/5.25.0                       
+                                                                                              
+    Help:                                                                                     
+      escience/gdu                                                                            </code></pre>
 </section>
-<section id="block-storage" class="level3">
-<h3 class="anchored" data-anchor-id="block-storage">Block storage</h3>
-<p>Block storage is a type of storage that stores data as blocks. Each block contains data and a unique identifier. Blocks are stored in a hierarchical address space and can be accessed using a file system. Block storage is designed to store large amounts of structured data. Block storage is typically used for storing data that is actively being worked on. <a href="../../docs/storage/options.html#amazon-web-services">Amazon EBS</a> is an example of block storage.</p>
+<section id="running-gdu" class="level3">
+<h3 class="anchored" data-anchor-id="running-gdu">Running Gdu</h3>
+<p>Load the default version with <code>module load escience/gdu</code> or load a specific version with <code>module load escience/gdu/version</code>.</p>
+<p>After loading the module, enter <code>gdu</code> into the shell to run the program.</p>
 </section>
-<section id="file-storage" class="level3">
-<h3 class="anchored" data-anchor-id="file-storage">File storage</h3>
-<p>File storage is a type of storage that stores data as files. Your computer’s local filesystem uses file storage. Network filesystems such as NFS and SMB, and cloud storage services such as <a href="../../docs/storage/options.html#azure">Azure Files</a> and <a href="../../docs/storage/options.html#amazon-web-services">Amazon EFS</a> also use file storage. File storage is designed to store large amounts of structured data. File storage is designed to be used by multiple users at the same time and supports creating, reading, updating, and deleting files. File storage is typically used for storing data that is actively being worked on. <a href="../../docs/storage/options.html#azure">Azure Files</a> is an example of file storage.</p>
-<section id="sync-services" class="level4">
-<h4 class="anchored" data-anchor-id="sync-services">Sync services</h4>
-<p>Cloud-based file sync services, such as <a href="../../docs/storage/options.html#dropbox">Dropbox</a>, <a href="../../docs/storage/options.html#google-drive">Google Drive</a>, and <a href="../../docs/storage/options.html#uw-onedrive-for-business">OneDrive</a>, offer file storage that can easily be accessed from multiple devices. These services usually offer convenient features such as file versioning, recovery, and file sharing. You can access the files stored in these services from a directory on your computer, and the files are automatically synchronized with the cloud storage service. However, the services may not support all of the features of a traditional file system (e.g., file permissions, symbolic links) and often have restrictions on the length of file names and the types of characters that can be used in file names, which may cause serious problems when using files stored in these services with some applications (e.g., <a href="../../docs/software/freesurfer.html">FreeSurfer</a>). Caution is advised when working with files stored in these services.</p>
-</section>
-</section>
-<section id="version-control-systems" class="level3">
-<h3 class="anchored" data-anchor-id="version-control-systems">Version control systems</h3>
-<p>Version control systems, such as <a href="https://git-scm.com/">Git</a>, are designed to store and manage different versions of files. Version control systems are typically used for storing source code but can also be used for storing other types of files. There are some version control systems that are designed to handle datasets, such as <a href="https://dvc.org/">DVC</a>. <a href="../../docs/storage/options.html#github">GitHub</a> provides online hosting and collaboration services for Git repositories.</p>
-</section>
-<section id="data-repositories" class="level3">
-<h3 class="anchored" data-anchor-id="data-repositories">Data repositories</h3>
-<p>Data repositories, such as <a href="../../docs/storage/options.html#researchworks-archive">ResearchWorks Archive</a> and <a href="../../docs/storage/options.html#open-science-framework">OSF</a>, are designed to store and manage research data and their metadata. Data repositories are typically used for storing data that is being shared with other researchers. Data repositories often provide features such as versioning, recovery, sharing, and embargos. Data repositories often provide a DOI for each dataset, which can be used to cite the dataset in publications.</p>
-</section>
-</section>
-<section id="characteristics-and-considerations" class="level2">
-<h2 class="anchored" data-anchor-id="characteristics-and-considerations">Characteristics and considerations</h2>
-<p>There are a number of characteristics and considerations that are important when choosing a storage service, and these may be reflected in the upfront and ongoing costs. Some of the most common characteristics and considerations are:</p>
-<section id="storage-capacity" class="level3">
-<h3 class="anchored" data-anchor-id="storage-capacity">Storage capacity</h3>
-<p>How much data is being stored. The more data that is being stored, the more it will cost to store the data. Storage services may have minimum and/or maximum storage capacity requirements. Some services may charge for storage in increments of a certain size (e.g., 1 TiB).</p>
-</section>
-<section id="storage-latency" class="level3">
-<h3 class="anchored" data-anchor-id="storage-latency">Storage latency</h3>
-<p>How quickly data can start being read or written. The lower the latency, the faster data can be read or written. Storage services may charge more for lower latency. A solid-state drive (SSD) has lower latency than a hard disk drive (HDD), which has lower latency than a tape drive. However, storage capacity on SSDs is more expensive than storage capacity on HDDs, which is more expensive than storage capacity on tape drives.</p>
-</section>
-<section id="data-transfer" class="level3">
-<h3 class="anchored" data-anchor-id="data-transfer">Data transfer</h3>
-<p>The rate at which data can be downloaded from or uploaded to a service may be limited. The higher the bandwidth, the faster data can be downloaded from or uploaded to the service. Service providers may charge more for higher bandwidth.</p>
-<p>Data transfer costs may be charged for uploading data to and downloading data from a service, also known as <em>ingress</em> and <em>egress</em>. Typically, ingress is free and egress is charged. Some services may charge more for uploading data to and downloading data from certain locations (e.g., outside of the United States). Some providers offer options such as physical media transfer (e.g., mailing a hard drive) for uploading and downloading large amounts of data (see <a href="https://aws.amazon.com/snowball/">AWS Snowball</a>).</p>
-</section>
-<section id="retention-period" class="level3">
-<h3 class="anchored" data-anchor-id="retention-period">Retention period</h3>
-<p>How long data needs to be stored. The longer data needs to be stored, the more it will cost to store the data. Billing for storage services is typically done on a monthly or annual basis.</p>
-</section>
-<section id="backup-and-recovery-options" class="level3">
-<h3 class="anchored" data-anchor-id="backup-and-recovery-options">Backup and recovery options</h3>
-<p>How often data is backed up, how long backups are kept, and how quickly data can be recovered from backups. The more often data is backed up, the longer backups are kept, and the faster data can be recovered from backups, the more it will cost to store the data. Backup and recovery options may not be available or involve extra charges on some services.</p>
-</section>
-<section id="frequency-of-access" class="level3">
-<h3 class="anchored" data-anchor-id="frequency-of-access">Frequency of access</h3>
-<p>How often data is accessed. Some services may charge for each time data is accessed or charge more for more frequent access.</p>
-</section>
-<section id="data-access-restrictions" class="level3">
-<h3 class="anchored" data-anchor-id="data-access-restrictions">Data access restrictions</h3>
-<p>Who can access the data. Data access restrictions may be inherent to a service (e.g., only people connected to the UW intranet can access the data) or may be imposed by the user, the organization, or the service provider. Sharing data with outside collaborators may require additional steps, such as creating accounts for the collaborators, or may not be possible at all.</p>
-</section>
-<section id="data-security" class="level3">
-<h3 class="anchored" data-anchor-id="data-security">Data security</h3>
-<p>How secure the data is against unauthorized access. While <a href="../../docs/storage/options.html#data-access-restrictions">access restrictions</a> can limit who can access the data in certain circumstances, measures such as encryption may be necessary to prevent access by users who have access to the data but should not be able to access the data (e.g., system administrators).</p>
-<p>Research data that is subject to HIPAA or FERPA regulations must be stored in a HIPAA- or FERPA-compliant service. For more information about HIPAA at UW, see the <a href="https://www.washington.edu/research/policies/guidance-hipaa-2/">HIPPA Guidance</a> page.</p>
+<section id="demo" class="level3">
+<h3 class="anchored" data-anchor-id="demo">Demo</h3>
+<p>The following demo shows how to use <code>gdu</code> to find the largest files and directories in the <code>/sw/contrib/escience-src</code> directory, where the contents of <a class="glossary-ref" data-glossary-term="lmod" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J2xtb2QnIHJvbGU9J3Rvb2x0aXAnPkFuCgplbnZpcm9ubWVudAoKbW9kdWxlCgpzeXN0ZW0KCnRoYXQKCmlzCgp1c2VkCgp0bwoKbG9hZAoKYWRkaXRpb25hbAoKc29mdHdhcmUKCm9uCgpLbG9uZQoKY29tcHV0ZQoKbm9kZXMuCgpTZWUKCjxhIGhyZWY9Ii9jb21wdXRlX2RvY3MvZG9jcy9jb21wdXRlL2xtb2QuaHRtbCI+aGVyZTwvYT4KCmZvcgoKbW9yZQoKaW5mb3JtYXRpb24uPC9kaXY+" href="javascript:void(0);">Lmod</a> modules are stored.</p>
+<div id="gdu" class="cast">
+
+</div>
 
 
 </section>
@@ -795,19 +797,100 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../docs/storage/index.html" class="pagination-link  aria-label=" storage"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Storage</span>
+      <a href="../../../docs/software/spm.html" class="pagination-link  aria-label=" spm="" toolbox"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SPM Toolbox</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../docs/storage/options.html" class="pagination-link" aria-label="Options">
-        <span class="nav-page-text">Options</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../docs/storage/index.html" class="pagination-link" aria-label="Storage">
+        <span class="nav-page-text">Storage</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/uw-psych/compute_docs/blob/main/docs/software/utilities/gdu.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/uw-psych/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/uw-psych/compute_docs/edit/main/docs/software/utilities/gdu.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="../../../_static/lib/asciinema-player.min.js"></script>
+<script>
+    term_font_family="'Cascadia Mono', monospace'"
+    document.querySelectorAll('.cast').forEach((block) => {
+        AsciinemaPlayer.create("../../../_static/casts/" + block.id + ".cast", block, {
+              terminalFontFamily: 'Iosevka Term Web, monospace',
+               fit: false
+        })
+        });
+</script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script>
+  const refs = document.querySelectorAll(".glossary-ref");
+  var activeRef, oldRef;
+
+  refs.forEach((ref) => {
+    //const def_string = atob(ref.getAttribute("data-glossary-def-base64"));
+    const def_string = decodeURIComponent(escape(window.atob( ref.getAttribute("data-glossary-def-base64") )));
+    let new_def = document.createElement("div");
+    new_def.innerHTML = def_string;
+
+    document.body.appendChild(new_def);
+
+    const def = document.querySelector(
+      "div[data-glossary-term='" + ref.getAttribute("data-glossary-term") + "']"
+    );
+
+    const popperInstance = Popper.createPopper(ref, def, {
+      placement: "auto",
+    });
+
+    function show() {
+      // Hide the old one if it exists
+      if (activeRef != null) {
+        oldRef = activeRef;
+        oldRef.dispatchEvent(new Event("focusout"));
+        oldRef = null; // Clear the old ref after hiding it
+      }
+      activeRef = ref; // Set the new active ref
+      def.setAttribute("data-show", ""); // Show the definition by adding the data-show attribute
+
+      // Enable the event listeners:
+      popperInstance.setOptions((options) => ({
+        ...options,
+        modifiers: [
+          ...options.modifiers,
+          { name: "eventListeners", enabled: true },
+        ],
+      }));
+
+      // Update its position
+      popperInstance.update();
+    }
+
+    function hide() {
+      // Only hide if the related target is null (i.e. the user clicked outside the popover):
+      if ((event.relatedTarget === null || event.relatedTarget === undefined)) {
+        def.removeAttribute("data-show");
+        activeRef == null        // Disable the event listeners
+        popperInstance.setOptions((options) => ({
+          ...options,
+          modifiers: [
+            ...options.modifiers,
+            { name: "eventListeners", enabled: false },
+          ],
+        }));
+      } 
+    }
+
+    const showEvents = ["click", "touchstart"];
+    const hideEvents = ["focusout"];
+
+    showEvents.forEach((event) => {
+      ref.addEventListener(event, show);
+    });
+
+    hideEvents.forEach((event) => {
+      ref.addEventListener(event, hide);
+    });
+  });
+</script>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/uw-psych/compute_docs/blob/main/docs/storage/concepts.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/uw-psych/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/uw-psych/compute_docs/edit/main/docs/storage/concepts.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+</body></html>

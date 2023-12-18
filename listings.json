@@ -16,22 +16,23 @@
     ]
   },
   {
+    "listing": "/docs/software/index.html",
+    "items": [
+      "/docs/software/afni.html",
+      "/docs/software/conn.html",
+      "/docs/software/freesurfer.html",
+      "/docs/software/utilities/gdu.html",
+      "/docs/software/matlab.html",
+      "/docs/software/spm.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/docs/compute/index.html",
       "/docs/start/index.html",
       "/docs/software/index.html",
       "/docs/storage/index.html"
-    ]
-  },
-  {
-    "listing": "/docs/software/index.html",
-    "items": [
-      "/docs/software/afni.html",
-      "/docs/software/conn.html",
-      "/docs/software/freesurfer.html",
-      "/docs/software/matlab.html",
-      "/docs/software/spm.html"
     ]
   },
   {
