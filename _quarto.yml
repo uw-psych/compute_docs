@@ -34,7 +34,7 @@ website:
           - docs/compute/lmod.qmd
           - docs/compute/apptainer.qmd
       - section: docs/software/index.qmd
-        contents: "docs/software/*.qmd"
+        contents: "docs/software/**/*.qmd"
       - section: docs/storage/index.qmd
         contents:
           - docs/storage/concepts.qmd

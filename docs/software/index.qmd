@@ -3,7 +3,7 @@ title: "Software"
 description: "Using and installing software on Klone"
 listing:
   contents:
-    - "*.qmd"
+    - "**/*.qmd"
 ---
 
 
