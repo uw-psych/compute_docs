@@ -1,13 +1,44 @@
 ---
-description: "How to contribute to this project"
+author:
+  - name: Altan Orhon
+    id: maouw
+    orcid: 0000-0002-4412-5580
+    email: altan@uw.edu
+    url: https://github.com/maouw
+    affiliation:
+      - name: University of Washington
+        city: Seattle
+        state: WA
+        url: www.washington.edu
+    attributes:
+      corresponding: true
+  - name: Ariel Rokem
+    id: arokem
+    orcid: 0000-0003-0679-1985
+    email: arokem@uw.edu
+    url: https://github.com/arokem
+    affiliation:
+      - name: University of Washington
+        city: Seattle
+        state: WA
+        url: www.washington.edu
+  - name: Hansem Ro
+    id: hansemro
+    url: https://github.com/hansemro
+    affiliation:
+      - name: University of Washington
+        city: Seattle
+        state: WA
+        url: www.washington.edu
 ---
+
 # Contributing
 
 Contributions are welcome and appreciated! Every little bit helps and we will always give you credit. You can contribute in the ways listed below.
 
 ## Report issues
 
-Report errors and other issues using the "Report issue" link at the bottom of each page.
+Report errors and other issues using the "Report issue" link at the bottom of each page or by going to the [issues page]({{ meta website.issue-url }}) on GitHub.
 
 If you are reporting an issue related to running the code, please include the following information:
 
@@ -17,18 +48,65 @@ If you are reporting an issue related to running the code, please include the fo
 * Any details about your local setup that might be helpful in troubleshooting
 * Detailed steps to reproduce the issue
 
-## Fix issues
+## Submitting feedback
 
-Look through the GitHub Issues for any open issues and see if there's anything you can help with. Send a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests) and we'll be happy to take a look.
-
-## Submit Feedback
-
-The best way to send feedback is to file an issue on GitHub.
+The best way to send feedback is to [file an issue]({{ meta website.issue-url }) on GitHub.
 
 If you are proposing a feature or change, please:
 
 * Explain in detail how it would work or what it would cover
 * Keep the scope as narrow as possible
 
-You can also submit feedback and ask questions on the [psych-hpc](https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc) mailing list.
+## Questions and discussion
 
+Have a question or want to discuss something? There are a few options:
+
+- 📥 File [an issue]({{ meta website.issue-url }}?labels=question) on GitHub
+- 🧵 Start a [discussion]({{ meta repo-url }}/discussions) or read past discussions on GitHub Discussions
+- 📧 Send an e-mail to the [psych-hpc](https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc) mailing list or read the archives
+
+
+## Contributing new content or changes
+
+You can contribute content or changes to the guide by [forking]({{ meta website.repo-url }}/fork) this repository and submitting a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests). 
+
+### Directions
+
+To contribute to this guide, you should be familiar with collaborating on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests), using [Git](https://git-scm.com/), and writing documents in Markdown (specifically [Quarto Markdown](https://quarto.org/docs/authoring/markdown-basics.html)).
+
+1. [Fork]({{ meta website.repo-url }}/fork) this repository.
+2. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) your fork locally.
+3. Create a new [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches) for your changes.
+4. If you want to preview or build the site locally:
+   1. Install [Quarto](https://quarto.org/docs/getting-started/installation.html) (use version 1.4 or higher, or a 1.4 [pre-release](https://quarto.org/docs/download) version).
+   2. Install [`R`](https://www.r-project.org/) (v4.1 or higher) and install the `rmarkdown` package with `install.packages("rmarkdown")`.
+5. Make your changes (generally to `.qmd` files).
+6. Add yourself to the list of authors in the YAML front matter of this page.
+7. If adding a new page: 
+   1. [Add a link to the page](https://quarto.org/docs/websites/website-navigation.html) in the [`_quarto.yml`]({{ meta repo-url }}/blob/main/_quarto.yml) `sidebar` section.
+   2. If the page is part of a folder that contains an `index.qmd` file that has a `listing` section and the `contents` section within it does not include all the pages using a wildcard (e.g., `- "*.qmd"`), add the page to the `contents` section under the `listing` section.
+   3. If the page should be listed on the [Welcome](/index.qmd) page, add a link to the page in the `index.qmd` file at the root of the repository.
+   4. Ensure that the page has a `description` in the YAML front matter.
+   5. Ensure that the page has a `title` in the YAML front matter OR that the page has a `#` heading at the top of the page.
+8. If possible, preview your changes locally using [`quarto preview`](https://quarto.org/docs/websites/#website-preview).
+9.  Open a pull request.
+
+Once the pull request is opened, a project maintainer will review your changes and may request changes or ask questions. Once the changes are approved, a project maintainer will merge your changes into the main repository.
+
+### Repository structure
+
+The repository is structured as a [Quarto website project](https://quarto.org/docs/websites/).
+
+The main files and folders are:
+
+- `_quarto.yml`: [Quarto configuration file](https://quarto.org/docs/configuration/quarto-yml.html) for the website
+- `index.qmd`: [Quarto Markdown](https://quarto.org/docs/authoring/markdown-basics.html) file for the home page
+- `docs/`: contains the page content
+- `_examples/`: contains example code
+- `_static`: contains static files that will be available to published web pages (e.g., images, CSS, JavaScript)
+- `_extensions/`: contains installed [Quarto extensions](https://quarto.org/docs/extensions/)
+
+
+## Licensing
+
+This work is licensed under the [MIT license](https://opensource.org/license/mit/)

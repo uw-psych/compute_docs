@@ -1,5 +1,4 @@
 ---
-title: "hyakvnc"
 order: 30
 description: A program to create and manage VNC sessions running within a containerized Apptainer environment on a compute node
 ---

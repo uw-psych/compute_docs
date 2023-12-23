@@ -1,7 +1,7 @@
 ---
 description: "Different storage options for your research data"
 ---
-# Options
+# Storage options
 
 There are many different storage options available for storing research data. This section describes some of the options available at the University of Washington, as well as some other options that may be useful.
 

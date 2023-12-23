@@ -1,8 +1,8 @@
----
-title: "MATLAB"
+---  
 description: A programming and numeric computing platform
 ---
-# MATLAB
+
+# MATLAB 
 
 ## Checking available versions
 

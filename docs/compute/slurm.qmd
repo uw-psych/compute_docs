@@ -1,9 +1,9 @@
 ---
-title: "SLURM Basics"
 order: 10
 description: An introduction to the SLURM job scheduler on Hyak
 ---
-# Slurm Basics
+
+# SLURM basics
 
 The {{< term Klone >}} cluster uses the [SLURM](https://slurm.schedmd.com/) job scheduler to manage access to compute resources and schedule user-submitted jobs.
 
