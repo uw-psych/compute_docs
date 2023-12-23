@@ -3,8 +3,8 @@
     "listing": "/docs/storage/index.html",
     "items": [
       "/docs/storage/concepts.html",
-      "/docs/storage/options.html",
-      "/docs/storage/klone-storage.html"
+      "/docs/storage/klone-storage.html",
+      "/docs/storage/options.html"
     ]
   },
   {
@@ -29,10 +29,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/docs/compute/index.html",
       "/docs/start/index.html",
       "/docs/software/index.html",
-      "/docs/storage/index.html"
+      "/docs/storage/index.html",
+      "/docs/compute/index.html"
     ]
   },
   {

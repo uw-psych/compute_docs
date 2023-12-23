@@ -2,11 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.528">
+<meta name="generator" content="quarto-1.4.533">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="How to contribute to this project">
+<meta name="author" content="Altan Orhon">
+<meta name="author" content="Ariel Rokem">
+<meta name="author" content="Hansem Ro">
 
 <title>UW Psychology Computational Resources</title>
 <style>
@@ -146,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../docs/compute/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Compute</span></a>
+ <span class="menu-text">Using the cluster</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -155,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/compute/slurm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">SLURM Basics</span></a>
+ <span class="menu-text">SLURM basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -242,13 +244,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/storage/concepts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Concepts</span></a>
+ <span class="menu-text">Concepts and terminology</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../docs/storage/options.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Options</span></a>
+ <span class="menu-text">Storage options</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -280,7 +282,57 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+</div>
 
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Authors</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/maouw">Altan Orhon</a> <a href="mailto:altan@uw.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-4412-5580" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="www.washington.edu">
+            University of Washington
+            </a>
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/arokem">Ariel Rokem</a> <a href="mailto:arokem@uw.edu" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0003-0679-1985" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="www.washington.edu">
+            University of Washington
+            </a>
+          </p>
+      </div>
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://github.com/hansemro">Hansem Ro</a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            <a href="www.washington.edu">
+            University of Washington
+            </a>
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <section id="contributing" class="level1">
@@ -288,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Contributions are welcome and appreciated! Every little bit helps and we will always give you credit. You can contribute in the ways listed below.</p>
 <section id="report-issues" class="level2">
 <h2 class="anchored" data-anchor-id="report-issues">Report issues</h2>
-<p>Report errors and other issues using the “Report issue” link at the bottom of each page.</p>
+<p>Report errors and other issues using the “Report issue” link at the bottom of each page or by going to the <a href="https://github.com/maouw/compute_docs/issues/new">issues page</a> on GitHub.</p>
 <p>If you are reporting an issue related to running the code, please include the following information:</p>
 <ul>
 <li>Your operating system name and version</li>
@@ -300,19 +352,71 @@ ul.task-list li input[type="checkbox"] {
 <li>Detailed steps to reproduce the issue</li>
 </ul>
 </section>
-<section id="fix-issues" class="level2">
-<h2 class="anchored" data-anchor-id="fix-issues">Fix issues</h2>
-<p>Look through the GitHub Issues for any open issues and see if there’s anything you can help with. Send a <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests">pull request</a> and we’ll be happy to take a look.</p>
-</section>
-<section id="submit-feedback" class="level2">
-<h2 class="anchored" data-anchor-id="submit-feedback">Submit Feedback</h2>
-<p>The best way to send feedback is to file an issue on GitHub.</p>
+<section id="submitting-feedback" class="level2">
+<h2 class="anchored" data-anchor-id="submitting-feedback">Submitting feedback</h2>
+<p>The best way to send feedback is to <a href="https://github.com/maouw/compute_docs/issues/new">file an issue</a> on GitHub.</p>
 <p>If you are proposing a feature or change, please:</p>
 <ul>
 <li>Explain in detail how it would work or what it would cover</li>
 <li>Keep the scope as narrow as possible</li>
 </ul>
-<p>You can also submit feedback and ask questions on the <a href="https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc">psych-hpc</a> mailing list.</p>
+</section>
+<section id="questions-and-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="questions-and-discussion">Questions and discussion</h2>
+<p>Have a question or want to discuss something? There are a few options:</p>
+<ul>
+<li>📥 File <a href="https://github.com/maouw/compute_docs/issues/new?labels=question">an issue</a> on GitHub</li>
+<li>🧵 Start a <a href="{{ meta repo-url >}}/discussions">discussion</a> or read past discussions on GitHub Discussions</li>
+<li>📧 Send an e-mail to the <a href="https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc">psych-hpc</a> mailing list or read the archives</li>
+</ul>
+</section>
+<section id="contributing-new-content-or-changes" class="level2">
+<h2 class="anchored" data-anchor-id="contributing-new-content-or-changes">Contributing new content or changes</h2>
+<p>You can contribute content or changes to the guide by <a href="https://github.com/maouw/compute_docs/fork">forking</a> this repository and submitting a <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests">pull request</a>.</p>
+<section id="directions" class="level3">
+<h3 class="anchored" data-anchor-id="directions">Directions</h3>
+<p>To contribute to this guide, you should be familiar with collaborating on <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests">GitHub</a>, using <a href="https://git-scm.com/">Git</a>, and writing documents in Markdown (specifically <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto Markdown</a>).</p>
+<ol type="1">
+<li><a href="https://github.com/maouw/compute_docs/fork">Fork</a> this repository.</li>
+<li><a href="https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository">Clone</a> your fork locally.</li>
+<li>Create a new <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches">branch</a> for your changes.</li>
+<li>If you want to preview or build the site locally:
+<ol type="1">
+<li>Install <a href="https://quarto.org/docs/getting-started/installation.html">Quarto</a> (use version 1.4 or higher, or a 1.4 <a href="https://quarto.org/docs/download">pre-release</a> version).</li>
+<li>Install <a href="https://www.r-project.org/"><code>R</code></a> (v4.1 or higher) and install the <code>rmarkdown</code> package with <code>install.packages("rmarkdown")</code>.</li>
+</ol></li>
+<li>Make your changes (generally to <code>.qmd</code> files).</li>
+<li>Add yourself to the list of authors in the YAML front matter of this page.</li>
+<li>If adding a new page:
+<ol type="1">
+<li><a href="https://quarto.org/docs/websites/website-navigation.html">Add a link to the page</a> in the <a href="{{ meta repo-url >}}/blob/main/_quarto.yml"><code>_quarto.yml</code></a> <code>sidebar</code> section.</li>
+<li>If the page is part of a folder that contains an <code>index.qmd</code> file that has a <code>listing</code> section and the <code>contents</code> section within it does not include all the pages using a wildcard (e.g., <code>- "*.qmd"</code>), add the page to the <code>contents</code> section under the <code>listing</code> section.</li>
+<li>If the page should be listed on the <a href="../index.html">Welcome</a> page, add a link to the page in the <code>index.qmd</code> file at the root of the repository.</li>
+<li>Ensure that the page has a <code>description</code> in the YAML front matter.</li>
+<li>Ensure that the page has a <code>title</code> in the YAML front matter OR that the page has a <code>#</code> heading at the top of the page.</li>
+</ol></li>
+<li>If possible, preview your changes locally using <a href="https://quarto.org/docs/websites/#website-preview"><code>quarto preview</code></a>.</li>
+<li>Open a pull request.</li>
+</ol>
+<p>Once the pull request is opened, a project maintainer will review your changes and may request changes or ask questions. Once the changes are approved, a project maintainer will merge your changes into the main repository.</p>
+</section>
+<section id="repository-structure" class="level3">
+<h3 class="anchored" data-anchor-id="repository-structure">Repository structure</h3>
+<p>The repository is structured as a <a href="https://quarto.org/docs/websites/">Quarto website project</a>.</p>
+<p>The main files and folders are:</p>
+<ul>
+<li><code>_quarto.yml</code>: <a href="https://quarto.org/docs/configuration/quarto-yml.html">Quarto configuration file</a> for the website</li>
+<li><code>index.qmd</code>: <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto Markdown</a> file for the home page</li>
+<li><code>docs/</code>: contains the page content</li>
+<li><code>_examples/</code>: contains example code</li>
+<li><code>_static</code>: contains static files that will be available to published web pages (e.g., images, CSS, JavaScript)</li>
+<li><code>_extensions/</code>: contains installed <a href="https://quarto.org/docs/extensions/">Quarto extensions</a></li>
+</ul>
+</section>
+</section>
+<section id="licensing" class="level2">
+<h2 class="anchored" data-anchor-id="licensing">Licensing</h2>
+<p>This work is licensed under the <a href="https://opensource.org/license/mit/">MIT license</a></p>
 
 
 </section>
@@ -765,7 +869,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/uw-psych/compute_docs/blob/main/docs/CONTRIBUTING.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/uw-psych/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/uw-psych/compute_docs/edit/main/docs/CONTRIBUTING.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="https://unpkg.com/@popperjs/core@2"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/maouw/compute_docs/blob/main/docs/CONTRIBUTING.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/uw-psych/compute_docs/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/maouw/compute_docs/edit/main/docs/CONTRIBUTING.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li></ul></div></div></div></footer><script src="https://unpkg.com/@popperjs/core@2"></script>
 <script>
   const refs = document.querySelectorAll(".glossary-ref");
   var activeRef, oldRef;
