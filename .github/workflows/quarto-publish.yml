@@ -36,7 +36,7 @@ jobs:
               repo-url = strenv(GITHUB_REPO_URL) |
               issue-url = strenv(GITHUB_ISSUE_URL)
             ' docs/_metadata.yml
-            cat _docs/_metadata.yml >&2 # show the file after the changes
+            cat docs/_metadata.yml >&2 # show the file after the changes
       - name: "Update URLs in glossary.yml"
         run: |
           sed -i -E 's/\(\/docs\//(\/compute_docs\/docs\//g' glossary.yml              
