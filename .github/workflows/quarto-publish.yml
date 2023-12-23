@@ -32,9 +32,9 @@ jobs:
             cat _quarto.yml >&2 # show the file after the changes
             # Replace the URLs in docs/_metadata.yml:
             yq -i '
-              site-url = strenv(GITHUB_PAGES_URL) |
-              repo-url = strenv(GITHUB_REPO_URL) |
-              issue-url = strenv(GITHUB_ISSUE_URL)
+              .site-url = strenv(GITHUB_PAGES_URL) |
+              .repo-url = strenv(GITHUB_REPO_URL) |
+              .issue-url = strenv(GITHUB_ISSUE_URL)
             ' docs/_metadata.yml
             cat docs/_metadata.yml >&2 # show the file after the changes
       - name: "Update URLs in glossary.yml"
