@@ -62,7 +62,7 @@ If you are proposing a feature or change, please:
 Have a question or want to discuss something? There are a few options:
 
 - 📥 File [an issue]({{< meta issue-url >}}?labels=question) on GitHub
-- 🧵 Start a [discussion]({{ meta repo-url >}}/discussions) or read past discussions on GitHub Discussions
+- 🧵 Start a [discussion]({{< meta repo-url >}}/discussions) or read past discussions on GitHub Discussions
 - 📧 Send an e-mail to the [psych-hpc](https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc) mailing list or read the archives
 
 
@@ -83,7 +83,7 @@ To contribute to this guide, you should be familiar with collaborating on [GitHu
 5. Make your changes (generally to `.qmd` files).
 6. Add yourself to the list of authors in the YAML front matter of this page.
 7. If adding a new page: 
-   1. [Add a link to the page](https://quarto.org/docs/websites/website-navigation.html) in the [`_quarto.yml`]({{ meta repo-url >}}/blob/main/_quarto.yml) `sidebar` section.
+   1. [Add a link to the page](https://quarto.org/docs/websites/website-navigation.html) in the [`_quarto.yml`]({{< meta repo-url >}}/blob/main/_quarto.yml) `sidebar` section.
    2. If the page is part of a folder that contains an `index.qmd` file that has a `listing` section and the `contents` section within it does not include all the pages using a wildcard (e.g., `- "*.qmd"`), add the page to the `contents` section under the `listing` section.
    3. If the page should be listed on the [Welcome](/index.qmd) page, add a link to the page in the `index.qmd` file at the root of the repository.
    4. Ensure that the page has a `description` in the YAML front matter.
