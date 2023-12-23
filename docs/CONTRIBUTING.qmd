@@ -38,7 +38,7 @@ Contributions are welcome and appreciated! Every little bit helps and we will al
 
 ## Report issues
 
-Report errors and other issues using the "Report issue" link at the bottom of each page or by going to the [issues page]({{ meta website.issue-url }}) on GitHub.
+Report errors and other issues using the "Report issue" link at the bottom of each page or by going to the [issues page]({{< meta issue-url >}}) on GitHub.
 
 If you are reporting an issue related to running the code, please include the following information:
 
@@ -50,7 +50,7 @@ If you are reporting an issue related to running the code, please include the fo
 
 ## Submitting feedback
 
-The best way to send feedback is to [file an issue]({{ meta website.issue-url }) on GitHub.
+The best way to send feedback is to [file an issue]({{< meta issue-url >}}) on GitHub.
 
 If you are proposing a feature or change, please:
 
@@ -61,20 +61,20 @@ If you are proposing a feature or change, please:
 
 Have a question or want to discuss something? There are a few options:
 
-- 📥 File [an issue]({{ meta website.issue-url }}?labels=question) on GitHub
-- 🧵 Start a [discussion]({{ meta repo-url }}/discussions) or read past discussions on GitHub Discussions
+- 📥 File [an issue]({{< meta issue-url >}}?labels=question) on GitHub
+- 🧵 Start a [discussion]({{ meta repo-url >}}/discussions) or read past discussions on GitHub Discussions
 - 📧 Send an e-mail to the [psych-hpc](https://mailman11.u.washington.edu/mailman/listinfo/psych-hpc) mailing list or read the archives
 
 
 ## Contributing new content or changes
 
-You can contribute content or changes to the guide by [forking]({{ meta website.repo-url }}/fork) this repository and submitting a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests). 
+You can contribute content or changes to the guide by [forking]({{< meta repo-url >}}/fork) this repository and submitting a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests). 
 
 ### Directions
 
 To contribute to this guide, you should be familiar with collaborating on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests), using [Git](https://git-scm.com/), and writing documents in Markdown (specifically [Quarto Markdown](https://quarto.org/docs/authoring/markdown-basics.html)).
 
-1. [Fork]({{ meta website.repo-url }}/fork) this repository.
+1. [Fork]({{< meta repo-url >}}/fork) this repository.
 2. [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) your fork locally.
 3. Create a new [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches) for your changes.
 4. If you want to preview or build the site locally:
@@ -83,7 +83,7 @@ To contribute to this guide, you should be familiar with collaborating on [GitHu
 5. Make your changes (generally to `.qmd` files).
 6. Add yourself to the list of authors in the YAML front matter of this page.
 7. If adding a new page: 
-   1. [Add a link to the page](https://quarto.org/docs/websites/website-navigation.html) in the [`_quarto.yml`]({{ meta repo-url }}/blob/main/_quarto.yml) `sidebar` section.
+   1. [Add a link to the page](https://quarto.org/docs/websites/website-navigation.html) in the [`_quarto.yml`]({{ meta repo-url >}}/blob/main/_quarto.yml) `sidebar` section.
    2. If the page is part of a folder that contains an `index.qmd` file that has a `listing` section and the `contents` section within it does not include all the pages using a wildcard (e.g., `- "*.qmd"`), add the page to the `contents` section under the `listing` section.
    3. If the page should be listed on the [Welcome](/index.qmd) page, add a link to the page in the `index.qmd` file at the root of the repository.
    4. Ensure that the page has a `description` in the YAML front matter.
