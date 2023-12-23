@@ -30,6 +30,13 @@ jobs:
               .website.issue-url = strenv(GITHUB_ISSUE_URL)
             ' _quarto.yml
             cat _quarto.yml >&2 # show the file after the changes
+            # Replace the URLs in docs/_metadata.yml:
+            yq -i '
+              site-url = strenv(GITHUB_PAGES_URL) |
+              repo-url = strenv(GITHUB_REPO_URL) |
+              issue-url = strenv(GITHUB_ISSUE_URL)
+            ' docs/_metadata.yml
+            cat _docs/_metadata.yml >&2 # show the file after the changes
       - name: "Update URLs in glossary.yml"
         run: |
           sed -i -E 's/\(\/docs\//(\/compute_docs\/docs\//g' glossary.yml              
