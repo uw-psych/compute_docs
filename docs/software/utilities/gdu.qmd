@@ -9,7 +9,7 @@ include-after-body:
             document.querySelectorAll('.cast').forEach((block) => {
                 AsciinemaPlayer.create("../../../_static/casts/" + block.id + ".cast", block, {
                       terminalFontFamily: 'Iosevka Term Web, monospace',
-                       fit: false
+                      fit: false
                 })
                 });
         </script>

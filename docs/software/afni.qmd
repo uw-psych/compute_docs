@@ -1,8 +1,6 @@
 ---
-title: "AFNI"
 description: AFNI (Analysis of Functional NeuroImages) software suite
 ---
-
 # AFNI
 
 ## Checking available versions

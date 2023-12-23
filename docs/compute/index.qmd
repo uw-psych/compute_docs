@@ -1,10 +1,11 @@
 ---
-title: "Compute"
-description: "How to connect to and use the UW Hyak clusters"
+description: "How to connect to and use the UW Hyak cluster"
 listing:
   contents:
     - "*.qmd"
 ---
+
+# Using the cluster
 
 UW Hyak clusters use {{<term SLURM >}} to manage access to compute resources and schedule compute jobs.
 

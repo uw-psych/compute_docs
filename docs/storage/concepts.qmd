@@ -1,7 +1,8 @@
 ---
 description: "Concepts, terminology, and considerations for storing research data"
 ---
-# Concepts
+
+# Concepts and terminology
 
 A number of concepts and terms are used when discussing research data storage. This page provides an overview of some of the most common concepts and terms.
 

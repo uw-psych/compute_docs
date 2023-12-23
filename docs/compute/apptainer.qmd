@@ -1,5 +1,4 @@
 ---
-title: "Apptainer"
 description: The Apptainer container environment
 order: 20
 css: "/_static/lib/asciinema-player.css"

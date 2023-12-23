@@ -1,9 +1,8 @@
 ---
-title: "Connecting to Hyak with SSH"
 description: How to connect to Hyak
 order: 20
 ---
-# SSH
+# Connecting to Hyak with SSH
 
 SSH (secure shell) is the primary method for connecting to and interacting with UW Hyak clusters
 from a command-line interface (CLI).
