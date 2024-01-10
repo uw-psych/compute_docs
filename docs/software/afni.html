@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.538">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -325,108 +325,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="using-afni-from-forsyth" class="level2">
 <h2 class="anchored" data-anchor-id="using-afni-from-forsyth">Using AFNI (from forsyth)</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Currently, AFNI only runs in a VNC Apptainer environment with sufficient dependencies.</p>
-</div>
-</div>
 <p>Load AFNI with <code>module load forsyth/afni</code>.</p>
 <p>After loading the module, all AFNI tools are made accessible in the shell session.</p>
 </section>
 <section id="installing-afni" class="level2">
 <h2 class="anchored" data-anchor-id="installing-afni">Installing AFNI</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is provided as reference material.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This is ran from a VNC Apptainer environment with sufficient dependencies.</p>
-</div>
-</div>
 <!-- TODO: provide steps to prepare Apptainer environment to run installer. -->
-<ol type="1">
+<ol class="example" type="1">
 <li>Download AFNI installer:</li>
 </ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-O</span> https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Install the CentOS 7 package to <code>/sw/contrib/labname-src/afni</code>:</li>
+<ol start="2" class="example" type="1">
+<li>Install the CentOS 7 package to <code>/sw/contrib/labname-src/afni</code> (replacing <code>mylabname</code> with the name of your lab):</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LABNAME</span><span class="op">=</span>escience</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">TARGET</span><span class="op">=</span>/sw/contrib/<span class="st">"</span><span class="va">$LABNAME</span><span class="st">"</span>-src/afni/</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">tcsh</span> @update.afni.binaries <span class="at">-package</span> linux_centos_7_64 <span class="at">-do_extras</span> <span class="at">-bindir</span> <span class="va">$TARGET</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>Install required R libraries to <code>/sw/contrib/labname-src/afni/Rlibs</code>:</li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">TARGET</span><span class="op">=</span><span class="st">"/sw/contrib/mylabname-src/afni/"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tcsh</span> @update.afni.binaries <span class="at">-package</span> linux_centos_7_64 <span class="at">-do_extras</span> <span class="at">-bindir</span> <span class="st">"</span><span class="va">$TARGET</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" class="example" type="1">
+<li>Install required R libraries to <code>/sw/contrib/mylabname-src/afni/Rlibs</code>:</li>
 </ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS</span><span class="op">=</span><span class="va">$TARGET</span>/Rlibs</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="va">$R_LIBS</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">R_LIBS</span><span class="op">=</span><span class="st">"</span><span class="va">$TARGET</span><span class="st">/Rlibs"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">"</span><span class="va">$R_LIBS</span><span class="st">"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">rPkgsInstall</span> <span class="at">-pkgs</span> ALL</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
+<ol start="4" class="example" type="1">
 <li>Create an Lmod .lua module file for AFNI with a text editor:</li>
 </ol>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>/sw/contrib/modulefiles/labname/afni.lua</strong></pre>
+<pre><strong>/sw/contrib/modulefiles/mylabname/afni.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb5" data-filename="/sw/contrib/modulefiles/labname/afni.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span><span class="vs">[[afni]]</span><span class="op">)</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">labname</span> <span class="op">=</span> <span class="st">"escience"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> <span class="st">"/sw/contrib/"</span> <span class="op">..</span> <span class="va">labname</span> <span class="op">..</span> <span class="st">"-src/afni"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">r_libs</span> <span class="op">=</span> pathJoin<span class="op">(</span><span class="va">base</span><span class="op">,</span> <span class="st">"Rlibs"</span><span class="op">)</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>append_path<span class="op">(</span><span class="st">"PATH"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>setenv<span class="op">(</span><span class="st">"R_LIBS"</span><span class="op">,</span> <span class="va">r_libs</span><span class="op">)</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>mode<span class="op">()</span> <span class="op">==</span> <span class="st">"load"</span><span class="op">)</span> <span class="cf">then</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    LmodMessage<span class="op">(</span><span class="st">"R_LIBS set to "</span> <span class="op">..</span> <span class="va">r_libs</span><span class="op">)</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    LmodMessage<span class="op">(</span><span class="st">"------------------------------------------------------------"</span><span class="op">)</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    LmodMessage<span class="op">(</span><span class="st">"On initial use, run the following:"</span><span class="op">)</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    LmodMessage<span class="op">(</span><span class="st">"  suma -update_env"</span><span class="op">)</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: "</span> <span class="op">..</span> <span class="va">name</span><span class="op">)</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> <span class="va">version</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-filename="/sw/contrib/modulefiles/mylabname/afni.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span>myModuleName<span class="op">())</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> pathJoin<span class="op">(</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"/sw/contrib"</span><span class="op">,</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"/.*$"</span><span class="op">,</span> <span class="st">"-src"</span><span class="op">),</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"^.*/"</span><span class="op">,</span> <span class="st">""</span><span class="op">),</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    myModuleVersion<span class="op">()</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>append_path<span class="op">(</span><span class="st">"PATH"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>setenv<span class="op">(</span><span class="st">"R_LIBS"</span><span class="op">,</span> <span class="va">r_libs</span><span class="op">)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>mode<span class="op">()</span> <span class="op">==</span> <span class="st">"load"</span><span class="op">)</span> <span class="cf">then</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    LmodMessage<span class="op">(</span><span class="st">"R_LIBS set to "</span> <span class="op">..</span> <span class="va">r_libs</span><span class="op">)</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    LmodMessage<span class="op">(</span><span class="st">"------------------------------------------------------------"</span><span class="op">)</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    LmodMessage<span class="op">(</span><span class="st">"On initial use, run the following:"</span><span class="op">)</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    LmodMessage<span class="op">(</span><span class="st">"  suma -update_env"</span><span class="op">)</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: "</span> <span class="op">..</span> <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"^.*/"</span><span class="op">,</span> <span class="st">""</span><span class="op">))</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> myModuleVersion<span class="op">())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Lmod takes some time to cache available modules. If a module does not appear, use the <code>-I</code> or <code>--ignore_cache</code> flag to force Lmod to check for new modules.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> avail afni</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load labname/afni</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<ol start="5" class="example" type="1">
+<li><p>Check that the module is available and load it:</p>
+<div class="sourceCode" id="annotated-cell-7"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="1">1</button><span id="annotated-cell-7-1" class="code-annotation-target"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> spider mylabname/afni</span>
+<span id="annotated-cell-7-2"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load mylabname/afni</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="1" data-code-annotation="1">Lmod takes some time to cache available modules. You can use the <code>-I</code> option to force Lmod to check for new modules.</span>
+</dd>
+</dl></li>
+</ol>
 
 
 </section>

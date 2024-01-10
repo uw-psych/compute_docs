@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.533">
+<meta name="generator" content="quarto-1.4.538">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -355,73 +355,56 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is provided as reference material.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <p>This is tested from a VNC Apptainer environment with sufficient dependencies.</p>
 </div>
 </div>
 <!-- TODO: provide steps to prepare Apptainer environment to run installer. -->
-<ol type="1">
-<li><p>Go to https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall and download the latest FreeSurfer tar archive for CentOS 8</p></li>
+<ol class="example" type="1">
+<li><p>Go to <a href="https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall" class="uri">https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall</a> and download the latest FreeSurfer tar archive for CentOS 8</p></li>
 <li><p>Extract the .tar.gz archive to <code>/sw/contrib/labname-src/freesurfer/&lt;version&gt;/</code>.</p></li>
 </ol>
 <p>For example, if installing version 7.3.2 of FreeSurfer, then run the following:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">LABNAME</span><span class="op">=</span>escience</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">VERSION</span><span class="op">=</span>7.3.2</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /sw/contrib/<span class="st">"</span><span class="va">$LABNAME</span><span class="st">"</span>-src/freesurfer/<span class="st">"</span><span class="va">$VERSION</span><span class="st">"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzf</span> freesurfer-linux-centos8_x86_64-<span class="st">"</span><span class="va">$VERSION</span><span class="st">"</span>.tar.gz <span class="dt">\</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">LABNAME</span><span class="op">=</span>escience</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">VERSION</span><span class="op">=</span>7.3.2</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> <span class="st">"/sw/contrib/</span><span class="va">$LABNAME</span><span class="st">-src/freesurfer/</span><span class="va">$VERSION</span><span class="st">"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzf</span> freesurfer-linux-centos8_x86_64-<span class="va">$VERSION</span>.tar.gz <span class="dt">\</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">--strip-components</span><span class="op">=</span>1 <span class="dt">\</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">-C</span> /sw/contrib/<span class="st">"</span><span class="va">$LABNAME</span><span class="st">"</span>-src/freesurfer/<span class="st">"</span><span class="va">$VERSION</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">-C</span> <span class="st">"/sw/contrib/</span><span class="va">$LABNAME</span><span class="st">-src/freesurfer/</span><span class="va">$VERSION</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" class="example" type="1">
 <li>Create an Lmod .lua module file for the new release with a text editor:</li>
 </ol>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>/sw/contrib/modulefiles/labname/freesurfer/7.3.2.lua</strong></pre>
+<pre><strong>/sw/contrib/modulefiles/mylabname/freesurfer/7.3.2.lua</strong></pre>
 </div>
-<div class="sourceCode" id="cb3" data-filename="/sw/contrib/modulefiles/labname/freesurfer/7.3.2.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span><span class="vs">[[freesurfer-7.3.2]]</span><span class="op">)</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">labname</span> <span class="op">=</span> <span class="st">"escience"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">version</span> <span class="op">=</span> <span class="st">"7.3.2"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> pathJoin<span class="op">(</span><span class="st">"/sw/contrib/"</span> <span class="op">..</span> <span class="va">labname</span> <span class="op">..</span> <span class="st">"-src/freesurfer/"</span><span class="op">,</span> <span class="va">version</span><span class="op">)</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">--FreeSurfer 7.x requires MATLAB R2014b</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>depend_on<span class="op">(</span><span class="st">"forsyth/matlab/r2014b"</span><span class="op">)</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>setenv<span class="op">(</span><span class="st">"FREESURFER_HOME"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>prepend_path<span class="op">(</span><span class="st">"PATH"</span><span class="op">,</span> pathJoin<span class="op">(</span><span class="va">base</span><span class="op">,</span> <span class="st">"bin"</span><span class="op">))</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>source_sh<span class="op">(</span><span class="st">"bash"</span><span class="op">,</span> pathJoin<span class="op">(</span><span class="va">base</span><span class="op">,</span> <span class="st">"SetUpFreeSurfer.sh"</span><span class="op">))</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: FreeSurfer"</span><span class="op">)</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> <span class="va">version</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-filename="/sw/contrib/modulefiles/mylabname/freesurfer/7.3.2.lua"><pre class="sourceCode lua code-with-copy"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>help<span class="op">(</span>myModuleName<span class="op">())</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="va">base</span> <span class="op">=</span> pathJoin<span class="op">(</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"/sw/contrib"</span><span class="op">,</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"/.*$"</span><span class="op">,</span> <span class="st">"-src"</span><span class="op">),</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"^.*/"</span><span class="op">,</span> <span class="st">""</span><span class="op">),</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    myModuleVersion<span class="op">()</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="op">)</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">--FreeSurfer 7.x requires MATLAB R2014b</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>depends_on<span class="op">(</span><span class="st">"forsyth/matlab/r2014b"</span><span class="op">)</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>setenv<span class="op">(</span><span class="st">"FREESURFER_HOME"</span><span class="op">,</span> <span class="va">base</span><span class="op">)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>prepend_path<span class="op">(</span><span class="st">"PATH"</span><span class="op">,</span> pathJoin<span class="op">(</span><span class="va">base</span><span class="op">,</span> <span class="st">"bin"</span><span class="op">))</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>source_sh<span class="op">(</span><span class="st">"bash"</span><span class="op">,</span> pathJoin<span class="op">(</span><span class="va">base</span><span class="op">,</span> <span class="st">"SetUpFreeSurfer.sh"</span><span class="op">))</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Name: "</span> <span class="op">..</span> <span class="fu">string.gsub</span><span class="op">(</span>myModuleName<span class="op">(),</span> <span class="st">"^.*/"</span><span class="op">,</span> <span class="st">""</span><span class="op">))</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>whatis<span class="op">(</span><span class="st">"Version: "</span> <span class="op">..</span> myModuleVersion<span class="op">())</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Lmod takes some time to cache available modules. If a module is not appearing, use the <code>-I</code> or <code>--ignore_cache</code> flag to force Lmod to check for new modules.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> avail freesurfer</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load labname/freesurfer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<ol type="1">
-<li>Request a free license from https://surfer.nmr.mgh.harvard.edu/registration.html if not already.</li>
+<ol start="4" class="example" type="1">
+<li><p>Check that the module is available and load it:</p>
+<div class="sourceCode" id="annotated-cell-6"><pre class="sourceCode bash code-annotation-code code-with-copy code-annotated"><code class="sourceCode bash"><button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1">1</button><span id="annotated-cell-6-1" class="code-annotation-target"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> spider mylabname/freesurfer</span>
+<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load mylabname/freesurfer/7.3.2</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="1" data-code-annotation="1">Lmod takes some time to cache available modules. You can use the <code>-I</code> option to force Lmod to check for new modules.</span>
+</dd>
+</dl></li>
+<li><p>Request a free license from https://surfer.nmr.mgh.harvard.edu/registration.html if not already.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -436,13 +419,13 @@ Note
 <p>This license is not tied to a specific version of FreeSurfer and can be copied from a previous installation.</p>
 </div>
 </div>
-<ol start="5" type="1">
-<li><p>Download license.txt from the registration email and copy it to <code>/sw/contrib/labname-src/freesurfer/&lt;version&gt;/license.txt</code>.</p></li>
+<ol start="6" class="example" type="1">
+<li><p>Download <code>license.txt</code> from the registration email and copy it to <code>/sw/contrib/labname-src/freesurfer/&lt;version&gt;/license.txt</code>.</p></li>
 <li><p>For FS-FAST support, create a link to a supported MATLAB release (R2014b for FreeSurfer 7.x):</p></li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load labname/freesurfer/<span class="op">&lt;</span>version<span class="op">&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="va">$FREESURFER_HOME</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /gscratch/forsyth-src/matlab/R2014b MCRv84</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> <span class="at">-I</span> load labname/freesurfer/<span class="op">&lt;</span>version<span class="op">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="st">"</span><span class="va">$FREESURFER_HOME</span><span class="st">"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> /gscratch/forsyth-src/matlab/R2014b MCRv84</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
