@@ -25,7 +25,9 @@ The Department of Psychology has a server that can be used for storing research 
 
 #### Features and options
 
-- 2 TiB of storage (up to 10 TiB available on request) **per lab**
+- 2 TiB of storage (up to 10 TiB available on request; for more, contact [mailto:dougkalk@uw.edu](the admin)) **per lab**
+- 1 Gigabit Ethernet connection to campus network
+- Accessible on {{< term Klone >}} via {{< term rclone >}}'s `smb` backend
 - Accessible off-campus via {{< term VPN >}}
 - Weekly backups (twice a week on request) to a backup server
 - Monthly backups to network-attached storage (NAS)
@@ -34,9 +36,15 @@ The Department of Psychology has a server that can be used for storing research 
   - Alternative configurations are possible on request (e.g., read-only accounts, restricted access to specific directories)
 - Mountable as a drive on Windows, Mac, and Linux systems
 
+The department's IT staff can provide more information about the server's configuration and options. Contact [mailto:dougkalk@uw.edu](the admin) for more information.
+
+::: callout-note
+Transfer speed to the server is limited by the speed of the network connection and its disk drives. The server is connected to the campus network via a 1 Gigabit Ethernet connection. The maximum write speed is around 70-100 MiB/s.
+:::
+
 #### Pricing
 
-Free for departmental labs up to 10 TiB. More available on request.
+Free for departmental labs up to 10 TiB. More may be available on request.
 
 #### Eligibility
 
