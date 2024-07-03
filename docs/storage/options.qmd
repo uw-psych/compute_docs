@@ -15,9 +15,9 @@ The following table compares the different options for storing research data:
 
 UW provides several different storage options for faculty, staff, and students. Additionally, there are storage options that are not directly supported by UW but are available to UW users through UW's enterprise agreements with the service providers, sometimes at a discount.
 
- The following sections describe some of the most common options. UW IT maintains a [page](https://itconnect.uw.edu/guides-by-topic/online-storage-publishing/online-storage/) that provides an overview of UW's online storage options, as well as a [comparison](https://itconnect.uw.edu/tools-services-support/software-computers/mws/my-workstation/files/comparison/) of file service options. The [UW IT Service Catalog](https://uw.service-now.com/sp?id=sc_home) has a more complete list of UW IT services.
+The following sections describe some of the most common options. UW IT maintains a [page](https://itconnect.uw.edu/guides-by-topic/online-storage-publishing/online-storage/) that provides an overview of UW's online storage options, as well as a [comparison](https://itconnect.uw.edu/tools-services-support/software-computers/mws/my-workstation/files/comparison/) of file service options. The [UW IT Service Catalog](https://uw.service-now.com/sp?id=sc_home) has a more complete list of UW IT services.
 
- UW 'Libraries' Research Data Services also maintains a [page](https://www.lib.washington.edu/dataservices/tools/storage-options) with information about storage options.
+The UW Libraries Research Data Services also maintains a [page](https://www.lib.washington.edu/dataservices/tools/storage-options) with information about storage options.
 
 ### Departmental storage
 
@@ -33,7 +33,7 @@ The Department of Psychology has a server that can be used for storing research 
 - Monthly backups to network-attached storage (NAS)
 - Storage is not encrypted
 - Shared access typically by sharing a single username and password per lab
-  - Alternative configurations are possible on request (e.g., read-only accounts, restricted access to specific directories)
+- Alternative configurations are possible on request (e.g., read-only accounts, restricted access to specific directories)
 - Mountable as a drive on Windows, Mac, and Linux systems
 
 The department's IT staff can provide more information about the server's configuration and options. Contact [mailto:dougkalk@uw.edu](the admin) for more information.
@@ -76,10 +76,10 @@ The LOLO Data Archive is priced at \$3.45/TiB/month, with a minimum purchase of 
 The [UW Shared File Service](https://itconnect.uw.edu/service/shared-file-service/) provides a network file system that can be mounted on Linux and Windows systems. It is only intended for use by UW faculty, staff, and students. It is suitable for data that is actively being worked on.
 
 #### Features and options
- 
+
 > - CIFS/SMB access from UW campus subnets.  (Can also be accessed via VPN Service, which provides remote systems with a UW campus IP address.)
 > - SFTP access from any internet location.
-> - User self-service file restores via “snapshots”
+> - User self-service file restores via "snapshots"
 > - Disaster recovery backups in two geographically separate regions (Seattle and Spokane).  Per-file restores from tape are not available.
 > - Easy allocations of additional space as demand requires.
 > - Access controlled via UW NetIDs and UW Groups
@@ -140,7 +140,7 @@ OneDrive has technical limitations that may cause problems when using it with so
 Free for eligible UW users.
 
 #### Eligibility
- 
+
 > UW faculty; UW staff; UW students; UW researchers; UW clinicians; For Shared UW NetIDs and Sponsored & affiliate UW NetIDs, accounts can be provisioned by UW employees
 
 ### UW Google Drive
