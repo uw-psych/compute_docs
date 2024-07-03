@@ -1,10 +1,13 @@
 [
   {
-    "listing": "/docs/storage/index.html",
+    "listing": "/docs/software/index.html",
     "items": [
-      "/docs/storage/concepts.html",
-      "/docs/storage/klone-storage.html",
-      "/docs/storage/options.html"
+      "/docs/software/afni.html",
+      "/docs/software/conn.html",
+      "/docs/software/freesurfer.html",
+      "/docs/software/utilities/gdu.html",
+      "/docs/software/matlab.html",
+      "/docs/software/spm.html"
     ]
   },
   {
@@ -16,14 +19,11 @@
     ]
   },
   {
-    "listing": "/docs/software/index.html",
+    "listing": "/docs/storage/index.html",
     "items": [
-      "/docs/software/afni.html",
-      "/docs/software/conn.html",
-      "/docs/software/freesurfer.html",
-      "/docs/software/utilities/gdu.html",
-      "/docs/software/matlab.html",
-      "/docs/software/spm.html"
+      "/docs/storage/concepts.html",
+      "/docs/storage/klone-storage.html",
+      "/docs/storage/options.html"
     ]
   },
   {
