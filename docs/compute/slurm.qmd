@@ -57,7 +57,7 @@ srun -A <lab> -p <node_type> -N <NUM_NODES> -c <NUM_CPUS> --mem=<MEM>[UNIT] --ti
 # Lines that begin with #SBATCH are special directives to the SLURM scheduler.
 # These directives tell the scheduler how to run your job.
 # They must come before any executable commands in your script.
-# Remove a single # character from the start of the line to enable a directive.
+# **Remove a single # character from the start of the line to enable a directive.**
 #
 # For more information about SLURM directives, see the SLURM documentation:
 # https://slurm.schedmd.com/sbatch.html
@@ -84,8 +84,8 @@ srun -A <lab> -p <node_type> -N <NUM_NODES> -c <NUM_CPUS> --mem=<MEM>[UNIT] --ti
 # the partition you request, and the number of nodes and tasks you request.
 # To see the accounts and partitions available to you, run the command `hyakalloc`.
 #
-##SBATCH --account=<lab> # Replace <lab> with your lab's name, e.g., "escience".
-##SBATCH --partition=<partition> # Replace <partition> with the name of the partition you want to use, e.g., "gpu-a40".
+##SBATCH --account=<lab> # Replace <lab> with your lab's name, e.g., "psych".
+##SBATCH --partition=<partition> # Replace <partition> with the name of the partition you want to use, e.g., "cpu-g2-mem2x".
 ##SBATCH --nodes=<number> # Number of nodes to allocate
 ##SBATCH --ntasks-per-node=<number> # Number of cores to allocate on each node
 ##SBATCH --mem=<number>[units] # How much memory to allocate per node, with units (M|G|T), e.g., 10G = 10 gigabytes

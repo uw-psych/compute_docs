@@ -88,5 +88,5 @@ This license is not tied to a specific version of FreeSurfer and can be copied f
 ``` bash
 module -I load labname/freesurfer/<version>
 cd "$FREESURFER_HOME"
-ln -s /gscratch/forsyth-src/matlab/R2014b MCRv84
+ln -s /gscratch/psych-src/matlab/R2014b MCRv84
 ```
