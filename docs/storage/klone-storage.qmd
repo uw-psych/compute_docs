@@ -79,6 +79,20 @@ The line at the top shows the location of your group's `gscratch` directory.
 
 Every lab or group has its own quota for `/gscratch` storage. By default, the quota is 1 TiB per {{< term slice >}} (or 4 TiB for a GPU slice). Additional storage is [available](https://hyak.uw.edu/docs/storage/gscratch#group-or-lab-directories) at $10/TiB/month as of 2023-12-08.
 
+
+::: {.callout-tip title="inode limits and Apptainer"}
+
+As reported by the `hyakstorage` utility, the `/gscratch` filesystem and your home directory are configured to limit the number of files that can be stored by a user or group. If you exceed this limit, you will not be able to write to the filesystem. Furthermore, because of the way that the software underlying the filesystem ([GPFS](https://en.wikipedia.org/wiki/GPFS)) works, having or accessing a large number of files can slow down the filesystem for everyone.
+
+Some software is prone to creating a large number of files -- `pip` and `conda` are common culprits. If you are using software that creates a large number of files, you should consider using [Apptainer](/docs/compute/apptainer.qmd) to run your software in a container. The files installed by the software will be compressed and stored in a single file (the container image), which will reduce the number of files on the filesystem and potentially speed up your software.
+
+:::
+
+#### `/gscratch/scrubbed`
+
+There is also a directory `/gscratch/scrubbed`, which is a scratch directory where any data not accessed in 21 days is **automatically deleted**. This directory is slower than other directories under /`gscratch`. There is no quota on this directory, but you should not store data here that you cannot afford to lose.
+
+
 ::: {.callout-tip title="Finding large or old files"}
 You can browse through the largest files and directories in any directory using the <tt>[gdu](/docs/software/utilities/gdu.qmd)</tt> command, which you can load using `module load escience/gdu` when logged in to a {{< term "compute node" >}}.
 
@@ -90,10 +104,6 @@ find . -atime +14 -size +1M -printf '%AFT%AH:%AM\t%s\t%p\n' | \
 ```
 1. We use [`awk`](https://www.gnu.org/software/gawk/manual/gawk.html) to process the file size in bytes that `find` reports and convert it to MiB.
 :::
-
-#### `/gscratch/scrubbed`
-
-There is also a directory `/gscratch/scrubbed`, which is a scratch directory where any data not accessed in 21 days is **automatically deleted**. This directory is slower than other directories under /`gscratch`. There is no quota on this directory, but you should not store data here that you cannot afford to lose.
 
 ## References
 
