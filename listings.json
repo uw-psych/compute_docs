@@ -1,16 +1,5 @@
 [
   {
-    "listing": "/docs/software/index.html",
-    "items": [
-      "/docs/software/afni.html",
-      "/docs/software/conn.html",
-      "/docs/software/freesurfer.html",
-      "/docs/software/utilities/gdu.html",
-      "/docs/software/matlab.html",
-      "/docs/software/spm.html"
-    ]
-  },
-  {
     "listing": "/docs/compute/index.html",
     "items": [
       "/docs/compute/slurm.html",
@@ -27,6 +16,14 @@
     ]
   },
   {
+    "listing": "/docs/start/index.html",
+    "items": [
+      "/docs/start/introduction.html",
+      "/docs/start/connect-ssh.html",
+      "/docs/start/hyakvnc.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/docs/start/index.html",
@@ -36,11 +33,14 @@
     ]
   },
   {
-    "listing": "/docs/start/index.html",
+    "listing": "/docs/software/index.html",
     "items": [
-      "/docs/start/introduction.html",
-      "/docs/start/connect-ssh.html",
-      "/docs/start/hyakvnc.html"
+      "/docs/software/afni.html",
+      "/docs/software/conn.html",
+      "/docs/software/freesurfer.html",
+      "/docs/software/utilities/gdu.html",
+      "/docs/software/matlab.html",
+      "/docs/software/spm.html"
     ]
   }
 ]

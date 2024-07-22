@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.0">
+<meta name="generator" content="quarto-1.6.3">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -388,6 +388,24 @@ Default software installation locations
 ╰───────────────────┴────────────────────────────┴─────────────────────────────╯</code></pre>
 <p>The line at the top shows the location of your group’s <code>gscratch</code> directory.</p>
 <p>Every lab or group has its own quota for <code>/gscratch</code> storage. By default, the quota is 1 TiB per <a class="glossary-ref" data-glossary-term="slice" data-glossary-def-base64="PGRpdiBjbGFzcz0nZ2xvc3NhcnktZGVmJyBkYXRhLWdsb3NzYXJ5LXRlcm09J3NsaWNlJyByb2xlPSd0b29sdGlwJz5PbgoKdGhlCgpLbG9uZQoKY2x1c3RlciwKCmEKCnNsaWNlCgppcwoKYQoKdW5pdAoKb2YKCmFsbG9jYXRpb24KCmZvcgoKY29tcHV0ZQoKcmVzb3VyY2VzCgp0aGF0CgppcwoKYm91Z2h0CgpieQoKYQoKcmVzZWFyY2gKCmdyb3VwLgoKU2VlCgo8YSBocmVmPSJodHRwczovL2h5YWsudXcuZWR1L2Jsb2cvdGVybWlub2xvZ3ktcmVzZXQiPmhlcmU8L2E+Cgpmb3IKCm1vcmUKCmluZm9ybWF0aW9uLjwvZGl2Pg==" href="javascript:void(0);">slice</a> (or 4 TiB for a GPU slice). Additional storage is <a href="https://hyak.uw.edu/docs/storage/gscratch#group-or-lab-directories">available</a> at $10/TiB/month as of 2023-12-08.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="inode limits and Apptainer">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+inode limits and Apptainer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As reported by the <code>hyakstorage</code> utility, the <code>/gscratch</code> filesystem and your home directory are configured to limit the number of files that can be stored by a user or group. If you exceed this limit, you will not be able to write to the filesystem. Furthermore, because of the way that the software underlying the filesystem (<a href="https://en.wikipedia.org/wiki/GPFS">GPFS</a>) works, having or accessing a large number of files can slow down the filesystem for everyone.</p>
+<p>Some software is prone to creating a large number of files – <code>pip</code> and <code>conda</code> are common culprits. If you are using software that creates a large number of files, you should consider using <a href="../../docs/compute/apptainer.html">Apptainer</a> to run your software in a container. The files installed by the software will be compressed and stored in a single file (the container image), which will reduce the number of files on the filesystem and potentially speed up your software.</p>
+</div>
+</div>
+</section>
+<section id="gscratchscrubbed" class="level4">
+<h4 class="anchored" data-anchor-id="gscratchscrubbed"><code>/gscratch/scrubbed</code></h4>
+<p>There is also a directory <code>/gscratch/scrubbed</code>, which is a scratch directory where any data not accessed in 21 days is <strong>automatically deleted</strong>. This directory is slower than other directories under /<code>gscratch</code>. There is no quota on this directory, but you should not store data here that you cannot afford to lose.</p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Finding large or old files">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -410,10 +428,6 @@ Finding large or old files
 </dl>
 </div>
 </div>
-</section>
-<section id="gscratchscrubbed" class="level4">
-<h4 class="anchored" data-anchor-id="gscratchscrubbed"><code>/gscratch/scrubbed</code></h4>
-<p>There is also a directory <code>/gscratch/scrubbed</code>, which is a scratch directory where any data not accessed in 21 days is <strong>automatically deleted</strong>. This directory is slower than other directories under /<code>gscratch</code>. There is no quota on this directory, but you should not store data here that you cannot afford to lose.</p>
 </section>
 </section>
 </section>
